@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/core/utlis/component.dart';
-import 'package:kian_sheeps_projects/core/widgets/check_app_without_login_button.dart';
-import 'package:kian_sheeps_projects/features/login/presentation/views/new_login_screen_view.dart';
-import 'package:kian_sheeps_projects/core/widgets/asking_for_login_or_sgin_up_.dart';
-import 'package:kian_sheeps_projects/features/login/presentation/views/widgets/forget_password_text_button.dart';
+import 'package:kian_sheeps_projects/widgets/visitor_button.dart';
+import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
+import 'package:kian_sheeps_projects/widgets/question_and_button.dart';
+import 'package:kian_sheeps_projects/features/login/presentation/views/widgets/forget_password_button.dart';
 import 'package:kian_sheeps_projects/features/login/presentation/views/widgets/login_button.dart';
-import 'package:kian_sheeps_projects/core/widgets/logo_image_&_screen__title.dart';
+import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
+import 'package:kian_sheeps_projects/widgets/logo_and_screen_title.dart';
 
 class LoginScreenBody extends StatefulWidget {
   const LoginScreenBody({super.key});
@@ -43,7 +43,8 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                   SizedBox(
                     height: 30.h,
                   ),
-                  CustomTextFormFieldWithTitle(
+                  CustomTextFormField(
+                    isEnabled: true,
                     controller: phoneNumberOrEmailController,
                     type: TextInputType.emailAddress,
                     title: 'رقم الجوال / البريد الالكتروني',
@@ -55,11 +56,13 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                       }
                       return null;
                     },
+                    ispassword: false,
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
-                  CustomTextFormFieldWithTitle(
+                  CustomTextFormField(
+                    isEnabled: true,
                     ispassword: isPassword,
                     controller: passwordController,
                     type: TextInputType.visiblePassword,
@@ -106,18 +109,22 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                   SizedBox(
                     height: 56.h,
                   ),
-                  AskingForLoginOrSignUp(
+                  QuestionAndButton(
                     text: 'إنشاء حساب جديد',
                     questionText: 'ليس لديك حساب ؟',
                     onTap: () {
-                      navigateTo(
-                          context: context, widget: const NewLoginScreenView());
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterScreenView(),
+                        ),
+                      );
+                      // RouteUtils.navigateTo(const NewLoginScreenView());
                     },
                   ),
                   SizedBox(
                     height: 15.h,
                   ),
-                  CheckAppWithoutLoginButton(onTap: () {}),
+                  VisitorButton(onTap: () {}),
                 ],
               ),
             ),

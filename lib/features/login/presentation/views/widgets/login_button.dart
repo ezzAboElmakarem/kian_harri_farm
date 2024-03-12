@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/core/utlis/component.dart';
+import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/core/utlis/assets.dart';
-import 'package:kian_sheeps_projects/core/widgets/background_image.dart';
+import 'package:kian_sheeps_projects/helper/assets.dart';
+import 'package:kian_sheeps_projects/widgets/background_image.dart';
 
 class SplashScreenBody extends StatelessWidget {
   const SplashScreenBody({super.key});

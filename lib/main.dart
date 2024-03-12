@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/constants.dart';
+import 'package:kian_sheeps_projects/helper/constants.dart';
 import 'package:kian_sheeps_projects/features/splash_screen/presentaion/views/splash_screen_view.dart';
 
 void main() {

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kian_sheeps_projects/helper/constants.dart';
 import 'package:kian_sheeps_projects/helper/styles.dart';
-import 'package:kian_sheeps_projects/features/onbording/data/onbording_model.dart';
+import 'package:kian_sheeps_projects/features/onbording/models/onbording_model.dart';
 
 Widget buildBordingItem(BordingModel model) => Column(
       crossAxisAlignment: CrossAxisAlignment.end,

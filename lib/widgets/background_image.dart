@@ -8,9 +8,9 @@ class BackgroundImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       AssetsData.backgroundImage,
-      //fit: BoxFit.contain,
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
+      fit: BoxFit.cover,
+      width: double.infinity,
+      height: double.infinity,
     );
   }
 }

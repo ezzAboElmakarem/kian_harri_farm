@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/login/presentation/views/login_screen_view.dart';
+import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
 
 class SkipButtonWidget extends StatelessWidget {

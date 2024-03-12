@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/forget_password/presentation/views/forget_password_view.dart';
+import 'package:kian_sheeps_projects/features/forget_password/views/forget_password_view.dart';
 import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
 
 class ForgetPasswordTextButton extends StatelessWidget {

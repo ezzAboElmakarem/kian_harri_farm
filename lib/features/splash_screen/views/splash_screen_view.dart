@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/features/onbording/presentaion/views/onbording_screen_view.dart';
-import 'package:kian_sheeps_projects/features/splash_screen/presentaion/views/widgets/splash_screen_body.dart';
+import 'package:kian_sheeps_projects/features/onbording/views/onbording_screen_view.dart';
+import 'package:kian_sheeps_projects/features/splash_screen/widgets/splash_logo.dart';
+import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});
@@ -19,7 +20,9 @@ class _SplashScreenViewState extends State<SplashScreenView> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SplashScreenBody(),
+      body: DecoratedBackGround(
+        child: SplashLogo(),
+      ),
     );
   }
 

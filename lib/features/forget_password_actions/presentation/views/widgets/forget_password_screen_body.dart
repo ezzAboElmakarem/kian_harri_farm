@@ -26,7 +26,8 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
         autovalidateMode: autovalidateMode,
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 80.h),
+            padding: EdgeInsets.only(
+                left: 24.w, right: 24.w, top: 80.h, bottom: 30.h),
             child: Column(
               children: [
                 const PasswordImageAndTitle(

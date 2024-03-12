@@ -21,25 +21,8 @@ class _VerfiyCodeScreenBodyState extends State<VerfiyCodeScreenBody> {
 
   late StreamController<ErrorAnimationType> errorController;
 
-  bool hasError = false;
-  String currentText = "";
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
-  @override
-  void initState() {
-    errorController = StreamController<ErrorAnimationType>();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    errorController.close();
-
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -48,7 +31,8 @@ class _VerfiyCodeScreenBodyState extends State<VerfiyCodeScreenBody> {
         autovalidateMode: autovalidateMode,
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 80.h),
+            padding: EdgeInsets.only(
+                left: 24.w, right: 24.w, top: 80.h, bottom: 12.h),
             child: Column(
               children: [
                 const PasswordImageAndTitle(
@@ -58,53 +42,8 @@ class _VerfiyCodeScreenBodyState extends State<VerfiyCodeScreenBody> {
                   height: 40.h,
                 ),
                 const CustomAppPinCodeField(),
-                /*
-                PinCodeTextField(
-                  keyboardType: TextInputType.number,
-                  errorTextDirection: TextDirection.rtl,
-                  errorTextSpace: 25,
-                  validator: (v) {
-                    if (v!.length < 4) {
-                      return "من فضلك أدخل الكود";
-                    } else {
-                      return null;
-                    }
-                  },
-                  length: 4,
-                  obscureText: false,
-                  animationType: AnimationType.fade,
-                  pinTheme: PinTheme(
-                    shape: PinCodeFieldShape.box,
-                    borderRadius: BorderRadius.circular(5),
-                    fieldHeight: 70.h,
-                    fieldWidth: 68.w,
-                    activeFillColor: Colors.white,
-                  ),
-                  animationDuration: Duration(milliseconds: 300),
-                  // backgroundColor: Colors.blue.shade50,
-                  //  enableActiveFill: true,
-                  errorAnimationController: errorController,
-                  controller: textEditingController,
-                  onCompleted: (v) {
-                    print("Completed");
-                  },
-                  onChanged: (value) {
-                    print(value);
-                    setState(() {
-                      currentText = value;
-                    });
-                  },
-                  beforeTextPaste: (text) {
-                    print("Allowing to paste $text");
-                    //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                    //but you can show anything you want here, like your pop up saying wrong paste format or etc
-                    return true;
-                  },
-                  appContext: context,
-                ),
-              */
                 SizedBox(
-                  height: 40.h,
+                  height: 20.h,
                 ),
                 CustomButton(
                   buttonText: 'متابعة',
@@ -124,7 +63,7 @@ class _VerfiyCodeScreenBodyState extends State<VerfiyCodeScreenBody> {
                   },
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 20.h,
                 ),
                 AskingForLoginOrSignUp(
                   text: 'عادة الارسال ',

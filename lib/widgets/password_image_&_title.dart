@@ -16,7 +16,7 @@ class PasswordImageAndTitle extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'نسيت كلمة المرور',
+          'استرجاع كلمة المرور',
           style: Styles.textstyle20,
         ),
         SizedBox(

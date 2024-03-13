@@ -2,37 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/styles.dart';
 
+// ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
+  CustomTextFormField({
     super.key,
     this.controller,
     required this.type,
     this.hint,
     required this.title,
-    required this.textDirection,
+    // required this.textDirection,
     this.prefixIcon,
     this.prefixText,
     this.suffixIcon,
     this.onChange,
     this.errorColor,
-    required this.validation,
+    this.validation,
     required this.ispassword,
-    required this.isEnabled,
+    // this.isEnabled,
   });
-  final TextEditingController? controller;
-  final TextInputType? type;
-  final String? hint;
+  TextEditingController? controller;
+  TextInputType? type;
+  String? hint;
   final String? title;
-  final Color? titleColor = Colors.black;
-  final textDirection;
-  final Widget? prefixIcon;
-  final String? prefixText;
-  final Widget? suffixIcon;
-  final Function(String)? onChange;
-  final Color? errorColor;
-  final bool ispassword;
-  final bool isEnabled;
-  final String? Function(String?)? validation;
+  Color? titleColor = Colors.black;
+  TextDirection? textDirection;
+  Widget? prefixIcon;
+  String? prefixText;
+  Widget? suffixIcon;
+  Function(String)? onChange;
+  Color? errorColor;
+  bool ispassword;
+  //bool isEnabled;
+  String? Function(String?)? validation;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,12 +50,12 @@ class CustomTextFormField extends StatelessWidget {
           ],
         ),
         TextFormField(
-          enabled: isEnabled,
+          enabled: true,
           style: TextStyle(
               fontWeight: FontWeight.w600,
               color: Colors.black,
               fontSize: 16.sp),
-          textDirection: textDirection,
+          textDirection: TextDirection.rtl,
           obscureText: ispassword,
           onChanged: onChange,
           controller: controller,

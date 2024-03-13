@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/constants.dart';
 import 'package:kian_sheeps_projects/helper/styles.dart';
-import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
+import 'package:kian_sheeps_projects/features/register/widgets/register_forms.dart';
 
 class AcceptTermsWidget extends StatefulWidget {
   const AcceptTermsWidget({super.key});
@@ -23,7 +23,7 @@ class _AcceptTermsWidgetState extends State<AcceptTermsWidget> {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const RegisterScreenView(),
+                builder: (context) => const RegisterForms(),
               ),
             );
 

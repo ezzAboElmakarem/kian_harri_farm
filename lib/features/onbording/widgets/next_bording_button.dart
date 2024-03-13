@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
-import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 
 class NextBordingButton extends StatelessWidget {
@@ -20,7 +19,9 @@ class NextBordingButton extends StatelessWidget {
         textColor: Colors.white,
         onTap: () {
           if (isLastScreen == true) {
-            RouteUtils.navigateTo(const LoginScreenView());
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const LoginScreenView(),
+            ));
           } else {
             bordingController.nextPage(
                 duration: const Duration(milliseconds: 700),

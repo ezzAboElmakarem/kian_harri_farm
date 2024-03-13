@@ -24,7 +24,7 @@ class RegisterView extends StatelessWidget {
               child: Column(
                 children: [
                   const LogoAndScreenTitle(
-                    screenTitle: 'تسجيل دخول جديد',
+                    screenTitle: 'تسجيل جديد',
                   ),
                   const RegisterForms(),
                   SizedBox(

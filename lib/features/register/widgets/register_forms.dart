@@ -41,9 +41,9 @@ class _RegisterFormsState extends State<RegisterForms> {
           height: 10.h,
         ),
         CustomTextFormField(
-          ispassword: isPassword,
           type: TextInputType.visiblePassword,
           title: 'كلمة المرور',
+          ispassword: isPassword,
           prefixIcon: IconButton(
             onPressed: () {
               setState(() {

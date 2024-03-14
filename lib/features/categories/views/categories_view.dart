@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/categories/widgets/category_title.dart';
 import 'package:kian_sheeps_projects/features/categories/widgets/product_grid_view.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/sort_by_sheet.dart';
+import 'package:kian_sheeps_projects/features/sort_by_bottom_sheet/views/sort_by_sheet.dart';
 import 'package:kian_sheeps_projects/features/categories/widgets/sub_category_list_view.dart';
 import 'package:kian_sheeps_projects/helper/bottom_sheet_method.dart';
 
@@ -46,11 +46,11 @@ class CategoriesScreenView extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: 1.w,
         ),
-        child: CustomScrollView(
+        child: const CustomScrollView(
           slivers: [
-            const CategoryTitle(),
-            const SubCategoryListView(),
-            const ProductGridView(),
+            CategoryTitle(),
+            SubCategoryListView(),
+            ProductGridView(),
           ],
         ),
       ),

@@ -5,8 +5,8 @@ import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class CustomCategoryRow extends StatelessWidget {
-  const CustomCategoryRow({
+class CustomCategoryListView extends StatelessWidget {
+  const CustomCategoryListView({
     super.key,
   });
 
@@ -24,26 +24,20 @@ class CustomCategoryRow extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CustomCategoryItem(
+          child: SizedBox(
+            height: 90.h,
+            width: double.infinity,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              separatorBuilder: (context, index) => SizedBox(
+                width: 1.h,
+              ),
+              itemCount: 8,
+              itemBuilder: (context, index) => CustomCategoryItem(
                   categoryColor: ColorStyles.vegetablesCategoryColor,
                   categoryImage: AssetsData.meatEmoji,
                   categoryName: 'خضراوت'),
-              CustomCategoryItem(
-                  categoryColor: ColorStyles.fruitsCategoryColor,
-                  categoryImage: AssetsData.meatEmoji,
-                  categoryName: 'فاكهة'),
-              CustomCategoryItem(
-                  categoryColor: ColorStyles.fishCategoryColor,
-                  categoryImage: AssetsData.meatEmoji,
-                  categoryName: 'اسماك'),
-              CustomCategoryItem(
-                  categoryColor: ColorStyles.meatCategoryColor,
-                  categoryImage: AssetsData.meatEmoji,
-                  categoryName: 'لحوم'),
-            ],
+            ),
           ),
         ),
       ],

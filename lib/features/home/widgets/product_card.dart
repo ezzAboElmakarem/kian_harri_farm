@@ -3,23 +3,29 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class ProductContainer extends StatelessWidget {
-  const ProductContainer({
+class ProductCard extends StatelessWidget {
+  const ProductCard({
     super.key,
     required this.price,
     required this.oldPrice,
     required this.productName,
     required this.imageUrl,
+    required this.categoryName,
+    required this.cardWidth,
+    required this.cardHeight,
   });
+  final String categoryName;
   final String price;
   final String oldPrice;
   final String productName;
   final String imageUrl;
+  final double cardWidth;
+  final double cardHeight;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 280.h,
-      width: 160.w,
+      height: cardWidth,
+      width: cardHeight,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -32,7 +38,7 @@ class ProductContainer extends StatelessWidget {
             height: 8.h,
           ),
           Text(
-            'اسماك',
+            categoryName,
             style: TextStyles.textstyle14
                 .copyWith(color: ColorStyles.textGreyColor),
           ),

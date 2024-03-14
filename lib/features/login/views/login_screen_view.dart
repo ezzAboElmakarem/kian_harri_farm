@@ -40,7 +40,7 @@ class LoginScreenView extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const HomeView(),
+                          builder: (context) => HomeView(),
                         ),
                       );
                     },

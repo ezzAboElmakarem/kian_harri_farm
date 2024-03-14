@@ -6,11 +6,27 @@ import 'package:kian_sheeps_projects/features/home/widgets/product_row.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/product_slider.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/search_bar.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/welcome_title.dart';
+import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/widgets/logo_image_widget.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  HomeView({super.key});
 
+  final imagesUrl = [
+    Image.asset(
+      AssetsData.meatBigPic,
+    ),
+    Image.asset(AssetsData.meatBigPic),
+    Image.asset(AssetsData.meatBigPic),
+  ];
+
+  final secondImagesUrl = [
+    Image.asset(
+      AssetsData.meatBigPic,
+    ),
+    Image.asset(AssetsData.meatBigPic),
+    Image.asset(AssetsData.meatBigPic),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,14 +37,17 @@ class HomeView extends StatelessWidget {
               const CustomHomeAppBar(),
               const HomeWelocmeTitle(),
               const CustomSearchBar(),
-              ProductSlider(),
+              ProductSlider(imageViewPoint: 0.9, imagesUrl: imagesUrl),
               const CustomCategoryRow(),
               const ProductRow(),
               const Divider(
                 height: 2.0,
                 color: Colors.black,
               ),
-              ProductSlider(),
+              ProductSlider(
+                imageViewPoint: 0.88,
+                imagesUrl: secondImagesUrl,
+              ),
               SizedBox(
                 height: 20.h,
               ),

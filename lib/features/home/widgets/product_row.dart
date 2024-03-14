@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/product_container.dart';
+import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
@@ -35,8 +36,16 @@ class ProductRow extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ProductContainer(),
-              ProductContainer(),
+              ProductContainer(
+                  price: '160',
+                  oldPrice: '200',
+                  productName: 'سمك فريش',
+                  imageUrl: AssetsData.fishOffer),
+              ProductContainer(
+                  price: '200',
+                  oldPrice: '230',
+                  productName: 'فريش بيف استربس',
+                  imageUrl: AssetsData.meatOffers),
             ],
           ),
         ],

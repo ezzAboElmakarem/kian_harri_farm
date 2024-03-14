@@ -9,7 +9,7 @@ class AssetsData {
   static const vegetableEmoji = 'assets/images/vegetable_emoji.svg';
   static const welcomeHand = 'assets/images/welcome_hand.png';
   static const meatBigPic = 'assets/images/meat_Big_pic.png';
-  static const meatOffers = 'assets/images/meat_offer.png';
+  static const meatOffers = 'assets/images/meat_offers.png';
   static const meatEmoji = 'assets/images/meat_category.png';
   static const fruitEmoji = 'assets/images/fruit_emoji.svg';
   static const fishOffer = 'assets/images/fish_offer.png';

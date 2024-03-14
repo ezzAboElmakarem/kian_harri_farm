@@ -1,27 +1,20 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductSlider extends StatefulWidget {
-  ProductSlider({super.key});
-
+  const ProductSlider(
+      {super.key, required this.imageViewPoint, required this.imagesUrl});
+  final double imageViewPoint;
+  final List<Widget> imagesUrl;
   @override
   State<ProductSlider> createState() => _ProductSliderState();
 }
 
 class _ProductSliderState extends State<ProductSlider> {
   int currentIndex = 0;
-
-  final imagesUrl = [
-    Image.asset(
-      AssetsData.meatBigPic,
-    ),
-    Image.asset(AssetsData.meatBigPic),
-    Image.asset(AssetsData.meatBigPic),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +26,11 @@ class _ProductSliderState extends State<ProductSlider> {
           alignment: Alignment.bottomCenter,
           children: [
             CarouselSlider(
-              items: imagesUrl,
+              items: widget.imagesUrl,
               options: CarouselOptions(
                 height: 300.h,
                 autoPlay: true,
-                viewportFraction: 0.9,
+                viewportFraction: widget.imageViewPoint,
                 onPageChanged: (index, reason) {
                   setState(() {
                     currentIndex = index;
@@ -52,7 +45,7 @@ class _ProductSliderState extends State<ProductSlider> {
               padding: EdgeInsets.only(bottom: 8.0.h),
               child: AnimatedSmoothIndicator(
                 activeIndex: currentIndex,
-                count: imagesUrl.length,
+                count: widget.imagesUrl.length,
                 effect: ExpandingDotsEffect(
                   dotColor: Colors.grey,
                   activeDotColor: kPrimaryColor,

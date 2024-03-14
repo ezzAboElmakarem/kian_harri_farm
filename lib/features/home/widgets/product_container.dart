@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class ProductContainer extends StatelessWidget {
   const ProductContainer({
     super.key,
+    required this.price,
+    required this.oldPrice,
+    required this.productName,
+    required this.imageUrl,
   });
-
+  final String price;
+  final String oldPrice;
+  final String productName;
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,9 +24,10 @@ class ProductContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           SizedBox(
-              width: 150.w,
-              height: 150.h,
-              child: Image.asset(AssetsData.meatOffers)),
+            width: 150.w,
+            height: 150.h,
+            child: Image.asset(imageUrl),
+          ),
           SizedBox(
             height: 8.h,
           ),
@@ -33,18 +40,18 @@ class ProductContainer extends StatelessWidget {
             height: 6.h,
           ),
           Text(
-            'سمك فريش',
+            price,
             style: TextStyles.textstyle14,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Icon(Icons.shopping_bag_outlined),
+              const Icon(Icons.shopping_bag_outlined),
               SizedBox(
                 width: 25.w,
               ),
               Text(
-                '125 SR',
+                '$price SR',
                 style: TextStyles.textstyle14.copyWith(
                   color: kPrimaryColor,
                 ),
@@ -53,7 +60,7 @@ class ProductContainer extends StatelessWidget {
                 width: 6.w,
               ),
               Text(
-                '175 SR',
+                '$oldPrice SR',
                 style: TextStyles.textstyle14.copyWith(
                     color: ColorStyles.textGreyColor,
                     decoration: TextDecoration.lineThrough,

@@ -4,7 +4,7 @@ import 'package:kian_sheeps_projects/features/password_verification/views/vrefiy
 import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
-import 'package:kian_sheeps_projects/widgets/password_image_&_title.dart';
+import 'package:kian_sheeps_projects/widgets/password_image_and_title.dart';
 
 class ForgetPasswordView extends StatelessWidget {
   const ForgetPasswordView({super.key});

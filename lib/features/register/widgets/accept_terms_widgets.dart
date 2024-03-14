@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/constants.dart';
-import 'package:kian_sheeps_projects/helper/styles.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import 'package:kian_sheeps_projects/features/register/widgets/register_forms.dart';
 
 class AcceptTermsWidget extends StatefulWidget {
@@ -30,14 +30,14 @@ class _AcceptTermsWidgetState extends State<AcceptTermsWidget> {
             // RouteUtils.navigateTo(const NewLoginScreenView());
           },
           child: Text("الشروط الاحكام",
-              style: Styles.textstyle12.copyWith(color: kPrimaryColor)),
+              style: TextStyles.textstyle12.copyWith(color: kPrimaryColor)),
         ),
         SizedBox(
           width: 4.w,
         ),
         Text(
           "اوافق علي",
-          style: Styles.textstyle12,
+          style: TextStyles.textstyle12,
         ),
         Checkbox(
           activeColor: kPrimaryColor,

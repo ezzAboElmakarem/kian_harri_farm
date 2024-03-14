@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/constants.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SmoothIndicatorWidget extends StatelessWidget {

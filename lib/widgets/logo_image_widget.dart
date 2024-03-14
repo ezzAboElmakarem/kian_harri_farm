@@ -5,10 +5,13 @@ import 'package:kian_sheeps_projects/helper/assets.dart';
 class LogoImageWidget extends StatelessWidget {
   const LogoImageWidget({
     super.key,
+    required this.height,
+    required this.width,
   });
-
+  final double height;
+  final double width;
   @override
   Widget build(BuildContext context) {
-    return Image.asset(AssetsData.logo1, height: 132.h, width: 132.w);
+    return Image.asset(AssetsData.logo1, height: height.h, width: width.w);
   }
 }

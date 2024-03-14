@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/helper/constants.dart';
-import 'package:kian_sheeps_projects/helper/styles.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
@@ -19,7 +19,7 @@ class CustomTextButton extends StatelessWidget {
       onTap: onTap,
       child: Text(
         text,
-        style: Styles.textstyle16.copyWith(
+        style: TextStyles.textstyle16.copyWith(
             color: textColor ?? kPrimaryColor, fontWeight: FontWeight.bold),
       ),
     );

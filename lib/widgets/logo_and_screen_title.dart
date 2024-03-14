@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/styles.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import 'package:kian_sheeps_projects/widgets/logo_image_widget.dart';
 
 class LogoAndScreenTitle extends StatelessWidget {
@@ -16,13 +16,13 @@ class LogoAndScreenTitle extends StatelessWidget {
         SizedBox(
           height: 103.h,
         ),
-        const LogoImageWidget(),
+        const LogoImageWidget(height: 132, width: 132),
         SizedBox(
           height: 19.h,
         ),
         Text(
           screenTitle,
-          style: Styles.textstyle20.copyWith(fontWeight: FontWeight.bold),
+          style: TextStyles.textstyle20.copyWith(fontWeight: FontWeight.bold),
         ),
       ],
     );

@@ -4,7 +4,7 @@ import 'package:kian_sheeps_projects/features/password_verification/widgets/pin_
 import 'package:kian_sheeps_projects/features/reset_password/views/reset_password_screen_view.dart';
 import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
-import 'package:kian_sheeps_projects/widgets/password_image_&_title.dart';
+import 'package:kian_sheeps_projects/widgets/password_image_and_title.dart';
 import 'package:kian_sheeps_projects/widgets/question_and_button.dart';
 
 class VerfiyCodeScreenView extends StatelessWidget {

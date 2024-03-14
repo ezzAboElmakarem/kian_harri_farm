@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/login/widgets/forget_password_button.dart';
 import 'package:kian_sheeps_projects/features/login/widgets/login_button.dart';
 import 'package:kian_sheeps_projects/features/login/widgets/login_screen_forms.dart';
@@ -36,7 +37,13 @@ class LoginScreenView extends StatelessWidget {
                     height: 15.h,
                   ),
                   LoginButton(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const HomeView(),
+                        ),
+                      );
+                    },
                   ),
                   SizedBox(
                     height: 56.h,

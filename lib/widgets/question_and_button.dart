@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/styles.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
 
 class QuestionAndButton extends StatelessWidget {
@@ -24,7 +24,7 @@ class QuestionAndButton extends StatelessWidget {
         ),
         Text(
           questionText,
-          style: Styles.textstyle16.copyWith(fontWeight: FontWeight.bold),
+          style: TextStyles.textstyle16.copyWith(fontWeight: FontWeight.bold),
         )
       ],
     );

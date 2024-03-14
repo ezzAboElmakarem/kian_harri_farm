@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/constants.dart';
-import 'package:kian_sheeps_projects/helper/styles.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -28,8 +28,8 @@ class CustomButton extends StatelessWidget {
         child: Center(
           child: Text(
             buttonText,
-            style:
-                Styles.textstyle14.copyWith(color: textColor ?? Colors.white),
+            style: TextStyles.textstyle14
+                .copyWith(color: textColor ?? Colors.white),
           ),
         ),
       ),

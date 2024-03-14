@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/styles.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
     super.key,
     this.controller,
-    required this.type,
+    this.type,
     this.hint,
-    required this.title,
+    this.title,
     // required this.textDirection,
     this.prefixIcon,
     this.prefixText,
@@ -43,8 +44,8 @@ class CustomTextFormField extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(bottom: 8.h),
-              child: Text(title!,
-                  style: Styles.textstyle16.copyWith(
+              child: Text(title ?? '',
+                  style: TextStyles.textstyle16.copyWith(
                       color: titleColor, fontWeight: FontWeight.bold)),
             ),
           ],
@@ -67,10 +68,11 @@ class CustomTextFormField extends StatelessWidget {
             //  contentPadding: EdgeInsets.fromLTRB(10, 20, 10, 20),
             errorStyle: TextStyle(
                 color: errorColor, fontSize: 14, fontWeight: FontWeight.bold),
-            // hintStyle: TextStyle(
-            //     fontSize: 16.sp,
-            //     fontWeight: FontWeight.w400,
-            //     color: ColorStyles.textFormFieldHintColor),
+            hintStyle: TextStyle(
+              fontSize: 14.sp,
+              fontWeight: FontWeight.bold,
+              color: ColorStyles.textGreyColor.withOpacity(0.4),
+            ),
             hintTextDirection: TextDirection.rtl,
             prefixText: prefixText,
             prefixStyle: TextStyle(

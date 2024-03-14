@@ -6,4 +6,12 @@ class AssetsData {
   static const onBording2 = 'assets/images/onbording_2.svg';
   static const onBording3 = 'assets/images/onbording_3.svg';
   static const forgetPasswordImage = 'assets/images/forget_password_image.svg';
+  static const vegetableEmoji = 'assets/images/vegetable_emoji.svg';
+  static const welcomeHand = 'assets/images/welcome_hand.png';
+  static const meatBigPic = 'assets/images/meat_Big_pic.png';
+  static const meatOffers = 'assets/images/meat_offer.png';
+  static const meatEmoji = 'assets/images/meat_category.png';
+  static const fruitEmoji = 'assets/images/fruit_emoji.svg';
+  static const fishOffer = 'assets/images/fish_offer.png';
+  static const fishEmoji = 'assets/images/fish_emoji.svg';
 }

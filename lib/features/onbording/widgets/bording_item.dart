@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kian_sheeps_projects/helper/constants.dart';
-import 'package:kian_sheeps_projects/helper/styles.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import 'package:kian_sheeps_projects/features/onbording/models/onbording_model.dart';
 
 Widget buildBordingItem(BordingModel model) => Column(
@@ -18,7 +18,7 @@ Widget buildBordingItem(BordingModel model) => Column(
         ),
         Text(
           model.title,
-          style: Styles.textstyle20.copyWith(fontWeight: FontWeight.bold),
+          style: TextStyles.textstyle20.copyWith(fontWeight: FontWeight.bold),
         ),
         SizedBox(
           height: 14.h,
@@ -26,7 +26,8 @@ Widget buildBordingItem(BordingModel model) => Column(
         Text(
           model.body,
           textAlign: TextAlign.right,
-          style: Styles.textstyle14.copyWith(color: ColorStyles.textGreyColor),
+          style:
+              TextStyles.textstyle14.copyWith(color: ColorStyles.textGreyColor),
         ),
       ],
     );

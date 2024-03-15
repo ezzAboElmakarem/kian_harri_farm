@@ -11,7 +11,7 @@ class CategoryTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 12.h),
+        padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 10.w),
         child: Align(
           alignment: Alignment.centerRight,
           child: Text(

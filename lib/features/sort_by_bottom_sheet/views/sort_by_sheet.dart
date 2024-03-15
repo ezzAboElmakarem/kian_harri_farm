@@ -13,7 +13,7 @@ class SortBySheet extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             BottomSheetTitle(),
-            BottomSheetRadios(),
+            BottomSheetRadiosList(),
           ],
         ),
       ),

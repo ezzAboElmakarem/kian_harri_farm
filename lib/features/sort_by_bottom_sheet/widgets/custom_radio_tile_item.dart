@@ -3,38 +3,37 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class CustomRadioTileItem extends StatefulWidget {
-  const CustomRadioTileItem(
-      {super.key, required this.sortType, required this.value});
-  final String sortType;
+class CustomRadioTileItem extends StatelessWidget {
+  final String title;
+  final String groupValue;
   final String value;
-  @override
-  State<CustomRadioTileItem> createState() => _CustomRadioTileItemState();
-}
+  final Function(String?)? onChanged;
+  final bool selected;
 
-class _CustomRadioTileItemState extends State<CustomRadioTileItem> {
-  String selectedOption = '';
+  const CustomRadioTileItem({
+    super.key,
+    required this.title,
+    required this.groupValue,
+    required this.value,
+    required this.onChanged,
+    required this.selected,
+  });
 
   @override
   Widget build(BuildContext context) {
     return RadioListTile(
-      controlAffinity: ListTileControlAffinity.trailing,
       activeColor: kPrimaryColor,
       contentPadding: EdgeInsets.symmetric(horizontal: 4.w),
       title: Text(
-        widget.sortType,
+        title,
         textAlign: TextAlign.right,
-        style: TextStyles.textstyle14.copyWith(
-            color:
-                selectedOption == widget.value ? kPrimaryColor : Colors.black),
+        style: TextStyles.textstyle14
+            .copyWith(color: selected ? kPrimaryColor : Colors.black),
       ),
-      value: widget.value,
-      groupValue: selectedOption,
-      onChanged: (value) {
-        setState(() {
-          selectedOption = value.toString();
-        });
-      },
+      value: value,
+      groupValue: groupValue,
+      onChanged: onChanged,
+      controlAffinity: ListTileControlAffinity.trailing,
     );
   }
 }

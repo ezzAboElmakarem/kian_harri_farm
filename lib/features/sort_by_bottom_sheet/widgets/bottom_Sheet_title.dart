@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class BottomSheetTitle extends StatelessWidget {
@@ -20,7 +22,8 @@ class BottomSheetTitle extends StatelessWidget {
           },
           child: Row(
             children: [
-              const Icon(Icons.close_rounded),
+              FaIcon(FontAwesomeIcons.circleXmark,
+                  size: 22.sp, color: ColorStyles.textGreyColor),
               SizedBox(
                 width: 100.w,
               ),

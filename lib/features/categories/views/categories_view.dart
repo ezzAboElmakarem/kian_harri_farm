@@ -28,7 +28,9 @@ class CategoriesScreenView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Icon(
                 Icons.arrow_forward_ios,
                 size: 20.sp,

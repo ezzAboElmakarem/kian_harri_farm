@@ -39,9 +39,10 @@ class OffersListView extends StatelessWidget {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               separatorBuilder: (context, index) => SizedBox(
-                width: 4.h,
+                width: 1.h,
               ),
               itemCount: 8,
+              reverse: true,
               itemBuilder: (context, index) => ProductCard(
                   cardHeight: 235.h,
                   cardWidth: 100.w,

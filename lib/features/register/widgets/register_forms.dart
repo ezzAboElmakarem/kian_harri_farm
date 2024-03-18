@@ -17,6 +17,7 @@ class _RegisterFormsState extends State<RegisterForms> {
     return Column(
       children: [
         CustomTextFormField(
+          isEnabled: true,
           type: TextInputType.name,
           title: "الاسم",
           ispassword: false,
@@ -25,6 +26,7 @@ class _RegisterFormsState extends State<RegisterForms> {
           height: 10.h,
         ),
         CustomTextFormField(
+          isEnabled: true,
           type: TextInputType.phone,
           title: 'رقم الجوال',
           ispassword: false,
@@ -33,6 +35,7 @@ class _RegisterFormsState extends State<RegisterForms> {
           height: 10.h,
         ),
         CustomTextFormField(
+          isEnabled: true,
           type: TextInputType.emailAddress,
           title: "البريد الالكترونى",
           ispassword: false,
@@ -41,6 +44,7 @@ class _RegisterFormsState extends State<RegisterForms> {
           height: 10.h,
         ),
         CustomTextFormField(
+          isEnabled: true,
           type: TextInputType.visiblePassword,
           title: 'كلمة المرور',
           ispassword: isPassword,
@@ -57,6 +61,7 @@ class _RegisterFormsState extends State<RegisterForms> {
           height: 10.h,
         ),
         CustomTextFormField(
+          isEnabled: true,
           title: 'تأكيد كلمة المرور',
           type: TextInputType.visiblePassword,
           ispassword: isConfirmPassword,

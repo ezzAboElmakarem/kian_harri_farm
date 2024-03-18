@@ -19,7 +19,7 @@ class CustomTextFormField extends StatelessWidget {
     this.errorColor,
     this.validation,
     required this.ispassword,
-    // this.isEnabled,
+    required this.isEnabled,
   });
   TextEditingController? controller;
   TextInputType? type;
@@ -33,7 +33,7 @@ class CustomTextFormField extends StatelessWidget {
   Function(String)? onChange;
   Color? errorColor;
   bool ispassword;
-  //bool isEnabled;
+  bool isEnabled;
   String? Function(String?)? validation;
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class CustomTextFormField extends StatelessWidget {
           ],
         ),
         TextFormField(
-          enabled: true,
+          enabled: isEnabled,
           style: TextStyle(
               fontWeight: FontWeight.w600,
               color: Colors.black,

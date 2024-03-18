@@ -17,4 +17,5 @@ class ColorStyles {
   static Color vegetablesCategoryColor = const Color(0xff9DEA83);
   static Color textFormFieldfillColor = const Color(0xffEFEFEF);
   static Color greyColor = const Color(0xffE2E2E2);
+  static Color hintColor = const Color(0xff717171);
 }

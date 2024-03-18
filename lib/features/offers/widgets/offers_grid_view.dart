@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/product_card.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 
-class ProductGridView extends StatelessWidget {
-  const ProductGridView({
+class OffersGridView extends StatelessWidget {
+  const OffersGridView({
     super.key,
   });
 

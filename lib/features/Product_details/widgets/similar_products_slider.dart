@@ -7,15 +7,13 @@ import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class OffersListView extends StatelessWidget {
-  const OffersListView({
-    super.key,
-  });
+class SimilarProductsSlider extends StatelessWidget {
+  const SimilarProductsSlider({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+      padding: EdgeInsets.symmetric(vertical: 14.h),
       child: Column(
         children: [
           Row(
@@ -31,7 +29,7 @@ class OffersListView extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                'العروض',
+                'منتجات مشابهة',
                 style: TextStyles.textstyle14
                     .copyWith(fontWeight: FontWeight.bold),
               ),
@@ -60,24 +58,6 @@ class OffersListView extends StatelessWidget {
                   imageUrl: AssetsData.meatOffers),
             ),
           ),
-
-          /*
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ProductCard(
-                  price: '160',
-                  oldPrice: '200',
-                  productName: 'سمك فريش',
-                  imageUrl: AssetsData.fishOffer),
-              ProductCard(
-                  price: '200',
-                  oldPrice: '230',
-                  productName: 'فريش بيف استربس',
-                  imageUrl: AssetsData.meatOffers),
-            ],
-          ),
-          */
         ],
       ),
     );

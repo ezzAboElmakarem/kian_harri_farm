@@ -28,6 +28,7 @@ class ForgetPasswordView extends StatelessWidget {
                     height: 40.h,
                   ),
                   CustomTextFormField(
+                    isEnabled: true,
                     type: TextInputType.emailAddress,
                     title: 'رقم الجوال / البريد الالكتروني',
                     ispassword: false,

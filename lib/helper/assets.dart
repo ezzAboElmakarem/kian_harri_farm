@@ -14,4 +14,6 @@ class AssetsData {
   static const fruitEmoji = 'assets/images/fruit_emoji.svg';
   static const fishOffer = 'assets/images/fish_offer.png';
   static const fishEmoji = 'assets/images/fish_emoji.svg';
+  static const productDetails = 'assets/images/product_details.png';
+  static const userPic = 'assets/images/user_pic.png';
 }

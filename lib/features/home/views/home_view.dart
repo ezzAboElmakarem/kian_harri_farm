@@ -26,6 +26,9 @@ class HomeView extends StatelessWidget {
     ),
     Image.asset(AssetsData.meatBigPic),
     Image.asset(AssetsData.meatBigPic),
+    Image.asset(
+      AssetsData.meatBigPic,
+    ),
   ];
   @override
   Widget build(BuildContext context) {

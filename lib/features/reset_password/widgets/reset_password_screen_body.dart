@@ -18,6 +18,7 @@ class _ResetPasswordFormsState extends State<ResetPasswordForms> {
     return Column(
       children: [
         CustomTextFormField(
+          isEnabled: true,
           ispassword: isPassword,
           type: TextInputType.visiblePassword,
           title: 'كلمة المرور الجديدة',
@@ -35,6 +36,7 @@ class _ResetPasswordFormsState extends State<ResetPasswordForms> {
           height: 10.h,
         ),
         CustomTextFormField(
+          isEnabled: true,
           title: 'تأكيد كلمة المرور الجديدة',
           type: TextInputType.visiblePassword,
           ispassword: isPasswordConfirm,

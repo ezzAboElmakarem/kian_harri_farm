@@ -18,6 +18,7 @@ class _LoginScreenFormsState extends State<LoginScreenForms> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomTextFormField(
+          isEnabled: true,
           title: 'رقم الجوال / البريد الالكتروني',
           type: TextInputType.emailAddress,
           ispassword: false,
@@ -26,6 +27,7 @@ class _LoginScreenFormsState extends State<LoginScreenForms> {
           height: 10.h,
         ),
         CustomTextFormField(
+          isEnabled: true,
           type: TextInputType.visiblePassword,
           title: 'كلمة المرور',
           ispassword: isPassword,

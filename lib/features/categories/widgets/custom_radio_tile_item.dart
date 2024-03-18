@@ -9,7 +9,7 @@ class CustomRadioTileItem extends StatelessWidget {
   final String value;
   final Function(String?)? onChanged;
   final bool selected;
-
+  final Widget? secondaryText;
   const CustomRadioTileItem({
     super.key,
     required this.title,
@@ -17,6 +17,7 @@ class CustomRadioTileItem extends StatelessWidget {
     required this.value,
     required this.onChanged,
     required this.selected,
+    this.secondaryText,
   });
 
   @override
@@ -34,6 +35,7 @@ class CustomRadioTileItem extends StatelessWidget {
       groupValue: groupValue,
       onChanged: onChanged,
       controlAffinity: ListTileControlAffinity.trailing,
+      secondary: secondaryText,
     );
   }
 }

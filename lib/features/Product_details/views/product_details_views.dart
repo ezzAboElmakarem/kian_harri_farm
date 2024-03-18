@@ -54,7 +54,7 @@ class ProductDetailsView extends StatelessWidget {
                     ),
                     const SimilarProductsSlider(),
                     SizedBox(
-                      height: 16.h,
+                      height: 88.h,
                     ),
                   ],
                 ),

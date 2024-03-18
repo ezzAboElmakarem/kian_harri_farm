@@ -11,6 +11,7 @@ class ColorStyles {
   static Color textColor = const Color(0xff3b3b3b);
   static Color textGreyColor = const Color(0xff636363);
   static Color redColor = const Color(0xffFF0000);
+  static Color orangeColor = const Color(0xffE84900);
   static Color meatCategoryColor = const Color(0xffF16868);
   static Color fishCategoryColor = const Color(0xffA3A9E3);
   static Color fruitsCategoryColor = const Color(0xffF1915A);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/Product_details/views/product_details_views.dart';
+import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
@@ -25,64 +26,88 @@ class ProductCard extends StatelessWidget {
   final double cardHeight;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        navigateTo(context: context, widget: const ProductDetailsView());
-      },
-      child: SizedBox(
-        height: cardWidth,
-        width: cardHeight,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            SizedBox(
-              width: 150.w,
-              height: 150.h,
-              child: Image.asset(imageUrl),
-            ),
-            SizedBox(
-              height: 8.h,
-            ),
-            Text(
-              categoryName,
-              style: TextStyles.textstyle14
-                  .copyWith(color: ColorStyles.textGreyColor),
-            ),
-            SizedBox(
-              height: 6.h,
-            ),
-            Text(
-              price,
-              style: TextStyles.textstyle14,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+    return Stack(
+      children: [
+        GestureDetector(
+          onTap: () {
+            navigateTo(context: context, widget: const ProductDetailsView());
+          },
+          child: SizedBox(
+            height: 240.h,
+            width: cardHeight,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const Icon(Icons.shopping_bag_outlined),
                 SizedBox(
-                  width: 25.w,
-                ),
-                Text(
-                  '$price SR',
-                  style: TextStyles.textstyle14.copyWith(
-                    color: kPrimaryColor,
-                  ),
+                  width: 150.w,
+                  height: 150.h,
+                  child: Image.asset(imageUrl),
                 ),
                 SizedBox(
-                  width: 6.w,
+                  height: 8.h,
                 ),
                 Text(
-                  '$oldPrice SR',
-                  style: TextStyles.textstyle14.copyWith(
-                      color: ColorStyles.textGreyColor,
-                      decoration: TextDecoration.lineThrough,
-                      decorationThickness: 2.0),
+                  categoryName,
+                  style: TextStyles.textstyle14
+                      .copyWith(color: ColorStyles.textGreyColor),
+                ),
+                SizedBox(
+                  height: 6.h,
+                ),
+                Text(
+                  price,
+                  style: TextStyles.textstyle14,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Image.asset(AssetsData.shoppingBasket),
+                    SizedBox(
+                      width: 25.w,
+                    ),
+                    Text(
+                      '$price SR',
+                      style: TextStyles.textstyle14.copyWith(
+                        color: kPrimaryColor,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 6.w,
+                    ),
+                    Text(
+                      '$oldPrice SR',
+                      style: TextStyles.textstyle14.copyWith(
+                          color: ColorStyles.textGreyColor,
+                          decoration: TextDecoration.lineThrough,
+                          decorationThickness: 2.0),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
+          ),
         ),
-      ),
+        Positioned(
+          //  top: 20.h,
+          right: 120.w,
+          child: CircleAvatar(
+            backgroundColor: ColorStyles.orangeColor,
+            radius: 17.r,
+            child: Column(
+              children: [
+                Text('%10 ',
+                    style: TextStyles.textstyle12.copyWith(
+                        color: Colors.white,
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.bold)),
+                Text('خصم',
+                    style: TextStyles.textstyle12
+                        .copyWith(color: Colors.white, fontSize: 8.sp)),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

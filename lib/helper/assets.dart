@@ -16,4 +16,9 @@ class AssetsData {
   static const fishEmoji = 'assets/images/fish_emoji.svg';
   static const productDetails = 'assets/images/product_details.png';
   static const userPic = 'assets/images/user_pic.png';
+  static const sortIcon = 'assets/images/sort_icon.png';
+  static const shoppingBasket = 'assets/images/shopping-basket.png';
+  static const orangeCircle = 'assets/images/orange_circle.png';
+  static const notificationBell = 'assets/images/notification_bell.png';
+  static const drawerIcon = 'assets/images/drawer_icon.png';
 }

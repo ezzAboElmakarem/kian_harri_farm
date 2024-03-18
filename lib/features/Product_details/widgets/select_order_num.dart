@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class SelectOrderNumRow extends StatefulWidget {
-  const SelectOrderNumRow({super.key});
+class SelectOrderNum extends StatefulWidget {
+  const SelectOrderNum({super.key});
 
   @override
-  State<SelectOrderNumRow> createState() => _SelectOrderNumRowState();
+  State<SelectOrderNum> createState() => _SelectOrderNumState();
 }
 
-class _SelectOrderNumRowState extends State<SelectOrderNumRow> {
+class _SelectOrderNumState extends State<SelectOrderNum> {
   int numOfOrders = 1;
 
   @override

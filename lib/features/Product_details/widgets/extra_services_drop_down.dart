@@ -11,7 +11,11 @@ class ExtraServicesDropDown extends StatefulWidget {
 }
 
 class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
-  final List<String> items = ['Option 1', 'Option 2', 'Option 3'];
+  final List<String> items = [
+    'تجريد من العظم',
+    '2تجريد من العظم',
+    'تجريد من العظم3',
+  ];
 
   String? selectedItem;
 
@@ -85,7 +89,18 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                   return DropdownMenuItem<String>(
                     value: value,
                     alignment: Alignment.centerRight,
-                    child: Text(value, textDirection: TextDirection.rtl),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text('(+5\$)',
+                            style: TextStyles.textstyle12
+                                .copyWith(color: kPrimaryColor)),
+                        SizedBox(
+                          width: 16.w,
+                        ),
+                        Text(value, textDirection: TextDirection.rtl),
+                      ],
+                    ),
                   );
                 }).toList(),
               ),

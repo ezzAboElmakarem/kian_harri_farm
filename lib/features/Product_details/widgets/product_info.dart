@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/select_order_num_row.dart';
+import 'package:kian_sheeps_projects/features/Product_details/widgets/select_order_num.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
@@ -42,7 +42,7 @@ class ProductInfo extends StatelessWidget {
             style: TextStyles.textstyle12.copyWith(color: kPrimaryColor)),
         SizedBox(height: 7.h),
         /****** */
-        const SelectOrderNumRow(),
+        const SelectOrderNum(),
         /**** */
         Row(
           mainAxisAlignment: MainAxisAlignment.end,

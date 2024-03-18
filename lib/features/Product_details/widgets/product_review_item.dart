@@ -4,8 +4,8 @@ import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class UserReviewContainer extends StatelessWidget {
-  const UserReviewContainer({
+class ProductReviewItem extends StatelessWidget {
+  const ProductReviewItem({
     super.key,
   });
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/user_review_item_container.dart';
+import 'package:kian_sheeps_projects/features/Product_details/widgets/product_review_item.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class UserReviewColumn extends StatelessWidget {
-  const UserReviewColumn({super.key});
+class ProductReview extends StatelessWidget {
+  const ProductReview({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class UserReviewColumn extends StatelessWidget {
           width: 345,
           child: ListView.separated(
               physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) => const UserReviewContainer(),
+              itemBuilder: (context, index) => const ProductReviewItem(),
               separatorBuilder: (context, index) => SizedBox(height: 14.h),
               itemCount: 2),
         ),

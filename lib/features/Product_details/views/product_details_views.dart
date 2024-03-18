@@ -3,12 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/add_to_basket_button.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/extra_services_drop_down.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/product_chopping_radio.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/product_info_body.dart';
+import 'package:kian_sheeps_projects/features/Product_details/widgets/product_info.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/product_packaging_radios.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/product_type_radio.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/similar_products_slider.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/user_review_column.dart';
+import 'package:kian_sheeps_projects/features/Product_details/widgets/product_review.dart';
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
+import 'package:kian_sheeps_projects/helper/assets.dart';
 
 class ProductDetailsView extends StatelessWidget {
   const ProductDetailsView({super.key});
@@ -19,7 +20,7 @@ class ProductDetailsView extends StatelessWidget {
       appBar: customAppBar(
         context: context,
         title: 'تفاصيل المنتج',
-        leading: const Icon(Icons.shopping_bag_outlined),
+        leading: Image.asset(AssetsData.shoppingBasket),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -48,7 +49,7 @@ class ProductDetailsView extends StatelessWidget {
                     SizedBox(
                       height: 20.h,
                     ),
-                    const UserReviewColumn(),
+                    const ProductReview(),
                     SizedBox(
                       height: 16.h,
                     ),

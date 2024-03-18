@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/helper/assets.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class CustomHomeAppBar extends StatelessWidget {
   const CustomHomeAppBar({
@@ -13,22 +16,49 @@ class CustomHomeAppBar extends StatelessWidget {
       child: Row(
         children: [
           GestureDetector(
-            onTap: () {},
-            child: const Icon(
-              Icons.notifications_none,
-            ),
-          ),
+              onTap: () {},
+              child: Stack(
+                children: [
+                  Image.asset(
+                    AssetsData.notificationBell,
+                  ),
+                  Positioned(
+                    left: 8.w,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.green,
+                      radius: 4.r,
+                    ),
+                  ),
+                ],
+              )),
           SizedBox(
             width: 10.w,
           ),
           GestureDetector(
-            onTap: () {},
-            child: const Icon(
-              Icons.shopping_bag_outlined,
-            ),
-          ),
+              onTap: () {},
+              child: Stack(
+                children: [
+                  SizedBox(
+                      height: 26.h,
+                      width: 26.w,
+                      child: Image.asset(AssetsData.shoppingBasket)),
+                  Positioned(
+                    left: 14.w,
+                    child: CircleAvatar(
+                      backgroundColor: ColorStyles.orangeColor,
+                      radius: 6.r,
+                      child: Text(
+                        '2',
+                        style: TextStyles.textstyle12
+                            .copyWith(color: Colors.white, fontSize: 7.sp),
+                      ),
+                    ),
+                  ),
+                ],
+              )),
           const Spacer(),
-          IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
+          IconButton(
+              icon: Image.asset(AssetsData.drawerIcon), onPressed: () {}),
         ],
       ),
     );

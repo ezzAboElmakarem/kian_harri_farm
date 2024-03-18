@@ -16,13 +16,15 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.h),
+      padding: EdgeInsets.only(bottom: 30.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
             'خدمات أضافية ',
-            style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w400),
+            textDirection: TextDirection.rtl,
+            style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w500),
           ),
           SizedBox(
             height: 8.h,

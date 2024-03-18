@@ -17,79 +17,82 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Text(
-          'خدمات أضافية ',
-          textDirection: TextDirection.rtl,
-          style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w500),
-        ),
-        SizedBox(
-          height: 8.h,
-        ),
-        Center(
-          child: Container(
-            width: 344.w,
-            height: 50.h,
-            decoration: BoxDecoration(
-              color: ColorStyles.greyColor,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: DropdownButton<String>(
-              dropdownColor: ColorStyles.greyColor,
-              iconEnabledColor: ColorStyles.greyColor,
-              hint: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                child: Container(
-                  height: double.maxFinite,
-                  // width: double.minPositive,
-                  alignment: Alignment.centerRight,
-                  color: ColorStyles.greyColor,
-                  child: Row(
-                    children: [
-                      Transform.rotate(
-                          angle: 3.14 / 2,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 18.sp,
-                          )),
-                      SizedBox(
-                        width: 144.w,
-                      ),
-                      Text('(+5\$)',
-                          style: TextStyles.textstyle12
-                              .copyWith(color: kPrimaryColor)),
-                      SizedBox(
-                        width: 16.w,
-                      ),
-                      Text(
-                        'تجريد من العظم',
-                        style: TextStyles.textstyle14,
-                      ),
-                    ],
+    return Padding(
+      padding: EdgeInsets.only(bottom: 24.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            'خدمات أضافية ',
+            textDirection: TextDirection.rtl,
+            style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w500),
+          ),
+          SizedBox(
+            height: 8.h,
+          ),
+          Center(
+            child: Container(
+              width: 344.w,
+              height: 50.h,
+              decoration: BoxDecoration(
+                color: ColorStyles.greyColor,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: DropdownButton<String>(
+                dropdownColor: ColorStyles.greyColor,
+                iconEnabledColor: ColorStyles.greyColor,
+                isExpanded: true,
+                hint: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: Container(
+                    height: double.maxFinite,
+                    alignment: Alignment.centerRight,
+                    color: ColorStyles.greyColor,
+                    child: Row(
+                      children: [
+                        Transform.rotate(
+                            angle: 3.14 / 2,
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 18.sp,
+                            )),
+                        SizedBox(
+                          width: 144.w,
+                        ),
+                        Text('(+5\$)',
+                            style: TextStyles.textstyle12
+                                .copyWith(color: kPrimaryColor)),
+                        SizedBox(
+                          width: 16.w,
+                        ),
+                        Text(
+                          'تجريد من العظم',
+                          style: TextStyles.textstyle14,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
+                value: selectedItem,
+                icon: null,
+                underline: Container(),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    selectedItem = newValue;
+                  });
+                },
+                items: items.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    alignment: Alignment.centerRight,
+                    child: Text(value, textDirection: TextDirection.rtl),
+                  );
+                }).toList(),
               ),
-              value: selectedItem,
-              icon: null,
-              onChanged: (String? newValue) {
-                setState(() {
-                  selectedItem = newValue;
-                });
-              },
-              items: items.map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  alignment: Alignment.centerRight,
-                  child: Text(value, textDirection: TextDirection.rtl),
-                );
-              }).toList(),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

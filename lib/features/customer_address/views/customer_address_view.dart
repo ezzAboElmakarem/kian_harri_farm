@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kian_sheeps_projects/features/customer_address/widgets/receiving_location.dart';
+import 'package:kian_sheeps_projects/features/customer_address/widgets/select_city.dart';
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
 
@@ -45,7 +45,7 @@ class CustomerAddressView extends StatelessWidget {
                 title: 'العنوان بالتفصيل',
               ),
               SizedBox(height: 10.h),
-              const CountryDropDown(),
+              CountryDropDown(),
               SizedBox(height: 10.h),
               CustomTextFormField(
                 ispassword: false,
@@ -65,12 +65,7 @@ class CustomerAddressView extends StatelessWidget {
                 title: 'رقم السكن',
               ),
               SizedBox(height: 10.h),
-              CustomTextFormField(
-                ispassword: false,
-                isEnabled: false,
-                title: 'تحديد موقع الاستلام على الخريطة',
-                prefixIcon: Image.asset(AssetsData.arrowPointer),
-              ),
+              const ReceivingLocation(),
               SizedBox(height: 10.h),
               CustomTextFormField(
                 ispassword: false,
@@ -85,21 +80,6 @@ class CustomerAddressView extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class CountryDropDown extends StatelessWidget {
-  const CountryDropDown({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomTextFormField(
-      ispassword: false,
-      isEnabled: true,
-      title: 'المدينة',
     );
   }
 }

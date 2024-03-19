@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/basket/views/basket_view.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class AddToBasketButton extends StatelessWidget {
@@ -43,7 +45,12 @@ class AddToBasketButton extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                Image.asset(AssetsData.shoppingBasket, color: Colors.white),
+                GestureDetector(
+                    onTap: () {
+                      navigateTo(context: context, widget: const BasketView());
+                    },
+                    child: Image.asset(AssetsData.shoppingBasket,
+                        color: Colors.white)),
               ],
             ),
           ),

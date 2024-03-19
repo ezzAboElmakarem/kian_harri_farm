@@ -21,4 +21,6 @@ class AssetsData {
   static const orangeCircle = 'assets/images/orange_circle.png';
   static const notificationBell = 'assets/images/notification_bell.png';
   static const drawerIcon = 'assets/images/drawer_icon.png';
+  static const coubonIcon = 'assets/images/coubon_icon.png';
+  static const arrowPointer = 'assets/images/arrow_pointer.png';
 }

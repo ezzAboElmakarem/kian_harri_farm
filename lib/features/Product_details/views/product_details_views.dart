@@ -8,8 +8,10 @@ import 'package:kian_sheeps_projects/features/Product_details/widgets/product_pa
 import 'package:kian_sheeps_projects/features/Product_details/widgets/product_type_radio.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/similar_products_slider.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/product_review.dart';
+import 'package:kian_sheeps_projects/features/basket/views/basket_view.dart';
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
+import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 
 class ProductDetailsView extends StatelessWidget {
   const ProductDetailsView({super.key});
@@ -20,7 +22,11 @@ class ProductDetailsView extends StatelessWidget {
       appBar: customAppBar(
         context: context,
         title: 'تفاصيل المنتج',
-        leading: Image.asset(AssetsData.shoppingBasket),
+        leading: GestureDetector(
+            onTap: () {
+              navigateTo(context: context, widget: const BasketView());
+            },
+            child: Image.asset(AssetsData.shoppingBasket)),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),

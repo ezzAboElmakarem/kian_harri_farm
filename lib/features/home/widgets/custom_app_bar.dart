@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/basket/views/basket_view.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class CustomHomeAppBar extends StatelessWidget {
@@ -35,7 +37,9 @@ class CustomHomeAppBar extends StatelessWidget {
             width: 10.w,
           ),
           GestureDetector(
-              onTap: () {},
+              onTap: () {
+                navigateTo(context: context, widget: const BasketView());
+              },
               child: Stack(
                 children: [
                   SizedBox(

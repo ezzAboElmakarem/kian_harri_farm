@@ -5,22 +5,22 @@ import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField({
-    super.key,
-    this.controller,
-    this.type,
-    this.hint,
-    this.title,
-    // required this.textDirection,
-    this.prefixIcon,
-    this.prefixText,
-    this.suffixIcon,
-    this.onChange,
-    this.errorColor,
-    this.validation,
-    required this.ispassword,
-    required this.isEnabled,
-  });
+  CustomTextFormField(
+      {super.key,
+      this.controller,
+      this.type,
+      this.hint,
+      this.title,
+      // required this.textDirection,
+      this.prefixIcon,
+      this.prefixText,
+      this.suffixIcon,
+      this.onChange,
+      this.errorColor,
+      this.validation,
+      required this.ispassword,
+      required this.isEnabled,
+      this.maxLines});
   TextEditingController? controller;
   TextInputType? type;
   String? hint;
@@ -35,6 +35,7 @@ class CustomTextFormField extends StatelessWidget {
   bool ispassword;
   bool isEnabled;
   String? Function(String?)? validation;
+  int? maxLines;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,6 +53,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         TextFormField(
           enabled: isEnabled,
+          maxLines: maxLines ?? 1,
           style: TextStyle(
               fontWeight: FontWeight.w600,
               color: Colors.black,

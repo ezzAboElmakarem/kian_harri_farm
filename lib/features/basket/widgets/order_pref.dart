@@ -60,9 +60,11 @@ class OrderPref extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-        Text(
-            '......................................................................................................................',
-            style: TextStyles.textstyle12),
+        Center(
+          child: Text(
+              '..................................................................................................................',
+              style: TextStyles.textstyle12),
+        ),
         SizedBox(
           height: 10.h,
         ),

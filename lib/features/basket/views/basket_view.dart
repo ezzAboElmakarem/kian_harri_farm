@@ -18,7 +18,7 @@ class BasketView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: Column(
             children: [
               const BasketOrders(),

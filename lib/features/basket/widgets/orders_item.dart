@@ -127,18 +127,20 @@ class _OrderItemState extends State<OrderItem> {
             ],
           ),
           SizedBox(
-            width: 10.w,
+            width: 4.w,
           ),
-          Container(
-            height: 70.h,
-            width: 64.w,
-            decoration: BoxDecoration(
-                image: const DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      AssetsData.productDetails,
-                    )),
-                borderRadius: BorderRadius.circular(11)),
+          Expanded(
+            child: Container(
+              height: 80.h,
+              width: 76.w,
+              decoration: BoxDecoration(
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        AssetsData.productDetails,
+                      )),
+                  borderRadius: BorderRadius.circular(11)),
+            ),
           ),
         ],
       ),

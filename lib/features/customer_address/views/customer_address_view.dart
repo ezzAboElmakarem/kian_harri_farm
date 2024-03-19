@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/customer_address/widgets/receiving_location.dart';
 import 'package:kian_sheeps_projects/features/customer_address/widgets/select_city.dart';
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
+import 'package:kian_sheeps_projects/helper/assets.dart';
+import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
 
@@ -65,7 +67,18 @@ class CustomerAddressView extends StatelessWidget {
                 title: 'رقم السكن',
               ),
               SizedBox(height: 10.h),
-              const ReceivingLocation(),
+              GestureDetector(
+                onTap: () {
+                  navigateTo(
+                      context: context, widget: const ReceivingLocation());
+                },
+                child: CustomTextFormField(
+                  ispassword: false,
+                  isEnabled: false,
+                  title: 'تحديد موقع الاستلام على الخريطة',
+                  prefixIcon: Image.asset(AssetsData.arrowPointer),
+                ),
+              ),
               SizedBox(height: 10.h),
               CustomTextFormField(
                 ispassword: false,

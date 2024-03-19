@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/customer_address/widgets/receiving_location.dart';
@@ -13,6 +15,9 @@ class CustomerAddressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as String?;
+    final TextEditingController addressController = TextEditingController();
+
     return Scaffold(
       appBar: customAppBar(
         context: context,
@@ -71,11 +76,13 @@ class CustomerAddressView extends StatelessWidget {
                 onTap: () {
                   navigateTo(
                       context: context, widget: const ReceivingLocation());
+                  log('$args');
                 },
                 child: CustomTextFormField(
                   ispassword: false,
                   isEnabled: false,
                   title: 'تحديد موقع الاستلام على الخريطة',
+                  controller: TextEditingController(text: args),
                   prefixIcon: Image.asset(AssetsData.arrowPointer),
                 ),
               ),

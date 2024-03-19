@@ -51,46 +51,48 @@ class _ReceivingLocationState extends State<ReceivingLocation> {
   GoogleMapController? googleMapController;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        GoogleMap(
-          zoomControlsEnabled: false,
-          onMapCreated: (controller) {
-            googleMapController = controller;
-          },
-          initialCameraPosition: intialCameraPostion,
-          onTap: (clickingLocation) {
-            setState(() {
-              selectedLocation = clickingLocation;
-              log('$selectedLocation');
-            });
-          },
-          markers: {
-            Marker(
-                markerId: const MarkerId(
-                  '10',
-                ),
-                position: selectedLocation)
-          },
-        ),
-        Positioned(
-          bottom: 8.h,
-          left: 20.w,
-          child: CustomButton(
-              buttonText: 'تاكيد العنوان',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const CustomerAddressView(),
-                    settings: RouteSettings(
-                      arguments: selectedLocation.latitude.toString(),
-                    ),
+    return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Padding(
+        padding: EdgeInsets.symmetric(vertical: 20.h),
+        child: CustomButton(
+            buttonText: 'تاكيد العنوان',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CustomerAddressView(),
+                  settings: RouteSettings(
+                    arguments: selectedLocation.latitude.toString(),
                   ),
-                );
-              }),
-        )
-      ],
+                ),
+              );
+            }),
+      ),
+      body: Stack(
+        children: [
+          GoogleMap(
+            zoomControlsEnabled: false,
+            onMapCreated: (controller) {
+              googleMapController = controller;
+            },
+            initialCameraPosition: intialCameraPostion,
+            onTap: (clickingLocation) {
+              setState(() {
+                selectedLocation = clickingLocation;
+                log('$selectedLocation');
+              });
+            },
+            markers: {
+              Marker(
+                  markerId: const MarkerId(
+                    '10',
+                  ),
+                  position: selectedLocation)
+            },
+          ),
+        ],
+      ),
     );
   }
 }

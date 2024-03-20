@@ -51,7 +51,7 @@ class _SelectPaymentWayState extends State<SelectPaymentWay> {
                 padding: EdgeInsets.all(12.sp),
                 child: Image.asset(
                   AssetsData.cashIcon,
-                  height: 26.h,
+                  height: 22.h,
                   width: 26.w,
                 ),
               )

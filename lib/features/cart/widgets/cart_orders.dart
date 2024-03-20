@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/basket/widgets/orders_item.dart';
+import 'package:kian_sheeps_projects/features/cart/widgets/orders_item.dart';
 import 'package:kian_sheeps_projects/features/offers/views/offers_view.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class BasketOrders extends StatelessWidget {
-  const BasketOrders({
+class CartOrders extends StatelessWidget {
+  const CartOrders({
     super.key,
   });
 

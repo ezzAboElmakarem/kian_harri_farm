@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/Product_details/views/product_details_views.dart';
-import 'package:kian_sheeps_projects/features/basket/views/basket_view.dart';
+import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
@@ -67,7 +67,7 @@ class ProductCard extends StatelessWidget {
                       GestureDetector(
                           onTap: () {
                             navigateTo(
-                                context: context, widget: const BasketView());
+                                context: context, widget: const CartView());
                           },
                           child: Image.asset(AssetsData.shoppingBasket)),
                       SizedBox(

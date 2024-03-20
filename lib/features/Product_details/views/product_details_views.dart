@@ -26,7 +26,14 @@ class ProductDetailsView extends StatelessWidget {
             onTap: () {
               navigateTo(context: context, widget: const CartView());
             },
-            child: Image.asset(AssetsData.shoppingBasket)),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 14.h),
+              child: Image.asset(
+                AssetsData.shoppingBasket,
+                height: 24.h,
+                width: 24.w,
+              ),
+            )),
       ),
       body: Stack(
         children: [

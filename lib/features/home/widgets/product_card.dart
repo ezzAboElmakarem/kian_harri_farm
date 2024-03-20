@@ -69,9 +69,13 @@ class ProductCard extends StatelessWidget {
                             navigateTo(
                                 context: context, widget: const CartView());
                           },
-                          child: Image.asset(AssetsData.shoppingBasket)),
+                          child: Image.asset(
+                            AssetsData.shoppingBasket,
+                            height: 24.h,
+                            width: 24.w,
+                          )),
                       SizedBox(
-                        width: 25.w,
+                        width: 18.w,
                       ),
                       Text(
                         '$price SR',

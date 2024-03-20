@@ -46,7 +46,7 @@ class AddToCartButton extends StatelessWidget {
                     navigateTo(context: context, widget: const CartView());
                   },
                   child: Image.asset(AssetsData.shoppingBasket,
-                      color: Colors.white)),
+                      height: 24.h, width: 24.w, color: Colors.white)),
             ],
           ),
         ),

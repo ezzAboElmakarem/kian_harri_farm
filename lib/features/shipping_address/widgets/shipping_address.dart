@@ -7,6 +7,8 @@ import 'package:kian_sheeps_projects/core/location_services.dart';
 import 'package:kian_sheeps_projects/core/maps_services.dart';
 import 'package:kian_sheeps_projects/features/shipping_address/views/customer_address_view.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
+import 'dart:io' show Platform;
+import 'package:google_maps_place_picker_mb/google_maps_place_picker.dart';
 
 class ShippingAddress extends StatefulWidget {
   const ShippingAddress({
@@ -61,12 +63,27 @@ class _ShippingAddressState extends State<ShippingAddress> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CustomerAddressView(),
-                  settings: RouteSettings(
-                    arguments: selectedLocation.latitude.toString(),
+                  builder: (context) => PlacePicker(
+                    apiKey: 'AIzaSyCH4zUtX7UgQU2cBbMVAYLCHQJEQR3vY_M',
+                    onPlacePicked: (result) {
+                      Navigator.of(context).pop();
+                    },
+                    initialPosition: selectedLocation,
+                    useCurrentLocation: true,
+                    resizeToAvoidBottomInset:
+                        false, // only works in page mode, less flickery, remove if wrong offsets
                   ),
                 ),
               );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const CustomerAddressView(),
+              //     settings: RouteSettings(
+              //       arguments: selectedLocation.latitude.toString(),
+              //     ),
+              //   ),
+              // );
             }),
       ),
       body: Stack(

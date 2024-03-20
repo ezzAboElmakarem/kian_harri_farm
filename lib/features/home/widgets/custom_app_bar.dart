@@ -43,9 +43,14 @@ class CustomHomeAppBar extends StatelessWidget {
               child: Stack(
                 children: [
                   SizedBox(
-                      height: 26.h,
-                      width: 26.w,
-                      child: Image.asset(AssetsData.shoppingBasket)),
+                    height: 26.h,
+                    width: 26.w,
+                    child: Image.asset(
+                      AssetsData.shoppingBasket,
+                      height: 24.h,
+                      width: 24.w,
+                    ),
+                  ),
                   Positioned(
                     left: 14.w,
                     child: CircleAvatar(

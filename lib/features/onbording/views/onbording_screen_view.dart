@@ -26,7 +26,7 @@ class _OnBordingScreenViewState extends State<OnBordingScreenView> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 16.h),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SkipButtonWidget(),
                   Expanded(

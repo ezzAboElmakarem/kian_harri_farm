@@ -7,7 +7,11 @@ import 'package:kian_sheeps_projects/features/onbording/models/onbording_model.d
 
 Widget buildBordingItem(BordingModel model) => Column(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        SizedBox(
+          height: 30.h,
+        ),
         SizedBox(
           height: 300,
           width: 300,

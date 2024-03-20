@@ -23,44 +23,47 @@ class _ProductchoppingRadiosState extends State<ProductchoppingRadios> {
   int addtionalMoney = 5;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Text(
-          'نوع التقطيع',
-          style: TextStyles.textstyle16,
-          textDirection: TextDirection.rtl,
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        SizedBox(
-          height: 200.h,
-          width: double.infinity,
-          child: ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return CustomRadioTileItem(
-                title: choppingOptions[index],
-                groupValue: selectedOption,
-                value: choppingOptions[index],
-                onChanged: (value) {
-                  setState(() {
-                    selectedOption = value!;
-                  });
-                },
-                selected: selectedOption == choppingOptions[index],
-                secondaryText: Text(
-                  '(+\$ $addtionalMoney)',
-                  style: TextStyles.textstyle12.copyWith(
-                      color: ColorStyles.textGreyColor.withOpacity(0.6)),
-                ),
-              );
-            },
-            itemCount: choppingOptions.length,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            'نوع التقطيع',
+            style: TextStyles.textstyle16,
+            textDirection: TextDirection.rtl,
           ),
-        ),
-      ],
+          SizedBox(
+            height: 10.h,
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: ListView.builder(
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                return CustomRadioTileItem(
+                  title: choppingOptions[index],
+                  groupValue: selectedOption,
+                  value: choppingOptions[index],
+                  onChanged: (value) {
+                    setState(() {
+                      selectedOption = value!;
+                    });
+                  },
+                  selected: selectedOption == choppingOptions[index],
+                  secondaryText: Text(
+                    '(+\$ $addtionalMoney)',
+                    style: TextStyles.textstyle12.copyWith(
+                        color: ColorStyles.textGreyColor.withOpacity(0.6)),
+                  ),
+                );
+              },
+              itemCount: choppingOptions.length,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -9,35 +9,38 @@ class ProductReview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Text(
-              'عرض الكل',
-              style: TextStyles.textstyle12
-                  .copyWith(color: kPrimaryColor, fontWeight: FontWeight.bold),
-            ),
-            const Spacer(),
-            Text(
-              'التقيمات',
-              style: TextStyles.textstyle16,
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 8.h,
-        ),
-        SizedBox(
-          height: 340.h,
-          width: 345,
-          child: ListView.separated(
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) => const ProductReviewItem(),
-              separatorBuilder: (context, index) => SizedBox(height: 14.h),
-              itemCount: 2),
-        ),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                'عرض الكل',
+                style: TextStyles.textstyle12.copyWith(
+                    color: kPrimaryColor, fontWeight: FontWeight.bold),
+              ),
+              const Spacer(),
+              Text(
+                'التقيمات',
+                style: TextStyles.textstyle16,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 8.h,
+          ),
+          SizedBox(
+            width: 345,
+            child: ListView.separated(
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) => const ProductReviewItem(),
+                separatorBuilder: (context, index) => SizedBox(height: 14.h),
+                itemCount: 2),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -23,4 +23,8 @@ class AssetsData {
   static const drawerIcon = 'assets/images/drawer_icon.png';
   static const coubonIcon = 'assets/images/coubon_icon.png';
   static const arrowPointer = 'assets/images/arrow_pointer.png';
+  static const mininizeIcon = 'assets/images/minimize_icon.png';
+  static const maximizeIcon = 'assets/images/maximize_icon.png';
+  static const minimizeContainer = 'assets/images/minimize_container.png';
+  static const maximizeContainer = 'assets/images/maximize_container.png';
 }

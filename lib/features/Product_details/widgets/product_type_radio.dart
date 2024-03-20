@@ -21,37 +21,40 @@ class _ProductTypeRadiosState extends State<ProductTypeRadios> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Text(
-          'نوع الطلب',
-          style: TextStyles.textstyle16,
-          textDirection: TextDirection.rtl,
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        SizedBox(
-          height: 160.h,
-          width: double.infinity,
-          child: ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) => CustomRadioTileItem(
-              title: typeOptions[index],
-              groupValue: selectedOption,
-              value: typeOptions[index],
-              onChanged: (value) {
-                setState(() {
-                  selectedOption = value!;
-                });
-              },
-              selected: selectedOption == typeOptions[index],
-            ),
-            itemCount: typeOptions.length,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            'نوع الطلب',
+            style: TextStyles.textstyle16,
+            textDirection: TextDirection.rtl,
           ),
-        ),
-      ],
+          SizedBox(
+            height: 10.h,
+          ),
+          SizedBox(
+            height: 160.h,
+            width: double.infinity,
+            child: ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) => CustomRadioTileItem(
+                title: typeOptions[index],
+                groupValue: selectedOption,
+                value: typeOptions[index],
+                onChanged: (value) {
+                  setState(() {
+                    selectedOption = value!;
+                  });
+                },
+                selected: selectedOption == typeOptions[index],
+              ),
+              itemCount: typeOptions.length,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

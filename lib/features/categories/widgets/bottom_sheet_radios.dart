@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/categories/widgets/custom_radio_tile_item.dart';
 
 class BottomSheetRadiosList extends StatefulWidget {
@@ -20,24 +19,23 @@ class _BottomSheetRadiosListState extends State<BottomSheetRadiosList> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 1000.h,
-      child: ListView.builder(
-        itemCount: options.length,
-        itemBuilder: (BuildContext context, int index) {
-          return CustomRadioTileItem(
-            title: options[index],
-            groupValue: selectedOption,
-            value: options[index],
-            onChanged: (value) {
-              setState(() {
-                selectedOption = value!;
-              });
-            },
-            selected: selectedOption == options[index],
-          );
-        },
-      ),
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const BouncingScrollPhysics(),
+      itemCount: options.length,
+      itemBuilder: (BuildContext context, int index) {
+        return CustomRadioTileItem(
+          title: options[index],
+          groupValue: selectedOption,
+          value: options[index],
+          onChanged: (value) {
+            setState(() {
+              selectedOption = value!;
+            });
+          },
+          selected: selectedOption == options[index],
+        );
+      },
     );
   }
 }

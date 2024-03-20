@@ -28,48 +28,49 @@ class ProductDetailsView extends StatelessWidget {
             },
             child: Image.asset(AssetsData.shoppingBasket)),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    const ProductInfo(
-                      oldProductPrice: 170,
-                      productPrice: 200,
-                      productType: "الطليان",
-                      productWeight: 50,
-                      productDescription:
-                          'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى أيضا',
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    const ProductTypeRadios(),
-                    const ExtraServicesDropDown(),
-                    const ProductpackagingRadios(),
-                    const ProductchoppingRadios(),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    const ProductReview(),
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    const SimilarProductsSlider(),
-                    SizedBox(
-                      height: 88.h,
-                    ),
-                  ],
-                ),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const ProductInfo(
+                    oldProductPrice: 170,
+                    productPrice: 200,
+                    productType: "الطليان",
+                    productWeight: 50,
+                    productDescription:
+                        'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى أيضا',
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  const ProductTypeRadios(),
+                  const ExtraServicesDropDown(),
+                  const ProductpackagingRadios(),
+                  const ProductchoppingRadios(),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  const ProductReview(),
+                  SizedBox(
+                    height: 16.h,
+                  ),
+                  const SimilarProductsSlider(),
+                  SizedBox(
+                    height: 88.h,
+                  ),
+                ],
               ),
             ),
-            const AddToBasketButton(price: 160),
-          ],
-        ),
+          ),
+          Positioned(
+              left: 25.w,
+              right: 25.w,
+              bottom: 16.w,
+              child: const AddToBasketButton(price: 160)),
+        ],
       ),
     );
   }

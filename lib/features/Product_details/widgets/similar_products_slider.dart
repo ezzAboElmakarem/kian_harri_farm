@@ -13,27 +13,20 @@ class SimilarProductsSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 14.h),
+      padding: EdgeInsets.symmetric(
+        vertical: 14.h,
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Row(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  navigateTo(context: context, widget: OffersView());
-                },
-                child: Text(
-                  'عرض المزيد',
-                  style: TextStyles.textstyle14.copyWith(color: kPrimaryColor),
-                ),
-              ),
-              const Spacer(),
-              Text(
-                'منتجات مشابهة',
-                style: TextStyles.textstyle14
-                    .copyWith(fontWeight: FontWeight.bold),
-              ),
-            ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Text(
+              'منتجات مشابهة',
+              textDirection: TextDirection.rtl,
+              style:
+                  TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
+            ),
           ),
           SizedBox(
             height: 23.h,

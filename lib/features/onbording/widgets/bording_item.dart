@@ -6,7 +6,7 @@ import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import 'package:kian_sheeps_projects/features/onbording/models/onbording_model.dart';
 
 Widget buildBordingItem(BordingModel model) => Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
           height: 300,

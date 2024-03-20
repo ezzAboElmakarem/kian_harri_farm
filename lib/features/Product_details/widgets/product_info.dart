@@ -21,84 +21,89 @@ class ProductInfo extends StatelessWidget {
   final String productDescription;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 22.h),
-          child: Center(
-            child: Container(
-              height: 160.h,
-              width: 342.w,
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(16.r)),
-              child: Image.asset(AssetsData.productDetails),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 22.h,
+            ),
+            child: Center(
+              child: Container(
+                height: 160.h,
+                width: 342.w,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(16.r)),
+                child: Image.asset(AssetsData.productDetails),
+              ),
             ),
           ),
-        ),
-        Text(
-            textAlign: TextAlign.right,
-            'لحوم',
-            style: TextStyles.textstyle12.copyWith(color: kPrimaryColor)),
-        SizedBox(height: 7.h),
-        /****** */
-        const SelectOrderNum(),
-        /**** */
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text('$productPrice SR',
-                style: TextStyles.textstyle16.copyWith(color: kPrimaryColor)),
-            SizedBox(width: 8.w),
-            Text('$oldProductPrice SR',
-                style: TextStyles.textstyle14.copyWith(
-                    color: ColorStyles.textGreyColor.withOpacity(0.5),
-                    decoration: TextDecoration.lineThrough,
-                    decorationThickness: 2.0)),
-          ],
-        ),
-        SizedBox(height: 14.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(productType, style: TextStyles.textstyle16),
-            SizedBox(width: 4.w),
-            Text(': النوع',
+          Text(
+              textAlign: TextAlign.right,
+              'لحوم',
+              style: TextStyles.textstyle12.copyWith(color: kPrimaryColor)),
+          SizedBox(height: 7.h),
+          /****** */
+          const SelectOrderNum(),
+          /**** */
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text('$productPrice SR',
+                  style: TextStyles.textstyle16.copyWith(color: kPrimaryColor)),
+              SizedBox(width: 8.w),
+              Text('$oldProductPrice SR',
+                  style: TextStyles.textstyle14.copyWith(
+                      color: ColorStyles.textGreyColor.withOpacity(0.5),
+                      decoration: TextDecoration.lineThrough,
+                      decorationThickness: 2.0)),
+            ],
+          ),
+          SizedBox(height: 14.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(productType, style: TextStyles.textstyle16),
+              SizedBox(width: 4.w),
+              Text(': النوع',
+                  style: TextStyles.textstyle16
+                      .copyWith(color: ColorStyles.hintColor)),
+            ],
+          ),
+          SizedBox(height: 14.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                '$productWeight كيلو ',
+                style: TextStyles.textstyle16,
+                textDirection: TextDirection.rtl,
+              ),
+              SizedBox(width: 4.w),
+              Text(
+                ': الوزن التقريبي',
                 style: TextStyles.textstyle16
-                    .copyWith(color: ColorStyles.hintColor)),
-          ],
-        ),
-        SizedBox(height: 14.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(
-              '$productWeight كيلو ',
-              style: TextStyles.textstyle16,
-              textDirection: TextDirection.rtl,
-            ),
-            SizedBox(width: 4.w),
-            Text(
-              ': الوزن التقريبي',
-              style:
-                  TextStyles.textstyle16.copyWith(color: ColorStyles.hintColor),
-            ),
-          ],
-        ),
-        SizedBox(height: 20.h),
-        Text(
-          'الوصف',
-          style: TextStyles.textstyle16,
-        ),
-        SizedBox(height: 16.h),
-        Text(
-          productDescription,
-          textDirection: TextDirection.rtl,
-          style: TextStyles.textstyle16.copyWith(
-            color: ColorStyles.hintColor.withOpacity(0.6),
+                    .copyWith(color: ColorStyles.hintColor),
+              ),
+            ],
           ),
-        ),
-      ],
+          SizedBox(height: 20.h),
+          Text(
+            'الوصف',
+            style: TextStyles.textstyle16,
+          ),
+          SizedBox(height: 16.h),
+          Text(
+            productDescription,
+            textDirection: TextDirection.rtl,
+            style: TextStyles.textstyle16.copyWith(
+              color: ColorStyles.hintColor.withOpacity(0.6),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

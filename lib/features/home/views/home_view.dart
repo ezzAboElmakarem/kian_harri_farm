@@ -42,7 +42,13 @@ class HomeView extends StatelessWidget {
               const CustomSearchBar(),
               ProductSlider(imageViewPoint: 0.9, imagesUrl: imagesUrl),
               const CustomCategoryListView(),
+              SizedBox(
+                height: 16.h,
+              ),
               const OffersListView(),
+              SizedBox(
+                height: 16.h,
+              ),
               const Divider(
                 height: 2.0,
                 color: Colors.black,

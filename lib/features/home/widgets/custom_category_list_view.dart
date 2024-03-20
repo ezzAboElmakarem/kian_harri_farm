@@ -15,9 +15,12 @@ class CustomCategoryListView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Text(
-          'الأقسام',
-          style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 14.w),
+          child: Text(
+            'الأقسام',
+            style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
+          ),
         ),
         SizedBox(
           height: 8.h,

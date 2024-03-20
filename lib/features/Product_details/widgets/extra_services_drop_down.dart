@@ -22,7 +22,7 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 24.h),
+      padding: EdgeInsets.only(bottom: 24.h, right: 16.w, left: 16.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [

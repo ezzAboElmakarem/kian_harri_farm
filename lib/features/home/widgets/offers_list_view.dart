@@ -15,27 +15,31 @@ class OffersListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+      padding: EdgeInsets.symmetric(vertical: 14.h),
       child: Column(
         children: [
-          Row(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  navigateTo(context: context, widget: OffersView());
-                },
-                child: Text(
-                  'عرض المزيد',
-                  style: TextStyles.textstyle14.copyWith(color: kPrimaryColor),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 14.w),
+            child: Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    navigateTo(context: context, widget: OffersView());
+                  },
+                  child: Text(
+                    'عرض المزيد',
+                    style:
+                        TextStyles.textstyle14.copyWith(color: kPrimaryColor),
+                  ),
                 ),
-              ),
-              const Spacer(),
-              Text(
-                'العروض',
-                style: TextStyles.textstyle14
-                    .copyWith(fontWeight: FontWeight.bold),
-              ),
-            ],
+                const Spacer(),
+                Text(
+                  'العروض',
+                  style: TextStyles.textstyle14
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: 23.h,

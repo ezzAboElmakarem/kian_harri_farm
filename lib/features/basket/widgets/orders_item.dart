@@ -22,9 +22,11 @@ class _OrderItemState extends State<OrderItem> {
       height: 95.h,
       width: 340.w,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('فريش بيف استربس',
                   style: TextStyles.textstyle14,
@@ -33,7 +35,8 @@ class _OrderItemState extends State<OrderItem> {
                 height: 8.h,
               ),
               Text('هذا النص هو مثال لنص يمكن أن يستبدل في ',
-                  style: TextStyles.textstyle14,
+                  style: TextStyles.textstyle12
+                      .copyWith(color: ColorStyles.textGreyColor),
                   textDirection: TextDirection.rtl),
               SizedBox(
                 height: 8.h,
@@ -42,31 +45,12 @@ class _OrderItemState extends State<OrderItem> {
                 children: [
                   Row(
                     children: [
-                      Stack(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              numOfOrders++;
-                              setState(() {});
-                            },
-                            child: Container(
-                              height: 26.h,
-                              width: 24.w,
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: kPrimaryColor),
-                                  borderRadius: BorderRadius.circular(16)),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 1.5.h,
-                            left: 6.w,
-                            child: Text(
-                              '+',
-                              style: TextStyles.textstyle20,
-                            ),
-                          ),
-                        ],
-                      ),
+                      InkWell(
+                          onTap: () {
+                            numOfOrders++;
+                            setState(() {});
+                          },
+                          child: Image.asset(AssetsData.maximizeIcon)),
                       SizedBox(
                         width: 5.w,
                       ),
@@ -86,48 +70,58 @@ class _OrderItemState extends State<OrderItem> {
                       SizedBox(
                         width: 5.w,
                       ),
-                      Stack(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              if (numOfOrders == 0) {
-                              } else {
-                                numOfOrders--;
-                                setState(() {});
-                              }
-                            },
-                            child: Container(
-                              height: 26.h,
-                              width: 24.w,
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: kPrimaryColor),
-                                  borderRadius: BorderRadius.circular(16)),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 0.5.h,
-                            left: 7.w,
-                            child: Text(
-                              '-',
-                              style: TextStyles.textstyle20,
-                            ),
-                          ),
-                        ],
-                      ),
+                      InkWell(
+                          onTap: () {
+                            if (numOfOrders == 0) {
+                            } else {
+                              numOfOrders--;
+                              setState(() {});
+                            }
+                          },
+                          child: Image.asset(AssetsData.mininizeIcon)),
+                      // Stack(
+                      //   children: [
+                      //     GestureDetector(
+                      //       onTap: () {
+                      // if (numOfOrders == 0) {
+                      // } else {
+                      //   numOfOrders--;
+                      //   setState(() {});
+                      // }
+                      //       },
+                      //       child: Container(
+                      //         height: 26.h,
+                      //         width: 24.w,
+                      //         decoration: BoxDecoration(
+                      //             border: Border.all(color: kPrimaryColor),
+                      //             borderRadius: BorderRadius.circular(16)),
+                      //       ),
+                      //     ),
+                      //     Positioned(
+                      //       bottom: 0.5.h,
+                      //       left: 7.w,
+                      //       child: Text(
+                      //         '-',
+                      //         style: TextStyles.textstyle20,
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
                     ],
                   ),
                   SizedBox(
                     width: 112.w,
                   ),
-                  Text('150.00   LE',
-                      style: TextStyles.textstyle14,
-                      textDirection: TextDirection.rtl),
+                  Text(
+                    '150.00   LE',
+                    style: TextStyles.textstyle14,
+                  ),
                 ],
               ),
             ],
           ),
           SizedBox(
-            width: 4.w,
+            width: 5.w,
           ),
           Expanded(
             child: Container(

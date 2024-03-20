@@ -22,6 +22,9 @@ class BasketView extends StatelessWidget {
           child: Column(
             children: [
               const BasketOrders(),
+              SizedBox(
+                height: 16.h,
+              ),
               const CoubonField(),
               SizedBox(
                 height: 24.h,

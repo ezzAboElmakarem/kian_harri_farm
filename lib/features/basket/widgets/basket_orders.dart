@@ -39,12 +39,13 @@ class BasketOrders extends StatelessWidget {
           height: 23.h,
         ),
         SizedBox(
-          height: 340.h,
           width: double.infinity,
           child: ListView.separated(
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) => const OrderItem(),
               separatorBuilder: (context, index) => SizedBox(height: 8.h),
-              itemCount: 3),
+              itemCount: 4),
         ),
       ],
     );

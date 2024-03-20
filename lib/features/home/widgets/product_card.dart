@@ -36,60 +36,63 @@ class ProductCard extends StatelessWidget {
           child: SizedBox(
             height: 240.h,
             width: cardHeight,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                SizedBox(
-                  width: 150.w,
-                  height: 150.h,
-                  child: Image.asset(imageUrl),
-                ),
-                SizedBox(
-                  height: 8.h,
-                ),
-                Text(
-                  categoryName,
-                  style: TextStyles.textstyle14
-                      .copyWith(color: ColorStyles.textGreyColor),
-                ),
-                SizedBox(
-                  height: 6.h,
-                ),
-                Text(
-                  price,
-                  style: TextStyles.textstyle14,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    GestureDetector(
-                        onTap: () {
-                          navigateTo(
-                              context: context, widget: const BasketView());
-                        },
-                        child: Image.asset(AssetsData.shoppingBasket)),
-                    SizedBox(
-                      width: 25.w,
-                    ),
-                    Text(
-                      '$price SR',
-                      style: TextStyles.textstyle14.copyWith(
-                        color: kPrimaryColor,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    width: 150.w,
+                    height: 150.h,
+                    child: Image.asset(imageUrl),
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  Text(
+                    categoryName,
+                    style: TextStyles.textstyle14
+                        .copyWith(color: ColorStyles.textGreyColor),
+                  ),
+                  SizedBox(
+                    height: 6.h,
+                  ),
+                  Text(
+                    price,
+                    style: TextStyles.textstyle14,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                          onTap: () {
+                            navigateTo(
+                                context: context, widget: const BasketView());
+                          },
+                          child: Image.asset(AssetsData.shoppingBasket)),
+                      SizedBox(
+                        width: 25.w,
                       ),
-                    ),
-                    SizedBox(
-                      width: 6.w,
-                    ),
-                    Text(
-                      '$oldPrice SR',
-                      style: TextStyles.textstyle14.copyWith(
-                          color: ColorStyles.textGreyColor,
-                          decoration: TextDecoration.lineThrough,
-                          decorationThickness: 2.0),
-                    ),
-                  ],
-                ),
-              ],
+                      Text(
+                        '$price SR',
+                        style: TextStyles.textstyle14.copyWith(
+                          color: kPrimaryColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 6.w,
+                      ),
+                      Text(
+                        '$oldPrice SR',
+                        style: TextStyles.textstyle14.copyWith(
+                            color: ColorStyles.textGreyColor,
+                            decoration: TextDecoration.lineThrough,
+                            decorationThickness: 2.0),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

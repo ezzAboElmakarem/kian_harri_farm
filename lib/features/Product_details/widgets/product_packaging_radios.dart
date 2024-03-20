@@ -21,37 +21,40 @@ class _ProductpackagingRadiosState extends State<ProductpackagingRadios> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Text(
-          'التغليف',
-          style: TextStyles.textstyle16,
-          textDirection: TextDirection.rtl,
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        SizedBox(
-          height: 160.h,
-          width: double.infinity,
-          child: ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) => CustomRadioTileItem(
-              title: packagingOptions[index],
-              groupValue: selectedOption,
-              value: packagingOptions[index],
-              onChanged: (value) {
-                setState(() {
-                  selectedOption = value!;
-                });
-              },
-              selected: selectedOption == packagingOptions[index],
-            ),
-            itemCount: packagingOptions.length,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            'التغليف',
+            style: TextStyles.textstyle16,
+            textDirection: TextDirection.rtl,
           ),
-        ),
-      ],
+          SizedBox(
+            height: 10.h,
+          ),
+          SizedBox(
+            height: 160.h,
+            width: double.infinity,
+            child: ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) => CustomRadioTileItem(
+                title: packagingOptions[index],
+                groupValue: selectedOption,
+                value: packagingOptions[index],
+                onChanged: (value) {
+                  setState(() {
+                    selectedOption = value!;
+                  });
+                },
+                selected: selectedOption == packagingOptions[index],
+              ),
+              itemCount: packagingOptions.length,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

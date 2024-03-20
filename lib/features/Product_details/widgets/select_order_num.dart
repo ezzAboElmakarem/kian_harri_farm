@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
@@ -18,32 +19,19 @@ class _SelectOrderNumState extends State<SelectOrderNum> {
     return Row(
       children: [
         GestureDetector(
-          onTap: () {
-            if (numOfOrders == 1) {
-            } else {
-              numOfOrders--;
-              setState(() {});
-            }
-          },
-          child: Container(
-            height: 40.h,
-            width: 32.w,
-            decoration: BoxDecoration(
-                border: Border.all(color: kPrimaryColor),
-                borderRadius: BorderRadius.circular(5)),
-            child: Center(
-              child: Text(
-                '-',
-                style: TextStyles.textstyle20,
-              ),
-            ),
-          ),
-        ),
+            onTap: () {
+              if (numOfOrders == 1) {
+              } else {
+                numOfOrders--;
+                setState(() {});
+              }
+            },
+            child: Image.asset(AssetsData.minimizeContainer)),
         SizedBox(
           width: 5.w,
         ),
         Container(
-          height: 40.h,
+          height: 37.h,
           width: 44.w,
           decoration: BoxDecoration(
               color: kPrimaryColor,
@@ -64,19 +52,7 @@ class _SelectOrderNumState extends State<SelectOrderNum> {
             numOfOrders++;
             setState(() {});
           },
-          child: Container(
-            height: 40.h,
-            width: 32.w,
-            decoration: BoxDecoration(
-                border: Border.all(color: kPrimaryColor),
-                borderRadius: BorderRadius.circular(5)),
-            child: Center(
-              child: Text(
-                '+',
-                style: TextStyles.textstyle20,
-              ),
-            ),
-          ),
+          child: Image.asset(AssetsData.maximizeContainer),
         ),
         const Spacer(),
         Text(

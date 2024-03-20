@@ -6,8 +6,8 @@ import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class AddToBasketButton extends StatelessWidget {
-  const AddToBasketButton({
+class AddToCartButton extends StatelessWidget {
+  const AddToCartButton({
     super.key,
     required this.price,
   });

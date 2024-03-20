@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/add_to_basket_button.dart';
+import 'package:kian_sheeps_projects/features/Product_details/widgets/add_to_cart_button.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/extra_services_drop_down.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/product_chopping_radio.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/product_info.dart';
@@ -69,7 +69,7 @@ class ProductDetailsView extends StatelessWidget {
               left: 25.w,
               right: 25.w,
               bottom: 16.w,
-              child: const AddToBasketButton(price: 160)),
+              child: const AddToCartButton(price: 160)),
         ],
       ),
     );

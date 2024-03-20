@@ -10,7 +10,7 @@ Widget buildBordingItem(BordingModel model) => Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SizedBox(
-          height: 30.h,
+          height: 20.h,
         ),
         SizedBox(
           height: 300,

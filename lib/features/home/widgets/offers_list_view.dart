@@ -48,6 +48,7 @@ class OffersListView extends StatelessWidget {
             height: 240.h,
             width: double.infinity,
             child: ListView.separated(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
               scrollDirection: Axis.horizontal,
               separatorBuilder: (context, index) => SizedBox(
                 width: 1.h,

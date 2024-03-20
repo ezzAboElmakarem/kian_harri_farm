@@ -55,9 +55,9 @@ class CustomTextFormField extends StatelessWidget {
           enabled: isEnabled,
           maxLines: maxLines ?? 1,
           style: TextStyle(
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               color: Colors.black,
-              fontSize: 16.sp),
+              fontSize: 14.sp),
           textDirection: TextDirection.rtl,
           obscureText: ispassword,
           onChanged: onChange,

@@ -49,9 +49,10 @@ class HomeView extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              const Divider(
+              Divider(
                 height: 2.0,
-                color: Colors.black,
+                thickness: 2.0,
+                color: Colors.black.withOpacity(0.2),
               ),
               ProductSlider(
                 imageViewPoint: 0.88,

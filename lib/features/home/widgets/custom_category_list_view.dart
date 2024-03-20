@@ -25,22 +25,20 @@ class CustomCategoryListView extends StatelessWidget {
         SizedBox(
           height: 8.h,
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            height: 90.h,
-            width: double.infinity,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) => SizedBox(
-                width: 1.h,
-              ),
-              itemCount: 8,
-              itemBuilder: (context, index) => CustomCategoryItem(
-                  categoryColor: ColorStyles.vegetablesCategoryColor,
-                  categoryImage: AssetsData.meatEmoji,
-                  categoryName: 'خضراوت'),
+        SizedBox(
+          height: 90.h,
+          width: double.infinity,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            reverse: true,
+            separatorBuilder: (context, index) => SizedBox(
+              width: 1.h,
             ),
+            itemCount: 8,
+            itemBuilder: (context, index) => CustomCategoryItem(
+                categoryColor: ColorStyles.vegetablesCategoryColor,
+                categoryImage: AssetsData.meatEmoji,
+                categoryName: 'خضراوت'),
           ),
         ),
       ],

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
 
 class CoubonField extends StatelessWidget {
   const CoubonField({
@@ -11,7 +12,24 @@ class CoubonField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return CustomTextFormField(
+      ispassword: false,
+      isEnabled: true,
+      hint: 'اضف كوبون خصم',
+      prefixIcon: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
+        child: GestureDetector(
+          onTap: () {},
+          child: Text(
+            textAlign: TextAlign.center,
+            'تفعيل',
+            style: TextStyles.textstyle14.copyWith(color: kPrimaryColor),
+          ),
+        ),
+      ),
+      suffixIcon: Image.asset(AssetsData.coubonIcon),
+    );
+    /*   Container(
       width: 344.w,
       height: 50.h,
       decoration: BoxDecoration(
@@ -42,6 +60,6 @@ class CoubonField extends StatelessWidget {
           ),
         ],
       ),
-    );
+    );*/
   }
 }

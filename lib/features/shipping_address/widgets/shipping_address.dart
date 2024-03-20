@@ -5,19 +5,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kian_sheeps_projects/core/location_services.dart';
 import 'package:kian_sheeps_projects/core/maps_services.dart';
-import 'package:kian_sheeps_projects/features/customer_address/views/customer_address_view.dart';
+import 'package:kian_sheeps_projects/features/shipping_address/views/customer_address_view.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 
-class ReceivingLocation extends StatefulWidget {
-  const ReceivingLocation({
+class ShippingAddress extends StatefulWidget {
+  const ShippingAddress({
     super.key,
   });
 
   @override
-  State<ReceivingLocation> createState() => _ReceivingLocationState();
+  State<ShippingAddress> createState() => _ShippingAddressState();
 }
 
-class _ReceivingLocationState extends State<ReceivingLocation> {
+class _ShippingAddressState extends State<ShippingAddress> {
   late CameraPosition intialCameraPostion;
   late LocationService locationService;
   late MapsShapes mapsShapes;

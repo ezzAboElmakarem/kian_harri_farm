@@ -14,7 +14,7 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
   final List<String> items = [
     'تجريد من العظم',
     '2تجريد من العظم',
-    'تجريد من العظم3',
+    'تجريد من لعظم3',
   ];
 
   String? selectedItem;
@@ -22,7 +22,7 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 24.h, right: 16.w, left: 16.w),
+      padding: EdgeInsets.only(bottom: 24.h, right: 12.w, left: 12.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -67,7 +67,7 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                             style: TextStyles.textstyle12
                                 .copyWith(color: kPrimaryColor)),
                         SizedBox(
-                          width: 16.w,
+                          width: 12.w,
                         ),
                         Text(
                           'تجريد من العظم',

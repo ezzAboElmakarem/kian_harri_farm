@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/product_card.dart';
-import 'package:kian_sheeps_projects/features/offers/views/offers_view.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class SimilarProductsSlider extends StatelessWidget {
@@ -35,6 +32,7 @@ class SimilarProductsSlider extends StatelessWidget {
             height: 240.h,
             width: double.infinity,
             child: ListView.separated(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
               scrollDirection: Axis.horizontal,
               separatorBuilder: (context, index) => SizedBox(
                 width: 1.h,

@@ -15,7 +15,7 @@ class SmoothIndicatorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       left: 143.w,
-      bottom: 130.h,
+      bottom: 100.h,
       child: SmoothPageIndicator(
         controller: bordingController,
         count: 3,

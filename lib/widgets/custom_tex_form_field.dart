@@ -11,6 +11,7 @@ class CustomTextFormField extends StatelessWidget {
       this.type,
       this.hint,
       this.title,
+      this.fillColor,
       // required this.textDirection,
       this.prefixIcon,
       this.prefixText,
@@ -26,6 +27,7 @@ class CustomTextFormField extends StatelessWidget {
   String? hint;
   final String? title;
   Color? titleColor = Colors.black;
+  Color? fillColor = const Color(0xffEFEFEF);
   TextDirection? textDirection;
   Widget? prefixIcon;
   String? prefixText;
@@ -82,7 +84,7 @@ class CustomTextFormField extends StatelessWidget {
                 fontSize: 18.sp,
                 fontWeight: FontWeight.bold),
             filled: true,
-            fillColor: const Color(0xffEFEFEF),
+            fillColor: fillColor ?? const Color(0xffEFEFEF),
             hintText: hint,
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,

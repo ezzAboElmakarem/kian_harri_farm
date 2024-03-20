@@ -27,4 +27,7 @@ class AssetsData {
   static const maximizeIcon = 'assets/images/maximize_icon.png';
   static const minimizeContainer = 'assets/images/minimize_container.png';
   static const maximizeContainer = 'assets/images/maximize_container.png';
+  static const cashIcon = 'assets/images/cash_icon.png';
+  static const visaIcon = 'assets/images/visa_icon.png';
+  static const successImage = 'assets/images/success_image.png';
 }

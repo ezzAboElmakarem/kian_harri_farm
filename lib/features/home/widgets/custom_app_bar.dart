@@ -44,7 +44,7 @@ class CustomHomeAppBar extends StatelessWidget {
                 children: [
                   SizedBox(
                     height: 26.h,
-                    width: 26.w,
+                    width: 35.w,
                     child: Image.asset(
                       AssetsData.shoppingBasket,
                       height: 24.h,
@@ -52,10 +52,10 @@ class CustomHomeAppBar extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    left: 14.w,
+                    left: 18.w,
                     child: CircleAvatar(
                       backgroundColor: ColorStyles.orangeColor,
-                      radius: 6.r,
+                      radius: 8.r,
                       child: Text(
                         '2',
                         style: TextStyles.textstyle12

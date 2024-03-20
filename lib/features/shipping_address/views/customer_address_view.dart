@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/payment/views/payment_view.dart';
 import 'package:kian_sheeps_projects/features/shipping_address/widgets/shipping_address.dart';
 import 'package:kian_sheeps_projects/features/shipping_address/widgets/select_city.dart';
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
@@ -91,7 +92,11 @@ class CustomerAddressView extends StatelessWidget {
                 maxLines: 6,
               ),
               SizedBox(height: 40.h),
-              CustomButton(buttonText: 'التالي', onTap: () {}),
+              CustomButton(
+                  buttonText: 'التالي',
+                  onTap: () {
+                    navigateTo(context: context, widget: const PaymentView());
+                  }),
               SizedBox(height: 12.h),
             ],
           ),

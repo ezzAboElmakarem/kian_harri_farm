@@ -16,6 +16,7 @@ class DrawerSectionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        Navigator.of(context).pop();
         navigateTo(context: context, widget: widget);
       },
       child: Padding(

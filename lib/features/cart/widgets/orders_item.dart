@@ -20,7 +20,7 @@ class _OrderItemState extends State<OrderItem> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 95.h,
-      width: 340.w,
+      width: 346.w,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -121,7 +121,7 @@ class _OrderItemState extends State<OrderItem> {
             ],
           ),
           SizedBox(
-            width: 5.w,
+            width: 8.w,
           ),
           Expanded(
             child: Container(

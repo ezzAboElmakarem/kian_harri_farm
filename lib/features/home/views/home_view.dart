@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/drawer/views/drawer_view.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/custom_app_bar.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/custom_category_list_view.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/offers_list_view.dart';
@@ -30,14 +31,21 @@ class HomeView extends StatelessWidget {
       AssetsData.meatBigPic,
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
+
     return Scaffold(
+      key: scaffoldkey,
+      endDrawer: const Drawer(
+        child: DrawerView(),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const CustomHomeAppBar(),
+              CustomHomeAppBar(scaffoldkey: scaffoldkey),
               const HomeWelocmeTitle(),
               const CustomSearchBar(),
               ProductSlider(imageViewPoint: 0.9, imagesUrl: imagesUrl),

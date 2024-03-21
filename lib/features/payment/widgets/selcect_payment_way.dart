@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/payment/widgets/visa_details.dart';
+import 'package:kian_sheeps_projects/features/payment/widgets/visa_form.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
@@ -16,14 +16,17 @@ class SelectPaymentWay extends StatefulWidget {
 
 class _SelectPaymentWayState extends State<SelectPaymentWay> {
   String selectedOption = '';
-  List<String> options = [
-    'الدفع كاش',
-    'الدفع عن طريق الفيزا',
-  ];
+
+  @override
+  void initState() {
+    selectedOption = 'الدفع كاش';
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 0.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -99,7 +102,7 @@ class _SelectPaymentWayState extends State<SelectPaymentWay> {
             height: 16.h,
           ),
           selectedOption == 'الدفع عن طريق الفيزا'
-              ? const VisaDetails()
+              ? const VisaForm()
               : SizedBox(
                   height: 4.h,
                 ),

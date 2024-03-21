@@ -30,4 +30,19 @@ class AssetsData {
   static const cashIcon = 'assets/images/cash_icon.png';
   static const visaIcon = 'assets/images/visa_icon.png';
   static const successImage = 'assets/images/success_image.png';
+  static const fileIcon = 'assets/images/file_icon.png';
+  static const headphonesIcon = 'assets/images/headphones_icon.png';
+  static const heartIcon = 'assets/images/heart_icon.png';
+  static const helpIcon = 'assets/images/help_icon.png';
+  static const infoIcon = 'assets/images/info_icon.png';
+  static const languageIcon = 'assets/images/language_icon.png';
+  static const lockIcon = 'assets/images/lock_icon.png';
+  static const logOutIcon = 'assets/images/log-out_icon.png';
+  static const refreshIcon = 'assets/images/refresh_icon.png';
+  static const settingsImage = 'assets/images/settings_image.png';
+  static const shoppingBagIcon = 'assets/images/shopping-bag-icon.png';
+  static const locationIcon = 'assets/images/location.png';
+  static const menuIcon = 'assets/images/menu_icon.png';
+
+  static const bellIcon = 'assets/images/bell_icon.png';
 }

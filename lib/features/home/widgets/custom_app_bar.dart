@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
@@ -9,7 +11,9 @@ import 'package:kian_sheeps_projects/helper/text_styles.dart';
 class CustomHomeAppBar extends StatelessWidget {
   const CustomHomeAppBar({
     super.key,
+    required this.scaffoldkey,
   });
+  final GlobalKey<ScaffoldState> scaffoldkey;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +27,13 @@ class CustomHomeAppBar extends StatelessWidget {
                 children: [
                   Image.asset(
                     AssetsData.notificationBell,
+                    height: 28.h,
                   ),
                   Positioned(
                     left: 8.w,
                     child: CircleAvatar(
                       backgroundColor: Colors.green,
-                      radius: 4.r,
+                      radius: 6.r,
                     ),
                   ),
                 ],
@@ -47,8 +52,8 @@ class CustomHomeAppBar extends StatelessWidget {
                     width: 35.w,
                     child: Image.asset(
                       AssetsData.shoppingBasket,
-                      height: 24.h,
-                      width: 24.w,
+                      height: 26.h,
+                      width: 26.w,
                     ),
                   ),
                   Positioned(
@@ -67,7 +72,11 @@ class CustomHomeAppBar extends StatelessWidget {
               )),
           const Spacer(),
           IconButton(
-              icon: Image.asset(AssetsData.drawerIcon), onPressed: () {}),
+              icon: Image.asset(AssetsData.menuIcon, height: 28.h, width: 26.w),
+              onPressed: () {
+                scaffoldkey.currentState?.openEndDrawer();
+                log('message');
+              }),
         ],
       ),
     );

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
 
-class VisaDetails extends StatelessWidget {
-  const VisaDetails({
+class VisaForm extends StatelessWidget {
+  const VisaForm({
     super.key,
   });
 

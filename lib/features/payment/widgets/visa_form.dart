@@ -26,6 +26,9 @@ class VisaForm extends StatelessWidget {
           title: 'اسم حامل البطاقة',
           fillColor: Colors.white,
         ),
+        SizedBox(
+          height: 12.h,
+        ),
         Row(
           children: [
             Expanded(

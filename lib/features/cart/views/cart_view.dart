@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/cart/widgets/cart_buttons.dart';
 import 'package:kian_sheeps_projects/features/cart/widgets/cart_orders.dart';
 import 'package:kian_sheeps_projects/features/cart/widgets/coubon_field.dart';
-import 'package:kian_sheeps_projects/features/cart/widgets/order_pref.dart';
+import 'package:kian_sheeps_projects/features/cart/widgets/payment_pref.dart';
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
 
 class CartView extends StatelessWidget {
@@ -29,7 +29,7 @@ class CartView extends StatelessWidget {
               SizedBox(
                 height: 24.h,
               ),
-              const OrderPref(),
+              const PaymentPref(),
               SizedBox(
                 height: 60.h,
               ),

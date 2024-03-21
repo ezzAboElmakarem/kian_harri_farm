@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/cart/widgets/order_pref.dart';
+import 'package:kian_sheeps_projects/features/cart/widgets/payment_pref.dart';
 import 'package:kian_sheeps_projects/features/payment/widgets/delivery_summary.dart';
 import 'package:kian_sheeps_projects/features/order_success/views/order_success_view.dart';
 import 'package:kian_sheeps_projects/features/payment/widgets/selcect_payment_way.dart';
@@ -60,7 +60,7 @@ class PaymentView extends StatelessWidget {
                     SizedBox(
                       height: 14.h,
                     ),
-                    const OrderPref(),
+                    const PaymentPref(),
                     SizedBox(
                       height: 60.h,
                     ),

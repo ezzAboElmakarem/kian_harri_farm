@@ -28,6 +28,9 @@ class _OnBordingScreenViewState extends State<OnBordingScreenView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: 8.h,
+                  ),
                   const SkipButtonWidget(),
                   Expanded(
                     child: SizedBox(

@@ -43,6 +43,8 @@ class AssetsData {
   static const shoppingBagIcon = 'assets/images/shopping-bag-icon.png';
   static const locationIcon = 'assets/images/location.png';
   static const menuIcon = 'assets/images/menu_icon.png';
-
+  static const questionIcon = 'assets/images/question_icon.png';
   static const bellIcon = 'assets/images/bell_icon.png';
+  static const box = 'assets/images/box.png';
+  static const star = 'assets/images/star.png';
 }

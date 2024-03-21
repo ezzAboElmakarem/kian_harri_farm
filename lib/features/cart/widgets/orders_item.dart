@@ -20,7 +20,7 @@ class _OrderItemState extends State<OrderItem> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 95.h,
-      width: 346.w,
+      width: double.infinity,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

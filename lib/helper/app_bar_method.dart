@@ -10,7 +10,7 @@ AppBar customAppBar(
     centerTitle: true,
     title: Text(
       title,
-      style: TextStyles.textstyle16.copyWith(fontWeight: FontWeight.w600),
+      style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w600),
     ),
     actions: [
       Padding(
@@ -21,7 +21,7 @@ AppBar customAppBar(
           },
           child: Icon(
             Icons.arrow_forward_ios,
-            size: 20.sp,
+            size: 24.sp,
           ),
         ),
       ),

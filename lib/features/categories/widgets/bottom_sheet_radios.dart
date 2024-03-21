@@ -16,6 +16,11 @@ class _BottomSheetRadiosListState extends State<BottomSheetRadiosList> {
     ' من السعر الاعلي الي الاقل',
     ' من السعر الاقل الي الاعلى',
   ];
+  @override
+  void initState() {
+    selectedOption = options[0];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

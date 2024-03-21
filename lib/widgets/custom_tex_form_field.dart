@@ -12,12 +12,15 @@ class CustomTextFormField extends StatelessWidget {
       this.hint,
       this.title,
       this.fillColor,
+      this.textAlign,
       // required this.textDirection,
       this.prefixIcon,
       this.prefixText,
       this.suffixIcon,
       this.onChange,
       this.errorColor,
+      this.hintColor,
+      this.borderColor,
       this.validation,
       required this.ispassword,
       required this.isEnabled,
@@ -38,6 +41,9 @@ class CustomTextFormField extends StatelessWidget {
   bool isEnabled;
   String? Function(String?)? validation;
   int? maxLines;
+  Color? hintColor;
+  Color? borderColor;
+  TextAlign? textAlign;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -54,6 +60,7 @@ class CustomTextFormField extends StatelessWidget {
           ],
         ),
         TextFormField(
+          textAlign: textAlign ?? TextAlign.start,
           enabled: isEnabled,
           maxLines: maxLines ?? 1,
           style: TextStyle(
@@ -75,7 +82,7 @@ class CustomTextFormField extends StatelessWidget {
             hintStyle: TextStyle(
               fontSize: 14.sp,
               fontWeight: FontWeight.bold,
-              color: ColorStyles.textGreyColor.withOpacity(0.4),
+              color: hintColor ?? ColorStyles.textGreyColor.withOpacity(0.4),
             ),
             hintTextDirection: TextDirection.rtl,
             prefixText: prefixText,
@@ -90,7 +97,7 @@ class CustomTextFormField extends StatelessWidget {
             suffixIcon: suffixIcon,
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: const Color(0xffEFEFEF),
+                color: borderColor ?? const Color(0xffEFEFEF),
                 width: 2.w,
               ),
               borderRadius: const BorderRadius.all(
@@ -99,28 +106,28 @@ class CustomTextFormField extends StatelessWidget {
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: const Color(0xffEFEFEF),
+                color: borderColor ?? const Color(0xffEFEFEF),
                 width: 2.w,
               ),
               borderRadius: const BorderRadius.all(
                 Radius.circular(8),
               ),
             ),
-            disabledBorder: const OutlineInputBorder(
+            disabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Color(0xffEFEFEF),
+                color: borderColor ?? const Color(0xffEFEFEF),
                 width: 2,
               ),
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(8),
               ),
             ),
-            border: const OutlineInputBorder(
+            border: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Color(0xffE7E7E7),
+                color: borderColor ?? const Color(0xffEFEFEF),
                 width: 2,
               ),
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(8),
               ),
             ),

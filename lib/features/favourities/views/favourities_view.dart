@@ -13,7 +13,7 @@ class Favourites extends StatelessWidget {
       appBar: customAppBar(context: context, title: 'المفضلة'),
       body: SingleChildScrollView(
           child: GridView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 26.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 26.h),
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

@@ -59,7 +59,7 @@ class OffersListView extends StatelessWidget {
                   price: '200',
                   oldPrice: '230',
                   productName: 'فريش بيف استربس',
-                  categoryName: 'لحوم',
+                  categoryName: 'اسماك',
                   imageUrl: AssetsData.fishOffer),
             ),
           ),

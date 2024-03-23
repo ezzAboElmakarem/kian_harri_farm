@@ -12,7 +12,7 @@ class OffersGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverFillRemaining(
       child: GridView.builder(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 6.w),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 2 / 3,
           crossAxisCount: 2,
@@ -21,17 +21,12 @@ class OffersGridView extends StatelessWidget {
         ),
         itemCount: 20,
         itemBuilder: (BuildContext context, int index) {
-          return SizedBox(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
-              child: const ProductCard(
-                  price: '200',
-                  oldPrice: '230',
-                  productName: 'فريش بيف استربس',
-                  categoryName: 'لحوم',
-                  imageUrl: AssetsData.meatOffers),
-            ),
-          );
+          return const ProductCard(
+              price: '200',
+              oldPrice: '230',
+              productName: 'فريش بيف استربس',
+              categoryName: 'لحوم',
+              imageUrl: AssetsData.meatOffers);
         },
       ),
     );

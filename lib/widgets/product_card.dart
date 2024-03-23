@@ -129,7 +129,7 @@ class _ProductCardState extends State<ProductCard> {
         ),
         Positioned(
             top: -8.h,
-            right: 6.w,
+            right: 4.w,
             left: 140.w,
             child: InkWell(
                 onTap: () {
@@ -138,7 +138,7 @@ class _ProductCardState extends State<ProductCard> {
                   setState(() {});
                 },
                 child: Container(
-                  width: 60.w,
+                  width: 100.w,
                   height: 60.h,
                   color: Colors.transparent,
                   child: Image.asset(

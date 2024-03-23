@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/features/splash_screen/views/splash_screen_view.dart';
+import 'package:kian_sheeps_projects/helper/keyboard_close_observer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,10 +21,7 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return GestureDetector(
-            onTap: () {
-              FocusScope.of(context).unfocus();
-            },
+          return KeyboardPopScaffold(
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',

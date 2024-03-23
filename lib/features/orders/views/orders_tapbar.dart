@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/orders/views/finished_orders_view.dart';
-import 'package:kian_sheeps_projects/features/orders/views/on_going_orders.dart';
+import 'package:kian_sheeps_projects/features/orders/views/finished_orders_list.dart';
+import 'package:kian_sheeps_projects/features/orders/views/on_going_orders_list.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 

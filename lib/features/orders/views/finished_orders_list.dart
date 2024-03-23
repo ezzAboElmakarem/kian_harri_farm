@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/orders/widgets/order_details.dart';
+import 'package:kian_sheeps_projects/features/orders/widgets/order_item.dart';
 
-class OnGoingOrdersList extends StatelessWidget {
-  const OnGoingOrdersList({
+class FinishedOrdersList extends StatelessWidget {
+  const FinishedOrdersList({
     super.key,
   });
 
@@ -14,9 +14,9 @@ class OnGoingOrdersList extends StatelessWidget {
           vertical: 16.h,
           horizontal: 16.w,
         ),
-        itemBuilder: (context, index) => const OrderDetails(
-              orderID: 6556589,
-              orderStatus: 'طلب مرفوض',
+        itemBuilder: (context, index) => const OrderItem(
+              orderID: 123500,
+              orderStatus: 'قيد التوصيل',
             ),
         separatorBuilder: (context, index) => SizedBox(height: 16.h),
         itemCount: 9);

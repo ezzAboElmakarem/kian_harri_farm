@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
@@ -19,6 +21,7 @@ class SkipButtonWidget extends StatelessWidget {
             textColor: Colors.black,
             text: 'تخطى',
             onTap: () {
+              log('skip button clicked');
               Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(
                   builder: (context) => const LoginScreenView(),

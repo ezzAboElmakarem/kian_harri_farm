@@ -32,7 +32,8 @@ class AssetsData {
   static const successImage = 'assets/images/success_image.png';
   static const fileIcon = 'assets/images/file_icon.png';
   static const headphonesIcon = 'assets/images/headphones_icon.png';
-  static const heartIcon = 'assets/images/heart_icon.png';
+  static const emptyHeartIcon = 'assets/images/empty_heart_icon.png';
+  static const fillHeartIcon = 'assets/images/fill_heart_icon.png';
   static const helpIcon = 'assets/images/help_icon.png';
   static const infoIcon = 'assets/images/info_icon.png';
   static const languageIcon = 'assets/images/language_icon.png';

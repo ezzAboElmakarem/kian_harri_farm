@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/cart/widgets/payment_pref.dart';
+import 'package:kian_sheeps_projects/widgets/payment_summary.dart';
 import 'package:kian_sheeps_projects/features/order_details/widgets/products_details_list.dart';
 import 'package:kian_sheeps_projects/features/order_details/widgets/refused_reason.dart';
-import 'package:kian_sheeps_projects/features/payment/widgets/delivery_summary.dart';
+import 'package:kian_sheeps_projects/widgets/delivery_summary.dart';
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
@@ -57,7 +57,7 @@ class OrderDetailsView extends StatelessWidget {
                   ),
                   orderStatus.contains('مرفوض')
                       ? const RefusedReason()
-                      : const PaymentPref(),
+                      : const PaymentSummary(),
                 ],
               ),
               SizedBox(

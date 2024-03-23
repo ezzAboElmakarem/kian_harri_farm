@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/orders/widgets/orders_status.dart';
+import 'package:kian_sheeps_projects/features/orders/widgets/order_card.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 

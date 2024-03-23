@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
 import 'package:kian_sheeps_projects/features/drawer/widgets/drawer_section_item.dart';
+import 'package:kian_sheeps_projects/features/favourities/views/favourities_view.dart';
 import 'package:kian_sheeps_projects/features/orders/views/orders_tapbar.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/widgets/logo_image_widget.dart';
@@ -22,9 +23,9 @@ class DrawerView extends StatelessWidget {
       "widget": const OrdersTabBar(),
     },
     {
-      "imagePath": AssetsData.headphonesIcon,
+      "imagePath": AssetsData.emptyHeartIcon,
       "title": 'المفضلة',
-      "widget": const CartView(),
+      "widget": const Favourites(),
     },
     {
       "imagePath": AssetsData.locationIcon,

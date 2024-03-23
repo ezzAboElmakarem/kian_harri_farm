@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class PaymentPref extends StatelessWidget {
-  const PaymentPref({
+class PaymentSummary extends StatelessWidget {
+  const PaymentSummary({
     super.key,
   });
 

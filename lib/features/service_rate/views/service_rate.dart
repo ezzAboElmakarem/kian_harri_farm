@@ -45,7 +45,6 @@ class ServiceRateView extends StatelessWidget {
               hint: 'اضف ملاحظاتك هنا',
               hintColor: Colors.black,
               borderColor: kPrimaryColor,
-              textAlign: TextAlign.center,
             ),
             SizedBox(
               height: 40.h,

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/Product_details/views/product_details_views.dart';
@@ -7,7 +9,7 @@ import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class ProductCard extends StatelessWidget {
+class ProductCard extends StatefulWidget {
   const ProductCard({
     super.key,
     required this.price,
@@ -25,6 +27,15 @@ class ProductCard extends StatelessWidget {
   final String imageUrl;
   final double cardWidth;
   final double cardHeight;
+
+  @override
+  State<ProductCard> createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
+  bool isFavouite = false;
+  String favouriteImage = AssetsData.fillHeartIcon;
+  String notFavouriteImage = AssetsData.emptyHeartIcon;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -35,7 +46,7 @@ class ProductCard extends StatelessWidget {
           },
           child: SizedBox(
             height: 240.h,
-            width: cardHeight,
+            width: widget.cardHeight,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w),
               child: Column(
@@ -44,13 +55,13 @@ class ProductCard extends StatelessWidget {
                   SizedBox(
                     width: 150.w,
                     height: 150.h,
-                    child: Image.asset(imageUrl),
+                    child: Image.asset(widget.imageUrl),
                   ),
                   SizedBox(
                     height: 8.h,
                   ),
                   Text(
-                    categoryName,
+                    widget.categoryName,
                     style: TextStyles.textstyle14
                         .copyWith(color: ColorStyles.textGreyColor),
                   ),
@@ -58,7 +69,7 @@ class ProductCard extends StatelessWidget {
                     height: 6.h,
                   ),
                   Text(
-                    price,
+                    widget.price,
                     style: TextStyles.textstyle14,
                   ),
                   Row(
@@ -78,7 +89,7 @@ class ProductCard extends StatelessWidget {
                         width: 18.w,
                       ),
                       Text(
-                        '$price SR',
+                        '${widget.price} SR',
                         style: TextStyles.textstyle14.copyWith(
                           color: kPrimaryColor,
                         ),
@@ -87,7 +98,7 @@ class ProductCard extends StatelessWidget {
                         width: 6.w,
                       ),
                       Text(
-                        '$oldPrice SR',
+                        '${widget.oldPrice} SR',
                         style: TextStyles.textstyle14.copyWith(
                             color: ColorStyles.textGreyColor,
                             decoration: TextDecoration.lineThrough,
@@ -120,6 +131,23 @@ class ProductCard extends StatelessWidget {
             ),
           ),
         ),
+        Positioned(
+            top: -8.h,
+            right: 6.w,
+            left: 140.w,
+            child: InkWell(
+                onTap: () {
+                  isFavouite = !isFavouite;
+                  log('state is : $isFavouite');
+                  setState(() {});
+                },
+                child: Container(
+                  width: 60.w,
+                  height: 60.h,
+                  color: Colors.transparent,
+                  child: Image.asset(
+                      isFavouite ? favouriteImage : notFavouriteImage),
+                ))),
       ],
     );
   }

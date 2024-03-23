@@ -21,9 +21,7 @@ class ProductGridView extends StatelessWidget {
         ),
         itemCount: 20,
         itemBuilder: (BuildContext context, int index) {
-          return ProductCard(
-              cardHeight: 235.h,
-              cardWidth: 140.w,
+          return const ProductCard(
               price: '200',
               oldPrice: '230',
               productName: 'فريش بيف استربس',

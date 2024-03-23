@@ -17,16 +17,12 @@ class ProductCard extends StatefulWidget {
     required this.productName,
     required this.imageUrl,
     required this.categoryName,
-    required this.cardWidth,
-    required this.cardHeight,
   });
   final String categoryName;
   final String price;
   final String oldPrice;
   final String productName;
   final String imageUrl;
-  final double cardWidth;
-  final double cardHeight;
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -46,7 +42,7 @@ class _ProductCardState extends State<ProductCard> {
           },
           child: SizedBox(
             height: 240.h,
-            width: widget.cardHeight,
+            width: 240.h,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w),
               child: Column(

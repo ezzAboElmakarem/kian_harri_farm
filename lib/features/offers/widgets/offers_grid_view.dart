@@ -24,9 +24,7 @@ class OffersGridView extends StatelessWidget {
           return SizedBox(
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
-              child: ProductCard(
-                  cardHeight: 235.h,
-                  cardWidth: 100.w,
+              child: const ProductCard(
                   price: '200',
                   oldPrice: '230',
                   productName: 'فريش بيف استربس',

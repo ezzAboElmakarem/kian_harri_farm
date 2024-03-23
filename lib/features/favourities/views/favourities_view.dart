@@ -23,9 +23,7 @@ class Favourites extends StatelessWidget {
           mainAxisSpacing: 2.h,
         ),
         itemCount: 5,
-        itemBuilder: (context, index) => ProductCard(
-            cardHeight: 235.h,
-            cardWidth: 100.w,
+        itemBuilder: (context, index) => const ProductCard(
             price: '200',
             oldPrice: '230',
             productName: 'فريش بيف استربس',

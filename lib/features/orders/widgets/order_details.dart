@@ -9,8 +9,8 @@ import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
 
-class Orderstatus extends StatelessWidget {
-  const Orderstatus(
+class OrderDetails extends StatelessWidget {
+  const OrderDetails(
       {super.key, required this.orderStatus, required this.orderID});
   final String orderStatus;
   final int orderID;

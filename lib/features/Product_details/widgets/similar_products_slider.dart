@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/widgets/product_card.dart';
+import 'package:kian_sheeps_projects/widgets/custom_product_item.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
@@ -29,23 +29,22 @@ class SimilarProductsSlider extends StatelessWidget {
             height: 23.h,
           ),
           SizedBox(
-            height: 240.h,
-            width: double.infinity,
+            height: 260.h,
             child: ListView.separated(
-              padding: EdgeInsets.symmetric(horizontal: 8.w),
-              scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) => SizedBox(
-                width: 1.h,
-              ),
-              itemCount: 8,
-              reverse: true,
-              itemBuilder: (context, index) => const ProductCard(
-                  price: '200',
-                  oldPrice: '230',
-                  productName: 'فريش بيف استربس',
-                  categoryName: 'لحوم',
-                  imageUrl: AssetsData.meatOffers),
-            ),
+                itemCount: 10,
+                reverse: true,
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                scrollDirection: Axis.horizontal,
+                separatorBuilder: (context, index) => SizedBox(width: 2.w),
+                itemBuilder: (context, index) {
+                  return const CustomProductCard(
+                    categoryName: 'لحوم',
+                    productName: 'قطعة استيك ',
+                    price: "200",
+                    oldPrice: "300",
+                    imageUrl: AssetsData.meatOffers,
+                  );
+                }),
           ),
         ],
       ),

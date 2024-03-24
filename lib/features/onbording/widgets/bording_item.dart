@@ -30,6 +30,7 @@ Widget buildBordingItem(BordingModel model) => Column(
         Text(
           model.body,
           textAlign: TextAlign.right,
+          textScaler: TextScaler.noScaling,
           style:
               TextStyles.textstyle14.copyWith(color: ColorStyles.textGreyColor),
         ),

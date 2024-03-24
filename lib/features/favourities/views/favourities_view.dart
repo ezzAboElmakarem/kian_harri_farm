@@ -11,9 +11,8 @@ class Favourites extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(context: context, title: 'المفضلة'),
-      body: SingleChildScrollView(
-          child: GridView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 26.h),
+      body: GridView.builder(
+        padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 26.h),
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -29,7 +28,7 @@ class Favourites extends StatelessWidget {
             productName: 'فريش بيف استربس',
             categoryName: 'لحوم',
             imageUrl: AssetsData.meatOffers),
-      )),
+      ),
     );
   }
 }

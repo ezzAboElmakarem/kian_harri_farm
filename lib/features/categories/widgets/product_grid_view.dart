@@ -12,7 +12,7 @@ class ProductGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverFillRemaining(
       child: GridView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 3.w),
+        padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 8.h),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 2.5 / 3,
           crossAxisCount: 2,

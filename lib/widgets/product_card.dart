@@ -42,65 +42,85 @@ class _ProductCardState extends State<ProductCard> {
           },
           child: SizedBox(
             height: 240.h,
-            width: 240.h,
+            // width: 240.h,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  SizedBox(
-                    width: 150.w,
-                    height: 150.h,
-                    child: Image.asset(widget.imageUrl),
-                  ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
-                  Text(
-                    widget.categoryName,
-                    style: TextStyles.textstyle14
-                        .copyWith(color: ColorStyles.textGreyColor),
-                  ),
-                  SizedBox(
-                    height: 6.h,
-                  ),
-                  Text(
-                    widget.price,
-                    style: TextStyles.textstyle14,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                          onTap: () {
-                            navigateTo(
-                                context: context, widget: const CartView());
-                          },
-                          child: Image.asset(
-                            AssetsData.shoppingBasket,
-                            height: 24.h,
-                            width: 24.w,
-                          )),
-                      SizedBox(
-                        width: 18.w,
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: SizedBox(
+                      // width: 150.w,
+                      //height: 150.h,
+                      child: Image.asset(
+                        widget.imageUrl,
+                        fit: BoxFit.cover,
                       ),
-                      Text(
-                        '${widget.price} SR',
-                        style: TextStyles.textstyle14.copyWith(
-                          color: kPrimaryColor,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 10.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            widget.categoryName,
+                            style: TextStyles.textstyle14
+                                .copyWith(color: ColorStyles.textGreyColor),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 6.w,
-                      ),
-                      Text(
-                        '${widget.oldPrice} SR',
-                        style: TextStyles.textstyle14.copyWith(
-                            color: ColorStyles.textGreyColor,
-                            decoration: TextDecoration.lineThrough,
-                            decorationThickness: 2.0),
-                      ),
-                    ],
+                        SizedBox(
+                          height: 6.h,
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            widget.price,
+                            style: TextStyles.textstyle14,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            GestureDetector(
+                                onTap: () {
+                                  navigateTo(
+                                      context: context,
+                                      widget: const CartView());
+                                },
+                                child: Image.asset(
+                                  AssetsData.shoppingBasket,
+                                  height: 24.h,
+                                  width: 24.w,
+                                )),
+                            SizedBox(
+                              width: 18.w,
+                            ),
+                            Text(
+                              '${widget.price} SR',
+                              style: TextStyles.textstyle14.copyWith(
+                                color: kPrimaryColor,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 6.w,
+                            ),
+                            Text(
+                              '${widget.oldPrice} SR',
+                              style: TextStyles.textstyle14.copyWith(
+                                  color: ColorStyles.textGreyColor,
+                                  decoration: TextDecoration.lineThrough,
+                                  decorationThickness: 2.0),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -142,7 +162,8 @@ class _ProductCardState extends State<ProductCard> {
                   height: 60.h,
                   color: Colors.transparent,
                   child: Image.asset(
-                      isFavouite ? favouriteImage : notFavouriteImage),
+                    isFavouite ? favouriteImage : notFavouriteImage,
+                  ),
                 ))),
       ],
     );

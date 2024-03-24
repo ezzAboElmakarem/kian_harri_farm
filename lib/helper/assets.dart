@@ -48,4 +48,6 @@ class AssetsData {
   static const bellIcon = 'assets/images/bell_icon.png';
   static const box = 'assets/images/box.png';
   static const star = 'assets/images/star.png';
+  static const editIcon = 'assets/images/edit_icon.png';
+  static const noNotificationImage = 'assets/images/no_notification.png';
 }

@@ -51,7 +51,7 @@ class OrderDetailsView extends StatelessWidget {
                   SizedBox(
                     height: 16.h,
                   ),
-                  const DeliverySummary(),
+                  const DeliverySummary(isEditing: false),
                   SizedBox(
                     height: 20.h,
                   ),

@@ -41,7 +41,7 @@ class PaymentView extends StatelessWidget {
                 SizedBox(
                   height: 20.h,
                 ),
-                const DeliverySummary(),
+                const DeliverySummary(isEditing: false),
                 SizedBox(
                   height: 20.h,
                 ),

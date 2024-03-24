@@ -10,21 +10,19 @@ import 'package:kian_sheeps_projects/helper/text_styles.dart';
 class CountryDropDown extends StatelessWidget {
   CountryDropDown({
     super.key,
+    required this.fieldTitle,
+    required this.dataList,
   });
+  final String fieldTitle;
+  final List<String> dataList;
 
-  List<String> list = [
-    'المحلة',
-    'المنصورة',
-    'القاهرة ',
-    'الجيزة',
-  ];
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Text(
-          'المدينة',
+          fieldTitle,
           style: TextStyles.textstyle16,
         ),
         SizedBox(
@@ -34,10 +32,10 @@ class CountryDropDown extends StatelessWidget {
           textDirection: TextDirection.rtl,
           child: CustomDropdown<String>(
             //hintText: 'اختار المدينة',
-            items: list,
+            items: dataList,
             decoration: CustomDropdownDecoration(
                 closedFillColor: ColorStyles.textFormFieldfillColor),
-            initialItem: list[0],
+            initialItem: dataList[0],
             onChanged: (value) {
               log('changing value to: $value');
             },

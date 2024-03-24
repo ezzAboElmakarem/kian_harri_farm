@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/widgets/custom_product_item.dart';
-import 'package:kian_sheeps_projects/widgets/product_card.dart';
 import 'package:kian_sheeps_projects/features/offers/views/offers_view.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';

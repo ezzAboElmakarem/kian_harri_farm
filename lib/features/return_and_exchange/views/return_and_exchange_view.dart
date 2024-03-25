@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/return_and_exchange/widgets/exchange_questions_item.dart';
+import 'package:kian_sheeps_projects/widgets/questions_item.dart';
 import 'package:kian_sheeps_projects/generated/l10n.dart';
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
 
@@ -25,8 +25,7 @@ class _ReturnAndExchangeState extends State<ReturnAndExchange> {
               ListView.separated(
                   shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) =>
-                      const ExchangeQuestionsItem(),
+                  itemBuilder: (context, index) => const QuestionsItem(),
                   separatorBuilder: (context, index) => SizedBox(
                         height: 14.h,
                       ),

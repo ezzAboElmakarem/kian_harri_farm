@@ -22,22 +22,21 @@ class CustomSearchBar extends StatelessWidget {
         },
         // refactor it to simple raw wraped with container
         child: CustomTextFormField(
-          ispassword: false,
-          isEnabled: false,
-          hint: S.of(context).search_hint,
-          suffixIcon: isArabic()
-              ? Icon(
-                  Icons.search_outlined,
-                  color: ColorStyles.textGreyColor.withOpacity(0.4),
-                )
-              : null,
-          prefixIcon: isArabic() == false
-              ? Icon(
-                  Icons.search_outlined,
-                  color: ColorStyles.textGreyColor.withOpacity(0.4),
-                )
-              : null,
-        ),
+            ispassword: false,
+            isEnabled: false,
+            hint: S.of(context).search_hint,
+            suffixIcon: Icon(
+              Icons.search_outlined,
+              color: ColorStyles.textGreyColor.withOpacity(0.4),
+            )
+
+            // prefixIcon: isArabic() == false
+            //     ? Icon(
+            //         Icons.search_outlined,
+            //         color: ColorStyles.textGreyColor.withOpacity(0.4),
+            //       )
+            //     : null,
+            ),
       ),
     );
   }

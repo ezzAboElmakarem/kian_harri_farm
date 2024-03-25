@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/categories/widgets/custom_radio_tile_item.dart';
+import 'package:kian_sheeps_projects/generated/l10n.dart';
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
 import 'package:kian_sheeps_projects/helper/change_locale_method.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 
 class LanguageView extends StatefulWidget {
   const LanguageView({super.key, required this.appState});
@@ -58,6 +60,16 @@ class _LanguageViewState extends State<LanguageView> {
                 ),
                 itemCount: typeOptions.length,
               ),
+            ),
+            SizedBox(
+              height: 24.h,
+            ),
+            CustomButton(
+              buttonText: S.of(context).confirm,
+              onTap: () {
+                widget.appState.changeLocale(const Locale('ar', 'EG'));
+                setState(() {});
+              },
             ),
           ],
         ),

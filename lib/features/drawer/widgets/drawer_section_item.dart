@@ -25,25 +25,25 @@ class DrawerSectionItem extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(
           children: [
-            navigationButton
-                ? Icon(
-                    Icons.arrow_back_ios_new_rounded,
-                    size: 20.sp,
-                  )
-                : Text(' '),
-            const Spacer(),
-            Text(
-              sectionTitle,
-              style: TextStyles.textstyle14,
-            ),
-            SizedBox(
-              width: 8.w,
-            ),
             Image.asset(
               sectionIcon,
               height: 24.h,
               width: 24.w,
             ),
+            SizedBox(
+              width: 8.w,
+            ),
+            Text(
+              sectionTitle,
+              style: TextStyles.textstyle14,
+            ),
+            const Spacer(),
+            navigationButton
+                ? Icon(
+                    Icons.arrow_forward_ios_sharp,
+                    size: 20.sp,
+                  )
+                : Text(' '),
           ],
         ),
       ),

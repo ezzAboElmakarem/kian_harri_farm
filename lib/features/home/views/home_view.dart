@@ -38,7 +38,7 @@ class HomeView extends StatelessWidget {
 
     return Scaffold(
       key: scaffoldkey,
-      endDrawer: Drawer(
+      drawer: Drawer(
         child: DrawerView(),
       ),
       body: SafeArea(

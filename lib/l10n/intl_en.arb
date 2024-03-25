@@ -37,7 +37,8 @@
     "return_and_exchange" : "Return And Exchange",
     "exchange_time" : "When is the exchange and return available",
     "exchange_time_anwser" : "This text is an example of text that can be replaced in the same space. This text was generated from the Arabic text generator, where you can generate such text or many other texts in addition to increasing the number of letters that the application generates.",
-    "common_questions_title" : "Common Questions" 
+    "common_questions_title" : "Common Questions" ,
+    "confirm" : "Confirm"
 
 
 }

@@ -4,14 +4,14 @@ import 'package:kian_sheeps_projects/generated/l10n.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class ExchangeQuestionsItem extends StatefulWidget {
-  const ExchangeQuestionsItem({super.key});
+class QuestionsItem extends StatefulWidget {
+  const QuestionsItem({super.key});
 
   @override
-  State<ExchangeQuestionsItem> createState() => _ExchangeQuestionsItemState();
+  State<QuestionsItem> createState() => _QuestionsItemState();
 }
 
-class _ExchangeQuestionsItemState extends State<ExchangeQuestionsItem> {
+class _QuestionsItemState extends State<QuestionsItem> {
   bool isPressed = false;
   @override
   Widget build(BuildContext context) {

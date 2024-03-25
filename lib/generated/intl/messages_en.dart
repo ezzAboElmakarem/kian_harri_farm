@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "common_questions_title":
             MessageLookupByLibrary.simpleMessage("Common Questions"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "contact_us": MessageLookupByLibrary.simpleMessage("Contact us"),
         "contuct_us_also":
             MessageLookupByLibrary.simpleMessage("Contact us also"),

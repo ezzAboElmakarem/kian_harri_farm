@@ -21,6 +21,13 @@ class CustomHomeAppBar extends StatelessWidget {
       padding: EdgeInsets.only(right: 16.w, left: 16.w, bottom: 20.h, top: 8.h),
       child: Row(
         children: [
+          IconButton(
+              icon: Image.asset(AssetsData.menuIcon, height: 28.h, width: 26.w),
+              onPressed: () {
+                scaffoldkey.currentState?.openDrawer();
+                log('message');
+              }),
+          const Spacer(),
           GestureDetector(
               onTap: () {},
               child: Stack(
@@ -70,13 +77,6 @@ class CustomHomeAppBar extends StatelessWidget {
                   ),
                 ],
               )),
-          const Spacer(),
-          IconButton(
-              icon: Image.asset(AssetsData.menuIcon, height: 28.h, width: 26.w),
-              onPressed: () {
-                scaffoldkey.currentState?.openEndDrawer();
-                log('message');
-              }),
         ],
       ),
     );

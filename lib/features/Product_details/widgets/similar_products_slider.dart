@@ -20,7 +20,7 @@ class SimilarProductsSlider extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Text(
               'منتجات مشابهة',
-              textDirection: TextDirection.rtl,
+              //textdirection: TextDirection.rtl,
               style:
                   TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
             ),

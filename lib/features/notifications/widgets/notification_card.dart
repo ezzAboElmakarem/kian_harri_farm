@@ -25,14 +25,14 @@ class NotificationCard extends StatelessWidget {
               Text(
                 'تم قبول طلبك وجارى التجهيز ',
                 style: TextStyles.textstyle14,
-                textDirection: TextDirection.rtl,
+                //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
               ),
               SizedBox(
                 height: 4.h,
               ),
               Text(
                 '3:50 PM',
-                textDirection: TextDirection.rtl,
+                //textdirection:isArabic() ? TextDirection.rtl : TextDirection.ltr,
                 style: TextStyles.textstyle14
                     .copyWith(color: Colors.black.withOpacity(0.3)),
               )

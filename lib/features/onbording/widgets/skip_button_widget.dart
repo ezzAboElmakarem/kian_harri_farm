@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
+import 'package:kian_sheeps_projects/generated/l10n.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
 
 class SkipButtonWidget extends StatelessWidget {
@@ -15,11 +17,12 @@ class SkipButtonWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 14.h),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment:
+            isArabic() ? MainAxisAlignment.start : MainAxisAlignment.end,
         children: [
           CustomTextButton(
             textColor: Colors.black,
-            text: 'تخطى',
+            text: S.of(context).skip,
             onTap: () {
               log('skip button clicked');
               Navigator.of(context).pushAndRemoveUntil(

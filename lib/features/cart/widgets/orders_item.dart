@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class OrderItem extends StatefulWidget {
@@ -28,16 +29,20 @@ class _OrderItemState extends State<OrderItem> {
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('فريش بيف استربس',
-                  style: TextStyles.textstyle14,
-                  textDirection: TextDirection.rtl),
+              Text(
+                'فريش بيف استربس',
+                style: TextStyles.textstyle14,
+                //textdirection:    isArabic() ? TextDirection.rtl : TextDirection.ltr,
+              ),
               SizedBox(
                 height: 8.h,
               ),
-              Text('هذا النص هو مثال لنص يمكن أن يستبدل في ',
-                  style: TextStyles.textstyle12
-                      .copyWith(color: ColorStyles.textGreyColor),
-                  textDirection: TextDirection.rtl),
+              Text(
+                'هذا النص هو مثال لنص يمكن أن يستبدل في ',
+                style: TextStyles.textstyle12
+                    .copyWith(color: ColorStyles.textGreyColor),
+                //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
+              ),
               SizedBox(
                 height: 8.h,
               ),

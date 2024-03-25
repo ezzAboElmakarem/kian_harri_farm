@@ -28,7 +28,7 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
         children: [
           Text(
             'خدمات أضافية ',
-            textDirection: TextDirection.rtl,
+            //textdirection: TextDirection.rtl,
             style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w500),
           ),
           SizedBox(
@@ -98,7 +98,9 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                         SizedBox(
                           width: 16.w,
                         ),
-                        Text(value, textDirection: TextDirection.rtl),
+                        Text(
+                          value,
+                        ), //textdirection: TextDirection.rtl),
                       ],
                     ),
                   );

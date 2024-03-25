@@ -4,6 +4,7 @@ import 'package:animated_custom_dropdown/custom_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 // ignore: must_be_immutable
@@ -29,7 +30,7 @@ class CountryDropDown extends StatelessWidget {
           height: 10.h,
         ),
         Directionality(
-          textDirection: TextDirection.rtl,
+          textDirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
           child: CustomDropdown<String>(
             //hintText: 'اختار المدينة',
             items: dataList,

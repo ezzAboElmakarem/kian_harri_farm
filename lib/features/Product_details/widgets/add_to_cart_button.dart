@@ -29,13 +29,13 @@ class AddToCartButton extends StatelessWidget {
             children: [
               Text(
                 '$price ر.س',
-                textDirection: TextDirection.rtl,
+                //   //textdirection: TextDirection.rtl,
                 style: TextStyles.textstyle16.copyWith(color: Colors.white),
               ),
               const Spacer(),
               Text(
                 'اضف للسله',
-                textDirection: TextDirection.rtl,
+                //     //textdirection: TextDirection.rtl,
                 style: TextStyles.textstyle16.copyWith(color: Colors.white),
               ),
               const SizedBox(

@@ -35,7 +35,7 @@ class DeliverySummary extends StatelessWidget {
               children: [
                 Text(
                   'محمد مصيلحي ',
-                  textDirection: TextDirection.rtl,
+                  //textdirection: TextDirection.rtl,
                   style: TextStyles.textstyle14
                       .copyWith(fontWeight: FontWeight.w400),
                 ),
@@ -44,7 +44,7 @@ class DeliverySummary extends StatelessWidget {
                 ),
                 Text(
                   '0502527234',
-                  textDirection: TextDirection.rtl,
+                  //textdirection: TextDirection.rtl,
                   style: TextStyles.textstyle14
                       .copyWith(fontWeight: FontWeight.w400),
                 ),
@@ -55,7 +55,7 @@ class DeliverySummary extends StatelessWidget {
                   width: 200.w,
                   child: Text(
                     'جدة 23 شارع عبد القدوس الانصارى بجانب مستوصف سابا',
-                    textDirection: TextDirection.rtl,
+                    //textdirection: TextDirection.rtl,
                     style: TextStyles.textstyle14.copyWith(
                         fontWeight: FontWeight.w400,
                         color: ColorStyles.hintColor),

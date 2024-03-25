@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 // ignore: must_be_immutable
@@ -49,7 +50,7 @@ class CustomTextFormField extends StatelessWidget {
     return Column(
       children: [
         Row(
-          textDirection: TextDirection.rtl,
+          //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
           children: [
             Padding(
               padding: EdgeInsets.only(bottom: 8.h),
@@ -67,7 +68,7 @@ class CustomTextFormField extends StatelessWidget {
               fontWeight: FontWeight.w500,
               color: Colors.black,
               fontSize: 14.sp),
-          textDirection: TextDirection.rtl,
+          //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
           obscureText: ispassword,
           onChanged: onChange,
           controller: controller,
@@ -84,7 +85,8 @@ class CustomTextFormField extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: hintColor ?? ColorStyles.textGreyColor.withOpacity(0.4),
             ),
-            hintTextDirection: TextDirection.rtl,
+            hintTextDirection:
+                isArabic() ? TextDirection.rtl : TextDirection.ltr,
             prefixText: prefixText,
             prefixStyle: TextStyle(
                 color: Colors.black,

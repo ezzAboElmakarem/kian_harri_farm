@@ -17,17 +17,21 @@ class ProductDetailsItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('فريش بيف استربس',
-                  style: TextStyles.textstyle12
-                      .copyWith(color: ColorStyles.textGreyColor),
-                  textDirection: TextDirection.rtl),
+              Text(
+                'فريش بيف استربس',
+                style: TextStyles.textstyle12
+                    .copyWith(color: ColorStyles.textGreyColor),
+                //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
+              ),
               SizedBox(
                 height: 8.h,
               ),
-              Text('الكمية 1',
-                  style: TextStyles.textstyle12
-                      .copyWith(color: ColorStyles.hintColor.withOpacity(0.4)),
-                  textDirection: TextDirection.rtl),
+              Text(
+                'الكمية 1',
+                style: TextStyles.textstyle12
+                    .copyWith(color: ColorStyles.hintColor.withOpacity(0.4)),
+                //textdirection:  isArabic() ? TextDirection.rtl : TextDirection.ltr,
+              ),
               SizedBox(
                 height: 8.h,
               ),

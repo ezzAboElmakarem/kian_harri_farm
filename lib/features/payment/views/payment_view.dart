@@ -50,7 +50,7 @@ class PaymentView extends StatelessWidget {
                   children: [
                     Text(
                       'قم باختيار طريقة الدفع',
-                      textDirection: TextDirection.rtl,
+                      //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
                       style: TextStyles.textstyle14,
                     ),
                     SizedBox(

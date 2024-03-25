@@ -5,6 +5,8 @@ import 'package:kian_sheeps_projects/features/login/widgets/forget_password_butt
 import 'package:kian_sheeps_projects/features/login/widgets/login_button.dart';
 import 'package:kian_sheeps_projects/features/login/widgets/login_screen_forms.dart';
 import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
+import 'package:kian_sheeps_projects/generated/l10n.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
 import 'package:kian_sheeps_projects/widgets/logo_and_screen_title.dart';
 import 'package:kian_sheeps_projects/widgets/question_and_button.dart';
@@ -24,7 +26,7 @@ class LoginScreenView extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const LogoAndScreenTitle(screenTitle: "تسجيل الدخول"),
+                  LogoAndScreenTitle(screenTitle: S.of(context).login),
                   SizedBox(
                     height: 30.h,
                   ),
@@ -49,8 +51,12 @@ class LoginScreenView extends StatelessWidget {
                     height: 56.h,
                   ),
                   QuestionAndButton(
-                    text: 'إنشاء حساب جديد',
-                    questionText: 'ليس لديك حساب ؟',
+                    text: isArabic()
+                        ? S.of(context).dont_have_account
+                        : S.of(context).create_new_account,
+                    questionText: isArabic()
+                        ? S.of(context).create_new_account
+                        : S.of(context).dont_have_account,
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(

@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/generated/l10n.dart';
+import 'package:kian_sheeps_projects/helper/change_locale_method.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/features/splash_screen/views/splash_screen_view.dart';
 import 'package:kian_sheeps_projects/helper/keyboard_close_observer.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+Locale currentLocale = const Locale('en', 'US');
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  AppState appState = AppState();
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -21,6 +32,14 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return KeyboardPopScaffold(
             child: MaterialApp(
+              locale: appState.currentLocale,
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: S.delegate.supportedLocales,
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
               theme: ThemeData(

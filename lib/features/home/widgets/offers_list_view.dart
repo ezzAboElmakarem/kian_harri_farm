@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/generated/l10n.dart';
 import 'package:kian_sheeps_projects/widgets/custom_product_item.dart';
 import 'package:kian_sheeps_projects/features/offers/views/offers_view.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
@@ -22,22 +23,23 @@ class OffersListView extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 14.w),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                Text(
+                  S.of(context).offers,
+                  style: TextStyles.textstyle14
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+                const Spacer(),
                 GestureDetector(
                   onTap: () {
                     navigateTo(context: context, widget: OffersView());
                   },
                   child: Text(
-                    'عرض المزيد',
+                    S.of(context).show_more,
                     style:
                         TextStyles.textstyle14.copyWith(color: kPrimaryColor),
                   ),
-                ),
-                const Spacer(),
-                Text(
-                  'العروض',
-                  style: TextStyles.textstyle14
-                      .copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),

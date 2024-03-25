@@ -44,23 +44,30 @@ class OrderItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(' رقم الطلب ' '# $orderID',
-                    style: TextStyles.textstyle14,
-                    textDirection: TextDirection.rtl),
+                Text(
+                  ' رقم الطلب '
+                  '# $orderID',
+                  style: TextStyles.textstyle14,
+                  //textdirection:isArabic() ? TextDirection.rtl : TextDirection.ltr,
+                ),
                 SizedBox(
                   height: 6.h,
                 ),
-                Text('فريش بيف استربس',
-                    style: TextStyles.textstyle12
-                        .copyWith(color: ColorStyles.textGreyColor),
-                    textDirection: TextDirection.rtl),
+                Text(
+                  'فريش بيف استربس',
+                  style: TextStyles.textstyle12
+                      .copyWith(color: ColorStyles.textGreyColor),
+                  //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
+                ),
                 SizedBox(
                   height: 6.h,
                 ),
-                Text('20/12/2022 الساعة 5:32 م',
-                    style: TextStyles.textstyle12.copyWith(
-                        color: ColorStyles.hintColor.withOpacity(0.4)),
-                    textDirection: TextDirection.rtl),
+                Text(
+                  '20/12/2022 الساعة 5:32 م',
+                  style: TextStyles.textstyle12
+                      .copyWith(color: ColorStyles.hintColor.withOpacity(0.4)),
+                  //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
+                ),
                 SizedBox(
                   height: 2.h,
                 ),

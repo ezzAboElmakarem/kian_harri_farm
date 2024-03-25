@@ -31,7 +31,7 @@ class _ProductchoppingRadiosState extends State<ProductchoppingRadios> {
           Text(
             'نوع التقطيع',
             style: TextStyles.textstyle16,
-            textDirection: TextDirection.rtl,
+            //textdirection: TextDirection.rtl,
           ),
           SizedBox(
             height: 10.h,

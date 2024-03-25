@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/generated/l10n.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
@@ -11,34 +12,34 @@ class HomeWelocmeTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
-        right: 16.w,
+      padding: EdgeInsets.symmetric(
+        horizontal: 16.w,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          Image.asset('assets/images/welcome_hand.png'),
+          SizedBox(
+            width: 16.h,
+          ),
           Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                ', مرحبا بك من جديد',
+                S.of(context).welcome_text,
                 style: TextStyles.textstyle20
                     .copyWith(fontWeight: FontWeight.bold),
+              ),
+              Text(
+                S.of(context).welcome_body_text,
+                style: TextStyles.textstyle14
+                    .copyWith(color: ColorStyles.textGreyColor),
               ),
               SizedBox(
                 height: 6.h,
               ),
-              Text(
-                'جميع منتجاتك متوفرة بأفضل الأسعار',
-                style: TextStyles.textstyle14
-                    .copyWith(color: ColorStyles.textGreyColor),
-              ),
             ],
           ),
-          SizedBox(
-            width: 16.w,
-          ),
-          Image.asset('assets/images/welcome_hand.png'),
         ],
       ),
     );

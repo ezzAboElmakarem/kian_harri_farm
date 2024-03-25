@@ -36,6 +36,7 @@ class AssetsData {
   static const fillHeartIcon = 'assets/images/fill_heart_icon.png';
   static const helpIcon = 'assets/images/help_icon.png';
   static const infoIcon = 'assets/images/info_icon.png';
+  static const truckIcon = 'assets/images/truck_icon.png';
   static const languageIcon = 'assets/images/language_icon.png';
   static const lockIcon = 'assets/images/lock_icon.png';
   static const logOutIcon = 'assets/images/log-out_icon.png';
@@ -50,4 +51,13 @@ class AssetsData {
   static const star = 'assets/images/star.png';
   static const editIcon = 'assets/images/edit_icon.png';
   static const noNotificationImage = 'assets/images/no_notification.png';
+  static const greenCircle = 'assets/images/green_circle.png';
+  static const personIcon = 'assets/images/person_icon.png';
+  static const twitterIcon = 'assets/images/twitter_icon.png';
+  static const webIcon = 'assets/images/web_icon.png';
+  static const snapIcon = 'assets/images/snapchat_icon.png';
+  static const instaIcon = 'assets/images/insta_icon.png';
+  static const phoneIcon = 'assets/images/phone_icon.png';
+  static const emailIcon = 'assets/images/email_icon.png';
+  static const facebookIcon = 'assets/images/facebook_icon.png';
 }

@@ -79,7 +79,7 @@ class ProductReviewItem extends StatelessWidget {
               ),
               Text(
                   'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص ',
-                  textDirection: TextDirection.rtl,
+                  //textdirection: TextDirection.rtl,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyles.textstyle14

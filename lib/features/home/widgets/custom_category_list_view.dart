@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/custom_category_item.dart';
+import 'package:kian_sheeps_projects/generated/l10n.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class CustomCategoryListView extends StatelessWidget {
@@ -13,24 +15,24 @@ class CustomCategoryListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 14.w),
           child: Text(
-            'الأقسام',
+            S.of(context).categories,
             style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
           ),
         ),
         SizedBox(
-          height: 8.h,
+          height: 10.h,
         ),
         SizedBox(
           height: 90.h,
           width: double.infinity,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            reverse: true,
+            reverse: isArabic() ? true : false,
             separatorBuilder: (context, index) => SizedBox(
               width: 1.h,
             ),

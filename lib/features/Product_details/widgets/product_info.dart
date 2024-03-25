@@ -79,7 +79,7 @@ class ProductInfo extends StatelessWidget {
               Text(
                 '$productWeight كيلو ',
                 style: TextStyles.textstyle16,
-                textDirection: TextDirection.rtl,
+                //textdirection: TextDirection.rtl,
               ),
               SizedBox(width: 4.w),
               Text(
@@ -97,7 +97,7 @@ class ProductInfo extends StatelessWidget {
           SizedBox(height: 16.h),
           Text(
             productDescription,
-            textDirection: TextDirection.rtl,
+            //textdirection: TextDirection.rtl,
             style: TextStyles.textstyle16.copyWith(
               color: ColorStyles.hintColor.withOpacity(0.6),
             ),

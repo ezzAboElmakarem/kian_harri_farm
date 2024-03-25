@@ -35,9 +35,12 @@ class ProductsDetailsList extends StatelessWidget {
                     log('message');
                   }),
               const Spacer(),
-              Text('رقم الطلب ' '# $orderID ',
-                  style: TextStyles.textstyle14,
-                  textDirection: TextDirection.rtl),
+              Text(
+                'رقم الطلب '
+                '# $orderID ',
+                style: TextStyles.textstyle14,
+                //textdirection:isArabic() ? TextDirection.rtl : TextDirection.ltr,
+              ),
             ],
           ),
           SizedBox(

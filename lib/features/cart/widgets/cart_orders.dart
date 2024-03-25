@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/cart/widgets/orders_item.dart';
 import 'package:kian_sheeps_projects/features/offers/views/offers_view.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
@@ -29,7 +30,7 @@ class CartOrders extends StatelessWidget {
             const Spacer(),
             Text(
               '3 منتجات',
-              textDirection: TextDirection.rtl,
+              //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
               style:
                   TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
             ),

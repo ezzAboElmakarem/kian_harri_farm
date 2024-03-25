@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class CustomAppPinCodeField extends StatefulWidget {
@@ -39,7 +40,7 @@ class _CustomAppPinCodeFieldState extends State<CustomAppPinCodeField> {
   Widget build(BuildContext context) {
     return PinCodeTextField(
       keyboardType: TextInputType.number,
-      errorTextDirection: TextDirection.rtl,
+      errorTextDirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
       errorTextSpace: 25,
       validator: (v) {
         if (v!.length < 4) {

@@ -4,7 +4,7 @@ import 'package:kian_sheeps_projects/features/add_address/views/add_address_view
 import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
 import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import 'package:kian_sheeps_projects/widgets/delivery_summary.dart';
 
 class AddressesListView extends StatelessWidget {
@@ -37,10 +37,9 @@ class AddressesListView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CustomTextButton(
-                    text: 'اضافة عنوان اخر',
-                    fontSize: 13.sp,
-                    onTap: () {},
+                  Text(
+                    'اضافة عنوان اخر',
+                    style: TextStyles.textstyle14.copyWith(fontSize: 13.sp),
                   ),
                   SizedBox(
                     width: 8.w,

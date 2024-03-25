@@ -29,7 +29,7 @@ class _ProductpackagingRadiosState extends State<ProductpackagingRadios> {
           Text(
             'التغليف',
             style: TextStyles.textstyle16,
-            textDirection: TextDirection.rtl,
+            //textdirection: TextDirection.rtl,
           ),
           SizedBox(
             height: 10.h,

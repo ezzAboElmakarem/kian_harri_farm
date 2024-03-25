@@ -29,7 +29,7 @@ class _ProductTypeRadiosState extends State<ProductTypeRadios> {
           Text(
             'نوع الطلب',
             style: TextStyles.textstyle16,
-            textDirection: TextDirection.rtl,
+            //textdirection: TextDirection.rtl,
           ),
           SizedBox(
             height: 10.h,

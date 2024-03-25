@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
 class RefusedReason extends StatelessWidget {
@@ -26,7 +27,7 @@ class RefusedReason extends StatelessWidget {
           ),
           Text(
               "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى اضافة الى زيادة عدد الحروف التى يولدها التطبيق.",
-              textDirection: TextDirection.rtl,
+              //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
               style: TextStyles.textstyle14
                   .copyWith(color: ColorStyles.hintColor, fontSize: 13.sp)),
         ],

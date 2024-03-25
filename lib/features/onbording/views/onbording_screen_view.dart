@@ -31,6 +31,7 @@ class _OnBordingScreenViewState extends State<OnBordingScreenView> {
                   SizedBox(
                     height: 8.h,
                   ),
+/******************************************************************************* */
                   const SkipButtonWidget(),
                   Expanded(
                     child: SizedBox(

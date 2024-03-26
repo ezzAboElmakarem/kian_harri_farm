@@ -5,18 +5,18 @@ import '../../../helper/text_styles.dart';
 
 class CustomRadioTileItem extends StatelessWidget {
   final String title;
-  final String groupValue;
-  final String value;
+  String? groupValue;
+  String value;
   final Function(String?)? onChanged;
   final bool selected;
   final Widget? secondaryText;
   //final bool isSelected;
-  const CustomRadioTileItem({
+  CustomRadioTileItem({
     super.key,
     required this.title,
-    required this.groupValue,
+    this.groupValue,
     required this.value,
-    required this.onChanged,
+    this.onChanged,
     required this.selected,
     this.secondaryText,
     // required this.isSelected,

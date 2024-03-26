@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'helper/change_locale_method.dart';
 import 'helper/color_styles.dart';
 import 'features/splash_screen/views/splash_screen_view.dart';
@@ -57,6 +58,8 @@ class _MyAppState extends State<MyApp> {
                 useMaterial3: true,
               ),
               home: const SplashScreenView(),
+              navigatorKey: navigatorKey,
+              onGenerateRoute: onGenerateRoute,
               localizationsDelegates: context.localizationDelegates,
               supportedLocales: const [
                 Locale('ar'),

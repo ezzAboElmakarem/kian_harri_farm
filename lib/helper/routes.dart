@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -27,4 +28,8 @@ class RouteUtils {
 
   static Route<dynamic> _materialPageRoute(Widget page) =>
       MaterialPageRoute(builder: (_) => page);
+
+  static bool get isAR {
+    return RouteUtils.context.locale.languageCode == 'ar';
+  }
 }

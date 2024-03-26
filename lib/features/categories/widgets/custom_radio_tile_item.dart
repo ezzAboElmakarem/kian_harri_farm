@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
 
+// ignore: must_be_immutable
 class CustomRadioTileItem extends StatelessWidget {
   final String title;
   String? groupValue;

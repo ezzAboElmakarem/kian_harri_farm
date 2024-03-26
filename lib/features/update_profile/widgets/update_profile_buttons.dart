@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../widgets/custom_button.dart';
 
-class SettingsButtons extends StatelessWidget {
-  const SettingsButtons({
+class UpdateProfileButtons extends StatelessWidget {
+  const UpdateProfileButtons({
     super.key,
   });
 

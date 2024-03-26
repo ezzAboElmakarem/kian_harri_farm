@@ -18,6 +18,8 @@
     "account_settings" : "اعدادات الحساب",
     "name" : "الاسم",
     "phone" : "رقم الجوال",
+    "extra_phone" : "رقم جوال اضافي",
+
     "email" : "البريد الالكتروني",
     "save_changes" : "حفظ التغييرات",
     "remove_account" : "حذف الحساب",
@@ -44,6 +46,7 @@
     "my_orders" : "طلباتى",
     "order_num" : "رقم الطلب",
     "addresses" :"العناوين",
+    "addresse" : "العنوان" ,
     "add_new_address" : "اضافة عنوان اخر",
     "favourite" : "المفضلة",
     "notification" :  "الاشعارات",

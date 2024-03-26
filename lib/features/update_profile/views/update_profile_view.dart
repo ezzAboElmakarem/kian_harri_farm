@@ -1,13 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../widgets/settings_buttons.dart';
+import '../widgets/update_profile_buttons.dart';
 import '../widgets/settings_forms.dart';
 import '../../../helper/app_bar_method.dart';
 import '../../../helper/assets.dart';
 
-class AccountSettings extends StatelessWidget {
-  const AccountSettings({super.key});
+class UpdateProfileView extends StatelessWidget {
+  const UpdateProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class AccountSettings extends StatelessWidget {
               SizedBox(
                 height: 50.h,
               ),
-              const SettingsButtons(),
+              const UpdateProfileButtons(),
               SizedBox(
                 height: 40.h,
               ),

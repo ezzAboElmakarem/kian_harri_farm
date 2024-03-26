@@ -1,7 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/add_address_forms.dart';
-import '../widgets/confirm_button.dart';
+import '../widgets/add_address_button.dart';
 import '../../../helper/app_bar_method.dart';
 
 class AddAddressView extends StatelessWidget {
@@ -10,7 +11,7 @@ class AddAddressView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context: context, title: 'اضافة عنوان'),
+      appBar: customAppBar(context: context, title: 'address'.tr()),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
@@ -18,7 +19,7 @@ class AddAddressView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               AddAddressForms(),
-              CofirmButton(),
+              AddAddressButton(),
             ],
           ),
         ),

@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../about_us/views/about_us_view.dart';
-import '../../account_settings/views/account_settings.dart';
+import '../../update_profile/views/update_profile_view.dart';
 import '../../addresses/views/addresses_list_view.dart';
 import '../../cart/views/cart_view.dart';
 import '../../common_Questions/views/common_questions.dart';
@@ -12,7 +12,7 @@ import '../../favourities/views/favourities_view.dart';
 import '../../language/views/language_view.dart';
 import '../../notifications/views/notifications_view.dart';
 import '../../orders/views/orders_tapbar.dart';
-import '../../privacy_Pollicy/views/privacy_Policy_rename.dart';
+import '../../privacy_Pollicy/views/privacy_policy_view.dart';
 import '../../delivery_and_shiping_terms/views/delivery_shipping_terms.dart';
 import '../../return_and_exchange/views/return_and_exchange_view.dart';
 import '../../terms_and_conditions/views/terms_and_conditions.dart';
@@ -28,7 +28,7 @@ class DrawerView extends StatelessWidget {
     {
       "imagePath": AssetsData.settingsImage,
       "title": 'account_settings'.tr(),
-      "widget": const AccountSettings(),
+      "widget": const UpdateProfileView(),
     },
     {
       "imagePath": AssetsData.shoppingBagIcon,

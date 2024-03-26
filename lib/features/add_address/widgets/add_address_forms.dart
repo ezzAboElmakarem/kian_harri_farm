@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../shipping_address/widgets/select_city.dart';
@@ -18,20 +19,20 @@ class AddAddressForms extends StatelessWidget {
         CustomTextFormField(
           ispassword: false,
           isEnabled: true,
-          title: 'الأسم',
+          title: 'name'.tr(),
         ),
         SizedBox(height: 10.h),
         CustomTextFormField(
           ispassword: false,
           isEnabled: true,
-          title: 'رقم الجوال',
+          title: 'phone'.tr(),
           type: TextInputType.phone,
         ),
         SizedBox(height: 10.h),
         CustomTextFormField(
           ispassword: false,
           isEnabled: true,
-          title: ' رقم جوال اضافي',
+          title: 'extra_phone'.tr(),
           type: TextInputType.phone,
         ),
         SizedBox(height: 10.h),

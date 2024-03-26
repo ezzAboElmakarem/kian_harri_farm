@@ -17,31 +17,7 @@ class DeliveryAndShippingTermsView extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "about_us_body".tr(),
-                style: TextStyles.textstyle16
-                    .copyWith(fontWeight: FontWeight.w300),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Text(
-                "about_us_body".tr(),
-                style: TextStyles.textstyle16
-                    .copyWith(fontWeight: FontWeight.w300),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Text(
-                "about_us_body".tr(),
-                style: TextStyles.textstyle16
-                    .copyWith(fontWeight: FontWeight.w300),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Text(
-                "about_us_body".tr(),
+                "${"about_us_body".tr()}\n \n ${"about_us_body".tr()}",
                 style: TextStyles.textstyle16
                     .copyWith(fontWeight: FontWeight.w300),
               ),

@@ -17,7 +17,7 @@ class LanguageView extends StatefulWidget {
 }
 
 class _LanguageViewState extends State<LanguageView> {
-  late String _selectedLocale;
+  String _selectedLocale = "ar";
 
   String selectedOption = '';
   List<String> typeOptions = [
@@ -37,8 +37,6 @@ class _LanguageViewState extends State<LanguageView> {
 
   @override
   Widget build(BuildContext context) {
-    _selectedLocale = context.locale.languageCode;
-
     return Scaffold(
       appBar: customAppBar(context: context, title: 'language'.tr()),
       body: Padding(

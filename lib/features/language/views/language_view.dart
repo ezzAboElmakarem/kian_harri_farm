@@ -24,13 +24,9 @@ class _LanguageViewState extends State<LanguageView> {
     'العربية',
     'English',
   ];
-  bool isArabic = true;
-  bool isEnglish = false;
   @override
   void initState() {
     selectedOption = typeOptions[0];
-
-    // _selectedLocale = context.locale.languageCode;
 
     super.initState();
   }
@@ -59,37 +55,14 @@ class _LanguageViewState extends State<LanguageView> {
                   onChanged: (value) {
                     setState(() {
                       selectedOption = value!;
-                    });
-                    if (typeOptions[index] == 'English') {
-                      setState(() {
-                        isArabic = false;
-                        isEnglish = true;
+                      if (typeOptions[index] == 'English') {
                         _selectedLocale = 'en';
-                      });
-                    } else {
-                      setState(() {
-                        isArabic = true;
-                        isEnglish = false;
+                      } else {
                         _selectedLocale = 'ar';
-                      });
-                    }
+                      }
+                    });
                   },
                   selected: selectedOption == typeOptions[index],
-                  onTap: () {
-                    // if (typeOptions[index] == 'English') {
-                    //   setState(() {
-                    //     isArabic = false;
-                    //     isEnglish = true;
-                    //     _selectedLocale = 'en';
-                    //   });
-                    // } else {
-                    //   setState(() {
-                    //     isArabic = true;
-                    //     isEnglish = false;
-                    //     _selectedLocale = 'ar';
-                    //   });
-                    // }
-                  },
                 ),
                 itemCount: typeOptions.length,
               ),
@@ -100,10 +73,6 @@ class _LanguageViewState extends State<LanguageView> {
             CustomButton(
               buttonText: "confirm".tr(),
               onTap: () {
-                // context.setLocale(Locale(_selectedLocale));
-                log("en" + isEnglish.toString());
-                log("ar" + isArabic.toString());
-                // Locale locale = Locale(_selectedLocale);
                 context.setLocale(Locale(_selectedLocale));
                 final rootElement =
                     WidgetsFlutterBinding.ensureInitialized().rootElement!;

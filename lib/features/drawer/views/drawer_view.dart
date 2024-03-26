@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../about_us/views/about_us_view.dart';
@@ -26,69 +27,69 @@ class DrawerView extends StatelessWidget {
   List<Map<String, dynamic>> drawerItems = [
     {
       "imagePath": AssetsData.settingsImage,
-      "title": 'إعدادات الحساب',
+      "title": 'account_settings'.tr(),
       "widget": const AccountSettings(),
     },
     {
       "imagePath": AssetsData.shoppingBagIcon,
-      "title": 'طلباتى',
+      "title": 'my_orders'.tr(),
       "widget": const OrdersTabBar(),
     },
     {
       "imagePath": AssetsData.emptyHeartIcon,
-      "title": 'المفضلة',
+      "title": 'favourite'.tr(),
       "widget": const Favourites(),
     },
     {
       "imagePath": AssetsData.locationIcon,
-      "title": 'العناوين',
+      "title": 'addresses'.tr(),
       "widget": const AddressesListView(),
     },
     {
       "imagePath": AssetsData.bellIcon,
-      "title": 'الاشعارات',
+      "title": 'notification'.tr(),
       "widget": const NotificationView(
         emptyNotification: false,
       ),
     },
     {
       "imagePath": AssetsData.languageIcon,
-      "title": 'اللغة',
+      "title": 'language'.tr(),
       "widget": LanguageView(appState: AppState()),
     },
     {
       "imagePath": AssetsData.infoIcon,
-      "title": 'من نحن',
+      "title": 'about_us'.tr(),
       "widget": const AboutUsView(),
     },
     {
       "imagePath": AssetsData.headphonesIcon,
-      "title": 'تواصل معنا',
+      "title": 'contact_us'.tr(),
       "widget": const ContactUs(),
     },
     {
       "imagePath": AssetsData.lockIcon,
-      "title": 'سياسة الخصوصية',
+      "title": 'privacy_policy'.tr(),
       "widget": const PrivacyPolicyView(),
     },
     {
       "imagePath": AssetsData.truckIcon,
-      "title": 'سياسه الشحن والتوصيل',
+      "title": 'shipping_terms'.tr(),
       "widget": const DeliveryAndShippingTermsView(),
     },
     {
       "imagePath": AssetsData.fileIcon,
-      "title": 'الشروط والاحكام',
+      "title": 'terms_and_conditions'.tr(),
       "widget": const TermsAndConditions(),
     },
     {
       "imagePath": AssetsData.refreshIcon,
-      "title": 'سياسة الاسترجاع والاستبدال',
+      "title": 'return_and_exchange'.tr(),
       "widget": const ReturnAndExchange(),
     },
     {
       "imagePath": AssetsData.questionIcon,
-      "title": 'الاسئلة الشائعة',
+      "title": 'common_questions_title'.tr(),
       "widget": const CommonQuestions(),
     },
   ];
@@ -127,86 +128,3 @@ class DrawerView extends StatelessWidget {
     );
   }
 }
-
-
-
-/*
-
-   const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.settingsImage,
-              sectionTitle: 'إعدادات الحساب'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.shoppingBagIcon,
-              sectionTitle: 'طلباتى'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.heartIcon,
-              sectionTitle: 'المفضلة'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.locationIcon,
-              sectionTitle: 'العناوين'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.bellIcon,
-              sectionTitle: 'الاشعارات'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.languageIcon,
-              sectionTitle: 'اللغة'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.infoIcon,
-              sectionTitle: 'من نحن'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.headphonesIcon,
-              sectionTitle: 'تواصل معنا'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.lockIcon,
-              sectionTitle: 'سياسة الخصوصية'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.fileIcon,
-              sectionTitle: 'الشروط والاحكام'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.refreshIcon,
-              sectionTitle: 'سياسة الاسترجاع والاستبدال'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.refreshIcon,
-              sectionTitle: 'سياسه الشحن والتوصيل'),
-          SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.infoIcon,
-              sectionTitle: 'الاسئلة الشائعة'),
-*/

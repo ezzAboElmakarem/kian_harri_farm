@@ -18,6 +18,7 @@ class SmoothIndicatorWidget extends StatelessWidget {
       bottom: 100.h,
       child: SmoothPageIndicator(
         controller: bordingController,
+        textDirection: TextDirection.ltr,
         count: 3,
         effect: ScrollingDotsEffect(
             activeDotColor: kPrimaryColor,

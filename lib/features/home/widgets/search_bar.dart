@@ -24,18 +24,18 @@ class CustomSearchBar extends StatelessWidget {
           ispassword: false,
           isEnabled: false,
           hint: "search_hint".tr(),
-          prefixIcon: context.locale == const Locale('ar')
-              ? Icon(
-                  Icons.search_outlined,
-                  color: ColorStyles.textGreyColor.withOpacity(0.4),
-                )
-              : null,
-          suffixIcon: context.locale == const Locale('en')
-              ? Icon(
-                  Icons.search_outlined,
-                  color: ColorStyles.textGreyColor.withOpacity(0.4),
-                )
-              : null,
+          // prefixIcon: context.locale == const Locale('ar')
+          //     ? Icon(
+          //         Icons.search_outlined,
+          //         color: ColorStyles.textGreyColor.withOpacity(0.4),
+          //       )
+          //     : null,
+          prefixIcon:
+              // context.locale == const Locale('en')?
+              Icon(
+            Icons.search_outlined,
+            color: ColorStyles.textGreyColor.withOpacity(0.4),
+          ),
 
           // prefixIcon: isArabic() == false
           //     ? Icon(

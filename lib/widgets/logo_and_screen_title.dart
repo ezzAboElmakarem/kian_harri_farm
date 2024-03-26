@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/widgets/logo_image_widget.dart';
+import '../helper/text_styles.dart';
+import 'logo_image_widget.dart';
 
 class LogoAndScreenTitle extends StatelessWidget {
   const LogoAndScreenTitle({

@@ -1,11 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/search/views/search.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
+import '../../search/views/search.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../widgets/custom_tex_form_field.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({
@@ -22,21 +21,29 @@ class CustomSearchBar extends StatelessWidget {
         },
         // refactor it to simple raw wraped with container
         child: CustomTextFormField(
-            ispassword: false,
-            isEnabled: false,
-            hint: S.of(context).search_hint,
-            suffixIcon: Icon(
-              Icons.search_outlined,
-              color: ColorStyles.textGreyColor.withOpacity(0.4),
-            )
+          ispassword: false,
+          isEnabled: false,
+          hint: "search_hint".tr(),
+          prefixIcon: context.locale == const Locale('ar')
+              ? Icon(
+                  Icons.search_outlined,
+                  color: ColorStyles.textGreyColor.withOpacity(0.4),
+                )
+              : null,
+          suffixIcon: context.locale == const Locale('en')
+              ? Icon(
+                  Icons.search_outlined,
+                  color: ColorStyles.textGreyColor.withOpacity(0.4),
+                )
+              : null,
 
-            // prefixIcon: isArabic() == false
-            //     ? Icon(
-            //         Icons.search_outlined,
-            //         color: ColorStyles.textGreyColor.withOpacity(0.4),
-            //       )
-            //     : null,
-            ),
+          // prefixIcon: isArabic() == false
+          //     ? Icon(
+          //         Icons.search_outlined,
+          //         color: ColorStyles.textGreyColor.withOpacity(0.4),
+          //       )
+          //     : null,
+        ),
       ),
     );
   }

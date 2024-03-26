@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/onbording/models/onbording_model.dart';
-import 'package:kian_sheeps_projects/features/onbording/widgets/bording_item.dart';
-import 'package:kian_sheeps_projects/features/onbording/widgets/next_bording_button.dart';
-import 'package:kian_sheeps_projects/features/onbording/widgets/skip_button_widget.dart';
-import 'package:kian_sheeps_projects/features/onbording/widgets/smooth_indicator_widget.dart';
-import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
+import '../models/onbording_model.dart';
+import '../widgets/bording_item.dart';
+import '../widgets/next_bording_button.dart';
+import '../widgets/skip_button_widget.dart';
+import '../widgets/smooth_indicator_widget.dart';
+import '../../../widgets/background_decoration.dart';
 
 class OnBordingScreenView extends StatefulWidget {
   const OnBordingScreenView({super.key});
@@ -36,6 +36,7 @@ class _OnBordingScreenViewState extends State<OnBordingScreenView> {
                   Expanded(
                     child: SizedBox(
                       child: PageView.builder(
+                        reverse: true,
                         controller: bordingController,
                         onPageChanged: (int index) {
                           if (index == onbordingItems.length - 1) {

@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/widgets/questions_item.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
+import '../../../widgets/questions_item.dart';
+import '../../../helper/app_bar_method.dart';
 
 class ReturnAndExchange extends StatefulWidget {
   const ReturnAndExchange({super.key});
@@ -15,8 +15,7 @@ class _ReturnAndExchangeState extends State<ReturnAndExchange> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
-          context: context, title: S.of(context).return_and_exchange),
+      appBar: customAppBar(context: context, title: "return_and_exchange".tr()),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),

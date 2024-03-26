@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
+import '../../../widgets/custom_tex_form_field.dart';
 
 class SettingsForms extends StatelessWidget {
   const SettingsForms({
@@ -15,7 +15,7 @@ class SettingsForms extends StatelessWidget {
         CustomTextFormField(
           ispassword: false,
           isEnabled: false,
-          title: S.of(context).name,
+          title: "name".tr(),
           hint: 'محمد الحديدي',
         ),
         SizedBox(
@@ -24,7 +24,7 @@ class SettingsForms extends StatelessWidget {
         CustomTextFormField(
           ispassword: false,
           isEnabled: false,
-          title: S.of(context).phone,
+          title: "phone".tr(),
           hint: '012345689',
         ),
         SizedBox(
@@ -33,7 +33,7 @@ class SettingsForms extends StatelessWidget {
         CustomTextFormField(
           ispassword: false,
           isEnabled: false,
-          title: S.of(context).email,
+          title: "email".tr(),
           hint: 'mohamedabbas@gmail.com',
         ),
         SizedBox(
@@ -42,7 +42,7 @@ class SettingsForms extends StatelessWidget {
         CustomTextFormField(
           ispassword: true,
           isEnabled: false,
-          title: S.of(context).password,
+          title: "password".tr(),
           hint: '***********',
         ),
       ],

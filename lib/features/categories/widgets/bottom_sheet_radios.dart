@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/custom_radio_tile_item.dart';
+import 'custom_radio_tile_item.dart';
 
 class BottomSheetRadiosList extends StatefulWidget {
   const BottomSheetRadiosList({super.key});

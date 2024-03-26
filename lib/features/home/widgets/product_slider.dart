@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import '../../../helper/color_styles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductSlider extends StatefulWidget {

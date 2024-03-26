@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/register/widgets/register_forms.dart';
-import 'package:kian_sheeps_projects/features/register/widgets/accept_terms_widgets.dart';
-import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
-import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
-import 'package:kian_sheeps_projects/widgets/logo_and_screen_title.dart';
-import 'package:kian_sheeps_projects/widgets/question_and_button.dart';
+import '../widgets/register_forms.dart';
+import '../widgets/accept_terms_widgets.dart';
+import '../../../widgets/background_decoration.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_text_button.dart';
+import '../../../widgets/logo_and_screen_title.dart';
+import '../../../widgets/question_and_button.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});

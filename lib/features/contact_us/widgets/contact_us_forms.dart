@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
+import '../../../widgets/custom_tex_form_field.dart';
 
 class ContactUsForms extends StatelessWidget {
   const ContactUsForms({
@@ -15,7 +15,7 @@ class ContactUsForms extends StatelessWidget {
         CustomTextFormField(
           ispassword: false,
           isEnabled: true,
-          title: S.of(context).name,
+          title: "name".tr(),
         ),
         SizedBox(
           height: 10.h,
@@ -23,14 +23,14 @@ class ContactUsForms extends StatelessWidget {
         CustomTextFormField(
           ispassword: false,
           isEnabled: true,
-          title: S.of(context).email,
+          title: "email".tr(),
         ),
         CustomTextFormField(
           ispassword: false,
           isEnabled: true,
           maxLines: 5,
-          title: S.of(context).messeage_text,
-          hint: S.of(context).messeage_hint_text,
+          title: "messeage_text".tr(),
+          hint: "messeage_hint_text".tr(),
         ),
         SizedBox(
           height: 24.h,

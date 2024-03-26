@@ -1,7 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../helper/color_styles.dart';
+import '../helper/text_styles.dart';
 
 class PaymentSummary extends StatelessWidget {
   const PaymentSummary({
@@ -11,10 +12,10 @@ class PaymentSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       //  mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Text('ملخص الدفع', style: TextStyles.textstyle16),
+        Text('payment_summary'.tr(), style: TextStyles.textstyle16),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 16.h),
           child: Divider(
@@ -28,9 +29,9 @@ class PaymentSummary extends StatelessWidget {
         ),
         Row(
           children: [
-            Text('450.00   LE', style: TextStyles.textstyle14),
+            Text('sub_total'.tr(), style: TextStyles.textstyle14),
             const Spacer(),
-            Text('المجموع الفرعى', style: TextStyles.textstyle14),
+            Text('450.00   LE', style: TextStyles.textstyle14),
           ],
         ),
         SizedBox(
@@ -38,11 +39,11 @@ class PaymentSummary extends StatelessWidget {
         ),
         Row(
           children: [
+            Text('discount'.tr(),
+                style: TextStyles.textstyle14.copyWith(color: kPrimaryColor)),
+            const Spacer(),
             Text('50.00   LE',
                 style: TextStyles.textstyle14.copyWith(color: kPrimaryColor)),
-            const Spacer(),
-            Text('الخصم',
-                style: TextStyles.textstyle14.copyWith(color: kPrimaryColor)),
           ],
         ),
         SizedBox(
@@ -50,9 +51,9 @@ class PaymentSummary extends StatelessWidget {
         ),
         Row(
           children: [
+            Text("service fee".tr(), style: TextStyles.textstyle14),
+            const Spacer(),
             Text('40.00   LE', style: TextStyles.textstyle14),
-            const Spacer(),
-            Text('رسوم الخدمة', style: TextStyles.textstyle14),
           ],
         ),
         SizedBox(
@@ -60,9 +61,9 @@ class PaymentSummary extends StatelessWidget {
         ),
         Row(
           children: [
+            Text('shipping_fees'.tr(), style: TextStyles.textstyle14),
+            const Spacer(),
             Text('40.00   LE', style: TextStyles.textstyle14),
-            const Spacer(),
-            Text('رسوم الشحن', style: TextStyles.textstyle14),
           ],
         ),
         SizedBox(
@@ -70,9 +71,9 @@ class PaymentSummary extends StatelessWidget {
         ),
         Row(
           children: [
+            Text('added_tax_value', style: TextStyles.textstyle14),
+            const Spacer(),
             Text('10.00   LE', style: TextStyles.textstyle14),
-            const Spacer(),
-            Text('قيمه الضريبه المضافة', style: TextStyles.textstyle14),
           ],
         ),
         SizedBox(
@@ -89,9 +90,9 @@ class PaymentSummary extends StatelessWidget {
         ),
         Row(
           children: [
-            Text('450.00   LE', style: TextStyles.textstyle14),
+            Text('total_summation'.tr(), style: TextStyles.textstyle14),
             const Spacer(),
-            Text('المجموع الكلى', style: TextStyles.textstyle14),
+            Text('450.00   LE', style: TextStyles.textstyle14),
           ],
         ),
       ],

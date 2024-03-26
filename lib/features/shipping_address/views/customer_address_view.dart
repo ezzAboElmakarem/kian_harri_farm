@@ -2,14 +2,14 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/payment/views/payment_view.dart';
-import 'package:kian_sheeps_projects/features/shipping_address/widgets/shipping_address.dart';
-import 'package:kian_sheeps_projects/features/shipping_address/widgets/select_city.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
-import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
+import '../../payment/views/payment_view.dart';
+import '../widgets/shipping_address.dart';
+import '../widgets/select_city.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_tex_form_field.dart';
 
 class CustomerAddressView extends StatelessWidget {
   const CustomerAddressView({super.key});

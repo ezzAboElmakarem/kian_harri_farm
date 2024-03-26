@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/service_rate/widgets/service_rating_widget.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
-import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
+import '../widgets/service_rating_widget.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/color_styles.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_tex_form_field.dart';
 
 class ServiceRateView extends StatelessWidget {
   const ServiceRateView({super.key});

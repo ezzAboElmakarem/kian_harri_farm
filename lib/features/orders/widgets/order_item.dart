@@ -1,13 +1,14 @@
 import 'dart:developer';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/order_details/views/order_details_view.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
+import '../../order_details/views/order_details_view.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../helper/text_styles.dart';
+import '../../../widgets/custom_text_button.dart';
 
 class OrderItem extends StatelessWidget {
   const OrderItem(
@@ -33,20 +34,28 @@ class OrderItem extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Padding(
-                padding: EdgeInsets.only(left: 16.w, right: 26.w),
-                child: CustomTextButton(
-                    text: orderStatus, fontSize: 14.sp, onTap: () {}),
+            Expanded(
+              child: Container(
+                height: 80.h,
+                width: 76.w,
+                decoration: BoxDecoration(
+                    image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          AssetsData.productDetails,
+                        )),
+                    borderRadius: BorderRadius.circular(11)),
               ),
+            ),
+            SizedBox(
+              width: 8.w,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  ' رقم الطلب '
-                  '# $orderID',
+                  '${'order_num'.tr()} # $orderID',
                   style: TextStyles.textstyle14,
                   //textdirection:isArabic() ? TextDirection.rtl : TextDirection.ltr,
                 ),
@@ -78,20 +87,11 @@ class OrderItem extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              width: 8.w,
-            ),
-            Expanded(
-              child: Container(
-                height: 80.h,
-                width: 76.w,
-                decoration: BoxDecoration(
-                    image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(
-                          AssetsData.productDetails,
-                        )),
-                    borderRadius: BorderRadius.circular(11)),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(left: 16.w, right: 26.w),
+                child: CustomTextButton(
+                    text: orderStatus, fontSize: 14.sp, onTap: () {}),
               ),
             ),
           ],

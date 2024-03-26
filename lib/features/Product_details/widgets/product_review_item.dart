@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class ProductReviewItem extends StatelessWidget {
   const ProductReviewItem({
@@ -34,15 +34,18 @@ class ProductReviewItem extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
-                    '2023 / 6 / 1',
-                    style: TextStyles.textstyle12.copyWith(
-                      color: ColorStyles.textGreyColor.withOpacity(0.6),
-                    ),
+                  SizedBox(
+                      height: 44.h,
+                      width: 38.w,
+                      child: Image.asset(
+                        AssetsData.userPic,
+                        fit: BoxFit.contain,
+                      )),
+                  SizedBox(
+                    width: 6.w,
                   ),
-                  const Spacer(),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'منال الخالدي',
@@ -62,16 +65,13 @@ class ProductReviewItem extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    width: 6.w,
+                  const Spacer(),
+                  Text(
+                    '2023 / 6 / 1',
+                    style: TextStyles.textstyle12.copyWith(
+                      color: ColorStyles.textGreyColor.withOpacity(0.6),
+                    ),
                   ),
-                  SizedBox(
-                      height: 44.h,
-                      width: 38.w,
-                      child: Image.asset(
-                        AssetsData.userPic,
-                        fit: BoxFit.contain,
-                      )),
                 ],
               ),
               SizedBox(

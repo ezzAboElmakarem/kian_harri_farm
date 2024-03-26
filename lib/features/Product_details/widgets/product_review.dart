@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/product_review_item.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'product_review_item.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class ProductReview extends StatelessWidget {
   const ProductReview({super.key});
@@ -16,14 +17,14 @@ class ProductReview extends StatelessWidget {
           Row(
             children: [
               Text(
-                'عرض الكل',
-                style: TextStyles.textstyle12.copyWith(
-                    color: kPrimaryColor, fontWeight: FontWeight.bold),
+                'rating'.tr(),
+                style: TextStyles.textstyle16,
               ),
               const Spacer(),
               Text(
-                'التقيمات',
-                style: TextStyles.textstyle16,
+                'show_more'.tr(),
+                style: TextStyles.textstyle12.copyWith(
+                    color: kPrimaryColor, fontWeight: FontWeight.bold),
               ),
             ],
           ),

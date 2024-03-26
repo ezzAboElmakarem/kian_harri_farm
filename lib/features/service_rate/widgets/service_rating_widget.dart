@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/text_styles.dart';
 
 class ServiceRatingWidget extends StatelessWidget {
   const ServiceRatingWidget({

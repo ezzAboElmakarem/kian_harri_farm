@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/about_us/views/about_us_view.dart';
-import 'package:kian_sheeps_projects/features/account_settings/views/account_settings.dart';
-import 'package:kian_sheeps_projects/features/addresses/views/addresses_list_view.dart';
-import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
-import 'package:kian_sheeps_projects/features/common_Questions/views/common_questions.dart';
-import 'package:kian_sheeps_projects/features/contact_us/views/contact_us.dart';
-import 'package:kian_sheeps_projects/features/drawer/widgets/drawer_section_item.dart';
-import 'package:kian_sheeps_projects/features/favourities/views/favourities_view.dart';
-import 'package:kian_sheeps_projects/features/language/views/language_view.dart';
-import 'package:kian_sheeps_projects/features/notifications/views/notifications_view.dart';
-import 'package:kian_sheeps_projects/features/orders/views/orders_tapbar.dart';
-import 'package:kian_sheeps_projects/features/privacy_Pollicy/views/privacy_Policy_rename.dart';
-import 'package:kian_sheeps_projects/features/delivery_and_shiping_terms/views/delivery_shipping_terms.dart';
-import 'package:kian_sheeps_projects/features/return_and_exchange/views/return_and_exchange_view.dart';
-import 'package:kian_sheeps_projects/features/terms_and_conditions/views/terms_and_conditions.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/change_locale_method.dart';
-import 'package:kian_sheeps_projects/widgets/logo_image_widget.dart';
+import '../../about_us/views/about_us_view.dart';
+import '../../account_settings/views/account_settings.dart';
+import '../../addresses/views/addresses_list_view.dart';
+import '../../cart/views/cart_view.dart';
+import '../../common_Questions/views/common_questions.dart';
+import '../../contact_us/views/contact_us.dart';
+import '../widgets/drawer_section_item.dart';
+import '../../favourities/views/favourities_view.dart';
+import '../../language/views/language_view.dart';
+import '../../notifications/views/notifications_view.dart';
+import '../../orders/views/orders_tapbar.dart';
+import '../../privacy_Pollicy/views/privacy_Policy_rename.dart';
+import '../../delivery_and_shiping_terms/views/delivery_shipping_terms.dart';
+import '../../return_and_exchange/views/return_and_exchange_view.dart';
+import '../../terms_and_conditions/views/terms_and_conditions.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/change_locale_method.dart';
+import '../../../widgets/logo_image_widget.dart';
 
 // ignore: must_be_immutable
 class DrawerView extends StatelessWidget {

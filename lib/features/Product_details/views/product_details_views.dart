@@ -1,17 +1,18 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/add_to_cart_button.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/extra_services_drop_down.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/product_chopping_radio.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/product_info.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/product_packaging_radios.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/product_type_radio.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/similar_products_slider.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/product_review.dart';
-import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
+import '../widgets/add_to_cart_button.dart';
+import '../widgets/extra_services_drop_down.dart';
+import '../widgets/product_chopping_radio.dart';
+import '../widgets/product_info.dart';
+import '../widgets/product_packaging_radios.dart';
+import '../widgets/product_type_radio.dart';
+import '../widgets/similar_products_slider.dart';
+import '../widgets/product_review.dart';
+import '../../cart/views/cart_view.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/navigation_methods.dart';
 
 class ProductDetailsView extends StatelessWidget {
   const ProductDetailsView({super.key});
@@ -21,7 +22,7 @@ class ProductDetailsView extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar(
         context: context,
-        title: 'تفاصيل المنتج',
+        title: 'product_details'.tr(),
         leading: GestureDetector(
             onTap: () {
               navigateTo(context: context, widget: const CartView());
@@ -40,7 +41,7 @@ class ProductDetailsView extends StatelessWidget {
           SingleChildScrollView(
             child: Center(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const ProductInfo(
                     oldProductPrice: 170,

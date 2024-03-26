@@ -1,4 +1,4 @@
-import 'package:kian_sheeps_projects/helper/assets.dart';
+import '../../../helper/assets.dart';
 
 class BordingModel {
   final String image;

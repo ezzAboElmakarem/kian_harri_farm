@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/widgets/questions_item.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
+import '../../../widgets/questions_item.dart';
+import '../../../helper/app_bar_method.dart';
 
 class CommonQuestions extends StatelessWidget {
   const CommonQuestions({super.key});
@@ -10,8 +10,8 @@ class CommonQuestions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
-          context: context, title: S.of(context).common_questions_title),
+      appBar:
+          customAppBar(context: context, title: "common_questions_title".tr()),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/shipping_address/widgets/select_city.dart';
-import 'package:kian_sheeps_projects/features/shipping_address/widgets/shipping_address.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
+import '../../shipping_address/widgets/select_city.dart';
+import '../../shipping_address/widgets/shipping_address.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../widgets/custom_tex_form_field.dart';
 
 class AddAddressForms extends StatelessWidget {
   const AddAddressForms({

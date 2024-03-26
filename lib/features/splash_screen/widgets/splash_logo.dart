@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
+import '../../../helper/assets.dart';
 
 class SplashLogo extends StatelessWidget {
   const SplashLogo({

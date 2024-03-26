@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
+import '../helper/text_styles.dart';
+import 'custom_text_button.dart';
 
 class QuestionAndButton extends StatelessWidget {
   const QuestionAndButton({

@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
+import '../../login/views/login_screen_view.dart';
+import '../../../widgets/custom_button.dart';
 
 class NextBordingButton extends StatelessWidget {
   const NextBordingButton({
@@ -16,7 +16,7 @@ class NextBordingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomButton(
-        buttonText: S.of(context).next,
+        buttonText: "next".tr(),
         textColor: Colors.white,
         onTap: () {
           if (isLastScreen == true) {

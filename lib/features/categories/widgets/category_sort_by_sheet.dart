@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/bottom_Sheet_title.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/bottom_sheet_radios.dart';
+import 'bottom_Sheet_title.dart';
+import 'bottom_sheet_radios.dart';
 
 class SortBySheet extends StatelessWidget {
   const SortBySheet({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/features/home/widgets/product_slider.dart';
-import 'package:kian_sheeps_projects/features/offers/widgets/offers_grid_view.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
+import '../../home/widgets/product_slider.dart';
+import '../widgets/offers_grid_view.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/assets.dart';
 
 class OffersView extends StatelessWidget {
   OffersView({super.key});

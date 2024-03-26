@@ -1,10 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../cart/views/cart_view.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../helper/text_styles.dart';
 
 class AddToCartButton extends StatelessWidget {
   const AddToCartButton({
@@ -25,29 +26,30 @@ class AddToCartButton extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-          child: Row(
-            children: [
-              Text(
-                '$price ر.س',
-                //   //textdirection: TextDirection.rtl,
-                style: TextStyles.textstyle16.copyWith(color: Colors.white),
-              ),
-              const Spacer(),
-              Text(
-                'اضف للسله',
-                //     //textdirection: TextDirection.rtl,
-                style: TextStyles.textstyle16.copyWith(color: Colors.white),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              GestureDetector(
-                  onTap: () {
-                    navigateTo(context: context, widget: const CartView());
-                  },
-                  child: Image.asset(AssetsData.shoppingBasket,
-                      height: 24.h, width: 24.w, color: Colors.white)),
-            ],
+          child: GestureDetector(
+            onTap: () {
+              navigateTo(context: context, widget: const CartView());
+            },
+            child: Row(
+              children: [
+                Image.asset(AssetsData.shoppingBasket,
+                    height: 24.h, width: 24.w, color: Colors.white),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "add_to_cart".tr(),
+                  //     //textdirection: TextDirection.rtl,
+                  style: TextStyles.textstyle16.copyWith(color: Colors.white),
+                ),
+                const Spacer(),
+                Text(
+                  '$price ر.س',
+                  //   //textdirection: TextDirection.rtl,
+                  style: TextStyles.textstyle16.copyWith(color: Colors.white),
+                ),
+              ],
+            ),
           ),
         ),
       ),

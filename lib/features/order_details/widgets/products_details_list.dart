@@ -2,11 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/order_details/widgets/product_details_item.dart';
-import 'package:kian_sheeps_projects/features/service_rate/views/service_rate.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
+import 'product_details_item.dart';
+import '../../service_rate/views/service_rate.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../helper/text_styles.dart';
+import '../../../widgets/custom_text_button.dart';
 
 class ProductsDetailsList extends StatelessWidget {
   const ProductsDetailsList({

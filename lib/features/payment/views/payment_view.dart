@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/widgets/payment_summary.dart';
-import 'package:kian_sheeps_projects/widgets/delivery_summary.dart';
-import 'package:kian_sheeps_projects/features/order_success/views/order_success_view.dart';
-import 'package:kian_sheeps_projects/features/payment/widgets/selcect_payment_way.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
-import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
+import '../../../widgets/payment_summary.dart';
+import '../../../widgets/delivery_summary.dart';
+import '../../order_success/views/order_success_view.dart';
+import '../widgets/selcect_payment_way.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../helper/text_styles.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_text_button.dart';
 
 class PaymentView extends StatelessWidget {
   const PaymentView({super.key});

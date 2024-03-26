@@ -1,12 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/widgets/custom_product_item.dart';
-import 'package:kian_sheeps_projects/features/offers/views/offers_view.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
+import '../../../widgets/custom_product_item.dart';
+import '../../offers/views/offers_view.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../helper/text_styles.dart';
 
 class OffersListView extends StatelessWidget {
   const OffersListView({
@@ -26,7 +27,7 @@ class OffersListView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  S.of(context).offers,
+                  "offers".tr(),
                   style: TextStyles.textstyle14
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
@@ -36,7 +37,7 @@ class OffersListView extends StatelessWidget {
                     navigateTo(context: context, widget: OffersView());
                   },
                   child: Text(
-                    S.of(context).show_more,
+                    "show_more".tr(),
                     style:
                         TextStyles.textstyle14.copyWith(color: kPrimaryColor),
                   ),
@@ -51,7 +52,7 @@ class OffersListView extends StatelessWidget {
             height: 260.h,
             child: ListView.separated(
                 itemCount: 10,
-                reverse: true,
+                reverse: isArabic() ? true : false,
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (context, index) => SizedBox(width: 2.w),

@@ -1,9 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
+import '../../../widgets/custom_tex_form_field.dart';
 
 class CoubonField extends StatelessWidget {
   const CoubonField({
@@ -15,19 +16,19 @@ class CoubonField extends StatelessWidget {
     return CustomTextFormField(
       ispassword: false,
       isEnabled: true,
-      hint: 'اضف كوبون خصم',
-      prefixIcon: Padding(
+      hint: 'add_a_discount_coupon'.tr(),
+      suffixIcon: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
         child: GestureDetector(
           onTap: () {},
           child: Text(
             textAlign: TextAlign.center,
-            'تفعيل',
+            'activation'.tr(),
             style: TextStyles.textstyle14.copyWith(color: kPrimaryColor),
           ),
         ),
       ),
-      suffixIcon: Image.asset(AssetsData.coubonIcon),
+      prefixIcon: Image.asset(AssetsData.coubonIcon),
     );
     /*   Container(
       width: 344.w,

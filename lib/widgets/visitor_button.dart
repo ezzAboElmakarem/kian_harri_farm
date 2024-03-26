@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../helper/color_styles.dart';
+import '../helper/text_styles.dart';
 
 class VisitorButton extends StatelessWidget {
   const VisitorButton({
@@ -14,7 +14,7 @@ class VisitorButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onTap,
-      child: Text(S.of(context).vistor_button,
+      child: Text("vistor_button".tr(),
           style: TextStyles.textstyle16.copyWith(color: kPrimaryColor)),
     );
   }

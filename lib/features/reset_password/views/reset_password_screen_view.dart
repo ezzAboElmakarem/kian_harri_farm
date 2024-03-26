@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/reset_password/widgets/reset_password_body_text.dart';
-import 'package:kian_sheeps_projects/features/reset_password/widgets/reset_password_screen_body.dart';
-import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
-import 'package:kian_sheeps_projects/widgets/logo_and_screen_title.dart';
+import '../widgets/reset_password_body_text.dart';
+import '../widgets/reset_password_screen_body.dart';
+import '../../../widgets/background_decoration.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/logo_and_screen_title.dart';
 
 class ResetPasswordScreenView extends StatelessWidget {
   const ResetPasswordScreenView({super.key});

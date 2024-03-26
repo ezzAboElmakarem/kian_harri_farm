@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/widgets/product_card.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
+import '../../../widgets/product_card.dart';
+import '../../../helper/assets.dart';
 
 class OffersGridView extends StatelessWidget {
   const OffersGridView({

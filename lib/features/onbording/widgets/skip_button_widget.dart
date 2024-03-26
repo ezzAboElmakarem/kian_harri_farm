@@ -1,11 +1,10 @@
 import 'dart:developer';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
-import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
+import '../../login/views/login_screen_view.dart';
+import '../../../widgets/custom_text_button.dart';
 
 class SkipButtonWidget extends StatelessWidget {
   const SkipButtonWidget({
@@ -17,12 +16,11 @@ class SkipButtonWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 14.h),
       child: Row(
-        mainAxisAlignment:
-            isArabic() ? MainAxisAlignment.start : MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           CustomTextButton(
             textColor: Colors.black,
-            text: S.of(context).skip,
+            text: "skip".tr(),
             onTap: () {
               log('skip button clicked');
               Navigator.of(context).pushAndRemoveUntil(

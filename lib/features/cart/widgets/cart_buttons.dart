@@ -1,9 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/shipping_address/views/customer_address_view.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
+import '../../shipping_address/views/customer_address_view.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../widgets/custom_button.dart';
 
 class CartButtons extends StatelessWidget {
   const CartButtons({
@@ -16,7 +17,7 @@ class CartButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomButton(
-            buttonText: 'اتمام الطلب',
+            buttonText: 'confirm_order'.tr(),
             textColor: Colors.white,
             onTap: () {
               navigateTo(context: context, widget: const CustomerAddressView());
@@ -26,7 +27,7 @@ class CartButtons extends StatelessWidget {
           width: 20.w,
         ),
         CustomButton(
-            buttonText: 'الرجوع للتسوق',
+            buttonText: 'back_to_shopping'.tr(),
             onTap: () {},
             width: 160.w,
             buttonColor: ColorStyles.textFormFieldfillColor,

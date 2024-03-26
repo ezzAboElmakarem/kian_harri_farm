@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/features/register/widgets/register_forms.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
+import 'register_forms.dart';
 
 class AcceptTermsWidget extends StatefulWidget {
   const AcceptTermsWidget({super.key});

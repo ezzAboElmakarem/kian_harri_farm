@@ -1,16 +1,33 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/change_locale_method.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/features/splash_screen/views/splash_screen_view.dart';
-import 'package:kian_sheeps_projects/helper/keyboard_close_observer.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'helper/change_locale_method.dart';
+import 'helper/color_styles.dart';
+import 'features/splash_screen/views/splash_screen_view.dart';
+import 'helper/keyboard_close_observer.dart';
 
 Locale currentLocale = const Locale('en', 'US');
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Future.value([
+    await EasyLocalization.ensureInitialized(),
+    // await Firebase.initializeApp(),
+  ]);
+
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('ar'),
+        Locale('en'),
+      ],
+      path: 'assets/lang',
+      saveLocale: true,
+      startLocale: const Locale('ar'),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -32,14 +49,6 @@ class _MyAppState extends State<MyApp> {
         builder: (context, child) {
           return KeyboardPopScaffold(
             child: MaterialApp(
-              locale: Locale('ar'),
-              localizationsDelegates: const [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: S.delegate.supportedLocales,
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
               theme: ThemeData(
@@ -48,6 +57,12 @@ class _MyAppState extends State<MyApp> {
                 useMaterial3: true,
               ),
               home: const SplashScreenView(),
+              localizationsDelegates: context.localizationDelegates,
+              supportedLocales: const [
+                Locale('ar'),
+                Locale('en'),
+              ],
+              locale: context.locale,
             ),
           );
         });

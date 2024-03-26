@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class SelectOrderNum extends StatefulWidget {
   const SelectOrderNum({super.key});
@@ -18,15 +18,18 @@ class _SelectOrderNumState extends State<SelectOrderNum> {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        Text(
+          'فريش بيف استربس',
+          style: TextStyles.textstyle16.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const Spacer(),
         GestureDetector(
-            onTap: () {
-              if (numOfOrders == 1) {
-              } else {
-                numOfOrders--;
-                setState(() {});
-              }
-            },
-            child: Image.asset(AssetsData.minimizeContainer)),
+          onTap: () {
+            numOfOrders++;
+            setState(() {});
+          },
+          child: Image.asset(AssetsData.maximizeContainer),
+        ),
         SizedBox(
           width: 5.w,
         ),
@@ -48,17 +51,14 @@ class _SelectOrderNumState extends State<SelectOrderNum> {
           width: 5.w,
         ),
         GestureDetector(
-          onTap: () {
-            numOfOrders++;
-            setState(() {});
-          },
-          child: Image.asset(AssetsData.maximizeContainer),
-        ),
-        const Spacer(),
-        Text(
-          'فريش بيف استربس',
-          style: TextStyles.textstyle16.copyWith(fontWeight: FontWeight.bold),
-        ),
+            onTap: () {
+              if (numOfOrders == 1) {
+              } else {
+                numOfOrders--;
+                setState(() {});
+              }
+            },
+            child: Image.asset(AssetsData.minimizeContainer)),
       ],
     );
   }

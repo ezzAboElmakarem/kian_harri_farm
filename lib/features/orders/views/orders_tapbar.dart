@@ -1,9 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/orders/views/finished_orders_list.dart';
-import 'package:kian_sheeps_projects/features/orders/views/on_going_orders_list.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'finished_orders_list.dart';
+import 'on_going_orders_list.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class OrdersTabBar extends StatelessWidget {
   const OrdersTabBar({super.key});
@@ -15,28 +16,26 @@ class OrdersTabBar extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Text('طلباتى', style: TextStyles.textstyle16),
+          title: Text('my_orders'.tr(), style: TextStyles.textstyle16),
           centerTitle: true,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Icon(
-                  Icons.arrow_forward_ios,
-                  size: 24.sp,
-                ),
+          leading: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back_ios_sharp,
+                size: 24.sp,
               ),
             ),
-          ],
-          bottom: const TabBar(
+          ),
+          bottom: TabBar(
             tabs: [
               Tab(
-                text: 'المنتهية',
+                text: 'finished'.tr(),
               ),
-              Tab(text: 'الحالية'),
+              Tab(text: 'current'.tr()),
             ],
             indicatorColor: kPrimaryColor,
           ),

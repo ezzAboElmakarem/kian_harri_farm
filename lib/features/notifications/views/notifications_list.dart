@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/notifications/widgets/notification_card.dart';
+import '../widgets/notification_card.dart';
 
 class Notificationlist extends StatelessWidget {
   const Notificationlist({

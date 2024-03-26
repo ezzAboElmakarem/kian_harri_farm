@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class ExtraServicesDropDown extends StatefulWidget {
   const ExtraServicesDropDown({super.key});
@@ -24,7 +25,7 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
     return Padding(
       padding: EdgeInsets.only(bottom: 24.h, right: 12.w, left: 12.w),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'خدمات أضافية ',
@@ -54,25 +55,25 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                     color: ColorStyles.greyColor,
                     child: Row(
                       children: [
-                        Transform.rotate(
-                            angle: 3.14 / 2,
-                            child: Icon(
-                              Icons.arrow_forward_ios,
-                              size: 18.sp,
-                            )),
+                        Text(
+                          'تجريد من العظم',
+                          style: TextStyles.textstyle14,
+                        ),
                         SizedBox(
-                          width: 144.w,
+                          width: 12.w,
                         ),
                         Text('(+5\$)',
                             style: TextStyles.textstyle12
                                 .copyWith(color: kPrimaryColor)),
                         SizedBox(
-                          width: 12.w,
+                          width: 144.w,
                         ),
-                        Text(
-                          'تجريد من العظم',
-                          style: TextStyles.textstyle14,
-                        ),
+                        Transform.rotate(
+                            angle: 3.14 / 2,
+                            child: Icon(
+                              Icons.arrow_back_ios_new_outlined,
+                              size: 18.sp,
+                            )),
                       ],
                     ),
                   ),
@@ -88,19 +89,23 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                 items: items.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
-                    alignment: Alignment.centerRight,
+                    alignment: isArabic()
+                        ? Alignment.centerRight
+                        : Alignment.centerLeft,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text('(+5\$)',
-                            style: TextStyles.textstyle12
-                                .copyWith(color: kPrimaryColor)),
+                        Text(
+                          value,
+                        ),
                         SizedBox(
                           width: 16.w,
                         ),
-                        Text(
-                          value,
-                        ), //textdirection: TextDirection.rtl),
+                        Text('(+5\$)',
+                            style: TextStyles.textstyle12
+                                .copyWith(color: kPrimaryColor)),
+
+                        //textdirection: TextDirection.rtl),
                       ],
                     ),
                   );

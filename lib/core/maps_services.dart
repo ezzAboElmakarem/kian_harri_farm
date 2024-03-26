@@ -8,7 +8,8 @@ class MapsShapes {
   Set<Polygon> polygons = {};
 
   void myLocationMarker(LatLng latLng) {
-    var myLcationMarker = Marker(markerId: MarkerId('11'), position: latLng);
+    var myLcationMarker =
+        Marker(markerId: const MarkerId('11'), position: latLng);
     myLocationMarkerSET.add(myLcationMarker);
   }
 

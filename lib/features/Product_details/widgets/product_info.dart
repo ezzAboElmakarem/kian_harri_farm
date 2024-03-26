@@ -1,9 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/Product_details/widgets/select_order_num.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'select_order_num.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class ProductInfo extends StatelessWidget {
   const ProductInfo({
@@ -24,7 +25,7 @@ class ProductInfo extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(
@@ -41,7 +42,7 @@ class ProductInfo extends StatelessWidget {
             ),
           ),
           Text(
-              textAlign: TextAlign.right,
+              // textAlign: TextAlign.right,
               'لحوم',
               style: TextStyles.textstyle12.copyWith(color: kPrimaryColor)),
           SizedBox(height: 7.h),
@@ -49,7 +50,7 @@ class ProductInfo extends StatelessWidget {
           const SelectOrderNum(),
           /**** */
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text('$productPrice SR',
                   style: TextStyles.textstyle16.copyWith(color: kPrimaryColor)),
@@ -63,7 +64,7 @@ class ProductInfo extends StatelessWidget {
           ),
           SizedBox(height: 14.h),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(productType, style: TextStyles.textstyle16),
               SizedBox(width: 4.w),
@@ -74,7 +75,7 @@ class ProductInfo extends StatelessWidget {
           ),
           SizedBox(height: 14.h),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 '$productWeight كيلو ',
@@ -91,7 +92,7 @@ class ProductInfo extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           Text(
-            'الوصف',
+            'description'.tr(),
             style: TextStyles.textstyle16,
           ),
           SizedBox(height: 16.h),

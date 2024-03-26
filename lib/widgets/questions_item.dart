@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../helper/color_styles.dart';
+import '../helper/text_styles.dart';
 
 class QuestionsItem extends StatefulWidget {
   const QuestionsItem({super.key});
@@ -33,7 +33,7 @@ class _QuestionsItemState extends State<QuestionsItem> {
             Row(
               children: [
                 Text(
-                  S.of(context).exchange_time,
+                  "exchange_time".tr(),
                   style: TextStyles.textstyle16
                       .copyWith(fontWeight: FontWeight.w400),
                 ),
@@ -51,7 +51,7 @@ class _QuestionsItemState extends State<QuestionsItem> {
                     padding:
                         EdgeInsets.symmetric(horizontal: 4.w, vertical: 14.h),
                     child: Text(
-                      S.of(context).exchange_time_anwser,
+                      "exchange_time_anwser".tr(),
                       style: TextStyles.textstyle16
                           .copyWith(fontWeight: FontWeight.w300),
                     ),

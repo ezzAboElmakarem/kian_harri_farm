@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/password_verification/widgets/pin_code_widget.dart';
-import 'package:kian_sheeps_projects/features/reset_password/views/reset_password_screen_view.dart';
-import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
-import 'package:kian_sheeps_projects/widgets/password_image_and_title.dart';
-import 'package:kian_sheeps_projects/widgets/question_and_button.dart';
+import '../widgets/pin_code_widget.dart';
+import '../../reset_password/views/reset_password_screen_view.dart';
+import '../../../widgets/background_decoration.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/password_image_and_title.dart';
+import '../../../widgets/question_and_button.dart';
 
 class VerfiyCodeScreenView extends StatelessWidget {
   const VerfiyCodeScreenView({super.key});

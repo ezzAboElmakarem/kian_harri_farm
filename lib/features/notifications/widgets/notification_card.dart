@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/text_styles.dart';
 
 class NotificationCard extends StatelessWidget {
   const NotificationCard({
@@ -13,10 +13,18 @@ class NotificationCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         // mainAxisSize: MainAxisSize.min,
         children: [
+          Image.asset(
+            AssetsData.bellIcon,
+            height: 24.h,
+            width: 24.w,
+          ),
+          SizedBox(
+            width: 14.w,
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -38,14 +46,6 @@ class NotificationCard extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
-            width: 14.w,
-          ),
-          Image.asset(
-            AssetsData.bellIcon,
-            height: 24.h,
-            width: 24.w,
-          )
         ],
       ),
     );

@@ -2,11 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../cart/views/cart_view.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../helper/text_styles.dart';
 
 class CustomHomeAppBar extends StatelessWidget {
   const CustomHomeAppBar({
@@ -28,26 +28,6 @@ class CustomHomeAppBar extends StatelessWidget {
                 log('message');
               }),
           const Spacer(),
-          GestureDetector(
-              onTap: () {},
-              child: Stack(
-                children: [
-                  Image.asset(
-                    AssetsData.notificationBell,
-                    height: 28.h,
-                  ),
-                  Positioned(
-                    left: 8.w,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.green,
-                      radius: 6.r,
-                    ),
-                  ),
-                ],
-              )),
-          SizedBox(
-            width: 10.w,
-          ),
           GestureDetector(
               onTap: () {
                 navigateTo(context: context, widget: const CartView());
@@ -73,6 +53,26 @@ class CustomHomeAppBar extends StatelessWidget {
                         style: TextStyles.textstyle12
                             .copyWith(color: Colors.white, fontSize: 7.sp),
                       ),
+                    ),
+                  ),
+                ],
+              )),
+          SizedBox(
+            width: 10.w,
+          ),
+          GestureDetector(
+              onTap: () {},
+              child: Stack(
+                children: [
+                  Image.asset(
+                    AssetsData.notificationBell,
+                    height: 28.h,
+                  ),
+                  Positioned(
+                    left: 8.w,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.green,
+                      radius: 6.r,
                     ),
                   ),
                 ],

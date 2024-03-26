@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/categories/views/categories_view.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../categories/views/categories_view.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../helper/text_styles.dart';
 
 class CustomCategoryItem extends StatelessWidget {
   const CustomCategoryItem({

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../helper/assets.dart';
+import '../helper/text_styles.dart';
 
 class PasswordImageAndTitle extends StatelessWidget {
   const PasswordImageAndTitle({

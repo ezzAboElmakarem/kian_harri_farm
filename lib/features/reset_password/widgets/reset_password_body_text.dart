@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class ResetPasswordBodyText extends StatelessWidget {
   const ResetPasswordBodyText({

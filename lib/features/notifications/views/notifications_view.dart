@@ -1,7 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/features/notifications/views/empty_notification_view.dart';
-import 'package:kian_sheeps_projects/features/notifications/views/notifications_list.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
+import 'empty_notification_view.dart';
+import 'notifications_list.dart';
+import '../../../helper/app_bar_method.dart';
 
 class NotificationView extends StatelessWidget {
   const NotificationView({super.key, required this.emptyNotification});
@@ -10,7 +11,7 @@ class NotificationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context: context, title: 'الاشعارات'),
+      appBar: customAppBar(context: context, title: 'notification'.tr()),
       body: emptyNotification
           ? const EmptyNotificationView()
           : const Notificationlist(),

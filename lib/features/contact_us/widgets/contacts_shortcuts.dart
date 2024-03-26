@@ -1,9 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/contact_us/widgets/contact_item.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'contact_item.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/text_styles.dart';
 
 class ContactsShortcuts extends StatelessWidget {
   const ContactsShortcuts({
@@ -20,7 +20,7 @@ class ContactsShortcuts extends StatelessWidget {
           height: 24.h,
         ),
         Text(
-          S.of(context).contuct_us_also,
+          "contuct_us_also".tr(),
           style: TextStyles.textstyle16,
         ),
         SizedBox(

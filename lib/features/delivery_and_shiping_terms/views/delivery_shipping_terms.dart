@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/text_styles.dart';
 
 class DeliveryAndShippingTermsView extends StatelessWidget {
   const DeliveryAndShippingTermsView({super.key});
@@ -10,15 +10,14 @@ class DeliveryAndShippingTermsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          customAppBar(context: context, title: S.of(context).shipping_terms),
+      appBar: customAppBar(context: context, title: "shipping_terms".tr()),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           child: Column(
             children: [
               Text(
-                S.of(context).about_us_body,
+                "about_us_body".tr(),
                 style: TextStyles.textstyle16
                     .copyWith(fontWeight: FontWeight.w300),
               ),
@@ -26,7 +25,7 @@ class DeliveryAndShippingTermsView extends StatelessWidget {
                 height: 10.h,
               ),
               Text(
-                S.of(context).about_us_body,
+                "about_us_body".tr(),
                 style: TextStyles.textstyle16
                     .copyWith(fontWeight: FontWeight.w300),
               ),
@@ -34,7 +33,7 @@ class DeliveryAndShippingTermsView extends StatelessWidget {
                 height: 10.h,
               ),
               Text(
-                S.of(context).about_us_body,
+                "about_us_body".tr(),
                 style: TextStyles.textstyle16
                     .copyWith(fontWeight: FontWeight.w300),
               ),
@@ -42,7 +41,7 @@ class DeliveryAndShippingTermsView extends StatelessWidget {
                 height: 10.h,
               ),
               Text(
-                S.of(context).about_us_body,
+                "about_us_body".tr(),
                 style: TextStyles.textstyle16
                     .copyWith(fontWeight: FontWeight.w300),
               ),

@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/custom_radio_tile_item.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../categories/widgets/custom_radio_tile_item.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class ProductchoppingRadios extends StatefulWidget {
   const ProductchoppingRadios({
@@ -26,10 +27,10 @@ class _ProductchoppingRadiosState extends State<ProductchoppingRadios> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'نوع التقطيع',
+            'chopping_type'.tr(),
             style: TextStyles.textstyle16,
             //textdirection: TextDirection.rtl,
           ),

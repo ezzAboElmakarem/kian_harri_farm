@@ -1,11 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/home/widgets/custom_category_item.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'custom_category_item.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/is_arabic_method.dart';
+import '../../../helper/text_styles.dart';
 
 class CustomCategoryListView extends StatelessWidget {
   const CustomCategoryListView({
@@ -20,7 +20,7 @@ class CustomCategoryListView extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 14.w),
           child: Text(
-            S.of(context).categories,
+            "categories".tr(),
             style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
           ),
         ),

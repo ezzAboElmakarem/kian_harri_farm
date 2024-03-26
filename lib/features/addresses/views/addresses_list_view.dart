@@ -1,11 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/add_address/views/add_address_view.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/widgets/delivery_summary.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import '../../add_address/views/add_address_view.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/navigation_methods.dart';
+import '../../../helper/text_styles.dart';
+import '../../../widgets/delivery_summary.dart';
 
 class AddressesListView extends StatelessWidget {
   const AddressesListView({super.key});
@@ -13,7 +15,7 @@ class AddressesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context: context, title: 'العناوين'),
+      appBar: customAppBar(context: context, title: 'adresses'.tr()),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,14 +39,15 @@ class AddressesListView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    'اضافة عنوان اخر',
-                    style: TextStyles.textstyle14.copyWith(fontSize: 13.sp),
-                  ),
+                  Image.asset(AssetsData.maximizeIcon),
                   SizedBox(
                     width: 8.w,
                   ),
-                  Image.asset(AssetsData.maximizeIcon)
+                  Text(
+                    'add_new_address'.tr(),
+                    style: TextStyles.textstyle14
+                        .copyWith(fontSize: 13.sp, color: kPrimaryColor),
+                  ),
                 ],
               ),
             ),

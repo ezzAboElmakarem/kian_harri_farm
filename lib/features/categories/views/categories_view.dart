@@ -1,12 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/category_title.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/product_grid_view.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/category_sort_by_sheet.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/sub_category_list_view.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/bottom_sheet_method.dart';
+import '../widgets/category_title.dart';
+import '../widgets/product_grid_view.dart';
+import '../widgets/category_sort_by_sheet.dart';
+import '../widgets/sub_category_list_view.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/bottom_sheet_method.dart';
 
 class CategoriesScreenView extends StatelessWidget {
   const CategoriesScreenView({super.key});
@@ -16,7 +17,7 @@ class CategoriesScreenView extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar(
         context: context,
-        title: 'الأقسام',
+        title: 'categories'.tr(),
         leading: GestureDetector(
           onTap: () {
             bottomSheetMethod(

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/drawer/views/drawer_view.dart';
-import 'package:kian_sheeps_projects/features/home/widgets/custom_app_bar.dart';
-import 'package:kian_sheeps_projects/features/home/widgets/custom_category_list_view.dart';
-import 'package:kian_sheeps_projects/features/home/widgets/offers_list_view.dart';
-import 'package:kian_sheeps_projects/features/home/widgets/product_slider.dart';
-import 'package:kian_sheeps_projects/features/home/widgets/search_bar.dart';
-import 'package:kian_sheeps_projects/features/home/widgets/welcome_title.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/widgets/logo_image_widget.dart';
+import '../../drawer/views/drawer_view.dart';
+import '../widgets/custom_app_bar.dart';
+import '../widgets/custom_category_list_view.dart';
+import '../widgets/offers_list_view.dart';
+import '../widgets/product_slider.dart';
+import '../widgets/search_bar.dart';
+import '../widgets/welcome_title.dart';
+import '../../../helper/assets.dart';
+import '../../../widgets/logo_image_widget.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});

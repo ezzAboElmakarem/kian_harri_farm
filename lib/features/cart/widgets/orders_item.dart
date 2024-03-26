@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../../helper/assets.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class OrderItem extends StatefulWidget {
   const OrderItem({
@@ -25,8 +24,24 @@ class _OrderItemState extends State<OrderItem> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Expanded(
+            child: Container(
+              height: 80.h,
+              width: 76.w,
+              decoration: BoxDecoration(
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        AssetsData.productDetails,
+                      )),
+                  borderRadius: BorderRadius.circular(11)),
+            ),
+          ),
+          SizedBox(
+            width: 8.w,
+          ),
           Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -48,14 +63,24 @@ class _OrderItemState extends State<OrderItem> {
               ),
               Row(
                 children: [
+                  Text(
+                    '150.00   LE',
+                    style: TextStyles.textstyle14,
+                  ),
+                  SizedBox(
+                    width: 112.w,
+                  ),
                   Row(
                     children: [
                       InkWell(
                           onTap: () {
-                            numOfOrders++;
-                            setState(() {});
+                            if (numOfOrders == 0) {
+                            } else {
+                              numOfOrders--;
+                              setState(() {});
+                            }
                           },
-                          child: Image.asset(AssetsData.maximizeIcon)),
+                          child: Image.asset(AssetsData.mininizeIcon)),
                       SizedBox(
                         width: 5.w,
                       ),
@@ -77,69 +102,18 @@ class _OrderItemState extends State<OrderItem> {
                       ),
                       InkWell(
                           onTap: () {
-                            if (numOfOrders == 0) {
-                            } else {
-                              numOfOrders--;
-                              setState(() {});
-                            }
+                            numOfOrders++;
+                            setState(() {});
                           },
-                          child: Image.asset(AssetsData.mininizeIcon)),
-                      // Stack(
-                      //   children: [
-                      //     GestureDetector(
-                      //       onTap: () {
-                      // if (numOfOrders == 0) {
-                      // } else {
-                      //   numOfOrders--;
-                      //   setState(() {});
-                      // }
-                      //       },
-                      //       child: Container(
-                      //         height: 26.h,
-                      //         width: 24.w,
-                      //         decoration: BoxDecoration(
-                      //             border: Border.all(color: kPrimaryColor),
-                      //             borderRadius: BorderRadius.circular(16)),
-                      //       ),
-                      //     ),
-                      //     Positioned(
-                      //       bottom: 0.5.h,
-                      //       left: 7.w,
-                      //       child: Text(
-                      //         '-',
-                      //         style: TextStyles.textstyle20,
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
+                          child: Image.asset(AssetsData.maximizeIcon)),
+                      SizedBox(
+                        width: 5.w,
+                      ),
                     ],
-                  ),
-                  SizedBox(
-                    width: 112.w,
-                  ),
-                  Text(
-                    '150.00   LE',
-                    style: TextStyles.textstyle14,
                   ),
                 ],
               ),
             ],
-          ),
-          SizedBox(
-            width: 8.w,
-          ),
-          Expanded(
-            child: Container(
-              height: 80.h,
-              width: 76.w,
-              decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                        AssetsData.productDetails,
-                      )),
-                  borderRadius: BorderRadius.circular(11)),
-            ),
           ),
         ],
       ),

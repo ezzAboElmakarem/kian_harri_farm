@@ -1,11 +1,12 @@
+import 'dart:developer';
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/custom_radio_tile_item.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/change_locale_method.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
+import '../../categories/widgets/custom_radio_tile_item.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/change_locale_method.dart';
+import '../../../widgets/custom_button.dart';
 
 class LanguageView extends StatefulWidget {
   const LanguageView({super.key, required this.appState});
@@ -16,26 +17,34 @@ class LanguageView extends StatefulWidget {
 }
 
 class _LanguageViewState extends State<LanguageView> {
+  late String _selectedLocale;
+
   String selectedOption = '';
   List<String> typeOptions = [
     'العربية',
     'English',
   ];
-
+  bool isArabic = true;
+  bool isEnglish = false;
   @override
   void initState() {
     selectedOption = typeOptions[0];
+
+    // _selectedLocale = context.locale.languageCode;
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    _selectedLocale = context.locale.languageCode;
+
     return Scaffold(
-      appBar: customAppBar(context: context, title: 'اللغة'),
+      appBar: customAppBar(context: context, title: 'language'.tr()),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
               height: 10.h,
@@ -53,10 +62,36 @@ class _LanguageViewState extends State<LanguageView> {
                     setState(() {
                       selectedOption = value!;
                     });
-                    widget.appState.changeLocale(const Locale('ar', 'EG'));
-                    setState(() {});
+                    if (typeOptions[index] == 'English') {
+                      setState(() {
+                        isArabic = false;
+                        isEnglish = true;
+                        _selectedLocale = 'en';
+                      });
+                    } else {
+                      setState(() {
+                        isArabic = true;
+                        isEnglish = false;
+                        _selectedLocale = 'ar';
+                      });
+                    }
                   },
                   selected: selectedOption == typeOptions[index],
+                  onTap: () {
+                    // if (typeOptions[index] == 'English') {
+                    //   setState(() {
+                    //     isArabic = false;
+                    //     isEnglish = true;
+                    //     _selectedLocale = 'en';
+                    //   });
+                    // } else {
+                    //   setState(() {
+                    //     isArabic = true;
+                    //     isEnglish = false;
+                    //     _selectedLocale = 'ar';
+                    //   });
+                    // }
+                  },
                 ),
                 itemCount: typeOptions.length,
               ),
@@ -65,30 +100,22 @@ class _LanguageViewState extends State<LanguageView> {
               height: 24.h,
             ),
             CustomButton(
-              buttonText: S.of(context).confirm,
+              buttonText: "confirm".tr(),
               onTap: () {
-                widget.appState.changeLocale(const Locale('ar', 'EG'));
-                setState(() {});
+                // context.setLocale(Locale(_selectedLocale));
+                log("en" + isEnglish.toString());
+                log("ar" + isArabic.toString());
+                // Locale locale = Locale(_selectedLocale);
+                context.setLocale(Locale(_selectedLocale));
+                final rootElement =
+                    WidgetsFlutterBinding.ensureInitialized().rootElement!;
+                WidgetsBinding.instance.buildOwner!.reassemble(rootElement);
+                log(_selectedLocale);
               },
             ),
           ],
         ),
       ),
     );
-  }
-}
-
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key, required this.appState});
-  final AppState appState;
-
-  @override
-  State<MyWidget> createState() => _MyWidgetState();
-}
-
-class _MyWidgetState extends State<MyWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }

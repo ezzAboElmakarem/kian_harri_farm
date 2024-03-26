@@ -1,9 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/color_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class AboutUsView extends StatelessWidget {
   const AboutUsView({super.key});
@@ -11,7 +11,7 @@ class AboutUsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context: context, title: S.of(context).about_us),
+      appBar: customAppBar(context: context, title: "about_us".tr()),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -19,7 +19,7 @@ class AboutUsView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                S.of(context).about_us_body,
+                "about_us_body".tr(),
                 style: TextStyles.textstyle16
                     .copyWith(fontWeight: FontWeight.w300),
               ),
@@ -27,14 +27,14 @@ class AboutUsView extends StatelessWidget {
                 height: 24.h,
               ),
               Text(
-                S.of(context).our_vision,
+                "our_vision".tr(),
                 style: TextStyles.textstyle20.copyWith(color: kPrimaryColor),
               ),
               SizedBox(
                 height: 8.h,
               ),
               Text(
-                S.of(context).about_us_body,
+                "about_us_body".tr(),
                 style: TextStyles.textstyle16
                     .copyWith(fontWeight: FontWeight.w300),
               ),
@@ -42,14 +42,14 @@ class AboutUsView extends StatelessWidget {
                 height: 24.h,
               ),
               Text(
-                S.of(context).our_message,
+                "our_message".tr(),
                 style: TextStyles.textstyle20.copyWith(color: kPrimaryColor),
               ),
               SizedBox(
                 height: 8.h,
               ),
               Text(
-                S.of(context).about_us_body,
+                "about_us_body".tr(),
                 style: TextStyles.textstyle16
                     .copyWith(fontWeight: FontWeight.w300),
               ),
@@ -57,14 +57,14 @@ class AboutUsView extends StatelessWidget {
                 height: 24.h,
               ),
               Text(
-                S.of(context).our_values,
+                "our_values".tr(),
                 style: TextStyles.textstyle20.copyWith(color: kPrimaryColor),
               ),
               SizedBox(
                 height: 8.h,
               ),
               Text(
-                S.of(context).about_us_body,
+                "about_us_body".tr(),
                 style: TextStyles.textstyle16
                     .copyWith(fontWeight: FontWeight.w300),
               ),

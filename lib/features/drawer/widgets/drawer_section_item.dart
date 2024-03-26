@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../../helper/text_styles.dart';
 
 class DrawerSectionItem extends StatelessWidget {
   const DrawerSectionItem(
@@ -43,7 +43,7 @@ class DrawerSectionItem extends StatelessWidget {
                     Icons.arrow_forward_ios_sharp,
                     size: 20.sp,
                   )
-                : Text(' '),
+                : const Text(' '),
           ],
         ),
       ),

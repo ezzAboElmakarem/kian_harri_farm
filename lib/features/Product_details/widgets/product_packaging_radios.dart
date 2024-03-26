@@ -1,7 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/categories/widgets/custom_radio_tile_item.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../../categories/widgets/custom_radio_tile_item.dart';
+import '../../../helper/text_styles.dart';
 
 class ProductpackagingRadios extends StatefulWidget {
   const ProductpackagingRadios({
@@ -24,10 +25,10 @@ class _ProductpackagingRadiosState extends State<ProductpackagingRadios> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'التغليف',
+            'encapsulation'.tr(),
             style: TextStyles.textstyle16,
             //textdirection: TextDirection.rtl,
           ),

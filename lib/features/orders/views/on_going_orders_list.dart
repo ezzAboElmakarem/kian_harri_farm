@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/orders/widgets/order_item.dart';
+import '../widgets/order_item.dart';
 
 class OnGoingOrdersList extends StatelessWidget {
   const OnGoingOrdersList({

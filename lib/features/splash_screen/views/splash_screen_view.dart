@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/features/onbording/views/onbording_screen_view.dart';
-import 'package:kian_sheeps_projects/features/splash_screen/widgets/splash_logo.dart';
-import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
+import '../../onbording/views/onbording_screen_view.dart';
+import '../widgets/splash_logo.dart';
+import '../../../widgets/background_decoration.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});

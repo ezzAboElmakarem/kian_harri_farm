@@ -1,10 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/cart/widgets/cart_buttons.dart';
-import 'package:kian_sheeps_projects/features/cart/widgets/cart_orders.dart';
-import 'package:kian_sheeps_projects/features/cart/widgets/coubon_field.dart';
-import 'package:kian_sheeps_projects/widgets/payment_summary.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
+import '../widgets/cart_buttons.dart';
+import '../widgets/cart_orders.dart';
+import '../widgets/coubon_field.dart';
+import '../../../widgets/payment_summary.dart';
+import '../../../helper/app_bar_method.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
@@ -14,7 +15,7 @@ class CartView extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar(
         context: context,
-        title: 'السلة',
+        title: 'cart'.tr(),
       ),
       body: SingleChildScrollView(
         child: Padding(

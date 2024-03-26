@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/password_verification/views/vrefiy_code_view.dart';
-import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
-import 'package:kian_sheeps_projects/widgets/custom_button.dart';
-import 'package:kian_sheeps_projects/widgets/custom_tex_form_field.dart';
-import 'package:kian_sheeps_projects/widgets/password_image_and_title.dart';
+import '../../password_verification/views/vrefiy_code_view.dart';
+import '../../../widgets/background_decoration.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_tex_form_field.dart';
+import '../../../widgets/password_image_and_title.dart';
 
 class ForgetPasswordView extends StatelessWidget {
   const ForgetPasswordView({super.key});

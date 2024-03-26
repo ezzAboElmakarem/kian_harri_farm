@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/widgets/product_card.dart';
-import 'package:kian_sheeps_projects/helper/app_bar_method.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
+import '../../../widgets/product_card.dart';
+import '../../../helper/app_bar_method.dart';
+import '../../../helper/assets.dart';
 
 class Favourites extends StatelessWidget {
   const Favourites({super.key});
@@ -10,7 +11,7 @@ class Favourites extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context: context, title: 'المفضلة'),
+      appBar: customAppBar(context: context, title: 'favourite'.tr()),
       body: GridView.builder(
         padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 26.h),
         shrinkWrap: true,

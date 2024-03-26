@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
-import 'package:kian_sheeps_projects/helper/color_styles.dart';
-import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import '../helper/assets.dart';
+import '../helper/color_styles.dart';
+import '../helper/text_styles.dart';
 
 class DeliverySummary extends StatelessWidget {
   const DeliverySummary({
@@ -21,17 +21,10 @@ class DeliverySummary extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 16.w),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            isEditing
-                ? Align(
-                    alignment: Alignment.topLeft,
-                    child:
-                        Image.asset(AssetsData.editIcon, fit: BoxFit.contain))
-                : const Text(' '),
-            const Spacer(),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'محمد مصيلحي ',
@@ -66,6 +59,13 @@ class DeliverySummary extends StatelessWidget {
                 ),
               ],
             ),
+            const Spacer(),
+            isEditing
+                ? Align(
+                    alignment: Alignment.topLeft,
+                    child:
+                        Image.asset(AssetsData.editIcon, fit: BoxFit.contain))
+                : const Text(' '),
           ],
         ),
       ),

@@ -1,16 +1,15 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
-import 'package:kian_sheeps_projects/features/login/widgets/forget_password_button.dart';
-import 'package:kian_sheeps_projects/features/login/widgets/login_button.dart';
-import 'package:kian_sheeps_projects/features/login/widgets/login_screen_forms.dart';
-import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
-import 'package:kian_sheeps_projects/generated/l10n.dart';
-import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
-import 'package:kian_sheeps_projects/widgets/background_decoration.dart';
-import 'package:kian_sheeps_projects/widgets/logo_and_screen_title.dart';
-import 'package:kian_sheeps_projects/widgets/question_and_button.dart';
-import 'package:kian_sheeps_projects/widgets/visitor_button.dart';
+import '../../home/views/home_view.dart';
+import '../widgets/forget_password_button.dart';
+import '../widgets/login_button.dart';
+import '../widgets/login_screen_forms.dart';
+import '../../register/views/register_view.dart';
+import '../../../widgets/background_decoration.dart';
+import '../../../widgets/logo_and_screen_title.dart';
+import '../../../widgets/question_and_button.dart';
+import '../../../widgets/visitor_button.dart';
 
 class LoginScreenView extends StatelessWidget {
   const LoginScreenView({super.key});
@@ -26,7 +25,7 @@ class LoginScreenView extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  LogoAndScreenTitle(screenTitle: S.of(context).login),
+                  LogoAndScreenTitle(screenTitle: "login".tr()),
                   SizedBox(
                     height: 30.h,
                   ),
@@ -51,12 +50,10 @@ class LoginScreenView extends StatelessWidget {
                     height: 56.h,
                   ),
                   QuestionAndButton(
-                    text: isArabic()
-                        ? S.of(context).dont_have_account
-                        : S.of(context).create_new_account,
-                    questionText: isArabic()
-                        ? S.of(context).create_new_account
-                        : S.of(context).dont_have_account,
+                    text: "dont_have_account".tr(),
+                    // : "create_new_account".tr(),
+                    questionText: "create_new_account".tr(),
+                    // : "dont_have_account".tr(),
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(

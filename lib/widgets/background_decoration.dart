@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kian_sheeps_projects/helper/assets.dart';
+import '../helper/assets.dart';
 
 class DecoratedBackGround extends StatelessWidget {
   final Widget child;

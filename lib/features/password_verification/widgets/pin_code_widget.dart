@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
+import '../../../helper/is_arabic_method.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class CustomAppPinCodeField extends StatefulWidget {
@@ -59,7 +59,7 @@ class _CustomAppPinCodeFieldState extends State<CustomAppPinCodeField> {
         fieldWidth: 68.w,
         activeFillColor: Colors.white,
       ),
-      animationDuration: Duration(milliseconds: 300),
+      animationDuration: const Duration(milliseconds: 300),
       // backgroundColor: Colors.blue.shade50,
       //  enableActiveFill: true,
       errorAnimationController: errorController,

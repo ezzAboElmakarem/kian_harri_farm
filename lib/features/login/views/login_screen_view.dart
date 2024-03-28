@@ -50,9 +50,9 @@ class LoginScreenView extends StatelessWidget {
                     height: 56.h,
                   ),
                   QuestionAndButton(
-                    text: "dont_have_account".tr(),
+                    text: "create_new_account".tr(),
                     // : "create_new_account".tr(),
-                    questionText: "create_new_account".tr(),
+                    questionText: "dont_have_account".tr(),
                     // : "dont_have_account".tr(),
                     onTap: () {
                       Navigator.of(context).push(

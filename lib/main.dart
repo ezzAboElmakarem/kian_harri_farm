@@ -1,6 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
+import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'helper/change_locale_method.dart';
 import 'helper/color_styles.dart';
@@ -11,6 +15,7 @@ Locale currentLocale = const Locale('en', 'US');
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
 
   await Future.value([
     await EasyLocalization.ensureInitialized(),
@@ -49,23 +54,31 @@ class _MyAppState extends State<MyApp> {
         splitScreenMode: true,
         builder: (context, child) {
           return KeyboardPopScaffold(
-            child: MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                fontFamily: 'Cairo',
-                colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
-                useMaterial3: true,
-              ),
-              home: const SplashScreenView(),
-              navigatorKey: navigatorKey,
-              onGenerateRoute: onGenerateRoute,
-              localizationsDelegates: context.localizationDelegates,
-              supportedLocales: const [
-                Locale('ar'),
-                Locale('en'),
+            child: MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (context) => RegisterBloc(),
+                  child: const RegisterView(),
+                ),
               ],
-              locale: context.locale,
+              child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: 'Flutter Demo',
+                theme: ThemeData(
+                  fontFamily: 'Cairo',
+                  colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
+                  useMaterial3: true,
+                ),
+                home: const SplashScreenView(),
+                navigatorKey: navigatorKey,
+                onGenerateRoute: onGenerateRoute,
+                localizationsDelegates: context.localizationDelegates,
+                supportedLocales: const [
+                  Locale('ar'),
+                  Locale('en'),
+                ],
+                locale: context.locale,
+              ),
             ),
           );
         });

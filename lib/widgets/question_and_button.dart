@@ -18,14 +18,14 @@ class QuestionAndButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CustomTextButton(text: text, onTap: onTap),
-        SizedBox(
-          width: 4.w,
-        ),
         Text(
           questionText,
           style: TextStyles.textstyle16.copyWith(fontWeight: FontWeight.bold),
-        )
+        ),
+        SizedBox(
+          width: 4.w,
+        ),
+        CustomTextButton(text: text, onTap: onTap),
       ],
     );
   }

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/register/widgets/register_buttons.dart';
 import '../widgets/register_forms.dart';
 import '../widgets/accept_terms_widgets.dart';
 import '../../../widgets/background_decoration.dart';
-import '../../../widgets/custom_button.dart';
-import '../../../widgets/custom_text_button.dart';
 import '../../../widgets/logo_and_screen_title.dart';
-import '../../../widgets/question_and_button.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -34,28 +32,7 @@ class RegisterView extends StatelessWidget {
                   SizedBox(
                     height: 45.h,
                   ),
-                  CustomButton(
-                    buttonText: 'تسجيل الدخول',
-                    textColor: Colors.white,
-                    onTap: () {},
-                  ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  QuestionAndButton(
-                      text: 'تسجيل الدخول',
-                      questionText: 'لديك حساب ؟',
-                      onTap: () {}),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  CustomTextButton(
-                    text: 'التصفح بدون تسجيل دخول',
-                    onTap: () {},
-                  ),
-                  SizedBox(
-                    height: 25.h,
-                  ),
+                  const RegisterButtons(),
                 ],
               ),
             ),

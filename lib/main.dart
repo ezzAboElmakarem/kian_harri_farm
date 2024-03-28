@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:kian_sheeps_projects/features/login/bloc/login_bloc.dart';
+import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
@@ -59,6 +61,10 @@ class _MyAppState extends State<MyApp> {
                 BlocProvider(
                   create: (context) => RegisterBloc(),
                   child: const RegisterView(),
+                ),
+                BlocProvider(
+                  create: (context) => LoginBloc(),
+                  child: const LoginScreenView(),
                 ),
               ],
               child: MaterialApp(

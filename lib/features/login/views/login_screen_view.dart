@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/login/bloc/login_bloc.dart';
 import '../../home/views/home_view.dart';
 import '../widgets/forget_password_button.dart';
 import '../widgets/login_button.dart';
@@ -16,6 +18,8 @@ class LoginScreenView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = LoginBloc.get(context);
+
     return Scaffold(
       body: DecoratedBackGround(
         child: SingleChildScrollView(
@@ -39,11 +43,14 @@ class LoginScreenView extends StatelessWidget {
                   ),
                   LoginButton(
                     onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => HomeView(),
-                        ),
-                      );
+                      if (bloc.formkey.currentState!.validate()) {
+                        bloc.add(Click());
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => HomeView(),
+                          ),
+                        );
+                      }
                     },
                   ),
                   SizedBox(

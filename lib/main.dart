@@ -3,11 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:kian_sheeps_projects/features/forget_password/bloc/forget_password_bloc.dart';
+import 'package:kian_sheeps_projects/features/forget_password/views/forget_password_view.dart';
 import 'package:kian_sheeps_projects/features/login/bloc/login_bloc.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
+import 'package:kian_sheeps_projects/features/reset_password/bloc/reset_pass_bloc.dart';
+import 'package:kian_sheeps_projects/features/verify_code/views/vrefiy_code_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
+import 'features/verify_code/verify_code_bloc/verify_code_bloc.dart';
 import 'helper/change_locale_method.dart';
 import 'helper/color_styles.dart';
 import 'features/splash_screen/views/splash_screen_view.dart';
@@ -65,6 +70,17 @@ class _MyAppState extends State<MyApp> {
                 BlocProvider(
                   create: (context) => LoginBloc(),
                   child: const LoginScreenView(),
+                ),
+                BlocProvider(
+                  create: (context) => ForgetPasswordBLoc(),
+                  child: const ForgetPasswordView(),
+                ),
+                BlocProvider(
+                  create: (context) => VerifyCodeBLoc(),
+                  child: const VerfiyCodeScreenView(),
+                ),
+                BlocProvider(
+                  create: (context) => ResetPasswordBLoc(),
                 ),
               ],
               child: MaterialApp(

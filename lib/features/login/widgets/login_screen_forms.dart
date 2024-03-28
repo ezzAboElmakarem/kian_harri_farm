@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/login/bloc/login_bloc.dart';
 import 'package:kian_sheeps_projects/helper/validations.dart';
-import '../../../helper/is_arabic_method.dart';
 import '../../../widgets/custom_tex_form_field.dart';
 
 class LoginScreenForms extends StatefulWidget {

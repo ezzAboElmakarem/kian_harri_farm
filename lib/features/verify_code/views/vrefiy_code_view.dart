@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import '../verify_code_bloc/verify_code_bloc.dart';
 import '../widgets/pin_code_widget.dart';
 import '../../reset_password/views/reset_password_screen_view.dart';
 import '../../../widgets/background_decoration.dart';
@@ -12,6 +14,8 @@ class VerfiyCodeScreenView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = VerifyCodeBLoc.get(context);
+
     return Scaffold(
       body: DecoratedBackGround(
         child: Center(
@@ -35,11 +39,15 @@ class VerfiyCodeScreenView extends StatelessWidget {
                     buttonText: 'متابعة',
                     textColor: null,
                     onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const ResetPasswordScreenView(),
-                        ),
-                      );
+                      if (bloc.formkey.currentState!.validate()) {
+                        bloc.add(Click());
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const ResetPasswordScreenView(),
+                          ),
+                        );
+                      }
                     },
                   ),
                   SizedBox(

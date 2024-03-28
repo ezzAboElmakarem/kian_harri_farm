@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../password_verification/views/vrefiy_code_view.dart';
+import 'package:kian_sheeps_projects/features/forget_password/widgets/forget_pass_button.dart';
+import 'package:kian_sheeps_projects/features/forget_password/widgets/forget_pass_form.dart';
 import '../../../widgets/background_decoration.dart';
-import '../../../widgets/custom_button.dart';
-import '../../../widgets/custom_tex_form_field.dart';
 import '../../../widgets/password_image_and_title.dart';
 
 class ForgetPasswordView extends StatelessWidget {
@@ -27,26 +26,11 @@ class ForgetPasswordView extends StatelessWidget {
                   SizedBox(
                     height: 40.h,
                   ),
-                  CustomTextFormField(
-                    isEnabled: true,
-                    type: TextInputType.emailAddress,
-                    title: 'رقم الجوال / البريد الالكتروني',
-                    ispassword: false,
-                  ),
+                  const ForgetPasswordForm(),
                   SizedBox(
                     height: 40.h,
                   ),
-                  CustomButton(
-                    buttonText: 'ارسال الكود',
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const VerfiyCodeScreenView(),
-                        ),
-                      );
-                    },
-                    textColor: null,
-                  ),
+                  const ForgetPasswordButton(),
                 ],
               ),
             ),

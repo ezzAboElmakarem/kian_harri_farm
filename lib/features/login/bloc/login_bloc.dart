@@ -19,7 +19,6 @@ class LoginBloc extends Bloc<AppEvent, AppState> {
   TextEditingController emailOrPhone = TextEditingController();
   TextEditingController password = TextEditingController();
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
-
   ////////////////////////////////////////////////////////////////////////
   ///  ////////////////////////////////////////////////////////////////////////
   ///   ///////////////////////////////   METHODS        /////////////////////////////////////////
@@ -40,12 +39,13 @@ class LoginBloc extends Bloc<AppEvent, AppState> {
         log(response.statusCode.toString());
         log("login success welcome > ${response.data}");
       } else {
-        emit(Error());
+        emit(Error(
+            "login error with status code  ==> ${response.statusCode.toString()}"));
         log(response.statusCode.toString());
         log("login error the data is ==> ${response.data}");
       }
     } catch (e) {
-      emit(Error());
+      emit(Error("catch an error ===> ${e.toString()}"));
       log(e.toString());
       log("catch an error ");
     }

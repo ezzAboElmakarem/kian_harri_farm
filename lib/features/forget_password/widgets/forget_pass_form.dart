@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:kian_sheeps_projects/features/forget_password/bloc/forget_password_bloc.dart';
 import 'package:kian_sheeps_projects/helper/validations.dart';
@@ -19,7 +20,7 @@ class ForgetPasswordForm extends StatelessWidget {
         type: TextInputType.emailAddress,
         controller: bloc.emailOrPhone,
         validation: Validator.empty,
-        title: 'رقم الجوال / البريد الالكتروني',
+        title: "email_or_phone".tr(),
         ispassword: false,
       ),
     );

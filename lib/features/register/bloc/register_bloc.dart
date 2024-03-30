@@ -46,11 +46,12 @@ class RegisterBloc extends Bloc<AppEvent, AppState> {
         emit(Done());
         log("name => ${body["name"]}");
       } else {
-        emit(Error());
+        emit(Error(
+            "Register Failed  with status code ==> ${response.statusCode.toString()}"));
         log('error name  ${body["name"]}');
       }
     } catch (e) {
-      emit(Error());
+      emit(Error("catch an error ===> ${e.toString()}"));
       log(e.toString());
       log(body["phone"]);
     }

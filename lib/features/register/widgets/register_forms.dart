@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
@@ -24,7 +25,7 @@ class _RegisterFormsState extends State<RegisterForms> {
           CustomTextFormField(
             isEnabled: true,
             type: TextInputType.name,
-            title: "الاسم",
+            title: "name".tr(),
             ispassword: false,
             controller: bloc.name,
             validation: Validator.name,
@@ -35,7 +36,7 @@ class _RegisterFormsState extends State<RegisterForms> {
           CustomTextFormField(
             isEnabled: true,
             type: TextInputType.phone,
-            title: 'رقم الجوال',
+            title: 'phone'.tr(),
             ispassword: false,
             controller: bloc.phone,
             validation: Validator.phone,
@@ -46,7 +47,7 @@ class _RegisterFormsState extends State<RegisterForms> {
           CustomTextFormField(
             isEnabled: true,
             type: TextInputType.emailAddress,
-            title: "البريد الالكترونى",
+            title: 'email'.tr(),
             ispassword: false,
             controller: bloc.email,
             validation: Validator.email,
@@ -57,7 +58,7 @@ class _RegisterFormsState extends State<RegisterForms> {
           CustomTextFormField(
             isEnabled: true,
             type: TextInputType.visiblePassword,
-            title: 'كلمة المرور',
+            title: 'password'.tr(),
             ispassword: isPassword,
             controller: bloc.password,
             validation: Validator.password,
@@ -75,13 +76,13 @@ class _RegisterFormsState extends State<RegisterForms> {
           ),
           CustomTextFormField(
             isEnabled: true,
-            title: 'تأكيد كلمة المرور',
+            title: 'confirm_password'.tr(),
             type: TextInputType.visiblePassword,
             ispassword: isConfirmPassword,
             controller: bloc.passwordConfirmation,
             validation: (value) {
               if (value != bloc.password.value.text) {
-                return "كلمة مرور غير مطابقة ";
+                return 'password_dose_not_match';
               }
               return null;
             },

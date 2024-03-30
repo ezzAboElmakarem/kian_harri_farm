@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -39,12 +38,16 @@ class ResetPasswordBLoc extends Bloc<AppEvent, AppState> {
 
         log("password Has been reset");
       } else {
-        emit(Error());
+        emit(Error(
+            "Reset pass Failed  with status code ==> ${response.statusCode.toString()}"));
+
         log(response.statusCode.toString());
 
         log("Failed to reset the pass");
       }
     } catch (e) {
+      emit(Error("catch an error ===> ${e.toString()}"));
+
       log("Catch an error => ${e.toString()}");
     }
   }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../helper/text_styles.dart';
 
@@ -8,11 +9,15 @@ class ResetPasswordBodyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'كلمة المرور الجديدة يجب ان تكون مختلفة كليا عن كلمة المرو القديمة',
-      textAlign: TextAlign.right,
-      style:
-          TextStyles.textstyle16.copyWith(color: Colors.black.withOpacity(0.5)),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "reset_pass_body_text".tr(),
+          style: TextStyles.textstyle16
+              .copyWith(color: Colors.black.withOpacity(0.5)),
+        ),
+      ],
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -30,12 +29,15 @@ class VerifyCodeBLoc extends Bloc<AppEvent, AppState> {
 
         log("Code Has been Verified");
       } else {
-        emit(Error());
-        log(response.statusCode.toString());
+        emit(Error(
+            "verify code Failed  with status code ==> ${response.statusCode.toString()}"));
 
         log("Failed to Verify the code");
+        log("there is an error with status code : ${response.statusCode}");
       }
     } catch (e) {
+      emit(Error("catch an error ===> ${e.toString()}"));
+
       log("Catch an error => ${e.toString()}");
     }
   }

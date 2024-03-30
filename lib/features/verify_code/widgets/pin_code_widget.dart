@@ -3,10 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
-import 'package:pinput/pinput.dart';
-import '../../../helper/is_arabic_method.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-
 import '../verify_code_bloc/verify_code_bloc.dart';
 
 class CustomAppPinCodeField extends StatefulWidget {
@@ -48,31 +45,33 @@ class _CustomAppPinCodeFieldState extends State<CustomAppPinCodeField> {
       key: bloc.formkey,
       child: Directionality(
         textDirection: TextDirection.ltr,
-        child: Pinput(
+        child: PinCodeTextField(
           keyboardType: TextInputType.number,
-          // errorTextDirection: TextDirection.ltr,
-          // errorTextSpace: 25,
+          errorTextDirection: TextDirection.ltr,
+          errorTextSpace: 25,
           validator: (v) {
             if (v!.length < 4) {
-              return "من فضلك أدخل الكود";
+              return RouteUtils.isAR
+                  ? "من فضلك أدخل الكود"
+                  : "Please enter the code";
             } else {
               return null;
             }
           },
           length: 4,
           obscureText: false,
-          // animationType: AnimationType.fade,
-          // pinTheme: PinTheme(
-          //   shape: PinCodeFieldShape.box,
-          //   borderRadius: BorderRadius.circular(5),
-          //   fieldHeight: 70.h,
-          //   fieldWidth: 68.w,
-          //   activeFillColor: Colors.white,
-          // ),
+          animationType: AnimationType.fade,
+          pinTheme: PinTheme(
+            shape: PinCodeFieldShape.box,
+            borderRadius: BorderRadius.circular(5),
+            fieldHeight: 70.h,
+            fieldWidth: 68.w,
+            activeFillColor: Colors.white,
+          ),
           animationDuration: const Duration(milliseconds: 300),
           // backgroundColor: Colors.blue.shade50,
           //  enableActiveFill: true,
-          // errorAnimationController: errorController,
+          errorAnimationController: errorController,
           controller: bloc.code,
           onCompleted: (v) {
             print("Completed");
@@ -83,13 +82,13 @@ class _CustomAppPinCodeFieldState extends State<CustomAppPinCodeField> {
               currentText = value;
             });
           },
-          // beforeTextPaste: (text) {
-          //   print("Allowing to paste $text");
-          //   //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-          //   //but you can show anything you want here, like your pop up saying wrong paste format or etc
-          //   return true;
-          // },
-          // appContext: context,
+          beforeTextPaste: (text) {
+            print("Allowing to paste $text");
+            //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
+            //but you can show anything you want here, like your pop up saying wrong paste format or etc
+            return true;
+          },
+          appContext: context,
         ),
       ),
     );

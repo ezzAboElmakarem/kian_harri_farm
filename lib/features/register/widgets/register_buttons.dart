@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
+import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
-import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
+import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
 import 'package:kian_sheeps_projects/widgets/question_and_button.dart';
@@ -20,11 +22,12 @@ class RegisterButtons extends StatelessWidget {
     return Column(
       children: [
         CustomButton(
-          buttonText: 'تسجيل الدخول',
+          buttonText: "login_button".tr(),
           textColor: Colors.white,
           onTap: () {
             if (bloc.formkey.currentState!.validate()) {
               bloc.add(Click());
+              RouteUtils.navigateAndPopAll(HomeView());
             }
           },
         ),
@@ -32,14 +35,18 @@ class RegisterButtons extends StatelessWidget {
           height: 15.h,
         ),
         QuestionAndButton(
-            text: 'تسجيل الدخول', questionText: 'لديك حساب ؟', onTap: () {}),
+            text: "login_button".tr(),
+            questionText: "have_account".tr(),
+            onTap: () {
+              RouteUtils.navigateAndPopAll(const LoginScreenView());
+            }),
         SizedBox(
           height: 15.h,
         ),
         CustomTextButton(
-          text: 'التصفح بدون تسجيل دخول',
+          text: "vistor_button".tr(),
           onTap: () {
-            navigateTo(context: context, widget: HomeView());
+            RouteUtils.navigateAndPopAll(HomeView());
           },
         ),
         SizedBox(

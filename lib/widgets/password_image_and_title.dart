@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,7 +17,7 @@ class PasswordImageAndTitle extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'استرجاع كلمة المرور',
+          "forget_password_screen_title".tr(),
           style: TextStyles.textstyle20,
         ),
         SizedBox(
@@ -30,7 +31,6 @@ class PasswordImageAndTitle extends StatelessWidget {
         Text(
           textBody,
           style: TextStyles.textstyle16,
-          textAlign: TextAlign.right,
         ),
       ],
     );

@@ -30,12 +30,16 @@ class ForgetPasswordBLoc extends Bloc<AppEvent, AppState> {
 
         log("Code Has been sending");
       } else {
-        emit(Error());
+        emit(Error(
+            "Failed to send the code with status ==> ${response.statusCode.toString()}"));
+
         log(response.statusCode.toString());
 
         log("Failed to send the code");
       }
     } catch (e) {
+      emit(Error("catch an error ===> ${e.toString()}"));
+
       log("Catch an error => ${e.toString()}");
     }
   }

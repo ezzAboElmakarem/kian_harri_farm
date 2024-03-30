@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/reset_password/bloc/reset_pass_bloc.dart';
@@ -27,11 +28,11 @@ class _ResetPasswordFormsState extends State<ResetPasswordForms> {
             isEnabled: true,
             ispassword: isPassword,
             type: TextInputType.visiblePassword,
-            title: 'كلمة المرور الجديدة',
+            title: "new_password".tr(),
             errorColor: Colors.red,
             controller: bloc.password,
             validation: Validator.password,
-            prefixIcon: IconButton(
+            suffixIcon: IconButton(
               onPressed: () {
                 setState(() {
                   isPassword = !isPassword;
@@ -45,21 +46,21 @@ class _ResetPasswordFormsState extends State<ResetPasswordForms> {
           ),
           CustomTextFormField(
             isEnabled: true,
-            title: 'تأكيد كلمة المرور الجديدة',
+            title: "confirm_new_password".tr(),
             type: TextInputType.visiblePassword,
             ispassword: isPasswordConfirm,
             controller: bloc.confirmPassword,
             validation: (value) {
               final password = bloc.password.text;
               if (value == null || value.isEmpty) {
-                return 'Please enter your password confirmation';
+                return "please_confirm_password".tr();
               }
               if (value != password) {
-                return 'Passwords do not match';
+                return "password_dose_not_match".tr();
               }
               return null;
             },
-            prefixIcon: IconButton(
+            suffixIcon: IconButton(
               onPressed: () {
                 setState(() {
                   isPasswordConfirm = !isPasswordConfirm;

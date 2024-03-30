@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
@@ -29,7 +30,7 @@ class _AcceptTermsWidgetState extends State<AcceptTermsWidget> {
           },
         ),
         Text(
-          "اوافق علي",
+          'i_agree'.tr(),
           style: TextStyles.textstyle12,
         ),
         SizedBox(
@@ -45,7 +46,7 @@ class _AcceptTermsWidgetState extends State<AcceptTermsWidget> {
 
             // RouteUtils.navigateTo(const NewLoginScreenView());
           },
-          child: Text("الشروط الاحكام",
+          child: Text("terms_and_conditions".tr(),
               style: TextStyles.textstyle12.copyWith(color: kPrimaryColor)),
         ),
       ],

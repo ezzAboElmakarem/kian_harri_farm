@@ -1,10 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 import 'package:kian_sheeps_projects/widgets/custom_text_button.dart';
@@ -21,13 +24,20 @@ class RegisterButtons extends StatelessWidget {
 
     return Column(
       children: [
-        CustomButton(
-          buttonText: "login_button".tr(),
-          textColor: Colors.white,
-          onTap: () {
-            if (bloc.formkey.currentState!.validate()) {
-              bloc.add(Click());
-              RouteUtils.navigateAndPopAll(HomeView());
+        BlocBuilder<RegisterBloc, AppState>(
+          builder: (context, state) {
+            if (state is Loading) {
+              return const Center(
+                child: CircularProgressIndicator(color: kPrimaryColor),
+              );
+            } else {
+              return CustomButton(
+                buttonText: "login_button".tr(),
+                textColor: Colors.white,
+                onTap: () {
+                  bloc.add(Click());
+                },
+              );
             }
           },
         ),

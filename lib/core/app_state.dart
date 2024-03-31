@@ -93,11 +93,8 @@ class ApprovalsDoneState extends AppState {
   ApprovalsDoneState({this.approvals});
 }
 
-// I Add  errorMsg
 class Error extends AppState {
-  final String errorMsg;
-
-  Error(this.errorMsg);
+  Error();
 }
 
 class FilterState extends AppState {}

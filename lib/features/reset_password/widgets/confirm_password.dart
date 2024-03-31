@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
-import 'package:kian_sheeps_projects/features/forget_password/bloc/forget_password_bloc.dart';
+import 'package:kian_sheeps_projects/features/reset_password/bloc/reset_pass_bloc.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 
-class ForgetPasswordButton extends StatelessWidget {
-  const ForgetPasswordButton({
+class ConfirmPassword extends StatelessWidget {
+  const ConfirmPassword({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    var bloc = ForgetPasswordBLoc.get(context);
+    var bloc = ResetPasswordBLoc.get(context);
 
-    return BlocBuilder<ForgetPasswordBLoc, AppState>(
+    return BlocBuilder<ResetPasswordBLoc, AppState>(
       builder: (context, state) {
         if (state is Loading) {
           return const Center(
@@ -24,11 +24,11 @@ class ForgetPasswordButton extends StatelessWidget {
           );
         } else {
           return CustomButton(
-            buttonText: 'send_code'.tr(),
+            buttonText: "confirm".tr(),
+            textColor: null,
             onTap: () {
               bloc.add(Click());
             },
-            textColor: null,
           );
         }
       },

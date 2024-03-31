@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -5,7 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
+import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/login/repo/login_repo.dart';
+import 'package:kian_sheeps_projects/helper/routes.dart';
+import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
 
 class LoginBloc extends Bloc<AppEvent, AppState> {
   LoginBloc() : super(Start()) {
@@ -25,6 +30,8 @@ class LoginBloc extends Bloc<AppEvent, AppState> {
   ///  ////////////////////////////////////////////////////////////////////////
 
   _login(AppEvent event, Emitter<AppState> emit) async {
+    if (!formkey.currentState!.validate()) return;
+
     emit(Loading());
     Map<String, dynamic> body = {
       "data": emailOrPhone.text,
@@ -36,16 +43,17 @@ class LoginBloc extends Bloc<AppEvent, AppState> {
       log(response.statusCode.toString());
       if (response.statusCode == 200) {
         emit(Done());
-        log(response.statusCode.toString());
+        RouteUtils.navigateAndPopAll(HomeView());
         log("login success welcome > ${response.data}");
       } else {
-        emit(Error(
-            "login error with status code  ==> ${response.statusCode.toString()}"));
-        log(response.statusCode.toString());
-        log("login error the data is ==> ${response.data}");
+        emit(Error());
+        showSnackBar(RouteUtils.context,
+            "catch an error ==>${response.statusCode.toString()}");
       }
     } catch (e) {
-      emit(Error("catch an error ===> ${e.toString()}"));
+      emit(Error());
+      showSnackBar(RouteUtils.context, "catch an error ==>$e");
+
       log(e.toString());
       log("catch an error ");
     }

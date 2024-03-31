@@ -70,7 +70,6 @@ class _OnBordingScreenViewState extends State<OnBordingScreenView> {
   }
 }
 
-
 // class BordinPageView extends StatefulWidget {
 //    BordinPageView({super.key, required this.isLastScreen, required this.bordingController});
 //   bool isLastScreen;

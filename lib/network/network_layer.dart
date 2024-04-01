@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:kian_sheeps_projects/core/app_config/app_config.dart';
+import 'package:kian_sheeps_projects/app_config/app_config.dart';
 import 'package:kian_sheeps_projects/core/AppStorage.dart';
 import 'package:kian_sheeps_projects/network/mapper.dart';
 import 'package:kian_sheeps_projects/network/network_logger.dart';
@@ -33,13 +33,13 @@ class Network {
     Map<String, dynamic>? header,
     ServerMethods method = ServerMethods.GET,
   }) async {
-    String _token = AppStorage.getToken ?? "";
+    String? _token = AppStorage.getToken;
 
     _dio.options.headers = {
-      'Authorization': 'Bearer $_token',
+      if (_token != null) 'Authorization': 'Bearer $_token',
       'Accept': 'application/json',
       "User-Agent": "Dart",
-      'Lang': lang,
+      'Accept-Language': lang,
     };
     if (header != null) {
       _dio.options.headers.addAll(header);

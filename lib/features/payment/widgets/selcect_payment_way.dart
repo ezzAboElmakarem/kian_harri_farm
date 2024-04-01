@@ -112,8 +112,6 @@ class _SelectPaymentWayState extends State<SelectPaymentWay> {
   }
 }
 
-
-
 /*
 
 */

@@ -1,3 +1,4 @@
+import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/splash_screen/views/splash_screen_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:get_storage/get_storage.dart';
@@ -24,7 +25,7 @@ class AppStorage {
   // static Future<void> cacheUser(UserModel user) async => await _box.write('user', user.toJson());
   // static UserModel get getUserModel => UserModel.fromJson(_box.read('user'));
   // static int get getId => getUserModel.data!.id!;
-  static String get getToken => _box.read('token') ?? "";
+  static String? get getToken => _box.read('token');
 
   static bool get isLogged => _box.hasData('userToken');
 
@@ -40,6 +41,6 @@ class AppStorage {
     await _box.erase();
     print("user isLogged :: $isLogged");
     // CustomNavigator.push(Routes.SPLASH, clean: true);
-    RouteUtils.navigateAndPopAll(const SplashScreenView());
+    RouteUtils.navigateAndPopAll(const LoginScreenView());
   }
 }

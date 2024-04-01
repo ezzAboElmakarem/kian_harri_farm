@@ -8,7 +8,8 @@ import '../../../widgets/password_image_and_title.dart';
 import '../../../widgets/question_and_button.dart';
 
 class VerfiyCodeScreenView extends StatelessWidget {
-  const VerfiyCodeScreenView({super.key});
+  final bool? isRegister;
+  const VerfiyCodeScreenView({super.key, this.isRegister = false});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class VerfiyCodeScreenView extends StatelessWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  const ContinueButton(),
+                  ContinueButton(isRegister: isRegister),
                   SizedBox(
                     height: 20.h,
                   ),

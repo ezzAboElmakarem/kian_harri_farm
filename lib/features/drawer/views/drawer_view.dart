@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/AppStorage.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import '../../about_us/views/about_us_view.dart';
 import '../../update_profile/views/update_profile_view.dart';
 import '../../addresses/views/addresses_list_view.dart';
@@ -55,7 +57,7 @@ class DrawerView extends StatelessWidget {
     {
       "imagePath": AssetsData.languageIcon,
       "title": 'language'.tr(),
-      "widget": LanguageView(appState: AppState()),
+      "widget": LanguageView(appState: AppLocaleLang()),
     },
     {
       "imagePath": AssetsData.infoIcon,
@@ -117,13 +119,49 @@ class DrawerView extends StatelessWidget {
                   ),
               itemCount: drawerItems.length),
           SizedBox(height: 24.h),
-          const DrawerSectionItem(
-              navigationButton: true,
-              widget: CartView(),
-              sectionIcon: AssetsData.logOutIcon,
-              sectionTitle: 'تسجيل الخروج'),
+          const LogOutButton(),
+          // const DrawerSectionItem(
+          //     navigationButton: true,
+          //     widget: CartView(),
+          //     sectionIcon: AssetsData.logOutIcon,
+          //     sectionTitle: 'تسجيل الخروج'),
+
           SizedBox(height: 30.h),
         ],
+      ),
+    );
+  }
+}
+
+class LogOutButton extends StatelessWidget {
+  const LogOutButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).pop();
+        AppStorage.signOut();
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: Row(
+          children: [
+            Image.asset(
+              AssetsData.logOutIcon,
+              height: 24.h,
+              width: 24.w,
+            ),
+            SizedBox(
+              width: 8.w,
+            ),
+            Text(
+              "log_out".tr(),
+              style: TextStyles.textstyle14,
+            ),
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }

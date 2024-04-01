@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/reset_password/widgets/confirm_passwprd.dart';
+import 'package:kian_sheeps_projects/features/reset_password/widgets/confirm_password.dart';
 import '../widgets/reset_password_body_text.dart';
 import '../widgets/reset_password_screen_body.dart';
 import '../../../widgets/background_decoration.dart';

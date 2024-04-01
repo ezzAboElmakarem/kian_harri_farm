@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppState {
+class AppLocaleLang {
   Locale currentLocale = const Locale('en');
 
   void changeLocale(Locale newLocale) {

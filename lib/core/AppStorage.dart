@@ -1,3 +1,4 @@
+import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/splash_screen/views/splash_screen_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:get_storage/get_storage.dart';
@@ -40,6 +41,6 @@ class AppStorage {
     await _box.erase();
     print("user isLogged :: $isLogged");
     // CustomNavigator.push(Routes.SPLASH, clean: true);
-    RouteUtils.navigateAndPopAll(const SplashScreenView());
+    RouteUtils.navigateAndPopAll(const LoginScreenView());
   }
 }

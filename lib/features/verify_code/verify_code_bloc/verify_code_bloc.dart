@@ -5,8 +5,10 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
+import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/reset_password/views/reset_password_screen_view.dart';
 import 'package:kian_sheeps_projects/features/verify_code/repo/verify_code_repo.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
@@ -22,17 +24,20 @@ class VerifyCodeBLoc extends Bloc<AppEvent, AppState> {
 
   verifyCode(Click event, Emitter<AppState> emit) async {
     if (!formkey.currentState!.validate()) return;
-
     emit(Loading());
     Map<String, dynamic> body = {
-      "user_id": "6",
+      "user_id": GetStorage().read('user_id'),
       "code": code.text,
     };
     try {
       Response response = await VerifyCodeRepository.verifyCode(body: body);
       if (response.statusCode == 200) {
         emit(Done());
-        RouteUtils.navigateAndPopAll(const ResetPasswordScreenView());
+        if (event.arguments == true) {
+          RouteUtils.navigateAndPopAll(HomeView());
+        } else {
+          RouteUtils.navigateAndPopAll(const ResetPasswordScreenView());
+        }
 
         log(response.statusCode.toString());
 

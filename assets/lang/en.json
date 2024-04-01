@@ -96,7 +96,8 @@
     "reset_pass_body_text" : "The new password must be completely different from the old password",
     "new_password" : "New Password",
     "confirm_new_password" : "Confirm New Password",
-    "error_getting_data" : "Failed To Load Data"
+    "error_getting_data" : "Failed To Load Data",
+    "log_out": "Log Out"
 
     
     

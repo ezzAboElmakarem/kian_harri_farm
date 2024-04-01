@@ -37,7 +37,6 @@ class Network {
 
     _dio.options.headers = {
       if (_token != null) 'Authorization': 'Bearer $_token',
-      'Authorization': 'Bearer $_token',
       'Accept': 'application/json',
       "User-Agent": "Dart",
       'Accept-Language': lang,

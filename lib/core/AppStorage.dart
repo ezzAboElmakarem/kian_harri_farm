@@ -24,7 +24,7 @@ class AppStorage {
   // static Future<void> cacheUser(UserModel user) async => await _box.write('user', user.toJson());
   // static UserModel get getUserModel => UserModel.fromJson(_box.read('user'));
   // static int get getId => getUserModel.data!.id!;
-  static String get getToken => _box.read('token') ?? "";
+  static String? get getToken => _box.read('token');
 
   static bool get isLogged => _box.hasData('userToken');
 

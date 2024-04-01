@@ -55,7 +55,7 @@ class DrawerView extends StatelessWidget {
     {
       "imagePath": AssetsData.languageIcon,
       "title": 'language'.tr(),
-      "widget": LanguageView(appState: AppState()),
+      "widget": LanguageView(appState: AppLocaleLang()),
     },
     {
       "imagePath": AssetsData.infoIcon,

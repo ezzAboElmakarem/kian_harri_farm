@@ -16,8 +16,6 @@ class KeyboardPopScaffold extends StatelessWidget {
   }
 }
 
-
-
 // import 'package:flutter/material.dart';
 
 // class KeyboardCloseObserver extends StatefulWidget {

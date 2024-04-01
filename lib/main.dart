@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/forget_password/bloc/forget_password_bloc.dart';
 import 'package:kian_sheeps_projects/features/forget_password/views/forget_password_view.dart';
+import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'package:kian_sheeps_projects/features/login/bloc/login_bloc.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
@@ -12,6 +14,7 @@ import 'package:kian_sheeps_projects/features/register/views/register_view.dart'
 import 'package:kian_sheeps_projects/features/reset_password/bloc/reset_pass_bloc.dart';
 import 'package:kian_sheeps_projects/features/verify_code/views/vrefiy_code_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
+import 'package:kian_sheeps_projects/network/network_layer.dart';
 import 'features/verify_code/verify_code_bloc/verify_code_bloc.dart';
 import 'helper/change_locale_method.dart';
 import 'helper/color_styles.dart';
@@ -51,10 +54,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  AppState appState = AppState();
+  AppLocaleLang appState = AppLocaleLang();
 
   @override
   Widget build(BuildContext context) {
+    Network.lang = context.locale.languageCode;
     return ScreenUtilInit(
         designSize: const Size(375, 825),
         minTextAdapt: true,
@@ -82,6 +86,9 @@ class _MyAppState extends State<MyApp> {
                 BlocProvider(
                   create: (context) => ResetPasswordBLoc(),
                 ),
+                BlocProvider(
+                  create: (context) => HomeBloc()..add(Get()),
+                ),
               ],
               child: MaterialApp(
                 debugShowCheckedModeBanner: false,
@@ -91,7 +98,6 @@ class _MyAppState extends State<MyApp> {
                   colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
                   useMaterial3: true,
                 ),
-                home: const SplashScreenView(),
                 navigatorKey: navigatorKey,
                 onGenerateRoute: onGenerateRoute,
                 localizationsDelegates: context.localizationDelegates,
@@ -100,6 +106,7 @@ class _MyAppState extends State<MyApp> {
                   Locale('en'),
                 ],
                 locale: context.locale,
+                home: const SplashScreenView(),
               ),
             ),
           );

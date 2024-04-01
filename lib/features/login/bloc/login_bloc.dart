@@ -48,7 +48,7 @@ class LoginBloc extends Bloc<AppEvent, AppState> {
       } else {
         emit(Error());
         showSnackBar(RouteUtils.context,
-            "catch an error ==>${response.statusCode.toString()}");
+            "catch an error ==>${response.statusMessage.toString()}");
       }
     } catch (e) {
       emit(Error());

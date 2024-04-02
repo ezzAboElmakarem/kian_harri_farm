@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kian_sheeps_projects/core/AppStorage.dart';
+import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
+import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
+import 'package:kian_sheeps_projects/helper/routes.dart';
 import '../../onbording/views/onbording_screen_view.dart';
 import '../widgets/splash_logo.dart';
 import '../../../widgets/background_decoration.dart';
@@ -13,7 +17,18 @@ class SplashScreenView extends StatefulWidget {
 class _SplashScreenViewState extends State<SplashScreenView> {
   @override
   void initState() {
-    navigateToHome();
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        if (AppStorage.isLogged) {
+          RouteUtils.navigateAndPopAll(HomeView());
+        } else if (AppStorage.isOnBoardingComplete) {
+          RouteUtils.navigateAndPopAll(const LoginScreenView());
+        } else {
+          RouteUtils.navigateAndPopAll(const OnBordingScreenView());
+        }
+      },
+    );
     super.initState();
   }
 

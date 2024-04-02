@@ -47,8 +47,7 @@ class ResetPasswordBLoc extends Bloc<AppEvent, AppState> {
         log("password Has been reset");
       } else {
         emit(Error());
-        showSnackBar(RouteUtils.context,
-            "catch an error ==>${response.statusCode.toString()}");
+        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
 
         log(response.statusCode.toString());
 

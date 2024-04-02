@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:kian_sheeps_projects/core/AppStorage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
@@ -56,11 +57,12 @@ class RegisterBloc extends Bloc<AppEvent, AppState> {
       print("the code is **********${response.data["data"]["code"]}");
       String userId = response.data["data"]["user_id"].toString();
       String code = response.data["data"]["code"].toString();
-
       GetStorage().write('user_id', userId);
       GetStorage().write('code', code);
       if (response.statusCode == 200) {
         emit(Done());
+        AppStorage.cacheToken(response.data['data']['token']);
+
         RouteUtils.navigateAndPopAll(const VerfiyCodeScreenView(
           isRegister: true,
         ));
@@ -69,8 +71,7 @@ class RegisterBloc extends Bloc<AppEvent, AppState> {
       } else {
         emit(Error());
         log('error name  ${body["name"]}');
-        showSnackBar(RouteUtils.context,
-            "catch an error ==>${response.statusCode.toString()}");
+        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
       }
     } catch (e) {
       emit(Error());

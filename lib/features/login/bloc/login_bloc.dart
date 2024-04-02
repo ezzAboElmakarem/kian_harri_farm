@@ -5,6 +5,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kian_sheeps_projects/core/AppStorage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
@@ -43,16 +44,16 @@ class LoginBloc extends Bloc<AppEvent, AppState> {
       log(response.statusCode.toString());
       if (response.statusCode == 200) {
         emit(Done());
+        AppStorage.cacheToken(response.data['data']['token']);
         RouteUtils.navigateAndPopAll(HomeView());
         log("login success welcome > ${response.data}");
       } else {
         emit(Error());
-        showSnackBar(RouteUtils.context,
-            "catch an error ==>${response.statusMessage.toString()}");
+        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
       }
     } catch (e) {
       emit(Error());
-      showSnackBar(RouteUtils.context, "catch an error ==>$e");
+      showSnackBar(RouteUtils.context, '"catch an error ==>$e"');
 
       log(e.toString());
       log("catch an error ");

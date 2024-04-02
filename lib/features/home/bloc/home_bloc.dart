@@ -29,8 +29,7 @@ class HomeBloc extends Bloc<AppEvent, AppState> {
         emit(Done());
       } else {
         emit(Error());
-        showSnackBar(RouteUtils.context,
-            "catch an error ==>${response.statusCode.toString()}");
+        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
         log('Get data Failed with Status code ${response.statusCode}');
       }
     } catch (e) {

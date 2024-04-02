@@ -39,8 +39,7 @@ class ForgetPasswordBLoc extends Bloc<AppEvent, AppState> {
         log("Code Has been sending");
       } else {
         emit(Error());
-        showSnackBar(RouteUtils.context,
-            "Failed to send the code ==>${response.statusCode.toString()}");
+        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
 
         log(response.statusCode.toString());
       }

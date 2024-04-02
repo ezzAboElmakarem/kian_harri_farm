@@ -1,4 +1,3 @@
-import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/splash_screen/views/splash_screen_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:get_storage/get_storage.dart';
@@ -8,14 +7,23 @@ class AppStorage {
 
   static Future<void> init() async => await GetStorage.init();
 
+  /// save token to check login
   static void cacheToken(String value) => _box.write('token', value);
+  static String? get getToken => _box.read('token');
+  static bool get isLogged => _box.hasData('token');
+
+  /// check onborading
+  static void cacheOnBoarding(bool value) =>
+      _box.write('onboarding_completed', value);
+  static bool get isOnBoardingComplete =>
+      _box.read('onboarding_completed') ?? false;
 
   static void cacheSocial(String value) => _box.write('social', value);
 
   static void cacheNotification(bool value) =>
       _box.write('notification', value);
 
-  static void cacheId(int id) => _box.write('id', id);
+  static void cacheId(var id) => _box.write('id', id);
 
   // static Future<void> cacheUserToken(UserTokenModel user) async =>
   //     await _box.write('userToken', user.toJson());
@@ -25,9 +33,6 @@ class AppStorage {
   // static Future<void> cacheUser(UserModel user) async => await _box.write('user', user.toJson());
   // static UserModel get getUserModel => UserModel.fromJson(_box.read('user'));
   // static int get getId => getUserModel.data!.id!;
-  static String? get getToken => _box.read('token');
-
-  static bool get isLogged => _box.hasData('userToken');
 
   static bool? get getNotification => _box.read('notification');
 
@@ -41,6 +46,6 @@ class AppStorage {
     await _box.erase();
     print("user isLogged :: $isLogged");
     // CustomNavigator.push(Routes.SPLASH, clean: true);
-    RouteUtils.navigateAndPopAll(const LoginScreenView());
+    RouteUtils.navigateAndPopAll(const SplashScreenView());
   }
 }

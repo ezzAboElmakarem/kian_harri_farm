@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'custom_category_item.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
@@ -14,6 +15,8 @@ class CustomCategoryListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = HomeBloc.get(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -36,11 +39,16 @@ class CustomCategoryListView extends StatelessWidget {
             separatorBuilder: (context, index) => SizedBox(
               width: 1.h,
             ),
-            itemCount: 8,
-            itemBuilder: (context, index) => CustomCategoryItem(
-                categoryColor: ColorStyles.vegetablesCategoryColor,
-                categoryImage: AssetsData.meatEmoji,
-                categoryName: 'خضراوت'),
+            itemCount: bloc.homeData.category!.length,
+            itemBuilder: (context, index) {
+              String colorString = bloc.homeData.category![index].color!;
+              int colorValue = int.parse(colorString.substring(1), radix: 16);
+              Color color = Color(0xFF000000 + colorValue);
+              return CustomCategoryItem(
+                  categoryColor: color,
+                  categoryImage: bloc.homeData.category![index].image!,
+                  categoryName: bloc.homeData.category![index].name!);
+            },
           ),
         ),
       ],

@@ -35,17 +35,19 @@ class CustomCategoryItem extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.all(8.h),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10000),
                 child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  height: 40.h,
-                  width: 40.w,
-                  child: Image.asset(
-                    categoryImage,
+                  width: 44.w,
+                  height: 44.w,
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.white,
+                      backgroundImage: NetworkImage(categoryImage),
+                    ),
                   ),
                 ),
               ),

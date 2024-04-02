@@ -7,6 +7,7 @@ import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/forget_password/bloc/forget_password_bloc.dart';
 import 'package:kian_sheeps_projects/features/forget_password/views/forget_password_view.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
+import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/login/bloc/login_bloc.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
@@ -106,7 +107,7 @@ class _MyAppState extends State<MyApp> {
                   Locale('en'),
                 ],
                 locale: context.locale,
-                home: const SplashScreenView(),
+                home: HomeView(),
               ),
             ),
           );

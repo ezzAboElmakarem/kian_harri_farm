@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
+import 'package:kian_sheeps_projects/widgets/product_slider_image.dart';
 import '../../../helper/color_styles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -18,6 +20,7 @@ class _ProductSliderState extends State<ProductSlider> {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = HomeBloc.get(context);
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 4.h),
       child: SizedBox(
@@ -26,7 +29,9 @@ class _ProductSliderState extends State<ProductSlider> {
           alignment: Alignment.bottomCenter,
           children: [
             CarouselSlider(
-              items: widget.imagesUrl,
+              items: bloc.homeData.banner!.map((banner) {
+                return AppTopViewedCard(imagePath: banner.image!);
+              }).toList(),
               options: CarouselOptions(
                 height: 300.h,
                 autoPlay: true,
@@ -45,7 +50,7 @@ class _ProductSliderState extends State<ProductSlider> {
               padding: EdgeInsets.only(bottom: 8.0.h),
               child: AnimatedSmoothIndicator(
                 activeIndex: currentIndex,
-                count: widget.imagesUrl.length,
+                count: bloc.homeData.banner!.length,
                 effect: ExpandingDotsEffect(
                   dotColor: Colors.grey,
                   activeDotColor: kPrimaryColor,

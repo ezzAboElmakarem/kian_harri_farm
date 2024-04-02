@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'custom_category_item.dart';
-import '../../../helper/assets.dart';
-import '../../../helper/color_styles.dart';
 import '../../../helper/is_arabic_method.dart';
 import '../../../helper/text_styles.dart';
 

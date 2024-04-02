@@ -7,10 +7,11 @@ import '../../../helper/color_styles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductSlider extends StatefulWidget {
-  const ProductSlider(
-      {super.key, required this.imageViewPoint, required this.imagesUrl});
+  const ProductSlider({
+    super.key,
+    required this.imageViewPoint,
+  });
   final double imageViewPoint;
-  final List<Widget> imagesUrl;
   @override
   State<ProductSlider> createState() => _ProductSliderState();
 }
@@ -23,45 +24,40 @@ class _ProductSliderState extends State<ProductSlider> {
     var bloc = HomeBloc.get(context);
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 4.h),
-      child: SizedBox(
-        height: 220.h,
-        child: Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            CarouselSlider(
-              items: bloc.homeData.banner!.map((banner) {
-                return AppTopViewedCard(imagePath: banner.image!);
-              }).toList(),
-              options: CarouselOptions(
-                height: 300.h,
-                autoPlay: true,
-                viewportFraction: widget.imageViewPoint,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentIndex = index;
-                  });
-                },
+      child: Column(
+        children: [
+          CarouselSlider(
+            items: bloc.homeData.banner!.map((banner) {
+              return AppTopViewedCard(imagePath: banner.image!);
+            }).toList(),
+            options: CarouselOptions(
+              height: 148.h,
+              autoPlay: true,
+              enlargeCenterPage: true,
+              viewportFraction: widget.imageViewPoint,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  currentIndex = index;
+                });
+              },
 
-                //ssenlargeCenterPage: true,
-                //enlargeStrategy: CenterPageEnlargeStrategy.height
-              ),
+              //ssenlargeCenterPage: true,
+              //enlargeStrategy: CenterPageEnlargeStrategy.height
             ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.0.h),
-              child: AnimatedSmoothIndicator(
-                activeIndex: currentIndex,
-                count: bloc.homeData.banner!.length,
-                effect: ExpandingDotsEffect(
-                  dotColor: Colors.grey,
-                  activeDotColor: kPrimaryColor,
-                  spacing: 8.w,
-                  dotWidth: 12.w,
-                  dotHeight: 8.h,
-                ),
-              ),
+          ),
+          SizedBox(height: 14.h),
+          AnimatedSmoothIndicator(
+            activeIndex: currentIndex,
+            count: bloc.homeData.banner!.length,
+            effect: ExpandingDotsEffect(
+              dotColor: Colors.grey,
+              activeDotColor: kPrimaryColor,
+              spacing: 8.w,
+              dotWidth: 12.w,
+              dotHeight: 8.h,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

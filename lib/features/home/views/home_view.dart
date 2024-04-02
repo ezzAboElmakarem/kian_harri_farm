@@ -87,11 +87,13 @@ class HomeBuildItem extends StatelessWidget {
           children: [
             const HomeWelocmeTitle(),
             const CustomSearchBar(),
-            ProductSlider(imageViewPoint: 0.9, imagesUrl: imagesUrl),
-            const CustomCategoryListView(),
             SizedBox(
               height: 16.h,
             ),
+            const ProductSlider(imageViewPoint: .75),
+            SizedBox(height: 20.h),
+            const CustomCategoryListView(),
+            SizedBox(height: 16.h),
             const OffersListView(),
             SizedBox(
               height: 16.h,
@@ -101,9 +103,8 @@ class HomeBuildItem extends StatelessWidget {
               thickness: 2.0,
               color: Colors.black.withOpacity(0.2),
             ),
-            ProductSlider(
+            const ProductSlider(
               imageViewPoint: 0.88,
-              imagesUrl: secondImagesUrl,
             ),
             SizedBox(
               height: 20.h,

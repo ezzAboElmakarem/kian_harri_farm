@@ -11,7 +11,7 @@ Widget buildBordingItem(BordingModel model) => Column(
       children: [
         Center(
           child: SizedBox(
-            height: 300,
+            height: 280.h,
             width: 300,
             child: SvgPicture.asset(model.image, fit: BoxFit.contain),
           ),

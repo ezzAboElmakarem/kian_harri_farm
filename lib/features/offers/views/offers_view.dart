@@ -17,11 +17,13 @@ class OffersView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(context: context, title: 'العروض'),
-      body: CustomScrollView(
+      body: const CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-              child: ProductSlider(imageViewPoint: 0.9, imagesUrl: imagesUrl)),
-          const OffersGridView(),
+              child: ProductSlider(
+            imageViewPoint: 0.9,
+          )),
+          OffersGridView(),
         ],
       ),
     );

@@ -14,21 +14,18 @@ class SkipButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 14.h),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          CustomTextButton(
-            textColor: Colors.black,
-            text: "skip".tr(),
-            onTap: () {
-              log('skip button clicked');
-              RouteUtils.navigateAndPopAll(const LoginScreenView());
-            },
-          ),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        CustomTextButton(
+          textColor: Colors.black,
+          text: "skip".tr(),
+          onTap: () {
+            log('skip button clicked');
+            RouteUtils.navigateAndPopAll(const LoginScreenView());
+          },
+        ),
+      ],
     );
     // TextButton(
     //   onPressed: () {

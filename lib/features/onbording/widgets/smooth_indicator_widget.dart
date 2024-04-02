@@ -13,19 +13,15 @@ class SmoothIndicatorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      left: 143.w,
-      bottom: 100.h,
-      child: SmoothPageIndicator(
-        controller: bordingController,
-        textDirection: TextDirection.ltr,
-        count: 3,
-        effect: ScrollingDotsEffect(
-            activeDotColor: kPrimaryColor,
-            spacing: 17.w,
-            dotWidth: 12.w,
-            dotHeight: 12.h),
-      ),
+    return SmoothPageIndicator(
+      controller: bordingController,
+      textDirection: TextDirection.ltr,
+      count: 3,
+      effect: ScrollingDotsEffect(
+          activeDotColor: kPrimaryColor,
+          spacing: 17.w,
+          dotWidth: 12.w,
+          dotHeight: 12.h),
     );
   }
 }

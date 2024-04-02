@@ -10,6 +10,7 @@ import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/login/repo/login_repo.dart';
+import 'package:kian_sheeps_projects/features/verify_code/views/vrefiy_code_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
 
@@ -50,6 +51,10 @@ class LoginBloc extends Bloc<AppEvent, AppState> {
       } else {
         emit(Error());
         showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
+
+        if (response.data['isVerified'] == 0) {
+          RouteUtils.navigateTo(const VerfiyCodeScreenView());
+        }
       }
     } catch (e) {
       emit(Error());

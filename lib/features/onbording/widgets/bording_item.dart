@@ -9,9 +9,6 @@ Widget buildBordingItem(BordingModel model) => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SizedBox(
-          height: 20.h,
-        ),
         Center(
           child: SizedBox(
             height: 300,
@@ -19,19 +16,15 @@ Widget buildBordingItem(BordingModel model) => Column(
             child: SvgPicture.asset(model.image, fit: BoxFit.contain),
           ),
         ),
-        SizedBox(
-          height: 14.h,
-        ),
+        SizedBox(height: 20.h),
         Text(
           model.title,
           style: TextStyles.textstyle20.copyWith(fontWeight: FontWeight.bold),
         ),
-        SizedBox(
-          height: 14.h,
-        ),
+        SizedBox(height: 14.h),
         Text(
           model.body,
-          //     textAlign: TextAlign.right,
+          // textAlign: TextAlign.left,
           textScaler: TextScaler.noScaling,
           style:
               TextStyles.textstyle14.copyWith(color: ColorStyles.textGreyColor),

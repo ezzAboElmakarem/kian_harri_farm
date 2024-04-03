@@ -5,4 +5,5 @@ class Endpoints {
   static const String VERIFY_CODE = "verifycode";
   static const String CHANGE_PASSWORD = "changePassword";
   static const String HOME = "home";
+  static const String SEARCH = "search";
 }

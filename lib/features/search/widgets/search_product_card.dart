@@ -2,25 +2,25 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/home/models/home_model.dart';
-import '../features/Product_details/views/product_details_views.dart';
-import '../features/cart/views/cart_view.dart';
-import '../helper/assets.dart';
-import '../helper/color_styles.dart';
-import '../helper/navigation_methods.dart';
-import '../helper/text_styles.dart';
+import 'package:kian_sheeps_projects/features/Product_details/views/product_details_views.dart';
+import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
+import 'package:kian_sheeps_projects/features/search/models/search_model.dart';
+import 'package:kian_sheeps_projects/helper/assets.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 
-class CustomProductCard extends StatefulWidget {
-  const CustomProductCard({
+class SearchProductCard extends StatefulWidget {
+  const SearchProductCard({
     super.key,
-    this.offer,
+    this.searchItem,
     // required this.categoryName,
     // required this.price,
     // required this.oldPrice,
     // required this.productName,
     // required this.imageUrl,
   });
-  final Offer? offer;
+  final SearchItem? searchItem;
   // final String categoryName;
   // final String price;
   // final String oldPrice;
@@ -28,10 +28,10 @@ class CustomProductCard extends StatefulWidget {
   // final String imageUrl;
 
   @override
-  State<CustomProductCard> createState() => _CustomProductCardState();
+  State<SearchProductCard> createState() => _CustomProductCardState();
 }
 
-class _CustomProductCardState extends State<CustomProductCard> {
+class _CustomProductCardState extends State<SearchProductCard> {
   bool isFavouite = false;
   String favouriteImage = AssetsData.fillHeartIcon;
   String notFavouriteImage = AssetsData.emptyHeartIcon;
@@ -52,7 +52,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.network(
-                      widget.offer?.image ?? AssetsData.dummyProductImage,
+                      widget.searchItem?.image ?? AssetsData.dummyProductImage,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -69,7 +69,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        widget.offer?.category ?? "category",
+                        widget.searchItem?.category ?? "category",
                         style: TextStyles.textstyle14
                             .copyWith(color: ColorStyles.textGreyColor),
                       ),
@@ -80,7 +80,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        widget.offer?.name ?? "product",
+                        widget.searchItem?.name ?? "product",
                         style: TextStyles.textstyle14,
                       ),
                     ),
@@ -104,7 +104,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                           width: 18.w,
                         ),
                         Text(
-                          widget.offer?.price ?? " 200",
+                          widget.searchItem?.price ?? " 200",
                           style: TextStyles.textstyle14.copyWith(
                             color: kPrimaryColor,
                           ),
@@ -113,7 +113,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                           width: 6.w,
                         ),
                         Text(
-                          widget.offer?.offerPrice ?? '250',
+                          widget.searchItem?.offerPrice ?? '250',
                           style: TextStyles.textstyle14.copyWith(
                               color: ColorStyles.textGreyColor,
                               decoration: TextDecoration.lineThrough,
@@ -133,7 +133,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
                 radius: 17.r,
                 child: Column(
                   children: [
-                    Text(widget.offer?.discount ?? '10',
+                    Text(widget.searchItem?.discount ?? '10',
                         style: TextStyles.textstyle12.copyWith(
                             color: Colors.white,
                             fontSize: 11.sp,

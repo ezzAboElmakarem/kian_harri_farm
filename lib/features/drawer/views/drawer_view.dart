@@ -6,7 +6,6 @@ import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import '../../about_us/views/about_us_view.dart';
 import '../../update_profile/views/update_profile_view.dart';
 import '../../addresses/views/addresses_list_view.dart';
-import '../../cart/views/cart_view.dart';
 import '../../common_Questions/views/common_questions.dart';
 import '../../contact_us/views/contact_us.dart';
 import '../widgets/drawer_section_item.dart';

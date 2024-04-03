@@ -1,4 +1,6 @@
 class AssetsData {
+  static const String dummyProductImage =
+      "https://img.freepik.com/free-vector/realistic-vector-icon-plastic-bottle-water-isolated-white-background-beverage-drink-mockup_134830-1356.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704758400&semt=ais";
   static const logo2 = 'assets/images/app_logo.svg';
   static const backgroundImage = 'assets/images/background_image.png';
   static const logo1 = 'assets/images/logo.png';

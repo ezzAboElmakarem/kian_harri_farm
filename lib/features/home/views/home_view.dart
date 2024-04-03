@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
+import 'package:kian_sheeps_projects/features/home/widgets/home_advert.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import '../../drawer/views/drawer_view.dart';
 import '../widgets/custom_app_bar.dart';
@@ -13,7 +14,6 @@ import '../widgets/product_slider.dart';
 import '../widgets/search_bar.dart';
 import '../widgets/welcome_title.dart';
 import '../../../helper/assets.dart';
-import '../../../widgets/logo_image_widget.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
@@ -109,10 +109,11 @@ class HomeBuildItem extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            const LogoImageWidget(
-              height: 100,
-              width: 100,
-            ),
+            // // const LogoImageWidget(
+            // //   height: 100,
+            // //   width: 100,
+            // // ),
+            const HomeAdverts(),
             SizedBox(
               height: 20.h,
             ),

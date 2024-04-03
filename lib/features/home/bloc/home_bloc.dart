@@ -12,7 +12,7 @@ import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
 
 class HomeBloc extends Bloc<AppEvent, AppState> {
-  HomeBloc() : super(Start()) {
+  HomeBloc() : super(Loading()) {
     on<Get>(getData);
   }
   static HomeBloc get(context) => BlocProvider.of(context);

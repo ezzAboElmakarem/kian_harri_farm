@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../widgets/custom_product_item.dart';
-import '../../../helper/assets.dart';
 import '../../../helper/text_styles.dart';
 
 class SimilarProductsSlider extends StatelessWidget {
@@ -37,13 +36,7 @@ class SimilarProductsSlider extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (context, index) => SizedBox(width: 2.w),
                 itemBuilder: (context, index) {
-                  return const CustomProductCard(
-                    categoryName: 'لحوم',
-                    productName: 'قطعة استيك ',
-                    price: "200",
-                    oldPrice: "300",
-                    imageUrl: AssetsData.meatOffers,
-                  );
+                  return const CustomProductCard();
                 }),
           ),
         ],

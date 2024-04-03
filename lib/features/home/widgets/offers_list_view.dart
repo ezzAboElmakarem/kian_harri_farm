@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import '../../../widgets/custom_product_item.dart';
 import '../../offers/views/offers_view.dart';
-import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/navigation_methods.dart';
 import '../../../helper/text_styles.dart';
@@ -16,6 +16,7 @@ class OffersListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = HomeBloc.get(context);
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 14.h),
       child: Column(
@@ -57,12 +58,8 @@ class OffersListView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (context, index) => SizedBox(width: 2.w),
                 itemBuilder: (context, index) {
-                  return const CustomProductCard(
-                    categoryName: 'لحوم',
-                    productName: 'قطعة استيك ',
-                    price: "200",
-                    oldPrice: "300",
-                    imageUrl: AssetsData.fishOffer,
+                  return CustomProductCard(
+                    offer: bloc.homeData.offer![index],
                   );
                 }),
           ),

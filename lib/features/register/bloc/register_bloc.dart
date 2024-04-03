@@ -9,7 +9,6 @@ import 'package:get_storage/get_storage.dart';
 import 'package:kian_sheeps_projects/core/AppStorage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
-import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/register/repo/register_repo.dart';
 import 'package:kian_sheeps_projects/features/verify_code/views/vrefiy_code_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';

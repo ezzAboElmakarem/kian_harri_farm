@@ -19,7 +19,6 @@ import 'package:kian_sheeps_projects/network/network_layer.dart';
 import 'features/verify_code/verify_code_bloc/verify_code_bloc.dart';
 import 'helper/change_locale_method.dart';
 import 'helper/color_styles.dart';
-import 'features/splash_screen/views/splash_screen_view.dart';
 import 'helper/keyboard_close_observer.dart';
 
 Locale currentLocale = const Locale('en', 'US');

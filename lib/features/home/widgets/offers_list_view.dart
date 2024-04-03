@@ -50,9 +50,9 @@ class OffersListView extends StatelessWidget {
             height: 23.h,
           ),
           SizedBox(
-            height: 260.h,
+            height: 240.h,
             child: ListView.separated(
-                itemCount: 10,
+                itemCount: bloc.homeData.offer!.length,
                 reverse: isArabic() ? true : false,
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
                 scrollDirection: Axis.horizontal,

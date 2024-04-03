@@ -103,12 +103,15 @@ class HomeBuildItem extends StatelessWidget {
               thickness: 2.0,
               color: Colors.black.withOpacity(0.2),
             ),
-            const ProductSlider(
-              imageViewPoint: 0.88,
-            ),
             SizedBox(
-              height: 20.h,
+              height: 24.h,
             ),
+            // const ProductSlider(
+            //   imageViewPoint: 0.88,
+            // ),
+            // SizedBox(
+            //   height: 20.h,
+            // ),
             // // const LogoImageWidget(
             // //   height: 100,
             // //   width: 100,

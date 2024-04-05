@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../widgets/product_card.dart';
-import '../../../helper/assets.dart';
+import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
+import 'package:kian_sheeps_projects/widgets/custom_product_item.dart';
 
 class OffersGridView extends StatelessWidget {
   const OffersGridView({
@@ -10,6 +10,8 @@ class OffersGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = AllOffersBloc.of(context);
+
     return SliverFillRemaining(
       child: GridView.builder(
         padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 6.w),
@@ -19,14 +21,11 @@ class OffersGridView extends StatelessWidget {
           crossAxisSpacing: 2.w,
           mainAxisSpacing: 2.h,
         ),
-        itemCount: 20,
+        itemCount: bloc.allOffersData.data!.offers!.length,
         itemBuilder: (BuildContext context, int index) {
-          return const ProductCard(
-              price: '200',
-              oldPrice: '230',
-              productName: 'فريش بيف استربس',
-              categoryName: 'لحوم',
-              imageUrl: AssetsData.meatOffers);
+          return CustomProductCard(
+            offer: bloc.allOffersData.data!.offers![index],
+          );
         },
       ),
     );

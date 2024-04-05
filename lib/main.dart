@@ -10,6 +10,7 @@ import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/login/bloc/login_bloc.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
+import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
 import 'package:kian_sheeps_projects/features/reset_password/bloc/reset_pass_bloc.dart';
@@ -88,6 +89,9 @@ class _MyAppState extends State<MyApp> {
                 ),
                 BlocProvider(
                   create: (context) => HomeBloc()..add(Get()),
+                ),
+                BlocProvider(
+                  create: (context) => AllOffersBloc(),
                 ),
               ],
               child: MaterialApp(

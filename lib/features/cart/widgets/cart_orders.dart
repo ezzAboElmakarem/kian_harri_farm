@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'orders_item.dart';
-import '../../offers/views/offers_view.dart';
+import '../../offers/views/all_offers_view.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/navigation_methods.dart';
 import '../../../helper/text_styles.dart';

@@ -21,7 +21,7 @@ class CustomProductCard extends StatefulWidget {
     // required this.productName,
     // required this.imageUrl,
   });
-  final Offer? offer;
+  final ProductModel? offer;
   // final String categoryName;
   // final String price;
   // final String oldPrice;

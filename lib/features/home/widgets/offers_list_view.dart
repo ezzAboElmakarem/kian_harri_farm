@@ -1,10 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
+import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
 import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
 import '../../../widgets/custom_product_item.dart';
-import '../../offers/views/offers_view.dart';
+import '../../offers/views/all_offers_view.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/navigation_methods.dart';
 import '../../../helper/text_styles.dart';
@@ -35,6 +37,8 @@ class OffersListView extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () {
+                    final bloc = AllOffersBloc.of(context);
+                    bloc.add(Get());
                     navigateTo(context: context, widget: OffersView());
                   },
                   child: Text(

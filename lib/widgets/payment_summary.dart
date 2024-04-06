@@ -81,7 +81,7 @@ class PaymentSummary extends StatelessWidget {
         ),
         Center(
           child: Text(
-              '..................................................................................................................',
+              '.................................................................................................',
               style: TextStyles.textstyle12
                   .copyWith(color: ColorStyles.hintColor)),
         ),

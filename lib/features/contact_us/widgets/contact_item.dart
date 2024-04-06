@@ -24,7 +24,7 @@ class ContactItemWidget extends StatelessWidget {
         ),
         Text(
           contactText,
-          style: TextStyles.textstyle12,
+          style: TextStyles.textstyle12.copyWith(fontSize: 10.sp),
         )
       ],
     );

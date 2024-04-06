@@ -13,7 +13,7 @@ class RefusedReason extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 26.h),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(' سبب الرفض', style: TextStyles.textstyle14),
           Padding(

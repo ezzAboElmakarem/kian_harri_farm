@@ -26,27 +26,25 @@ class ContactsShortcuts extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const ContactItemWidget(
+            Spacer(),
+            ContactItemWidget(
               iconUrl: AssetsData.phoneIcon,
               contactText: '0147852698',
             ),
-            SizedBox(
-              width: 30.w,
-            ),
-            const ContactItemWidget(
+            Spacer(),
+            ContactItemWidget(
               iconUrl: AssetsData.emailIcon,
               contactText: 'info@gmail.com',
             ),
-            SizedBox(
-              width: 30.w,
-            ),
-            const ContactItemWidget(
+            Spacer(),
+            ContactItemWidget(
               iconUrl: AssetsData.locationIcon,
               contactText: 'الرياض حي التعاون',
             ),
+            Spacer(),
           ],
         ),
         SizedBox(

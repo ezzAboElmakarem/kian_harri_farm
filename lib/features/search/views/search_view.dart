@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/search/bloc/search_bloc.dart';
 import 'package:kian_sheeps_projects/features/search/widgets/search_form_field.dart';
@@ -27,6 +26,11 @@ class SearchView extends StatelessWidget {
               const SearchBodyTitle(),
               const SliverToBoxAdapter(
                 child: SearchTextFormField(),
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 40.h,
+                ),
               ),
               SliverToBoxAdapter(
                 child: BlocBuilder<SearchBloc, AppState>(

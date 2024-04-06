@@ -21,12 +21,19 @@ class ProductsDetailsList extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 24.h),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Text(
+                'رقم الطلب '
+                '# $orderID ',
+                style: TextStyles.textstyle14,
+                //textdirection:isArabic() ? TextDirection.rtl : TextDirection.ltr,
+              ),
+              const Spacer(),
               CustomTextButton(
                   text: 'تقييم الخدمة',
                   onTap: () {
@@ -34,13 +41,6 @@ class ProductsDetailsList extends StatelessWidget {
                         context: context, widget: const ServiceRateView());
                     log('message');
                   }),
-              const Spacer(),
-              Text(
-                'رقم الطلب '
-                '# $orderID ',
-                style: TextStyles.textstyle14,
-                //textdirection:isArabic() ? TextDirection.rtl : TextDirection.ltr,
-              ),
             ],
           ),
           SizedBox(

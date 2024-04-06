@@ -15,7 +15,7 @@ class AddressesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context: context, title: 'adresses'.tr()),
+      appBar: customAppBar(context: context, title: 'addresses'.tr()),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

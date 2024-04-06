@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
 import '../../categories/views/categories_view.dart';
 import '../../../helper/navigation_methods.dart';
 import '../../../helper/text_styles.dart';
@@ -10,11 +12,13 @@ class CustomCategoryItem extends StatelessWidget {
     required this.categoryColor,
     required this.categoryImage,
     required this.categoryName,
+    required this.catId,
   });
 
   final Color categoryColor;
   final String categoryImage;
   final String categoryName;
+  final String catId;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +26,8 @@ class CustomCategoryItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 8.w),
       child: GestureDetector(
         onTap: () {
+          CategoriesBloc.of(context).add(Get(arguments: catId));
+
           navigateTo(
             context: context,
             widget: const CategoriesScreenView(),

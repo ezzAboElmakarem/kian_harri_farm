@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
 import 'package:kian_sheeps_projects/features/forget_password/bloc/forget_password_bloc.dart';
 import 'package:kian_sheeps_projects/features/forget_password/views/forget_password_view.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
@@ -92,6 +93,9 @@ class _MyAppState extends State<MyApp> {
                 ),
                 BlocProvider(
                   create: (context) => AllOffersBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => CategoriesBloc(),
                 ),
               ],
               child: MaterialApp(

@@ -44,6 +44,7 @@ class CustomCategoryListView extends StatelessWidget {
               Color color = Color(0xFF000000 + colorValue);
               return CustomCategoryItem(
                   categoryColor: color,
+                  catId: bloc.homeData.category![index].id.toString(),
                   categoryImage: bloc.homeData.category![index].image!,
                   categoryName: bloc.homeData.category![index].name!);
             },

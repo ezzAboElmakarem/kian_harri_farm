@@ -14,7 +14,7 @@ class DeliverySummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 343.w,
-      height: 120.h,
+      height: 170.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: kPrimaryColor, width: 2.w)),

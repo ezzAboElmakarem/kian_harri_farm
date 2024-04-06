@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'package:kian_sheeps_projects/widgets/product_slider_image.dart';
 import '../../home/widgets/product_slider.dart';
 import '../widgets/offers_grid_view.dart';
 import '../../../helper/app_bar_method.dart';
@@ -20,6 +21,7 @@ class OffersView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    final bloc = AllOffersBloc.of(context);
     return Scaffold(
       appBar: customAppBar(context: context, title: 'العروض'),
       body: BlocBuilder<AllOffersBloc, AppState>(
@@ -29,13 +31,17 @@ class OffersView extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           } else if (state is Done) {
-            return const CustomScrollView(
+            return CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
-                    child: ProductSlider(
-                  imageViewPoint: 0.9,
-                )),
-                OffersGridView(),
+                  child: ProductSlider(
+                    imageViewPoint: 0.9,
+                    list: bloc.allOffersData.data!.banner!.map((banner) {
+                      return AppTopViewedCard(imagePath: banner.image!);
+                    }).toList(),
+                  ),
+                ),
+                const OffersGridView(),
               ],
             );
           } else if (state is Error) {

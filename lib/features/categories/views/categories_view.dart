@@ -1,6 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_state.dart';
+import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
+import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import '../widgets/category_title.dart';
 import '../widgets/product_grid_view.dart';
 import '../widgets/category_sort_by_sheet.dart';
@@ -28,17 +32,39 @@ class CategoriesScreenView extends StatelessWidget {
           child: Image.asset(AssetsData.sortIcon),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 1.w,
-        ),
-        child: const CustomScrollView(
-          slivers: [
-            CategoryTitle(),
-            SubCategoryListView(),
-            ProductGridView(),
-          ],
-        ),
+      body: BlocBuilder<CategoriesBloc, AppState>(
+        builder: (context, state) {
+          final bloc = CategoriesBloc.of(context);
+
+          if (state is Loading) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (state is Done) {
+            return Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 1.w,
+              ),
+              child: CustomScrollView(
+                slivers: [
+                  CategoryTitle(
+                    categoryName: bloc.subCategoryData.data!.name,
+                  ),
+                  SubCategoryListView(
+                    subCategory: bloc.subCategoryData.data!.subCategory,
+                  ),
+                  const ProductGridView(),
+                ],
+              ),
+            );
+          } else if (state is Error) {
+            return Center(
+                child: Text(
+              "error_getting_data".tr(),
+              style: TextStyles.textstyle16,
+            ));
+          } else {
+            return const SizedBox();
+          }
+        },
       ),
     );
   }

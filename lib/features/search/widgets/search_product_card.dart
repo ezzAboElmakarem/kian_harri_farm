@@ -94,7 +94,7 @@ class _CustomProductCardState extends State<SearchProductCard> {
                       Row(
                         children: [
                           Text(
-                            widget.searchItem?.offerPrice ?? '250',
+                            widget.searchItem?.price ?? '250',
                             style: TextStyles.textstyle14.copyWith(
                                 color: ColorStyles.textGreyColor,
                                 decoration: TextDecoration.lineThrough,
@@ -104,7 +104,7 @@ class _CustomProductCardState extends State<SearchProductCard> {
                             width: 6.w,
                           ),
                           Text(
-                            widget.searchItem?.price ?? " 200",
+                            widget.searchItem?.offerPrice ?? " 200",
                             style: TextStyles.textstyle14.copyWith(
                               color: kPrimaryColor,
                             ),

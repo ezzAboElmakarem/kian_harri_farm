@@ -18,6 +18,8 @@ class ServiceRatingWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 8.w),
       child: Row(
         children: [
+          Text(service, style: TextStyles.textstyle14),
+          const Spacer(),
           RatingBar.builder(
             itemSize: 24.sp,
             initialRating: 3,
@@ -31,8 +33,6 @@ class ServiceRatingWidget extends StatelessWidget {
               log(rating.toString());
             },
           ),
-          const Spacer(),
-          Text(service, style: TextStyles.textstyle14),
         ],
       ),
     );

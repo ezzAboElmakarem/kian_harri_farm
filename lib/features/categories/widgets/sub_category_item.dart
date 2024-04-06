@@ -8,7 +8,10 @@ class SubCategoryItem extends StatelessWidget {
     super.key,
     required this.isSelected,
     required this.onTap,
+    required this.subCartegoriesName,
   });
+  final String subCartegoriesName;
+
   final bool isSelected;
   final VoidCallback onTap;
   @override
@@ -24,7 +27,7 @@ class SubCategoryItem extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
         child: Center(
           child: Text(
-            'لحوم ',
+            subCartegoriesName,
             style: TextStyles.textstyle14,
           ),
         ),

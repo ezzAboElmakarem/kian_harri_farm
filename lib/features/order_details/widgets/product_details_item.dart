@@ -12,9 +12,23 @@ class ProductDetailsItem extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Container(
+          height: 80.h,
+          width: 76.w,
+          decoration: BoxDecoration(
+              image: const DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    AssetsData.productDetails,
+                  )),
+              borderRadius: BorderRadius.circular(11)),
+        ),
+        SizedBox(
+          width: 8.w,
+        ),
         Expanded(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -42,20 +56,6 @@ class ProductDetailsItem extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        SizedBox(
-          width: 8.w,
-        ),
-        Container(
-          height: 80.h,
-          width: 76.w,
-          decoration: BoxDecoration(
-              image: const DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(
-                    AssetsData.productDetails,
-                  )),
-              borderRadius: BorderRadius.circular(11)),
         ),
       ],
     );

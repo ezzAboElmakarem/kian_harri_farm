@@ -45,7 +45,7 @@ class OrderDetailsView extends StatelessWidget {
               ),
               ProductsDetailsList(orderID: orderID),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('بيانات التوصيل', style: TextStyles.textstyle14),
                   SizedBox(

@@ -6,6 +6,7 @@ import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/home_advert.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'package:kian_sheeps_projects/widgets/product_slider_image.dart';
 import '../../drawer/views/drawer_view.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/custom_category_list_view.dart';
@@ -81,6 +82,8 @@ class HomeBuildItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = HomeBloc.get(context);
+
     return SafeArea(
       child: SingleChildScrollView(
         child: Column(
@@ -90,7 +93,12 @@ class HomeBuildItem extends StatelessWidget {
             SizedBox(
               height: 16.h,
             ),
-            const ProductSlider(imageViewPoint: .75),
+            ProductSlider(
+              imageViewPoint: .75,
+              list: bloc.homeData.banner!.map((banner) {
+                return AppTopViewedCard(imagePath: banner.image!);
+              }).toList(),
+            ),
             SizedBox(height: 20.h),
             const CustomCategoryListView(),
             SizedBox(height: 16.h),

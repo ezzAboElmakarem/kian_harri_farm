@@ -20,7 +20,7 @@ class CountryDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           fieldTitle,
@@ -29,18 +29,15 @@ class CountryDropDown extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-        Directionality(
-          textDirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
-          child: CustomDropdown<String>(
-            //hintText: 'اختار المدينة',
-            items: dataList,
-            decoration: CustomDropdownDecoration(
-                closedFillColor: ColorStyles.textFormFieldfillColor),
-            initialItem: dataList[0],
-            onChanged: (value) {
-              log('changing value to: $value');
-            },
-          ),
+        CustomDropdown<String>(
+          //hintText: 'اختار المدينة',
+          items: dataList,
+          decoration: CustomDropdownDecoration(
+              closedFillColor: ColorStyles.textFormFieldfillColor),
+          initialItem: dataList[0],
+          onChanged: (value) {
+            log('changing value to: $value');
+          },
         ),
       ],
     );

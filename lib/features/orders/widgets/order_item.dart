@@ -29,67 +29,71 @@ class OrderItem extends StatelessWidget {
       },
       child: Container(
         color: Colors.transparent,
-        height: 95.h,
+        // height: 95.h,
         width: double.infinity,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(
-              child: Container(
-                height: 80.h,
-                width: 76.w,
-                decoration: BoxDecoration(
-                    image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(
-                          AssetsData.productDetails,
-                        )),
-                    borderRadius: BorderRadius.circular(11)),
-              ),
+            Container(
+              height: 85.h,
+              width: 76.w,
+              decoration: BoxDecoration(
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        AssetsData.productDetails,
+                      )),
+                  borderRadius: BorderRadius.circular(11)),
             ),
             SizedBox(
               width: 8.w,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '${'order_num'.tr()} # $orderID',
-                  style: TextStyles.textstyle14,
-                  //textdirection:isArabic() ? TextDirection.rtl : TextDirection.ltr,
-                ),
-                SizedBox(
-                  height: 6.h,
-                ),
-                Text(
-                  'فريش بيف استربس',
-                  style: TextStyles.textstyle12
-                      .copyWith(color: ColorStyles.textGreyColor),
-                  //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
-                ),
-                SizedBox(
-                  height: 6.h,
-                ),
-                Text(
-                  '20/12/2022 الساعة 5:32 م',
-                  style: TextStyles.textstyle12
-                      .copyWith(color: ColorStyles.hintColor.withOpacity(0.4)),
-                  //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                Text(
-                  '150.00 SR',
-                  style: TextStyles.textstyle12
-                      .copyWith(color: ColorStyles.hintColor.withOpacity(0.4)),
-                ),
-              ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '${'order_num'.tr()} # $orderID',
+                    style: TextStyles.textstyle14,
+                    //textdirection:isArabic() ? TextDirection.rtl : TextDirection.ltr,
+                  ),
+                  SizedBox(
+                    height: 6.h,
+                  ),
+                  Text(
+                    'فريش بيف استربس',
+                    style: TextStyles.textstyle12
+                        .copyWith(color: ColorStyles.textGreyColor),
+                    //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
+                  ),
+                  SizedBox(
+                    height: 6.h,
+                  ),
+                  Text(
+                    '20/12/2022 الساعة 5:32 م',
+                    style: TextStyles.textstyle12.copyWith(
+                        fontSize: 11.sp,
+                        color: ColorStyles.hintColor.withOpacity(0.4)),
+                    //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
+                  ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  Text(
+                    '150.00 SR',
+                    style: TextStyles.textstyle12.copyWith(
+                        color: ColorStyles.hintColor.withOpacity(0.4)),
+                  ),
+                ],
+              ),
             ),
             Center(
               child: Padding(
-                padding: EdgeInsets.only(left: 16.w, right: 26.w),
+                padding: EdgeInsets.only(
+                  left: 2.w,
+                  right: 2.w,
+                ),
                 child: CustomTextButton(
                     text: orderStatus, fontSize: 14.sp, onTap: () {}),
               ),

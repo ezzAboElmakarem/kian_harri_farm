@@ -5,7 +5,9 @@ import '../../../helper/text_styles.dart';
 class CategoryTitle extends StatelessWidget {
   const CategoryTitle({
     super.key,
+    this.categoryName,
   });
+  final String? categoryName;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class CategoryTitle extends StatelessWidget {
         child: Align(
           alignment: Alignment.centerRight,
           child: Text(
-            'لحوم',
+            categoryName ?? 'no category',
             style: TextStyles.textstyle14,
           ),
         ),

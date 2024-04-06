@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/order_item.dart';
 
-class FinishedOrdersList extends StatelessWidget {
-  const FinishedOrdersList({
+class CurrentOrders extends StatelessWidget {
+  const CurrentOrders({
     super.key,
   });
 
@@ -11,8 +11,8 @@ class FinishedOrdersList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
         padding: EdgeInsets.symmetric(
-          vertical: 16.h,
-          horizontal: 16.w,
+          vertical: 10.h,
+          horizontal: 4.w,
         ),
         itemBuilder: (context, index) => const OrderItem(
               orderID: 123500,

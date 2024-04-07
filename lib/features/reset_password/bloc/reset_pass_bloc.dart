@@ -17,12 +17,12 @@ import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
 class ResetPasswordBLoc extends Bloc<AppEvent, AppState> {
   ResetPasswordBLoc() : super(Start()) {
     on<Click>(resetPassword);
+    on<Reset>((event, emit) => emit(Start()));
   }
   static ResetPasswordBLoc get(context) => BlocProvider.of(context);
   TextEditingController password = TextEditingController();
   TextEditingController confirmPassword = TextEditingController();
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
-  var verifyCode = VerifyCodeBLoc.get(RouteUtils.context).code.text;
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////   METHODS     /////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ class ResetPasswordBLoc extends Bloc<AppEvent, AppState> {
 
     emit(Loading());
     Map<String, dynamic> body = {
-      "code": verifyCode,
+      "code": GetStorage().read('reset_pass_code'),
       "password": password.text,
       "password_confirmation": confirmPassword.text
     };

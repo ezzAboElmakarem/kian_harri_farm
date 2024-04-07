@@ -52,9 +52,9 @@ class CustomerAddressView extends StatelessWidget {
               ),
               SizedBox(height: 10.h),
 //*******************************************************************************************************
-              CountryDropDown(
+              const CountryDropDown(
                 fieldTitle: 'المدينة',
-                dataList: const [
+                dataList: [
                   'المحلة',
                   'المنصورة',
                   'القاهرة ',

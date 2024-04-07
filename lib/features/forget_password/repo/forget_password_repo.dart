@@ -5,7 +5,7 @@ abstract class ForgetPasswordRepo {
   static Future sendCode({required String body}) async {
     return Network().request(
       Endpoints.FORGET_PASSWORD,
-      body: body,
+      body: {"email": body},
       method: ServerMethods.POST,
     );
   }

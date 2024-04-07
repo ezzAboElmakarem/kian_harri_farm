@@ -8,10 +8,10 @@ import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/widgets/custom_button.dart';
 
 class ContinueButton extends StatelessWidget {
-  final bool? isRegister;
+  final bool? isVerified;
   const ContinueButton({
     super.key,
-    this.isRegister,
+    this.isVerified,
   });
 
   @override
@@ -29,7 +29,7 @@ class ContinueButton extends StatelessWidget {
             buttonText: "continue".tr(),
             textColor: null,
             onTap: () {
-              bloc.add(Click(arguments: isRegister));
+              bloc.add(Click(arguments: isVerified));
             },
           );
         }

@@ -9,7 +9,7 @@ import '../../../helper/text_styles.dart';
 
 // ignore: must_be_immutable
 class CountryDropDown extends StatelessWidget {
-  CountryDropDown({
+  const CountryDropDown({
     super.key,
     required this.fieldTitle,
     required this.dataList,

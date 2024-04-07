@@ -1,4 +1,4 @@
-import 'dart:async';
+// ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,22 +20,21 @@ class CustomAppPinCodeField extends StatefulWidget {
 }
 
 class _CustomAppPinCodeFieldState extends State<CustomAppPinCodeField> {
-  TextEditingController textEditingController = TextEditingController();
-  late StreamController<ErrorAnimationType> errorController;
+  // late StreamController<ErrorAnimationType> errorController;
   String currentText = "";
 
-  @override
-  void initState() {
-    errorController = StreamController<ErrorAnimationType>();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   errorController = StreamController<ErrorAnimationType>();
+  //   super.initState();
+  // }
 
-  @override
-  void dispose() {
-    errorController.close();
+  // @override
+  // void dispose() {
+  //   errorController.close();
 
-    super.dispose();
-  }
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +70,7 @@ class _CustomAppPinCodeFieldState extends State<CustomAppPinCodeField> {
           animationDuration: const Duration(milliseconds: 300),
           // backgroundColor: Colors.blue.shade50,
           //  enableActiveFill: true,
-          errorAnimationController: errorController,
+          // errorAnimationController: errorController,
           controller: bloc.code,
           onCompleted: (v) {
             print("Completed");

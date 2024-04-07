@@ -36,9 +36,9 @@ class AddAddressForms extends StatelessWidget {
           type: TextInputType.phone,
         ),
         SizedBox(height: 10.h),
-        CountryDropDown(
+        const CountryDropDown(
           fieldTitle: 'المنطقة',
-          dataList: const [
+          dataList: [
             'الترعة',
             'الجلاء',
             'الاستاد ',
@@ -46,9 +46,9 @@ class AddAddressForms extends StatelessWidget {
           ],
         ),
         SizedBox(height: 10.h),
-        CountryDropDown(
+        const CountryDropDown(
           fieldTitle: 'المدينة',
-          dataList: const [
+          dataList: [
             'المحلة',
             'المنصورة',
             'القاهرة ',

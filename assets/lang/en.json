@@ -90,7 +90,7 @@
     "verification_body_text" : "Enter a 4-digit code sent to your mobile number to change your password again",
     "continue" : "Continue",
     "enter_code" : "Please enter the code",
-    "resend_code" : "Resend code",
+    "resend_code" : "Resend code after",
     "don't_receive_code" : "didn't receive the message?",
     "reset_password" : "Reset password",
     "reset_pass_body_text" : "The new password must be completely different from the old password",

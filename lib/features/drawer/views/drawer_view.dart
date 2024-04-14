@@ -49,9 +49,7 @@ class DrawerView extends StatelessWidget {
     {
       "imagePath": AssetsData.bellIcon,
       "title": 'notification'.tr(),
-      "widget": const NotificationView(
-        emptyNotification: false,
-      ),
+      "widget": const NotificationView(),
     },
     {
       "imagePath": AssetsData.languageIcon,

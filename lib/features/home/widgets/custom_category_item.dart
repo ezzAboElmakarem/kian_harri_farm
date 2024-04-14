@@ -27,7 +27,7 @@ class CustomCategoryItem extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           CategoriesBloc.of(context).add(Get(arguments: catId));
-
+          // CategoriesBloc.of(context).add(Default());
           navigateTo(
             context: context,
             widget: const CategoriesScreenView(),

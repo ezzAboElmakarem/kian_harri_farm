@@ -4,12 +4,11 @@ import 'package:animated_custom_dropdown/custom_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../helper/color_styles.dart';
-import '../../../helper/is_arabic_method.dart';
 import '../../../helper/text_styles.dart';
 
 // ignore: must_be_immutable
 class CountryDropDown extends StatelessWidget {
-  CountryDropDown({
+  const CountryDropDown({
     super.key,
     required this.fieldTitle,
     required this.dataList,

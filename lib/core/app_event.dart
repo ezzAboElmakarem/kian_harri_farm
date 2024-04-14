@@ -72,6 +72,10 @@ class Delete extends AppEvent {
   Delete({Object? arguments}) : super(arguments);
 }
 
+class Default extends AppEvent {
+  Default({Object? arguments}) : super(arguments);
+}
+
 class ResendCode extends AppEvent {
   ResendCode({Object? arguments}) : super(arguments);
 }

@@ -11,6 +11,7 @@ import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/login/bloc/login_bloc.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
+import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bloc.dart';
 import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
@@ -96,6 +97,9 @@ class _MyAppState extends State<MyApp> {
                 ),
                 BlocProvider(
                   create: (context) => CategoriesBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => NotificationBloc(),
                 ),
               ],
               child: MaterialApp(

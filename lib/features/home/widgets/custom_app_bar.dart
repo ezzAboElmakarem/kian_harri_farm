@@ -2,6 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bloc.dart';
+import 'package:kian_sheeps_projects/features/notifications/views/notifications_view.dart';
+import 'package:kian_sheeps_projects/helper/routes.dart';
 import '../../cart/views/cart_view.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
@@ -63,7 +67,10 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               width: 10.w,
             ),
             GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  NotificationBloc.get(context).add(Get());
+                  RouteUtils.navigateTo(const NotificationView());
+                },
                 child: Stack(
                   children: [
                     Image.asset(

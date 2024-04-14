@@ -22,15 +22,20 @@ class CategoriesScreenView extends StatelessWidget {
       appBar: customAppBar(
         context: context,
         title: 'categories'.tr(),
-        leading: GestureDetector(
-          onTap: () {
-            bottomSheetMethod(
-                context: context,
-                bottomSheetContent: const SortBySheet(),
-                height: MediaQuery.of(context).size.height * .45);
-          },
-          child: Image.asset(AssetsData.sortIcon),
-        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: GestureDetector(
+              onTap: () {
+                bottomSheetMethod(
+                    context: context,
+                    bottomSheetContent: const SortBySheet(),
+                    height: MediaQuery.of(context).size.height * .45);
+              },
+              child: Image.asset(AssetsData.sortIcon),
+            ),
+          ),
+        ],
       ),
       body: BlocBuilder<CategoriesBloc, AppState>(
         builder: (context, state) {

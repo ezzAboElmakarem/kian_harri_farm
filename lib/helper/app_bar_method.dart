@@ -3,7 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'text_styles.dart';
 
 AppBar customAppBar(
-    {required BuildContext context, Widget? leading, required String title}) {
+    {required BuildContext context,
+    Widget? leading,
+    required String title,
+    List<Widget>? actions}) {
   return AppBar(
     automaticallyImplyLeading: false,
     leading: Padding(
@@ -23,6 +26,6 @@ AppBar customAppBar(
       title,
       style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w600),
     ),
-    actions: const [],
+    actions: actions,
   );
 }

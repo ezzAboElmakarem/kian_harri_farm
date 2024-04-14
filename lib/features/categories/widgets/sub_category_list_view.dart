@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/categories/model/categories_model.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
+import 'package:kian_sheeps_projects/features/categories/models/categories_model.dart';
 import 'sub_category_item.dart';
 
 class SubCategoryListView extends StatefulWidget {
@@ -17,6 +19,13 @@ class SubCategoryListView extends StatefulWidget {
 class _SubCategoryListViewState extends State<SubCategoryListView> {
   int? selectedIndex;
 
+  // @override
+  // void initState() {
+  //   CategoriesBloc.of(context)
+  //       .add(Read(arguments: widget.subCategory!.first.id!.toString()));
+  //   super.initState();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -30,6 +39,10 @@ class _SubCategoryListViewState extends State<SubCategoryListView> {
             return SubCategoryItem(
                 isSelected: index == selectedIndex,
                 onTap: () {
+                  CategoriesBloc.of(context).add(Read(
+                    arguments: widget.subCategory![index].id.toString(),
+                  ));
+
                   setState(() {
                     selectedIndex = index;
                   });

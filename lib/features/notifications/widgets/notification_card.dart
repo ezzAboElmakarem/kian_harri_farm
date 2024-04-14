@@ -4,8 +4,13 @@ import '../../../helper/assets.dart';
 import '../../../helper/text_styles.dart';
 
 class NotificationCard extends StatelessWidget {
+  final String title;
+
+  final String dateTime;
   const NotificationCard({
     super.key,
+    required this.title,
+    required this.dateTime,
   });
 
   @override
@@ -31,7 +36,7 @@ class NotificationCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'تم قبول طلبك وجارى التجهيز ',
+                title,
                 style: TextStyles.textstyle14,
                 //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
               ),
@@ -39,7 +44,7 @@ class NotificationCard extends StatelessWidget {
                 height: 4.h,
               ),
               Text(
-                '3:50 PM',
+                dateTime,
                 //textdirection:isArabic() ? TextDirection.rtl : TextDirection.ltr,
                 style: TextStyles.textstyle14
                     .copyWith(color: Colors.black.withOpacity(0.3)),

@@ -21,6 +21,6 @@ class Notificationlist extends StatelessWidget {
         separatorBuilder: (context, index) => SizedBox(
               height: 14.h,
             ),
-        itemCount: 20);
+        itemCount: bloc.data.data!.length);
   }
 }

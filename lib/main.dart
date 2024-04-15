@@ -16,6 +16,7 @@ import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
 import 'package:kian_sheeps_projects/features/reset_password/bloc/reset_pass_bloc.dart';
+import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
 import 'package:kian_sheeps_projects/features/verify_code/views/vrefiy_code_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/network/network_layer.dart';
@@ -100,6 +101,9 @@ class _MyAppState extends State<MyApp> {
                 ),
                 BlocProvider(
                   create: (context) => NotificationBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => UpdateProfileBloc(),
                 ),
               ],
               child: MaterialApp(

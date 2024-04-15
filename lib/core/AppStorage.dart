@@ -1,4 +1,5 @@
 import 'package:kian_sheeps_projects/features/splash_screen/views/splash_screen_view.dart';
+import 'package:kian_sheeps_projects/features/update_profile/model/update_profile_model.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -30,8 +31,11 @@ class AppStorage {
 
   // static UserTokenModel get getUserToken => UserTokenModel.fromJson(_box.read('userToken')) ?? "";
 
-  // static Future<void> cacheUser(UserModel user) async => await _box.write('user', user.toJson());
-  // static UserModel get getUserModel => UserModel.fromJson(_box.read('user'));
+////////////////   SAVE USER        ///////////////////////////////
+  static Future<void> cacheUser(UpdateProfileModel user) async =>
+      await _box.write('user', user.toJson());
+  static UpdateProfileModel get getUserModel =>
+      UpdateProfileModel.fromJson(_box.read('user'));
   // static int get getId => getUserModel.data!.id!;
 
   static bool? get getNotification => _box.read('notification');

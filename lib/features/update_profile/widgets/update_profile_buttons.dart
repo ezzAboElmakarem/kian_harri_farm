@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
 import '../../../widgets/custom_button.dart';
 
 class UpdateProfileButtons extends StatelessWidget {
@@ -14,7 +16,9 @@ class UpdateProfileButtons extends StatelessWidget {
       children: [
         CustomButton(
           buttonText: "save_changes".tr(),
-          onTap: () {},
+          onTap: () {
+            UpdateProfileBloc.get(context).add(Click());
+          },
         ),
         SizedBox(
           height: 18.h,

@@ -21,11 +21,13 @@ class NotificationView extends StatelessWidget {
           if (state is Loading) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is Error) {
-            return Center(child: Text('error_loading_data'.tr()));
+            return Center(child: Text('error_getting_data'.tr()));
           } else if (state is Empty) {
             return const EmptyNotificationView();
-          } else {
+          } else if (state is Done) {
             return const Notificationlist();
+          } else {
+            return const SizedBox();
           }
         },
       ),

@@ -3,24 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../helper/text_styles.dart';
 
 class DrawerSectionItem extends StatelessWidget {
-  const DrawerSectionItem(
-      {super.key,
-      required this.sectionTitle,
-      required this.sectionIcon,
-      required this.widget,
-      required this.navigationButton});
+  const DrawerSectionItem({
+    super.key,
+    required this.sectionTitle,
+    required this.sectionIcon,
+    required this.onTap,
+    required this.navigationButton,
+  });
   final String sectionTitle;
   final String sectionIcon;
-  final Widget widget;
   final bool navigationButton;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.of(context).pop();
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => widget));
-      },
+      onTap: onTap,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(

@@ -2,6 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/AppStorage.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
+import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import '../../about_us/views/about_us_view.dart';
 import '../../update_profile/views/update_profile_view.dart';
@@ -29,67 +32,145 @@ class DrawerView extends StatelessWidget {
     {
       "imagePath": AssetsData.settingsImage,
       "title": 'account_settings'.tr(),
-      "widget": const UpdateProfileView(),
+      "onTap": () {
+        UpdateProfileBloc.get(RouteUtils.context).add(Get());
+        // RouteUtils.pop();
+        RouteUtils.navigateTo(
+          const UpdateProfileView(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.shoppingBagIcon,
       "title": 'my_orders'.tr(),
-      "widget": const OrdersTabBar(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const OrdersTabBar(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.emptyHeartIcon,
       "title": 'favourite'.tr(),
-      "widget": const Favourites(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const Favourites(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.locationIcon,
       "title": 'addresses'.tr(),
-      "widget": const AddressesListView(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const AddressesListView(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.bellIcon,
       "title": 'notification'.tr(),
-      "widget": const NotificationView(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const NotificationView(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.languageIcon,
       "title": 'language'.tr(),
-      "widget": LanguageView(appState: AppLocaleLang()),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          LanguageView(appState: AppLocaleLang()),
+        );
+      }
     },
     {
       "imagePath": AssetsData.infoIcon,
       "title": 'about_us'.tr(),
-      "widget": const AboutUsView(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const AboutUsView(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.headphonesIcon,
       "title": 'contact_us'.tr(),
-      "widget": const ContactUs(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const ContactUs(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.lockIcon,
       "title": 'privacy_policy'.tr(),
-      "widget": const PrivacyPolicyView(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const PrivacyPolicyView(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.truckIcon,
       "title": 'shipping_terms'.tr(),
-      "widget": const DeliveryAndShippingTermsView(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const DeliveryAndShippingTermsView(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.fileIcon,
       "title": 'terms_and_conditions'.tr(),
-      "widget": const TermsAndConditions(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const TermsAndConditions(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.refreshIcon,
       "title": 'return_and_exchange'.tr(),
-      "widget": const ReturnAndExchange(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const ReturnAndExchange(),
+        );
+      }
     },
     {
       "imagePath": AssetsData.questionIcon,
       "title": 'common_questions_title'.tr(),
-      "widget": const CommonQuestions(),
+      "onTap": () {
+        RouteUtils.pop();
+
+        RouteUtils.navigateTo(
+          const CommonQuestions(),
+        );
+      }
     },
   ];
   @override
@@ -109,7 +190,7 @@ class DrawerView extends StatelessWidget {
               itemBuilder: (context, index) => DrawerSectionItem(
                   sectionTitle: drawerItems[index]['title'],
                   sectionIcon: drawerItems[index]['imagePath'],
-                  widget: drawerItems[index]['widget'],
+                  onTap: drawerItems[index]['onTap'],
                   navigationButton: true),
               separatorBuilder: (context, index) => SizedBox(
                     height: 24.h,

@@ -12,6 +12,7 @@ class Endpoints {
   static const String NOTIFICATION = "notifications";
   static const String USER = "user";
   static const String UPDATE = "update";
+  static const String GET_ORDERS = "get-orders";
   static String subCat({required String catId}) {
     return "category/$catId/subcategory";
   }

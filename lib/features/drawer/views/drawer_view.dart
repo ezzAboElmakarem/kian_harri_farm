@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/AppStorage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/my_orders/bloc/order_bloc.dart';
 import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
@@ -15,7 +16,7 @@ import '../widgets/drawer_section_item.dart';
 import '../../favourities/views/favourities_view.dart';
 import '../../language/views/language_view.dart';
 import '../../notifications/views/notifications_view.dart';
-import '../../orders/views/orders_tapbar.dart';
+import '../../my_orders/views/orders_tapbar.dart';
 import '../../privacy_Pollicy/views/privacy_policy_view.dart';
 import '../../delivery_and_shiping_terms/views/delivery_shipping_terms.dart';
 import '../../return_and_exchange/views/return_and_exchange_view.dart';
@@ -34,7 +35,7 @@ class DrawerView extends StatelessWidget {
       "title": 'account_settings'.tr(),
       "onTap": () {
         UpdateProfileBloc.get(RouteUtils.context).add(Get());
-        // RouteUtils.pop();
+        RouteUtils.pop();
         RouteUtils.navigateTo(
           const UpdateProfileView(),
         );
@@ -45,6 +46,7 @@ class DrawerView extends StatelessWidget {
       "title": 'my_orders'.tr(),
       "onTap": () {
         RouteUtils.pop();
+        MyOrdersBloc.get(RouteUtils.context).add(Get());
 
         RouteUtils.navigateTo(
           const OrdersTabBar(),

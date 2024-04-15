@@ -39,9 +39,10 @@ class OrderDetailsView extends StatelessWidget {
                 child: Text(
                     orderStatus.contains('مرفوض') ? 'مرفوض' : orderStatus,
                     style: TextStyles.textstyle14.copyWith(
-                        color: orderStatus.contains('مرفوض')
-                            ? ColorStyles.redColor
-                            : kPrimaryColor)),
+                        color:
+                            orderStatus == 'refuse' || orderStatus == 'تم الرفض'
+                                ? ColorStyles.redColor
+                                : kPrimaryColor)),
               ),
               ProductsDetailsList(orderID: orderID),
               Column(
@@ -55,7 +56,7 @@ class OrderDetailsView extends StatelessWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  orderStatus.contains('مرفوض')
+                  orderStatus == 'refuse' || orderStatus == 'تم الرفض'
                       ? const RefusedReason()
                       : const PaymentSummary(),
                 ],

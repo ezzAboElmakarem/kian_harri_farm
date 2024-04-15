@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../home/views/home_view.dart';
-import '../../orders/views/orders_tapbar.dart';
+import '../../my_orders/views/orders_tapbar.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/navigation_methods.dart';

@@ -12,9 +12,18 @@ import '../../../widgets/custom_text_button.dart';
 
 class OrderItem extends StatelessWidget {
   const OrderItem(
-      {super.key, required this.orderStatus, required this.orderID});
+      {super.key,
+      required this.orderStatus,
+      required this.orderID,
+      required this.name,
+      required this.date,
+      required this.price});
   final String orderStatus;
   final int orderID;
+  final String name;
+  final String date;
+
+  final String price;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -61,17 +70,19 @@ class OrderItem extends StatelessWidget {
                   SizedBox(
                     height: 6.h,
                   ),
-                  Text(
-                    'فريش بيف استربس',
-                    style: TextStyles.textstyle12
-                        .copyWith(color: ColorStyles.textGreyColor),
-                    //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
-                  ),
+                  name == ''
+                      ? const SizedBox()
+                      : Text(
+                          name,
+                          style: TextStyles.textstyle12
+                              .copyWith(color: ColorStyles.textGreyColor),
+                          //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
+                        ),
                   SizedBox(
                     height: 6.h,
                   ),
                   Text(
-                    '20/12/2022 الساعة 5:32 م',
+                    date,
                     style: TextStyles.textstyle12.copyWith(
                         fontSize: 11.sp,
                         color: ColorStyles.hintColor.withOpacity(0.4)),
@@ -80,10 +91,19 @@ class OrderItem extends StatelessWidget {
                   SizedBox(
                     height: 2.h,
                   ),
-                  Text(
-                    '150.00 SR',
-                    style: TextStyles.textstyle12.copyWith(
-                        color: ColorStyles.hintColor.withOpacity(0.4)),
+                  Row(
+                    children: [
+                      Text(
+                        ' SR',
+                        style: TextStyles.textstyle12.copyWith(
+                            color: ColorStyles.hintColor.withOpacity(0.4)),
+                      ),
+                      Text(
+                        price,
+                        style: TextStyles.textstyle12.copyWith(
+                            color: ColorStyles.hintColor.withOpacity(0.4)),
+                      ),
+                    ],
                   ),
                 ],
               ),

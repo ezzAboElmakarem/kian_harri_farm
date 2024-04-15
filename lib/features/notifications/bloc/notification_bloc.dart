@@ -25,7 +25,6 @@ class NotificationBloc extends Bloc<AppEvent, AppState> {
       if (response.statusCode == 200) {
         data = NotificationModel.fromJson(response.data);
         log('Get data Successfuly ');
-        log(data.data![0].toString());
         emit(Done());
         if (data.data!.isEmpty) {
           emit(Empty());

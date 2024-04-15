@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/AppStorage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/my_orders/bloc/order_bloc.dart';
+import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
@@ -71,7 +72,10 @@ class DrawerView extends StatelessWidget {
         RouteUtils.pop();
 
         RouteUtils.navigateTo(
-          const AddressesListView(),
+          AddressesListView(
+            orderDetails:
+                MyOrdersDetailsBloc.of(RouteUtils.context).myOrdersDetailsData,
+          ),
         );
       }
     },

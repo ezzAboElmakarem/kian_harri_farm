@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/order_details/model/order_details_model.dart';
 import 'product_details_item.dart';
 import '../../service_rate/views/service_rate.dart';
 import '../../../helper/navigation_methods.dart';
@@ -12,10 +13,11 @@ class ProductsDetailsList extends StatelessWidget {
   const ProductsDetailsList({
     super.key,
     required this.orderID,
+    required this.orderDetailsModel,
   });
 
   final int orderID;
-
+  final MyOrderDetailsModel orderDetailsModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -38,7 +40,10 @@ class ProductsDetailsList extends StatelessWidget {
                   text: 'تقييم الخدمة',
                   onTap: () {
                     navigateTo(
-                        context: context, widget: const ServiceRateView());
+                        context: context,
+                        widget: ServiceRateView(
+                          myOrderDetailsModel: orderDetailsModel,
+                        ));
                     log('message');
                   }),
             ],
@@ -49,7 +54,8 @@ class ProductsDetailsList extends StatelessWidget {
           ListView.separated(
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => const ProductDetailsItem(),
+              itemBuilder: (context, index) => ProductDetailsItem(
+                  offer: orderDetailsModel.data!.offers![index]),
               separatorBuilder: (context, index) => Padding(
                     padding: EdgeInsets.symmetric(vertical: 16.h),
                     child: Divider(
@@ -58,7 +64,7 @@ class ProductsDetailsList extends StatelessWidget {
                       color: Colors.black.withOpacity(0.1),
                     ),
                   ),
-              itemCount: 3)
+              itemCount: orderDetailsModel.data!.offers!.length)
         ],
       ),
     );

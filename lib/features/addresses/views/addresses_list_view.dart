@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/order_details/model/order_details_model.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import '../../add_address/views/add_address_view.dart';
 import '../../../helper/app_bar_method.dart';
@@ -10,7 +11,8 @@ import '../../../helper/text_styles.dart';
 import '../../../widgets/delivery_summary.dart';
 
 class AddressesListView extends StatelessWidget {
-  const AddressesListView({super.key});
+  const AddressesListView({super.key, required this.orderDetails});
+  final MyOrderDetailsModel orderDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,8 @@ class AddressesListView extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
-                itemBuilder: (context, index) =>
-                    const DeliverySummary(isEditing: true),
+                itemBuilder: (context, index) => DeliverySummary(
+                    isEditing: true, orderDetails: orderDetails),
                 separatorBuilder: (context, index) => SizedBox(
                       height: 16.w,
                     ),

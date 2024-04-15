@@ -1,12 +1,9 @@
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../order_details/views/order_details_view.dart';
+
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
-import '../../../helper/navigation_methods.dart';
 import '../../../helper/text_styles.dart';
 import '../../../widgets/custom_text_button.dart';
 
@@ -17,25 +14,18 @@ class OrderItem extends StatelessWidget {
       required this.orderID,
       required this.name,
       required this.date,
-      required this.price});
+      required this.price,
+      this.onTap});
   final String orderStatus;
   final int orderID;
   final String name;
   final String date;
-
+  final void Function()? onTap;
   final String price;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        navigateTo(
-            context: context,
-            widget: OrderDetailsView(
-              orderStatus: orderStatus,
-              orderID: orderID,
-            ));
-        log('message');
-      },
+      onTap: onTap,
       child: Container(
         color: Colors.transparent,
         // height: 95.h,

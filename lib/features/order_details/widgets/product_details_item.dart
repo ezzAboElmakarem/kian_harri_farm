@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/order_details/model/order_details_model.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
 
 class ProductDetailsItem extends StatelessWidget {
-  const ProductDetailsItem({super.key});
-
+  const ProductDetailsItem({super.key, required this.offer});
+  final Offers offer;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -32,7 +33,7 @@ class ProductDetailsItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'فريش بيف استربس',
+                offer.name!,
                 style: TextStyles.textstyle12
                     .copyWith(color: ColorStyles.textGreyColor),
                 //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
@@ -41,7 +42,7 @@ class ProductDetailsItem extends StatelessWidget {
                 height: 8.h,
               ),
               Text(
-                'الكمية 1',
+                offer.quantity.toString(),
                 style: TextStyles.textstyle12
                     .copyWith(color: ColorStyles.hintColor.withOpacity(0.4)),
                 //textdirection:  isArabic() ? TextDirection.rtl : TextDirection.ltr,
@@ -49,10 +50,22 @@ class ProductDetailsItem extends StatelessWidget {
               SizedBox(
                 height: 8.h,
               ),
-              Text(
-                '150.00 SR',
-                style: TextStyles.textstyle12
-                    .copyWith(color: ColorStyles.hintColor.withOpacity(0.4)),
+              Row(
+                children: [
+                  Text(
+                    'SR',
+                    style: TextStyles.textstyle12.copyWith(
+                        color: ColorStyles.hintColor.withOpacity(0.4)),
+                  ),
+                  SizedBox(
+                    width: 4.w,
+                  ),
+                  Text(
+                    offer.price.toString(),
+                    style: TextStyles.textstyle12.copyWith(
+                        color: ColorStyles.hintColor.withOpacity(0.4)),
+                  ),
+                ],
               ),
             ],
           ),

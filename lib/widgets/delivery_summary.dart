@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/order_details/model/order_details_model.dart';
 import '../helper/assets.dart';
 import '../helper/color_styles.dart';
 import '../helper/text_styles.dart';
@@ -8,8 +9,10 @@ class DeliverySummary extends StatelessWidget {
   const DeliverySummary({
     required this.isEditing,
     super.key,
+    required this.orderDetails,
   });
   final bool isEditing;
+  final MyOrderDetailsModel orderDetails;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +30,7 @@ class DeliverySummary extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'محمد مصيلحي ',
+                  orderDetails.data!.name!,
                   //textdirection: TextDirection.rtl,
                   style: TextStyles.textstyle14
                       .copyWith(fontWeight: FontWeight.w400),
@@ -36,7 +39,7 @@ class DeliverySummary extends StatelessWidget {
                   height: 4.h,
                 ),
                 Text(
-                  '0502527234',
+                  orderDetails.data!.phone!,
                   //textdirection: TextDirection.rtl,
                   style: TextStyles.textstyle14
                       .copyWith(fontWeight: FontWeight.w400),
@@ -47,7 +50,7 @@ class DeliverySummary extends StatelessWidget {
                 SizedBox(
                   width: 200.w,
                   child: Text(
-                    'جدة 23 شارع عبد القدوس الانصارى بجانب مستوصف سابا',
+                    orderDetails.data!.address!,
                     //textdirection: TextDirection.rtl,
                     style: TextStyles.textstyle14.copyWith(
                         fontWeight: FontWeight.w400,

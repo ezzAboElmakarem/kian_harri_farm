@@ -44,7 +44,7 @@ class VerifyCodeBLoc extends Bloc<AppEvent, AppState> {
         log("Code Has been Verified");
       } else {
         emit(Error());
-        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
+        showSnackBar(RouteUtils.context, " ${response.data['message']}");
 
         log("Failed to Verify the code");
         log("there is an error with status code : ${response.statusCode}");

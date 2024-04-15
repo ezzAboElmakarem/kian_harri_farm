@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/order_details/model/order_details_model.dart';
 import '../../../widgets/payment_summary.dart';
 import '../../../widgets/delivery_summary.dart';
 import '../../order_success/views/order_success_view.dart';
@@ -12,7 +13,8 @@ import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_text_button.dart';
 
 class PaymentView extends StatelessWidget {
-  const PaymentView({super.key});
+  const PaymentView({super.key, required this.orderDetails});
+  final MyOrderDetailsModel orderDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class PaymentView extends StatelessWidget {
                 SizedBox(
                   height: 20.h,
                 ),
-                const DeliverySummary(isEditing: false),
+                DeliverySummary(isEditing: false, orderDetails: orderDetails),
                 SizedBox(
                   height: 20.h,
                 ),

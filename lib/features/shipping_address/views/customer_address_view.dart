@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
 import '../../payment/views/payment_view.dart';
 import '../widgets/shipping_address.dart';
 import '../widgets/select_city.dart';
@@ -106,7 +107,12 @@ class CustomerAddressView extends StatelessWidget {
               CustomButton(
                   buttonText: 'التالي',
                   onTap: () {
-                    navigateTo(context: context, widget: const PaymentView());
+                    navigateTo(
+                        context: context,
+                        widget: PaymentView(
+                          orderDetails: MyOrdersDetailsBloc.of(context)
+                              .myOrdersDetailsData,
+                        ));
                   }),
               SizedBox(height: 12.h),
             ],

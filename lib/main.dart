@@ -4,7 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/about_us/about_us_bloc.dart';
 import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
+import 'package:kian_sheeps_projects/features/categories/bloc/category_Items_bloc.dart';
+import 'package:kian_sheeps_projects/features/common_Questions/bloc/common_ques_bloc.dart';
+import 'package:kian_sheeps_projects/features/delivery_and_shiping_terms/bloc/delivery_shipping_policy_bloc.dart';
+import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
 import 'package:kian_sheeps_projects/features/forget_password/bloc/forget_password_bloc.dart';
 import 'package:kian_sheeps_projects/features/forget_password/views/forget_password_view.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
@@ -15,9 +20,11 @@ import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bl
 import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
 import 'package:kian_sheeps_projects/features/my_orders/bloc/order_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
+import 'package:kian_sheeps_projects/features/privacy_Policy/bloc/privacy_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
 import 'package:kian_sheeps_projects/features/reset_password/bloc/reset_pass_bloc.dart';
+import 'package:kian_sheeps_projects/features/return_and_exchange/bloc/exchange_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/service_rate/bloc/service_rate_bloc.dart';
 import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
 import 'package:kian_sheeps_projects/features/verify_code/views/vrefiy_code_view.dart';
@@ -103,6 +110,9 @@ class _MyAppState extends State<MyApp> {
                   create: (context) => CategoriesBloc(),
                 ),
                 BlocProvider(
+                  create: (context) => CategoryItemsBloc(),
+                ),
+                BlocProvider(
                   create: (context) => NotificationBloc(),
                 ),
                 BlocProvider(
@@ -116,6 +126,24 @@ class _MyAppState extends State<MyApp> {
                 ),
                 BlocProvider(
                   create: (context) => ServiceRateBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => ShippingPolicyBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => ExchangePolicyBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => PrivacyPolicyBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => CommonQuestionsBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => FavouriteBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => AboutUsBloc(),
                 ),
               ],
               child: MaterialApp(

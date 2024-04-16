@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
-import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
+import 'package:kian_sheeps_projects/features/categories/bloc/category_Items_bloc.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import 'package:kian_sheeps_projects/widgets/custom_product_item.dart';
@@ -15,22 +15,26 @@ class ProductGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoriesBloc, AppState>(
+    return BlocBuilder<CategoryItemsBloc, AppState>(
       builder: (context, state) {
-        var bloc = CategoriesBloc.of(context);
+        var bloc = CategoryItemsBloc.of(context);
 
         if (state is Loading) {
-          return const Center(
-            child: CircularProgressIndicator(
-              color: kPrimaryColor,
+          return const SliverToBoxAdapter(
+            child: Center(
+              child: CircularProgressIndicator(
+                color: kPrimaryColor,
+              ),
             ),
           );
         } else if (state is Error) {
-          return Center(
-              child: Text(
-            "error_getting_data".tr(),
-            style: TextStyles.textstyle16,
-          ));
+          return SliverToBoxAdapter(
+            child: Center(
+                child: Text(
+              "error_getting_data".tr(),
+              style: TextStyles.textstyle16,
+            )),
+          );
         } else {
           return SliverFillRemaining(
             child: GridView.builder(
@@ -44,6 +48,9 @@ class ProductGridView extends StatelessWidget {
               itemCount: bloc.subCategoryOffersModel.data?.offer?.length ?? 0,
               itemBuilder: (BuildContext context, int index) {
                 return CustomProductCard(
+                  isFavourite:
+                      bloc.subCategoryOffersModel.data?.offer?[index].like ??
+                          false,
                   offer: bloc.subCategoryOffersModel.data!.offer![index],
                 );
               },

@@ -22,7 +22,7 @@ class ServiceRateBloc extends Bloc<AppEvent, AppState> {
   TextEditingController commentController = TextEditingController();
 
   RatingModel ratingModel = RatingModel(
-    comment: "",
+    comment: "No Comment",
     deliverySpeed: "0",
     order: "0",
     satisfaction: "0",
@@ -47,8 +47,8 @@ class ServiceRateBloc extends Bloc<AppEvent, AppState> {
 
 /////add
   void resetValues() {
-    ratingModel = RatingModel(
-      comment: "",
+    ratingModel = ratingModel.copyWith(
+      comment: "No Comment",
       deliverySpeed: "0",
       order: "0",
       satisfaction: "0",

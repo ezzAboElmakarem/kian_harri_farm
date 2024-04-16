@@ -3,8 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/AppStorage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/about_us/about_us_bloc.dart';
+import 'package:kian_sheeps_projects/features/common_Questions/bloc/common_ques_bloc.dart';
+import 'package:kian_sheeps_projects/features/delivery_and_shiping_terms/bloc/delivery_shipping_policy_bloc.dart';
+import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
 import 'package:kian_sheeps_projects/features/my_orders/bloc/order_bloc.dart';
+import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
+import 'package:kian_sheeps_projects/features/privacy_Policy/bloc/privacy_policy_bloc.dart';
+import 'package:kian_sheeps_projects/features/return_and_exchange/bloc/exchange_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
@@ -18,7 +25,7 @@ import '../../favourities/views/favourities_view.dart';
 import '../../language/views/language_view.dart';
 import '../../notifications/views/notifications_view.dart';
 import '../../my_orders/views/orders_tapbar.dart';
-import '../../privacy_Pollicy/views/privacy_policy_view.dart';
+import '../../privacy_Policy/views/privacy_policy_view.dart';
 import '../../delivery_and_shiping_terms/views/delivery_shipping_terms.dart';
 import '../../return_and_exchange/views/return_and_exchange_view.dart';
 import '../../terms_and_conditions/views/terms_and_conditions.dart';
@@ -59,6 +66,7 @@ class DrawerView extends StatelessWidget {
       "title": 'favourite'.tr(),
       "onTap": () {
         RouteUtils.pop();
+        FavouriteBloc.get(RouteUtils.context).add(Get());
 
         RouteUtils.navigateTo(
           const Favourites(),
@@ -84,7 +92,7 @@ class DrawerView extends StatelessWidget {
       "title": 'notification'.tr(),
       "onTap": () {
         RouteUtils.pop();
-
+        NotificationBloc.get(RouteUtils.context).add(Get());
         RouteUtils.navigateTo(
           const NotificationView(),
         );
@@ -106,6 +114,7 @@ class DrawerView extends StatelessWidget {
       "title": 'about_us'.tr(),
       "onTap": () {
         RouteUtils.pop();
+        AboutUsBloc.of(RouteUtils.context).add(Get());
 
         RouteUtils.navigateTo(
           const AboutUsView(),
@@ -128,6 +137,7 @@ class DrawerView extends StatelessWidget {
       "title": 'privacy_policy'.tr(),
       "onTap": () {
         RouteUtils.pop();
+        PrivacyPolicyBloc.get(RouteUtils.context).add(Get());
 
         RouteUtils.navigateTo(
           const PrivacyPolicyView(),
@@ -139,6 +149,7 @@ class DrawerView extends StatelessWidget {
       "title": 'shipping_terms'.tr(),
       "onTap": () {
         RouteUtils.pop();
+        ShippingPolicyBloc.get(RouteUtils.context).add(Get());
 
         RouteUtils.navigateTo(
           const DeliveryAndShippingTermsView(),
@@ -161,6 +172,7 @@ class DrawerView extends StatelessWidget {
       "title": 'return_and_exchange'.tr(),
       "onTap": () {
         RouteUtils.pop();
+        ExchangePolicyBloc.get(RouteUtils.context).add(Get());
 
         RouteUtils.navigateTo(
           const ReturnAndExchange(),
@@ -172,6 +184,7 @@ class DrawerView extends StatelessWidget {
       "title": 'common_questions_title'.tr(),
       "onTap": () {
         RouteUtils.pop();
+        CommonQuestionsBloc.get(RouteUtils.context).add(Get());
 
         RouteUtils.navigateTo(
           const CommonQuestions(),

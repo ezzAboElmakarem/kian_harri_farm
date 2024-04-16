@@ -36,7 +36,10 @@ class SimilarProductsSlider extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (context, index) => SizedBox(width: 2.w),
                 itemBuilder: (context, index) {
-                  return const CustomProductCard();
+                  return const CustomProductCard(
+                    isFavourite: /*bloc.favouriteData.data?.product?[index].like??*/
+                        false,
+                  );
                 }),
           ),
         ],

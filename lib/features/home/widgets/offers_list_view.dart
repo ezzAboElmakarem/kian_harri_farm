@@ -63,6 +63,7 @@ class OffersListView extends StatelessWidget {
                 separatorBuilder: (context, index) => SizedBox(width: 2.w),
                 itemBuilder: (context, index) {
                   return CustomProductCard(
+                    isFavourite: bloc.homeData.offer![index].like ?? false,
                     offer: bloc.homeData.offer![index],
                   );
                 }),

@@ -6,35 +6,35 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
-import 'package:kian_sheeps_projects/features/my_orders/model/order_model.dart';
-import 'package:kian_sheeps_projects/features/my_orders/repo/order_repo.dart';
+import 'package:kian_sheeps_projects/features/common_Questions/model/common_ques_model.dart';
+import 'package:kian_sheeps_projects/features/common_Questions/repo/common_ques_repo.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
 
-class MyOrdersBloc extends Bloc<AppEvent, AppState> {
-  MyOrdersBloc() : super(Loading()) {
+class CommonQuestionsBloc extends Bloc<AppEvent, AppState> {
+  CommonQuestionsBloc() : super(Loading()) {
     on<Get>(getData);
   }
-  static MyOrdersBloc get(context) => BlocProvider.of(context);
-  MyOrdersModel ordersData = MyOrdersModel();
+  static CommonQuestionsBloc get(context) => BlocProvider.of(context);
+  CommonQuestionsModel commonQuestionsData = CommonQuestionsModel();
 
   getData(AppEvent event, Emitter<AppState> emit) async {
     emit(Loading());
     try {
-      Response response = await MyOrdersRepository.getMyOrders();
+      Response response = await CommonQurestionsRepository.getData();
       if (response.statusCode == 200) {
-        ordersData = MyOrdersModel.fromJson(response.data);
-        log('Get orders data Successfuly ');
+        commonQuestionsData = CommonQuestionsModel.fromJson(response.data);
+        log('Get Common ques data Successfuly ');
         emit(Done());
       } else {
         emit(Error());
         showSnackBar(RouteUtils.context, " ${response.data['message']}");
-        log('Get orders data Failed with Status code ${response.statusCode}');
+        log('Get Common ques data Failed with Status code ${response.statusCode}');
       }
     } catch (e) {
       emit(Error());
       showSnackBar(RouteUtils.context, "catch an error ==>$e");
-      log("catch error in get orders data ${e.toString()}");
+      log("catch error in get Common ques data ${e.toString()}");
     }
   }
 }

@@ -25,6 +25,7 @@ class OffersGridView extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return CustomProductCard(
             offer: bloc.allOffersData.data!.offers![index],
+            isFavourite: bloc.allOffersData.data?.offers?[index].like ?? false,
           );
         },
       ),

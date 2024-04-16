@@ -11,6 +11,13 @@ class Endpoints {
   static const String ALLOFFERES = "show-all-offer";
   static const String NOTIFICATION = "notifications";
   static const String USER = "user";
+  static const String FAVOURITE = "favorite";
+  static const String LIKE = "like";
+  static const String ABOUT_US = "aboutus";
+  static const String COMMON_QUES = "qustions";
+  static const String PRIVACY_POLICY = "privacy";
+  static const String SHIPPING_POLICY = "shipping_delivery";
+  static const String EXCHANGE_POLICY = "exchange_policy";
   static const String UPDATE = "update";
   static const String SERVICE_RATE = "rate-service";
   static const String GET_ORDERS = "get-orders";

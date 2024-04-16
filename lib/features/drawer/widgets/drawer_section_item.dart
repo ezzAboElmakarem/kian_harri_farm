@@ -28,7 +28,7 @@ class DrawerSectionItem extends StatelessWidget {
               width: 24.w,
             ),
             SizedBox(
-              width: 8.w,
+              width: 6.w,
             ),
             Text(
               sectionTitle,

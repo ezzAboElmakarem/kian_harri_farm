@@ -1,7 +1,12 @@
 import 'dart:developer';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/core/app_state.dart';
+import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
 import 'package:kian_sheeps_projects/features/home/models/home_model.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import '../features/Product_details/views/product_details_views.dart';
@@ -15,6 +20,7 @@ class CustomProductCard extends StatefulWidget {
   const CustomProductCard({
     super.key,
     this.offer,
+    required this.isFavourite,
     // required this.categoryName,
     // required this.price,
     // required this.oldPrice,
@@ -22,6 +28,7 @@ class CustomProductCard extends StatefulWidget {
     // required this.imageUrl,
   });
   final ProductModel? offer;
+  final bool isFavourite;
   // final String categoryName;
   // final String price;
   // final String oldPrice;
@@ -33,7 +40,14 @@ class CustomProductCard extends StatefulWidget {
 }
 
 class _CustomProductCardState extends State<CustomProductCard> {
-  bool isFavouite = false;
+  bool _isFavourite = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _isFavourite = widget.isFavourite;
+  }
+
   String favouriteImage = AssetsData.fillHeartIcon;
   String notFavouriteImage = AssetsData.emptyHeartIcon;
   @override
@@ -128,49 +142,67 @@ class _CustomProductCardState extends State<CustomProductCard> {
                 ),
               ],
             ),
-            Positioned(
-              left: RouteUtils.isAR ? 0 : null,
-              right: RouteUtils.isAR ? null : 0,
-              top: -12.h,
-              child: Row(
-                children: [
-                  InkWell(
-                      splashColor: Colors.transparent,
-                      onTap: () {
-                        isFavouite = !isFavouite;
-                        log('state is : $isFavouite');
-                        setState(() {});
-                      },
-                      child: Container(
-                        width: 70.w,
-                        height: 60.h,
-                        color: Colors.transparent,
-                        child: Image.asset(
-                          isFavouite ? favouriteImage : notFavouriteImage,
+            BlocBuilder<FavouriteBloc, AppState>(builder: (context, state) {
+              if (state is Loading) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (state is Error) {
+                return Center(
+                    child: Text(
+                  "error_getting_data".tr(),
+                  style: TextStyles.textstyle16,
+                ));
+              } else {
+                return Positioned(
+                  left: RouteUtils.isAR ? 0 : null,
+                  right: RouteUtils.isAR ? null : 0,
+                  top: -12.h,
+                  child: Row(
+                    children: [
+                      InkWell(
+                          splashColor: Colors.transparent,
+                          onTap: () {
+                            _isFavourite = !_isFavourite;
+                            log('state is : $_isFavourite');
+                            setState(() {});
+                            FavouriteBloc.get(context).add(Click(
+                              arguments: {
+                                "product_id": widget.offer?.id,
+                                "like": _isFavourite,
+                              },
+                            ));
+                          },
+                          child: Container(
+                            width: 70.w,
+                            height: 60.h,
+                            color: Colors.transparent,
+                            child: Image.asset(
+                              _isFavourite ? favouriteImage : notFavouriteImage,
+                            ),
+                          )),
+                      SizedBox(
+                        width: 64.w,
+                      ),
+                      CircleAvatar(
+                        backgroundColor: ColorStyles.orangeColor,
+                        radius: 17.r,
+                        child: Column(
+                          children: [
+                            Text(widget.offer?.discount ?? '10',
+                                style: TextStyles.textstyle12.copyWith(
+                                    color: Colors.white,
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.bold)),
+                            Text('خصم',
+                                style: TextStyles.textstyle12.copyWith(
+                                    color: Colors.white, fontSize: 8.sp)),
+                          ],
                         ),
-                      )),
-                  SizedBox(
-                    width: 64.w,
+                      ),
+                    ],
                   ),
-                  CircleAvatar(
-                    backgroundColor: ColorStyles.orangeColor,
-                    radius: 17.r,
-                    child: Column(
-                      children: [
-                        Text(widget.offer?.discount ?? '10',
-                            style: TextStyles.textstyle12.copyWith(
-                                color: Colors.white,
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.bold)),
-                        Text('خصم',
-                            style: TextStyles.textstyle12
-                                .copyWith(color: Colors.white, fontSize: 8.sp)),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+                );
+              }
+            }),
           ],
         ),
       ),

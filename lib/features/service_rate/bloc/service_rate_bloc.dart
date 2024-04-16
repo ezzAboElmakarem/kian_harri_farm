@@ -92,6 +92,8 @@ class ServiceRateBloc extends Bloc<AppEvent, AppState> {
 
         log("Error  service rate ${response.statusCode}");
         showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        // /////add
+        resetValues();
       }
     } catch (e) {
       emit(Error());

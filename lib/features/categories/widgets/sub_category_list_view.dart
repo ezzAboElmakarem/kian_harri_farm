@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
-import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
 import 'package:kian_sheeps_projects/features/categories/bloc/category_Items_bloc.dart';
 import 'package:kian_sheeps_projects/features/categories/models/categories_model.dart';
 import 'sub_category_item.dart';

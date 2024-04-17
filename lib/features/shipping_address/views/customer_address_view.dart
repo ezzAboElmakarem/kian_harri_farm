@@ -53,15 +53,18 @@ class CustomerAddressView extends StatelessWidget {
               ),
               SizedBox(height: 10.h),
 //*******************************************************************************************************
-              CountryDropDown(
-                fieldTitle: 'المدينة',
-                dataList: const [
-                  'المحلة',
-                  'المنصورة',
-                  'القاهرة ',
-                  'الجيزة',
-                ],
-              ),
+              // CountryDropDown(
+              //   fieldTitle: 'المدينة',
+              //   dataList: const [
+              //     'المحلة',
+              //     'المنصورة',
+              //     'القاهرة ',
+              //     'الجيزة',
+              //   ],
+              //   onChange: (value) {
+              //     log('changing value to: $value');
+              //   },
+              // ),
 //*******************************************************************************************************
 
               SizedBox(height: 10.h),

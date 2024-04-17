@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/AppStorage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/about_us/about_us_bloc.dart';
+import 'package:kian_sheeps_projects/features/addresses/bloc/addresses_bloc.dart';
 import 'package:kian_sheeps_projects/features/common_Questions/bloc/common_ques_bloc.dart';
 import 'package:kian_sheeps_projects/features/delivery_and_shiping_terms/bloc/delivery_shipping_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
@@ -78,12 +79,10 @@ class DrawerView extends StatelessWidget {
       "title": 'addresses'.tr(),
       "onTap": () {
         RouteUtils.pop();
+        AddressesBloc.of(RouteUtils.context).add(Get());
 
         RouteUtils.navigateTo(
-          AddressesListView(
-            orderDetails:
-                MyOrdersDetailsBloc.of(RouteUtils.context).myOrdersDetailsData,
-          ),
+          const AddressesListView(),
         );
       }
     },

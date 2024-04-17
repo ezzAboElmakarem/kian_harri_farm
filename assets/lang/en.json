@@ -97,7 +97,9 @@
     "new_password" : "New Password",
     "confirm_new_password" : "Confirm New Password",
     "error_getting_data" : "Failed To Load Data",
-    "log_out": "Log Out"
+    "log_out": "Log Out",
+    "city": "City",
+    "region": "region"
 
     
     

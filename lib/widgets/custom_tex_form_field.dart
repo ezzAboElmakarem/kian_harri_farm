@@ -98,8 +98,8 @@ class CustomTextFormField extends StatelessWidget {
             suffixIcon: suffixIcon,
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: borderColor ?? const Color(0xffEFEFEF),
-                width: 2.w,
+                color: borderColor ?? kPrimaryColor,
+                width: 0.5.w,
               ),
               borderRadius: const BorderRadius.all(
                 Radius.circular(8),
@@ -107,8 +107,8 @@ class CustomTextFormField extends StatelessWidget {
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: borderColor ?? const Color(0xffEFEFEF),
-                width: 2.w,
+                color: borderColor ?? kPrimaryColor,
+                width: 0.5.w,
               ),
               borderRadius: const BorderRadius.all(
                 Radius.circular(8),
@@ -116,8 +116,8 @@ class CustomTextFormField extends StatelessWidget {
             ),
             disabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: borderColor ?? const Color(0xffEFEFEF),
-                width: 2,
+                color: borderColor ?? kPrimaryColor,
+                width: 0.5.w,
               ),
               borderRadius: const BorderRadius.all(
                 Radius.circular(8),
@@ -125,8 +125,8 @@ class CustomTextFormField extends StatelessWidget {
             ),
             border: OutlineInputBorder(
               borderSide: BorderSide(
-                color: borderColor ?? const Color(0xffEFEFEF),
-                width: 2,
+                color: borderColor ?? kPrimaryColor,
+                width: 0.5.w,
               ),
               borderRadius: const BorderRadius.all(
                 Radius.circular(8),

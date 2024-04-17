@@ -5,6 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/about_us/about_us_bloc.dart';
+import 'package:kian_sheeps_projects/features/add_address/bloc/add_address_bloc.dart';
+import 'package:kian_sheeps_projects/features/add_address/bloc/get_cities_and_regions_bloc.dart';
+import 'package:kian_sheeps_projects/features/addresses/bloc/addresses_bloc.dart';
 import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
 import 'package:kian_sheeps_projects/features/categories/bloc/category_Items_bloc.dart';
 import 'package:kian_sheeps_projects/features/common_Questions/bloc/common_ques_bloc.dart';
@@ -144,6 +147,15 @@ class _MyAppState extends State<MyApp> {
                 ),
                 BlocProvider(
                   create: (context) => AboutUsBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => AddressesBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => AddAddressBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => CitiesAndRegionsBloc(),
                 ),
               ],
               child: MaterialApp(

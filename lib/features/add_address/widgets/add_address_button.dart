@@ -28,13 +28,16 @@ class AddAddressButton extends StatelessWidget {
               AddAddressBloc.of(context).add(Click());
             },
           );
-        } else {}
-        return CustomButton(
-          buttonText: 'حفظ',
-          onTap: () {
-            AddAddressBloc.of(context).add(Click());
-          },
-        );
+        } else {
+          BlocProvider.of<AddAddressBloc>(context).add(Reset());
+
+          return CustomButton(
+            buttonText: 'حفظ',
+            onTap: () {
+              AddAddressBloc.of(context).add(Click());
+            },
+          );
+        }
       },
     );
   }

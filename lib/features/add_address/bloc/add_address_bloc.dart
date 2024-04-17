@@ -15,8 +15,11 @@ import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
 class AddAddressBloc extends Bloc<AppEvent, AppState> {
   AddAddressBloc() : super(Start()) {
     on<Click>(_addAddress);
+    on<Reset>((event, emit) => emit(Start()));
   }
   static AddAddressBloc of(context) => BlocProvider.of(context);
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController addressDetailsController = TextEditingController();
@@ -30,6 +33,8 @@ class AddAddressBloc extends Bloc<AppEvent, AppState> {
   // TextEditingController locationController = TextEditingController();
 
   _addAddress(AppEvent event, Emitter<AppState> emit) async {
+    if (!formkey.currentState!.validate()) return;
+
     emit(Loading());
     Map<String, dynamic> body = {
       "name": nameController.text,
@@ -46,15 +51,23 @@ class AddAddressBloc extends Bloc<AppEvent, AppState> {
     };
     try {
       Response response = await AddAddressRepository.addAddress(body: body);
-      if (response.statusCode == 200 || response.statusCode == 422) {
+      if (response.statusCode == 200) {
         log('Posted Address data Successfuly ');
         emit(Done());
         // if (addressesData.data!.isEmpty) {
         //   emit(Empty());
         // }
-
+        AddAddressBloc bloc = AddAddressBloc.of(RouteUtils.context);
+        bloc.nameController.clear();
+        bloc.phoneController.clear();
+        bloc.addressDetailsController.clear();
+        bloc.neighborhoodController.clear();
+        bloc.streetNameController.clear();
+        bloc.buildingNumberController.clear();
+        bloc.notesController.clear();
         AddressesBloc.of(RouteUtils.context).add(Get());
         RouteUtils.pop();
+        showSnackBar(RouteUtils.context, " Address Added Successfully");
       } else {
         log("Error add address ${response.statusCode}");
         showSnackBar(RouteUtils.context, " ${response.data['message']}");

@@ -99,7 +99,13 @@
     "error_getting_data" : "خطأ في تحميل البيانات",
     "log_out": "تسجيل الخروج",
     "city": "المدينة",
-    "region": "المنطقة"
+    "region": "المنطقة",
+    "address_details": " العنوان بالتفصيل",
+    "neighborhood" : "الحي",
+    "street_name" : "اسم الشارع",
+    "residential_number" :"رقم السكن",
+    "notes": "الملاحظات",
+    "pick_location_on_map" : "تحديد موقع الاستلام على الخريطة"
 
 
 

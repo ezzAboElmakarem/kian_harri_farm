@@ -21,6 +21,8 @@ class Endpoints {
   static const String EXCHANGE_POLICY = "exchange_policy";
   static const String UPDATE = "update";
   static const String GET_CITIES = "city";
+  static const String CONTACTUS = "contactUs";
+  static const String CONTACT_US_LINKS = "setting";
   static const String ADD_ADDRESS = "save-address";
   static const String SERVICE_RATE = "rate-service";
   static const String GET_ORDERS = "get-orders";

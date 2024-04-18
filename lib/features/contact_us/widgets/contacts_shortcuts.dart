@@ -1,6 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/contact_us/model/contact_us_links_model.dart';
+import 'package:kian_sheeps_projects/features/contact_us/widgets/contact_us_row.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'contact_item.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/text_styles.dart';
@@ -8,8 +11,9 @@ import '../../../helper/text_styles.dart';
 class ContactsShortcuts extends StatelessWidget {
   const ContactsShortcuts({
     super.key,
+    required this.linkData,
   });
-
+  final ContacUsLinksModel linkData;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,74 +30,44 @@ class ContactsShortcuts extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Spacer(),
+            // const Spacer(),
             ContactItemWidget(
               iconUrl: AssetsData.phoneIcon,
-              contactText: '0147852698',
+              contactText: linkData.data?[0].phone ?? '0147852698',
             ),
-            Spacer(),
-            ContactItemWidget(
-              iconUrl: AssetsData.emailIcon,
-              contactText: 'info@gmail.com',
-            ),
-            Spacer(),
+            SizedBox(width: 10.w),
             ContactItemWidget(
               iconUrl: AssetsData.locationIcon,
-              contactText: 'الرياض حي التعاون',
+              contactText: linkData.data?[0].address ?? 'الرياض حي التعاون',
             ),
-            Spacer(),
+            // const Spacer(),
+            SizedBox(width: 10.w),
+            InkWell(
+              onTap: () {
+                final Uri emailLaunchUri = Uri(
+                  scheme: 'mailto',
+                  path: linkData.data?[0].email ?? '',
+                );
+
+                launchUrl(emailLaunchUri);
+              },
+              child: ContactItemWidget(
+                iconUrl: AssetsData.emailIcon,
+                contactText: linkData.data?[0].email ?? 'info@gmail.com',
+              ),
+            ),
+            // const Spacer(),
+
+            // const Spacer(),
           ],
         ),
         SizedBox(
           height: 30.h,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Spacer(),
-            Image.asset(
-              AssetsData.instaIcon,
-              height: 22.h,
-              width: 22.w,
-            ),
-            SizedBox(
-              width: 12.w,
-            ),
-            Image.asset(
-              AssetsData.snapIcon,
-              height: 22.h,
-              width: 22.w,
-            ),
-            SizedBox(
-              width: 12.w,
-            ),
-            Image.asset(
-              AssetsData.webIcon,
-              height: 22.h,
-              width: 22.w,
-            ),
-            SizedBox(
-              width: 12.w,
-            ),
-            Image.asset(
-              AssetsData.twitterIcon,
-              height: 22.h,
-              width: 22.w,
-            ),
-            SizedBox(
-              width: 12.w,
-            ),
-            Image.asset(
-              AssetsData.facebookIcon,
-              height: 22.h,
-              width: 22.w,
-            ),
-            const Spacer(),
-          ],
-        ),
+        ContactUsLinksRow(linkData: linkData),
         SizedBox(
           height: 30.h,
         ),

@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
 import '../../payment/views/payment_view.dart';
 import '../widgets/shipping_address.dart';
-import '../widgets/select_city.dart';
 import '../../../helper/app_bar_method.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/navigation_methods.dart';

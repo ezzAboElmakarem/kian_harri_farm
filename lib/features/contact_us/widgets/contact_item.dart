@@ -13,6 +13,7 @@ class ContactItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(
           iconUrl,
@@ -24,7 +25,9 @@ class ContactItemWidget extends StatelessWidget {
         ),
         Text(
           contactText,
-          style: TextStyles.textstyle12.copyWith(fontSize: 10.sp),
+          style: TextStyles.textstyle12.copyWith(fontSize: 8.sp),
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1,
         )
       ],
     );

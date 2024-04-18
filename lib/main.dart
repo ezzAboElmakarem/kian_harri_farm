@@ -11,6 +11,7 @@ import 'package:kian_sheeps_projects/features/addresses/bloc/addresses_bloc.dart
 import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
 import 'package:kian_sheeps_projects/features/categories/bloc/category_Items_bloc.dart';
 import 'package:kian_sheeps_projects/features/common_Questions/bloc/common_ques_bloc.dart';
+import 'package:kian_sheeps_projects/features/contact_us/bloc/Contact_us_bloc.dart';
 import 'package:kian_sheeps_projects/features/delivery_and_shiping_terms/bloc/delivery_shipping_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
 import 'package:kian_sheeps_projects/features/forget_password/bloc/forget_password_bloc.dart';
@@ -156,6 +157,9 @@ class _MyAppState extends State<MyApp> {
                 ),
                 BlocProvider(
                   create: (context) => CitiesAndRegionsBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => ContactUsBloc(),
                 ),
               ],
               child: MaterialApp(

@@ -6,11 +6,11 @@ import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/about_us/about_us_bloc.dart';
 import 'package:kian_sheeps_projects/features/addresses/bloc/addresses_bloc.dart';
 import 'package:kian_sheeps_projects/features/common_Questions/bloc/common_ques_bloc.dart';
+import 'package:kian_sheeps_projects/features/contact_us/bloc/Contact_us_bloc.dart';
 import 'package:kian_sheeps_projects/features/delivery_and_shiping_terms/bloc/delivery_shipping_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
 import 'package:kian_sheeps_projects/features/my_orders/bloc/order_bloc.dart';
 import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bloc.dart';
-import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/privacy_Policy/bloc/privacy_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/return_and_exchange/bloc/exchange_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
@@ -125,6 +125,7 @@ class DrawerView extends StatelessWidget {
       "title": 'contact_us'.tr(),
       "onTap": () {
         RouteUtils.pop();
+        ContactUsBloc.of(RouteUtils.context).add(Get());
 
         RouteUtils.navigateTo(
           const ContactUs(),

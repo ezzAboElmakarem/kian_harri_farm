@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
@@ -40,6 +41,9 @@ class OffersView extends StatelessWidget {
                       return AppTopViewedCard(imagePath: banner.image!);
                     }).toList(),
                   ),
+                ),
+                SliverToBoxAdapter(
+                  child: SizedBox(height: 28.h),
                 ),
                 const OffersGridView(),
               ],

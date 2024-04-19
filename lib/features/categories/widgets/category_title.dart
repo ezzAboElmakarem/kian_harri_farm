@@ -14,12 +14,9 @@ class CategoryTitle extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 10.w),
-        child: Align(
-          alignment: Alignment.centerRight,
-          child: Text(
-            categoryName ?? 'no category',
-            style: TextStyles.textstyle14,
-          ),
+        child: Text(
+          categoryName ?? 'no category',
+          style: TextStyles.textstyle14,
         ),
       ),
     );

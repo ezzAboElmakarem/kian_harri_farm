@@ -14,18 +14,21 @@ class OffersGridView extends StatelessWidget {
 
     return SliverFillRemaining(
       child: GridView.builder(
-        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 6.w),
+        padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 3.w),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 1 / 1,
+          childAspectRatio: .9 / 1,
           crossAxisCount: 2,
           crossAxisSpacing: 2.w,
-          mainAxisSpacing: 2.h,
+          mainAxisSpacing: 16.h,
         ),
         itemCount: bloc.allOffersData.data!.offers!.length,
         itemBuilder: (BuildContext context, int index) {
-          return CustomProductCard(
-            offer: bloc.allOffersData.data!.offers![index],
-            isFavourite: bloc.allOffersData.data?.offers?[index].like ?? false,
+          return Center(
+            child: CustomProductCard(
+              offer: bloc.allOffersData.data!.offers![index],
+              isFavourite:
+                  bloc.allOffersData.data?.offers?[index].like ?? false,
+            ),
           );
         },
       ),

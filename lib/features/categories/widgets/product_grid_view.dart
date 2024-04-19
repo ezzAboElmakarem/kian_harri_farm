@@ -20,10 +20,13 @@ class ProductGridView extends StatelessWidget {
         var bloc = CategoryItemsBloc.of(context);
 
         if (state is Loading) {
-          return const SliverToBoxAdapter(
-            child: Center(
-              child: CircularProgressIndicator(
-                color: kPrimaryColor,
+          return SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 200.h),
+              child: const Center(
+                child: CircularProgressIndicator(
+                  color: kPrimaryColor,
+                ),
               ),
             ),
           );
@@ -40,18 +43,20 @@ class ProductGridView extends StatelessWidget {
             child: GridView.builder(
               padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 8.h),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 2.5 / 3,
+                childAspectRatio: .9 / 1,
                 crossAxisCount: 2,
-                crossAxisSpacing: 0.w,
-                mainAxisSpacing: 2.h,
+                crossAxisSpacing: 2.w,
+                mainAxisSpacing: 16.h,
               ),
               itemCount: bloc.subCategoryOffersModel.data?.offer?.length ?? 0,
               itemBuilder: (BuildContext context, int index) {
-                return CustomProductCard(
-                  isFavourite:
-                      bloc.subCategoryOffersModel.data?.offer?[index].like ??
-                          false,
-                  offer: bloc.subCategoryOffersModel.data!.offer![index],
+                return Center(
+                  child: CustomProductCard(
+                    isFavourite:
+                        bloc.subCategoryOffersModel.data?.offer?[index].like ??
+                            false,
+                    offer: bloc.subCategoryOffersModel.data!.offer![index],
+                  ),
                 );
               },
             ),

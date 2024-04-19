@@ -30,16 +30,18 @@ class Favourites extends StatelessWidget {
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 2 / 3,
+                childAspectRatio: .9 / 1,
                 crossAxisCount: 2,
                 crossAxisSpacing: 2.w,
-                mainAxisSpacing: 2.h,
+                mainAxisSpacing: 16.h,
               ),
               itemCount: bloc.favouriteData.data!.product!.length,
-              itemBuilder: (context, index) => CustomProductCard(
-                offer: bloc.favouriteData.data!.product![index],
-                isFavourite:
-                    bloc.favouriteData.data?.product?[index].like ?? false,
+              itemBuilder: (context, index) => Center(
+                child: CustomProductCard(
+                  offer: bloc.favouriteData.data!.product![index],
+                  isFavourite:
+                      bloc.favouriteData.data?.product?[index].like ?? false,
+                ),
               ),
             );
           }

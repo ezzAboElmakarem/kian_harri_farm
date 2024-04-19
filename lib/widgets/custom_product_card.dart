@@ -61,22 +61,28 @@ class _CustomProductCardState extends State<CustomProductCard> {
             context: context,
             widget: ProductDetailsView(productDetailsModel: widget.offer));
       },
-      child: Container(
-        width: 146.w,
-        color: Colors.white,
-        child: Stack(
-          children: [
-            Column(
+      child: Stack(
+        children: [
+          Container(
+            width: 146.w,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(12.r)),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: 34.h),
                 Expanded(
-                  child: Center(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.network(
-                        widget.offer?.image ?? AssetsData.dummyProductImage,
-                        fit: BoxFit.fill,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                    ),
+                    child: Center(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.network(
+                          widget.offer?.image ?? AssetsData.dummyProductImage,
+                          fit: BoxFit.fitWidth,
+                        ),
                       ),
                     ),
                   ),
@@ -85,84 +91,117 @@ class _CustomProductCardState extends State<CustomProductCard> {
                   height: 10.h,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 10.w),
+                  padding: EdgeInsets.only(right: 10.w, left: 8.w),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          widget.offer?.category ?? "category",
-                          style: TextStyles.textstyle14
-                              .copyWith(color: ColorStyles.textGreyColor),
-                        ),
+                      Text(
+                        widget.offer?.category ?? "category",
+                        style: TextStyles.textstyle14
+                            .copyWith(color: ColorStyles.textGreyColor),
                       ),
                       SizedBox(
                         height: 6.h,
                       ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          widget.offer?.name ?? "product",
-                          style: TextStyles.textstyle14,
-                        ),
+                      Text(
+                        widget.offer?.name ?? "product",
+                        style: TextStyles.textstyle14,
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
-                      Row(
-                        children: [
-                          Text(
-                            widget.offer?.price ?? '250',
-                            style: TextStyles.textstyle14.copyWith(
-                                color: ColorStyles.textGreyColor,
-                                decoration: TextDecoration.lineThrough,
-                                decorationThickness: 2.0),
-                          ),
-                          SizedBox(
-                            width: 6.w,
-                          ),
-                          Text(
-                            widget.offer?.offerPrice ?? " 200",
-                            style: TextStyles.textstyle14.copyWith(
-                              color: kPrimaryColor,
+                      widget.offer?.price == widget.offer?.offerPrice
+                          ? Row(
+                              children: [
+                                Text(
+                                  widget.offer?.offerPrice ?? " 200",
+                                  style: TextStyles.textstyle14.copyWith(
+                                    color: kPrimaryColor,
+                                  ),
+                                ),
+                                const Spacer(),
+                                // SizedBox(
+                                //   width: 18.w,
+                                // ),
+                                GestureDetector(
+                                    onTap: () {
+                                      navigateTo(
+                                          context: context,
+                                          widget: const CartView());
+                                    },
+                                    child: Image.asset(
+                                      AssetsData.shoppingBasket,
+                                      height: 24.h,
+                                      width: 24.w,
+                                    )),
+                              ],
+                            )
+                          : Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  widget.offer?.price ?? '250',
+                                  style: TextStyles.textstyle14.copyWith(
+                                      color: ColorStyles.textGreyColor,
+                                      decoration: TextDecoration.lineThrough,
+                                      decorationThickness: 2.0),
+                                ),
+                                SizedBox(
+                                  width: 6.w,
+                                ),
+                                Text(
+                                  widget.offer?.offerPrice ?? " 200",
+                                  style: TextStyles.textstyle14.copyWith(
+                                    color: kPrimaryColor,
+                                  ),
+                                ),
+                                const Spacer(),
+                                // SizedBox(
+                                //   width: 18.w,
+                                // ),
+                                GestureDetector(
+                                    onTap: () {
+                                      navigateTo(
+                                          context: context,
+                                          widget: const CartView());
+                                    },
+                                    child: Image.asset(
+                                      AssetsData.shoppingBasket,
+                                      height: 24.h,
+                                      width: 24.w,
+                                    )),
+                              ],
                             ),
-                          ),
-                          SizedBox(
-                            width: 18.w,
-                          ),
-                          GestureDetector(
-                              onTap: () {
-                                navigateTo(
-                                    context: context, widget: const CartView());
-                              },
-                              child: Image.asset(
-                                AssetsData.shoppingBasket,
-                                height: 24.h,
-                                width: 24.w,
-                              )),
-                        ],
+                      SizedBox(
+                        height: 8.h,
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-            BlocBuilder<FavouriteBloc, AppState>(builder: (context, state) {
-              if (state is Loading) {
-                return const Center(child: CircularProgressIndicator());
-              } else if (state is Error) {
-                return Center(
-                    child: Text(
-                  "error_getting_data".tr(),
-                  style: TextStyles.textstyle16,
-                ));
-              } else {
-                return Positioned(
-                  left: RouteUtils.isAR ? 0 : null,
-                  right: RouteUtils.isAR ? null : 0,
-                  top: -12.h,
+          ),
+          BlocBuilder<FavouriteBloc, AppState>(builder: (context, state) {
+            if (state is Error) {
+              return Center(
+                  child: Text(
+                "error_getting_data".tr(),
+                style: TextStyles.textstyle16,
+              ));
+            } else {
+              return Positioned(
+                // left: RouteUtils.isAR ? 0 : null,
+                right: RouteUtils.isAR ? 12.w : 12.w,
+
+                top: -18.h,
+                child: SizedBox(
+                  width: 130.w,
+                  height: 100.h,
                   child: Row(
                     children: [
+                      // const Spacer(
+                      //   flex: 1,
+                      // ),
                       InkWell(
                           splashColor: Colors.transparent,
                           onTap: () {
@@ -177,39 +216,77 @@ class _CustomProductCardState extends State<CustomProductCard> {
                             ));
                           },
                           child: Container(
-                            width: 70.w,
-                            height: 60.h,
+                            // width: 70.w,
+                            // height: 60.h,
                             color: Colors.transparent,
                             child: Image.asset(
                               _isFavourite ? favouriteImage : notFavouriteImage,
                             ),
                           )),
-                      SizedBox(
-                        width: 64.w,
-                      ),
-                      CircleAvatar(
-                        backgroundColor: ColorStyles.orangeColor,
-                        radius: 17.r,
-                        child: Column(
-                          children: [
-                            Text(widget.offer?.discount ?? '10',
-                                style: TextStyles.textstyle12.copyWith(
-                                    color: Colors.white,
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.bold)),
-                            Text('خصم',
-                                style: TextStyles.textstyle12.copyWith(
-                                    color: Colors.white, fontSize: 8.sp)),
-                          ],
-                        ),
-                      ),
+                      const Spacer(
+                          // flex: 8,
+                          ),
+                      widget.offer?.discount == '0' ||
+                              widget.offer?.discount == null
+                          ? const SizedBox()
+                          : CircleAvatar(
+                              backgroundColor: ColorStyles.orangeColor,
+                              radius: 20.r,
+                              child: Column(
+                                children: [
+                                  Text(widget.offer?.discount ?? '10',
+                                      style: TextStyles.textstyle12.copyWith(
+                                          color: Colors.white,
+                                          fontSize: 9.sp,
+                                          fontWeight: FontWeight.bold)),
+                                  Text('خصم',
+                                      style: TextStyles.textstyle12.copyWith(
+                                          color: Colors.white, fontSize: 7.sp)),
+                                ],
+                              ),
+                            ),
+                      // const Spacer(
+                      //   flex: 1,
+                      // ),
                     ],
                   ),
-                );
-              }
-            }),
-          ],
-        ),
+                ),
+              );
+
+              //   return Positioned(
+              //     left: RouteUtils.isAR ? 0 : null,
+              //     right: RouteUtils.isAR ? null : 0,
+              //     top: -12.h,
+              //     child: Row(
+              //       children: [
+              //         SizedBox(
+              //           width: 64.w,
+              //         ),
+              //         CircleAvatar(
+              //           backgroundColor: ColorStyles.orangeColor,
+              //           radius: 17.r,
+              //           child: Column(
+              //             children: [
+              //               Text(widget.offer?.discount ?? '10',
+              //                   style: TextStyles.textstyle12.copyWith(
+              //                       color: Colors.white,
+              //                       fontSize: 11.sp,
+              //                       fontWeight: FontWeight.bold)),
+              //               Text('خصم',
+              //                   style: TextStyles.textstyle12.copyWith(
+              //                       color: Colors.white, fontSize: 8.sp)),
+              //             ],
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   );
+              // } else {
+              //   return const SizedBox();
+              // }
+            }
+          }),
+        ],
       ),
     );
   }

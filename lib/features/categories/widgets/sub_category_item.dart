@@ -19,16 +19,19 @@ class SubCategoryItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 80.w,
+        // width: 80.w,
         height: 60.h,
         decoration: BoxDecoration(
             color: isSelected ? kPrimaryColor : ColorStyles.greyColor,
             borderRadius: BorderRadius.circular(8)),
         margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
         child: Center(
-          child: Text(
-            subCartegoriesName,
-            style: TextStyles.textstyle14,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4.w),
+            child: Text(
+              subCartegoriesName,
+              style: TextStyles.textstyle14,
+            ),
           ),
         ),
       ),

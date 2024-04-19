@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
-import 'package:kian_sheeps_projects/widgets/custom_product_item.dart';
+import 'package:kian_sheeps_projects/widgets/custom_product_card.dart';
 
 class OffersGridView extends StatelessWidget {
   const OffersGridView({
@@ -16,7 +16,7 @@ class OffersGridView extends StatelessWidget {
       child: GridView.builder(
         padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 6.w),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 2 / 3,
+          childAspectRatio: 1 / 1,
           crossAxisCount: 2,
           crossAxisSpacing: 2.w,
           mainAxisSpacing: 2.h,

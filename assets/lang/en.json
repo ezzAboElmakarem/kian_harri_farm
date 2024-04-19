@@ -105,7 +105,8 @@
     "street_name" : "Street Name",
     "residential_number" :"Residential Number",
     "notes": "Notes",
-    "pick_location_on_map" : "Pick Location On Map"
+    "pick_location_on_map" : "Pick Location On Map",
+    "press_to_choose" : "Press To Choose"
 
 
 

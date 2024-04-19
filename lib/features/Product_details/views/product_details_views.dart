@@ -1,12 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../widgets/add_to_cart_button.dart';
 import '../widgets/extra_services_drop_down.dart';
 import '../widgets/product_chopping_radio.dart';
 import '../widgets/product_info.dart';
 import '../widgets/product_packaging_radios.dart';
-import '../widgets/product_type_radio.dart';
+import '../widgets/order_type_radio.dart';
 import '../widgets/similar_products_slider.dart';
 import '../widgets/product_review.dart';
 import '../../cart/views/cart_view.dart';
@@ -15,8 +16,8 @@ import '../../../helper/assets.dart';
 import '../../../helper/navigation_methods.dart';
 
 class ProductDetailsView extends StatelessWidget {
-  const ProductDetailsView({super.key});
-
+  const ProductDetailsView({super.key, this.productDetailsModel});
+  final ProductModel? productDetailsModel;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,21 +44,24 @@ class ProductDetailsView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ProductInfo(
-                    oldProductPrice: 170,
-                    productPrice: 200,
-                    productType: "الطليان",
-                    productWeight: 50,
-                    productDescription:
-                        'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى أيضا',
+                  ProductInfo(
+                    productDetailsModel: productDetailsModel,
                   ),
                   SizedBox(
                     height: 20.h,
                   ),
-                  const ProductTypeRadios(),
-                  const ExtraServicesDropDown(),
-                  const ProductpackagingRadios(),
-                  const ProductchoppingRadios(),
+                  OrderTypeRadios(
+                    productDetailsModel: productDetailsModel,
+                  ),
+                  ExtraServicesDropDown(
+                    productDetailsModel: productDetailsModel,
+                  ),
+                  ProductpackagingRadios(
+                    productDetailsModel: productDetailsModel,
+                  ),
+                  ProductchoppingRadios(
+                    productDetailsModel: productDetailsModel,
+                  ),
                   SizedBox(
                     height: 20.h,
                   ),
@@ -65,7 +69,9 @@ class ProductDetailsView extends StatelessWidget {
                   SizedBox(
                     height: 16.h,
                   ),
-                  const SimilarProductsSlider(),
+                  SimilarProductsSlider(
+                    productDetailsModel: productDetailsModel,
+                  ),
                   SizedBox(
                     height: 88.h,
                   ),

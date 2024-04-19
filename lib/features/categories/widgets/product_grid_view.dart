@@ -6,7 +6,7 @@ import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/categories/bloc/category_Items_bloc.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
-import 'package:kian_sheeps_projects/widgets/custom_product_item.dart';
+import 'package:kian_sheeps_projects/widgets/custom_product_card.dart';
 
 class ProductGridView extends StatelessWidget {
   const ProductGridView({

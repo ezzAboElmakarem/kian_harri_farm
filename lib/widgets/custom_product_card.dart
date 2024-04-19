@@ -6,9 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
+import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
-import 'package:kian_sheeps_projects/features/home/models/home_model.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
+import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../features/Product_details/views/product_details_views.dart';
 import '../features/cart/views/cart_view.dart';
 import '../helper/assets.dart';
@@ -54,7 +55,11 @@ class _CustomProductCardState extends State<CustomProductCard> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        navigateTo(context: context, widget: const ProductDetailsView());
+        ProductDetailsBloc.of(context)
+            .add(Get(arguments: widget.offer?.id ?? ''));
+        navigateTo(
+            context: context,
+            widget: ProductDetailsView(productDetailsModel: widget.offer));
       },
       child: Container(
         width: 146.w,

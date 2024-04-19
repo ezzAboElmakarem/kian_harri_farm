@@ -1,11 +1,16 @@
+import 'dart:developer';
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
+import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
 
 class ExtraServicesDropDown extends StatefulWidget {
-  const ExtraServicesDropDown({super.key});
+  const ExtraServicesDropDown({super.key, this.productDetailsModel});
+
+  final ProductModel? productDetailsModel;
 
   @override
   State<ExtraServicesDropDown> createState() => _ExtraServicesDropDownState();
@@ -20,6 +25,23 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
 
   String? selectedItem;
 
+  // List<DropdownMenuItem<String>> buildDropdownItems() {
+  //   List<DropdownMenuItem<String>>? dropdownItems = [];
+
+  //   // Check if productDetailsModel is not null and contains additions
+  //   if (widget.productDetailsModel?.addition != null) {
+  //     // Map over the additions and create dropdown items
+  //     dropdownItems = widget.productDetailsModel?.addition?.map((addition) {
+  //       return DropdownMenuItem<String>(
+  //         value: addition.id.toString(), // Assuming id is of type int
+  //         child: Text(addition.name ?? ''), // Display the name of the addition
+  //       );
+  //     }).toList();
+  //   }
+
+  //   return dropdownItems;
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,7 +52,7 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
           Text(
             'خدمات أضافية ',
             //textdirection: TextDirection.rtl,
-            style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w500),
+            style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 8.h,
@@ -54,20 +76,28 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                     alignment: Alignment.centerRight,
                     color: ColorStyles.greyColor,
                     child: Row(
+                      // mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          'تجريد من العظم',
-                          style: TextStyles.textstyle14,
-                        ),
                         SizedBox(
-                          width: 12.w,
+                          width: 100.w,
                         ),
-                        Text('(+5\$)',
-                            style: TextStyles.textstyle12
-                                .copyWith(color: kPrimaryColor)),
-                        SizedBox(
-                          width: 144.w,
+                        Center(
+                          child: Text(
+                            'press_to_choose'.tr(),
+                            style: TextStyles.textstyle14
+                                .copyWith(fontSize: 10.sp),
+                          ),
                         ),
+                        // SizedBox(
+                        //   width: 12.w,
+                        // ),
+                        // Text('(+5\$)',
+                        //     style: TextStyles.textstyle12
+                        //         .copyWith(color: kPrimaryColor)),
+                        // SizedBox(
+                        //   width: 160.w,
+                        // ),
+                        const Spacer(),
                         Transform.rotate(
                             angle: 3.14 / 2,
                             child: Icon(
@@ -82,35 +112,52 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                 icon: null,
                 underline: Container(),
                 onChanged: (String? newValue) {
+                  // Map<String,dynamic>? addtionalServiceId;
+                  log(newValue ?? 'no data');
                   setState(() {
                     selectedItem = newValue;
                   });
-                },
-                items: items.map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    alignment: isArabic()
-                        ? Alignment.centerRight
-                        : Alignment.centerLeft,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          value,
-                        ),
-                        SizedBox(
-                          width: 16.w,
-                        ),
-                        Text('(+5\$)',
-                            style: TextStyles.textstyle12
-                                .copyWith(color: kPrimaryColor)),
 
-                        //textdirection: TextDirection.rtl),
-                      ],
-                    ),
-                  );
-                }).toList(),
+                  //    widget.productDetailsModel?.addition?.forEach((choice) {
+                  //   addtionalServiceId = choice.toString();
+                  // });
+                },
+                items: widget.productDetailsModel?.addition
+                        ?.map((e) => DropdownMenuItem<String>(
+                              value: e.name,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                                child: Text(e.name ?? ''),
+                              ),
+                            ))
+                        .toList() ??
+                    [],
               ),
+              //   items: addtionalChoices.map<DropdownMenuItem<String>>((String value) {
+              //     return DropdownMenuItem<String>(
+              //       value: value,
+              //       alignment: isArabic()
+              //           ? Alignment.centerRight
+              //           : Alignment.centerLeft,
+              //       child: Row(
+              //         mainAxisAlignment: MainAxisAlignment.start,
+              //         children: [
+              //           Text(
+              //             value,
+              //           ),
+              //           SizedBox(
+              //             width: 16.w,
+              //           ),
+              //           Text('(+5\$)',
+              //               style: TextStyles.textstyle12
+              //                   .copyWith(color: kPrimaryColor)),
+
+              //           //textdirection: TextDirection.rtl),
+              //         ],
+              //       ),
+              //     );
+              //   }).toList(),
+              // ),
             ),
           ),
         ],

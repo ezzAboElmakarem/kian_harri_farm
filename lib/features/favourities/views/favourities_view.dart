@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
-import 'package:kian_sheeps_projects/widgets/custom_product_item.dart';
+import 'package:kian_sheeps_projects/widgets/custom_product_card.dart';
 import '../../../helper/app_bar_method.dart';
 
 class Favourites extends StatelessWidget {

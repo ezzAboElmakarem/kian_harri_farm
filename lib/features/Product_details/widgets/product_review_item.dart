@@ -15,7 +15,7 @@ class ProductReviewItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 6.h),
       child: Container(
         width: 340.w,
-        height: 150.h,
+        // height: 150.h,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
@@ -80,7 +80,7 @@ class ProductReviewItem extends StatelessWidget {
               Text(
                   'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص ',
                   //textdirection: TextDirection.rtl,
-                  maxLines: 2,
+                  maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyles.textstyle14
                       .copyWith(fontWeight: FontWeight.w500)),

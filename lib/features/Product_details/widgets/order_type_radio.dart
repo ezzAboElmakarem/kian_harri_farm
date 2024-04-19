@@ -1,25 +1,33 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../../categories/widgets/custom_radio_tile_item.dart';
 import '../../../helper/text_styles.dart';
 
-class ProductTypeRadios extends StatefulWidget {
-  const ProductTypeRadios({
+class OrderTypeRadios extends StatefulWidget {
+  const OrderTypeRadios({
     super.key,
+    required this.productDetailsModel,
   });
-
+  final ProductModel? productDetailsModel;
   @override
-  State<ProductTypeRadios> createState() => _ProductTypeRadiosState();
+  State<OrderTypeRadios> createState() => _OrderTypeRadiosState();
 }
 
-class _ProductTypeRadiosState extends State<ProductTypeRadios> {
+class _OrderTypeRadiosState extends State<OrderTypeRadios> {
   String selectedOption = '';
   List<String> typeOptions = [
     'ذبيحه غير مطبوخه',
     'لا  شئ',
   ];
 
+  // List<Map<String, dynamic>> filters = [
+  //   {
+  //     "id": 0,
+  //     "title": "الكل",
+  //   },
+  // ];
   @override
   Widget build(BuildContext context) {
     return Padding(

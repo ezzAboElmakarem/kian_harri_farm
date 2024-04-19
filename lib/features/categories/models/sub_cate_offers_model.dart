@@ -1,4 +1,4 @@
-import 'package:kian_sheeps_projects/features/home/models/home_model.dart';
+import 'package:kian_sheeps_projects/main_models/product_model.dart';
 
 class SubCategoryOffersModel {
   bool? success;

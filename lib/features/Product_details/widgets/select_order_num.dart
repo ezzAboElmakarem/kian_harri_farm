@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
 
 class SelectOrderNum extends StatefulWidget {
-  const SelectOrderNum({super.key});
+  const SelectOrderNum({super.key, required this.productDetailsModel});
+  final ProductModel? productDetailsModel;
 
   @override
   State<SelectOrderNum> createState() => _SelectOrderNumState();
@@ -19,7 +21,7 @@ class _SelectOrderNumState extends State<SelectOrderNum> {
     return Row(
       children: [
         Text(
-          'فريش بيف استربس',
+          widget.productDetailsModel?.name ?? 'فريش بيف استربس',
           style: TextStyles.textstyle16.copyWith(fontWeight: FontWeight.bold),
         ),
         const Spacer(),

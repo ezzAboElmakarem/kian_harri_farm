@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../../categories/widgets/custom_radio_tile_item.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
@@ -8,7 +9,9 @@ import '../../../helper/text_styles.dart';
 class ProductchoppingRadios extends StatefulWidget {
   const ProductchoppingRadios({
     super.key,
+    this.productDetailsModel,
   });
+  final ProductModel? productDetailsModel;
 
   @override
   State<ProductchoppingRadios> createState() => _ProductchoppingRadiosState();
@@ -44,23 +47,28 @@ class _ProductchoppingRadiosState extends State<ProductchoppingRadios> {
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return CustomRadioTileItem(
-                  title: choppingOptions[index],
+                  title: widget.productDetailsModel?.cutting?[index].name ??
+                      choppingOptions[index],
                   groupValue: selectedOption,
-                  value: choppingOptions[index],
+                  value: widget.productDetailsModel?.cutting?[index].name ??
+                      choppingOptions[index],
                   onChanged: (value) {
                     setState(() {
                       selectedOption = value!;
                     });
                   },
-                  selected: selectedOption == choppingOptions[index],
+                  selected: selectedOption ==
+                      widget.productDetailsModel?.cutting?[index].name,
                   secondaryText: Text(
-                    '(+\$ $addtionalMoney)',
+                    widget.productDetailsModel?.cutting?[index].price ??
+                        '(+\$ $addtionalMoney)',
                     style: TextStyles.textstyle12.copyWith(
                         color: ColorStyles.textGreyColor.withOpacity(0.6)),
                   ),
                 );
               },
-              itemCount: choppingOptions.length,
+              itemCount: widget.productDetailsModel?.cutting?.length ??
+                  choppingOptions.length,
             ),
           ),
         ],

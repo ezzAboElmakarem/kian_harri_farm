@@ -1,13 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../../categories/widgets/custom_radio_tile_item.dart';
 import '../../../helper/text_styles.dart';
 
 class ProductpackagingRadios extends StatefulWidget {
   const ProductpackagingRadios({
     super.key,
+    this.productDetailsModel,
   });
+  final ProductModel? productDetailsModel;
 
   @override
   State<ProductpackagingRadios> createState() => _ProductpackagingRadiosState();
@@ -41,17 +44,21 @@ class _ProductpackagingRadiosState extends State<ProductpackagingRadios> {
             child: ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => CustomRadioTileItem(
-                title: packagingOptions[index],
+                title: widget.productDetailsModel?.wrapping?[index].name ??
+                    packagingOptions[index],
                 groupValue: selectedOption,
-                value: packagingOptions[index],
+                value: widget.productDetailsModel?.wrapping?[index].name ??
+                    packagingOptions[index],
                 onChanged: (value) {
                   setState(() {
                     selectedOption = value!;
                   });
                 },
-                selected: selectedOption == packagingOptions[index],
+                selected: selectedOption ==
+                    widget.productDetailsModel?.wrapping?[index].name,
               ),
-              itemCount: packagingOptions.length,
+              itemCount: widget.productDetailsModel?.wrapping?.length ??
+                  packagingOptions.length,
             ),
           ),
         ],

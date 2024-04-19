@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../widgets/custom_product_item.dart';
+import 'package:kian_sheeps_projects/main_models/product_model.dart';
+import '../../../widgets/custom_product_card.dart';
 import '../../../helper/text_styles.dart';
 
 class SimilarProductsSlider extends StatelessWidget {
-  const SimilarProductsSlider({super.key});
+  const SimilarProductsSlider({super.key, this.productDetailsModel});
+  final ProductModel? productDetailsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +32,13 @@ class SimilarProductsSlider extends StatelessWidget {
           SizedBox(
             height: 260.h,
             child: ListView.separated(
-                itemCount: 10,
-                reverse: true,
+                itemCount: productDetailsModel?.similarProduct?.length ?? 0,
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (context, index) => SizedBox(width: 2.w),
                 itemBuilder: (context, index) {
-                  return const CustomProductCard(
+                  return CustomProductCard(
+                    offer: productDetailsModel,
                     isFavourite: /*bloc.favouriteData.data?.product?[index].like??*/
                         false,
                   );

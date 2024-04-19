@@ -35,6 +35,10 @@ class Endpoints {
     return "area/$cityId";
   }
 
+  static String getOfferDetails({required String offerId}) {
+    return "offer/$offerId";
+  }
+
   static String subCategoryOffers({
     required String subId,
   }) {

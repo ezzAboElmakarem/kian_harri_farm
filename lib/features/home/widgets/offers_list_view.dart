@@ -5,7 +5,7 @@ import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
 import 'package:kian_sheeps_projects/helper/is_arabic_method.dart';
-import '../../../widgets/custom_product_item.dart';
+import '../../../widgets/custom_product_card.dart';
 import '../../offers/views/all_offers_view.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/navigation_methods.dart';

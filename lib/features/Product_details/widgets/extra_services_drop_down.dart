@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
@@ -17,11 +18,11 @@ class ExtraServicesDropDown extends StatefulWidget {
 }
 
 class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
-  final List<String> items = [
-    'تجريد من العظم',
-    '2تجريد من العظم',
-    'تجريد من لعظم3',
-  ];
+  // final List<String> items = [
+  //   'تجريد من العظم',
+  //   '2تجريد من العظم',
+  //   'تجريد من لعظم3',
+  // ];
 
   String? selectedItem;
 
@@ -44,6 +45,8 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = ProductDetailsBloc.of(context);
+
     return Padding(
       padding: EdgeInsets.only(bottom: 24.h, right: 12.w, left: 12.w),
       child: Column(
@@ -116,6 +119,11 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                   log(newValue ?? 'no data');
                   setState(() {
                     selectedItem = newValue;
+                    bloc.addition = widget.productDetailsModel?.addition
+                        ?.firstWhere((element) => element.name == newValue)
+                        .id
+                        .toString();
+                    log('addtianal id${bloc.addition}');
                   });
 
                   //    widget.productDetailsModel?.addition?.forEach((choice) {

@@ -27,6 +27,13 @@ class Endpoints {
   static const String SERVICE_RATE = "rate-service";
   static const String GET_ORDERS = "get-orders";
   static const String GET_ORDERS_DETAILS = "order-details";
+  static const String ADD_TO_CART = "add-cart";
+  static const String SHOW_CART = "show-cart";
+  static const String DELETE_CART_ITEM = "delete-cart-item";
+  static const String DELETE_ALL_CART = "delete-cart";
+  static const String ADD_COUPON = "add-coupon";
+  static const String DECREASE_CART_ITEM = "decrease-cart-item";
+  static const String INCREASE_CART_ITEM = "increase-cart-item";
   static String subCat({required String catId}) {
     return "category/$catId/subcategory";
   }

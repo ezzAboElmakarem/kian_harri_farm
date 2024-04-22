@@ -12,4 +12,12 @@ abstract class ProductDetailsRepo {
       method: ServerMethods.GET,
     );
   }
+
+  static Future addToCart({required Map<String, dynamic> body}) async {
+    return await Network().request(
+      Endpoints.ADD_TO_CART,
+      method: ServerMethods.POST,
+      body: body,
+    );
+  }
 }

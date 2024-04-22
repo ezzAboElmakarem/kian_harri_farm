@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import 'select_order_num.dart';
 import '../../../helper/assets.dart';
@@ -16,6 +17,8 @@ class ProductInfo extends StatelessWidget {
   final ProductModel? productDetailsModel;
   @override
   Widget build(BuildContext context) {
+    var bloc = ProductDetailsBloc.of(context);
+    bloc.sizeId = productDetailsModel?.sizes?[0].id.toString();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
@@ -83,28 +86,28 @@ class ProductInfo extends StatelessWidget {
           //   ],
           // ),
           // SizedBox(height: 14.h),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.start,
-          //   children: [
-          //     Text(
-          //       'الوزن التقريبي',
-          //       style: TextStyles.textstyle16
-          //           .copyWith(color: ColorStyles.hintColor),
-          //     ),
-          //     Text(
-          //       ' : ',
-          //       style: TextStyles.textstyle16
-          //           .copyWith(color: ColorStyles.hintColor),
-          //     ),
-          //     SizedBox(width: 4.w),
-          //     Text(
-          //       '$productWeight كيلو ',
-          //       style: TextStyles.textstyle16,
-          //       //textdirection: TextDirection.rtl,
-          //     ),
-          //   ],
-          // ),
-          // SizedBox(height: 20.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'الوزن التقريبي',
+                style: TextStyles.textstyle16
+                    .copyWith(color: ColorStyles.hintColor),
+              ),
+              Text(
+                ' : ',
+                style: TextStyles.textstyle16
+                    .copyWith(color: ColorStyles.hintColor),
+              ),
+              SizedBox(width: 4.w),
+              Text(
+                productDetailsModel?.sizes?[0].name.toString() ?? 'x',
+                style: TextStyles.textstyle16,
+                //textdirection: TextDirection.rtl,
+              ),
+            ],
+          ),
+          SizedBox(height: 20.h),
           Text(
             'description'.tr(),
             style: TextStyles.textstyle16,

@@ -16,7 +16,7 @@ class DrawerSectionItem extends StatelessWidget {
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onTap,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -30,9 +30,12 @@ class DrawerSectionItem extends StatelessWidget {
             SizedBox(
               width: 6.w,
             ),
-            Text(
-              sectionTitle,
-              style: TextStyles.textstyle14,
+            SizedBox(
+              width: 140.w,
+              child: Text(
+                sectionTitle,
+                style: TextStyles.textstyle14,
+              ),
             ),
             const Spacer(),
             navigationButton

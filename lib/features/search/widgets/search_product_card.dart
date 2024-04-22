@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/Product_details/views/product_details_views.dart';
+import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
 import 'package:kian_sheeps_projects/features/search/models/search_model.dart';
 import 'package:kian_sheeps_projects/helper/assets.dart';
@@ -38,7 +40,7 @@ class _CustomProductCardState extends State<SearchProductCard> {
   String notFavouriteImage = AssetsData.emptyHeartIcon;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         navigateTo(context: context, widget: const ProductDetailsView());
       },
@@ -114,6 +116,8 @@ class _CustomProductCardState extends State<SearchProductCard> {
                           ),
                           GestureDetector(
                               onTap: () {
+                                CartBloc.of(context).add(Get());
+
                                 navigateTo(
                                     context: context, widget: const CartView());
                               },
@@ -135,8 +139,8 @@ class _CustomProductCardState extends State<SearchProductCard> {
               top: -12.h,
               child: Row(
                 children: [
-                  InkWell(
-                      splashColor: Colors.transparent,
+                  GestureDetector(
+                      // splashColor: Colors.transparent,
                       onTap: () {
                         isFavouite = !isFavouite;
                         log('state is : $isFavouite');

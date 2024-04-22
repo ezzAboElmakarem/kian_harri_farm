@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
+import 'package:kian_sheeps_projects/features/cart/model/cart_model.dart';
 import 'orders_item.dart';
 import '../../offers/views/all_offers_view.dart';
 import '../../../helper/color_styles.dart';
@@ -9,7 +12,11 @@ import '../../../helper/text_styles.dart';
 class CartOrders extends StatelessWidget {
   const CartOrders({
     super.key,
+    required this.cartDataModel,
+    required this.itemData,
   });
+  final CartModel cartDataModel;
+  final CartModel? itemData;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +25,12 @@ class CartOrders extends StatelessWidget {
         Row(
           children: [
             Text(
-              '3 منتجات',
+              cartDataModel.data?.cart?.length.toString() ?? "test",
+              style:
+                  TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              ' منتجات',
               //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
               style:
                   TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
@@ -28,9 +40,14 @@ class CartOrders extends StatelessWidget {
               onTap: () {
                 navigateTo(context: context, widget: OffersView());
               },
-              child: Text(
-                'حذف السلة',
-                style: TextStyles.textstyle14.copyWith(color: kPrimaryColor),
+              child: GestureDetector(
+                onTap: () {
+                  CartBloc.of(context).add(Clear());
+                },
+                child: Text(
+                  'حذف السلة',
+                  style: TextStyles.textstyle14.copyWith(color: kPrimaryColor),
+                ),
               ),
             ),
           ],
@@ -43,9 +60,11 @@ class CartOrders extends StatelessWidget {
           child: ListView.separated(
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => const OrderItem(),
-              separatorBuilder: (context, index) => SizedBox(height: 8.h),
-              itemCount: 4),
+              itemBuilder: (context, index) => OrderItem(
+                  cartData: cartDataModel.data!.cart![index],
+                  itemData: itemData?.data?.cart?[index]),
+              separatorBuilder: (context, index) => SizedBox(height: 20.h),
+              itemCount: cartDataModel.data?.cart?.length ?? 0),
         ),
       ],
     );

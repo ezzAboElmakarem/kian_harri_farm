@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
@@ -18,6 +19,8 @@ class _SelectOrderNumState extends State<SelectOrderNum> {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = ProductDetailsBloc.of(context);
+    bloc.quantity = numOfOrders.toString();
     return Row(
       children: [
         Text(
@@ -28,7 +31,9 @@ class _SelectOrderNumState extends State<SelectOrderNum> {
         GestureDetector(
           onTap: () {
             numOfOrders++;
-            setState(() {});
+            setState(() {
+              bloc.quantity = numOfOrders.toString();
+            });
           },
           child: Image.asset(AssetsData.maximizeContainer),
         ),

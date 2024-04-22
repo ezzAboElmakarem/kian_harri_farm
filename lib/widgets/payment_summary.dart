@@ -1,13 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/cart/model/cart_model.dart';
 import '../helper/color_styles.dart';
 import '../helper/text_styles.dart';
 
 class PaymentSummary extends StatelessWidget {
   const PaymentSummary({
     super.key,
+    required this.cartDataModel,
   });
+  final CartModel cartDataModel;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,8 @@ class PaymentSummary extends StatelessWidget {
           children: [
             Text('sub_total'.tr(), style: TextStyles.textstyle14),
             const Spacer(),
-            Text('450.00   LE', style: TextStyles.textstyle14),
+            Text(cartDataModel.data?.totalPriceBefore ?? '450.00   LE',
+                style: TextStyles.textstyle14),
           ],
         ),
         SizedBox(
@@ -42,7 +46,7 @@ class PaymentSummary extends StatelessWidget {
             Text('discount'.tr(),
                 style: TextStyles.textstyle14.copyWith(color: kPrimaryColor)),
             const Spacer(),
-            Text('50.00   LE',
+            Text(cartDataModel.data?.discount ?? '50.00   LE',
                 style: TextStyles.textstyle14.copyWith(color: kPrimaryColor)),
           ],
         ),
@@ -53,7 +57,8 @@ class PaymentSummary extends StatelessWidget {
           children: [
             Text("service fee".tr(), style: TextStyles.textstyle14),
             const Spacer(),
-            Text('40.00   LE', style: TextStyles.textstyle14),
+            Text(cartDataModel.data?.service ?? '40.00   LE',
+                style: TextStyles.textstyle14),
           ],
         ),
         SizedBox(
@@ -63,7 +68,8 @@ class PaymentSummary extends StatelessWidget {
           children: [
             Text('shipping_fees'.tr(), style: TextStyles.textstyle14),
             const Spacer(),
-            Text('40.00   LE', style: TextStyles.textstyle14),
+            Text(cartDataModel.data?.tax ?? '40.00   LE',
+                style: TextStyles.textstyle14),
           ],
         ),
         SizedBox(
@@ -71,9 +77,10 @@ class PaymentSummary extends StatelessWidget {
         ),
         Row(
           children: [
-            Text('added_tax_value', style: TextStyles.textstyle14),
+            Text('added_tax_value'.tr(), style: TextStyles.textstyle14),
             const Spacer(),
-            Text('10.00   LE', style: TextStyles.textstyle14),
+            Text(cartDataModel.data?.taxVal ?? '10.00   LE',
+                style: TextStyles.textstyle14),
           ],
         ),
         SizedBox(
@@ -92,7 +99,8 @@ class PaymentSummary extends StatelessWidget {
           children: [
             Text('total_summation'.tr(), style: TextStyles.textstyle14),
             const Spacer(),
-            Text('450.00   LE', style: TextStyles.textstyle14),
+            Text(cartDataModel.data?.finalPrice ?? '450.00   LE',
+                style: TextStyles.textstyle14),
           ],
         ),
       ],

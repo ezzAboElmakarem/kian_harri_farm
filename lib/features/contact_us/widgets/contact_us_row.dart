@@ -20,7 +20,7 @@ class ContactUsLinksRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Spacer(),
-        InkWell(
+        GestureDetector(
           onTap: () {
             final Uri instaLaunchUri = Uri(
               path: linkData.data?[0].instagram ?? '',
@@ -37,7 +37,7 @@ class ContactUsLinksRow extends StatelessWidget {
         SizedBox(
           width: 12.w,
         ),
-        InkWell(
+        GestureDetector(
           onTap: () {
             final Uri snapLaunchUri = Uri(
               path: linkData.data?[0].snapchat ?? '',
@@ -54,7 +54,7 @@ class ContactUsLinksRow extends StatelessWidget {
         SizedBox(
           width: 12.w,
         ),
-        InkWell(
+        GestureDetector(
           onTap: () {
             final Uri webLaunchUri = Uri(
               path: linkData.data?[0].websiteUrl ?? '',
@@ -71,7 +71,7 @@ class ContactUsLinksRow extends StatelessWidget {
         SizedBox(
           width: 12.w,
         ),
-        InkWell(
+        GestureDetector(
           onTap: () {
             final Uri twitterLaunchUri = Uri(
               path: linkData.data?[0].twitter ?? '',
@@ -88,7 +88,7 @@ class ContactUsLinksRow extends StatelessWidget {
         SizedBox(
           width: 12.w,
         ),
-        InkWell(
+        GestureDetector(
           onTap: () {
             final Uri facebookLaunchUri = Uri(
               path: linkData.data?[0].facebook ?? '',

@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import '../features/Product_details/views/product_details_views.dart';
 import '../features/cart/views/cart_view.dart';
 import '../helper/assets.dart';
@@ -89,6 +91,8 @@ class _ProductCardState extends State<ProductCard> {
                           children: [
                             GestureDetector(
                                 onTap: () {
+                                  CartBloc.of(context).add(Get());
+
                                   navigateTo(
                                       context: context,
                                       widget: const CartView());
@@ -151,7 +155,7 @@ class _ProductCardState extends State<ProductCard> {
             top: -8.h,
             right: 4.w,
             left: 140.w,
-            child: InkWell(
+            child: GestureDetector(
                 onTap: () {
                   isFavouite = !isFavouite;
                   log('state is : $isFavouite');

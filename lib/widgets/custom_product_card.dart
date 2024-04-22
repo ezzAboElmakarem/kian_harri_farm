@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
+import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
@@ -53,7 +54,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
   String notFavouriteImage = AssetsData.emptyHeartIcon;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         ProductDetailsBloc.of(context)
             .add(Get(arguments: widget.offer?.id ?? ''));
@@ -125,6 +126,8 @@ class _CustomProductCardState extends State<CustomProductCard> {
                                 // ),
                                 GestureDetector(
                                     onTap: () {
+                                      CartBloc.of(context).add(Get());
+
                                       navigateTo(
                                           context: context,
                                           widget: const CartView());
@@ -161,6 +164,8 @@ class _CustomProductCardState extends State<CustomProductCard> {
                                 // ),
                                 GestureDetector(
                                     onTap: () {
+                                      CartBloc.of(context).add(Get());
+
                                       navigateTo(
                                           context: context,
                                           widget: const CartView());
@@ -202,8 +207,8 @@ class _CustomProductCardState extends State<CustomProductCard> {
                       // const Spacer(
                       //   flex: 1,
                       // ),
-                      InkWell(
-                          splashColor: Colors.transparent,
+                      GestureDetector(
+                          // splashColor: Colors.transparent,
                           onTap: () {
                             _isFavourite = !_isFavourite;
                             log('state is : $_isFavourite');

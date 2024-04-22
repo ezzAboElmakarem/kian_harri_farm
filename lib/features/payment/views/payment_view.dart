@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/model/order_details_model.dart';
 import '../../../widgets/payment_summary.dart';
 import '../../../widgets/delivery_summary.dart';
@@ -62,7 +63,9 @@ class PaymentView extends StatelessWidget {
                     SizedBox(
                       height: 14.h,
                     ),
-                    const PaymentSummary(),
+                    PaymentSummary(
+                      cartDataModel: CartBloc.of(context).cartData,
+                    ),
                     SizedBox(
                       height: 60.h,
                     ),

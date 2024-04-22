@@ -10,7 +10,7 @@ class AppTopViewedCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: Image.network(
         imagePath,
-        fit: BoxFit.cover,
+        fit: BoxFit.fitWidth,
       ),
     );
   }

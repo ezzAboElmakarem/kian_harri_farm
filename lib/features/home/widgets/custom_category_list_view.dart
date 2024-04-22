@@ -29,7 +29,7 @@ class CustomCategoryListView extends StatelessWidget {
           height: 10.h,
         ),
         SizedBox(
-          height: 90.h,
+          height: 110.h,
           width: double.infinity,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,

@@ -45,7 +45,7 @@ class ContactsShortcuts extends StatelessWidget {
             ),
             // const Spacer(),
             SizedBox(width: 10.w),
-            InkWell(
+            GestureDetector(
               onTap: () {
                 final Uri emailLaunchUri = Uri(
                   scheme: 'mailto',

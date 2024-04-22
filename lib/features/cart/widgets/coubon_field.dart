@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/cart/bloc/coupon_bloc.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
@@ -13,14 +15,18 @@ class CoubonField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = CouponBloc.get(context);
     return CustomTextFormField(
       ispassword: false,
       isEnabled: true,
+      controller: bloc.coupon,
       hint: 'add_a_discount_coupon'.tr(),
       suffixIcon: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
         child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            CouponBloc.get(context).add(Click());
+          },
           child: Text(
             textAlign: TextAlign.center,
             'activation'.tr(),

@@ -20,8 +20,8 @@ class _QuestionsItemState extends State<QuestionsItem> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: kPrimaryColor, width: 2.w)),
-      child: InkWell(
-        splashColor: Colors.transparent,
+      child: GestureDetector(
+        // splashColor: Colors.transparent,
         onTap: () {
           setState(() {
             isPressed = !isPressed;

@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../../categories/widgets/custom_radio_tile_item.dart';
 import '../../../helper/text_styles.dart';
@@ -17,7 +20,7 @@ class OrderTypeRadios extends StatefulWidget {
 
 class _OrderTypeRadiosState extends State<OrderTypeRadios> {
   String selectedOption = '';
-  List<String> typeOptions = [
+  List<String> typesOptions = [
     'ذبيحه غير مطبوخه',
     'لا  شئ',
   ];
@@ -30,6 +33,7 @@ class _OrderTypeRadiosState extends State<OrderTypeRadios> {
   // ];
   @override
   Widget build(BuildContext context) {
+    var bloc = ProductDetailsBloc.of(context);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
@@ -49,17 +53,27 @@ class _OrderTypeRadiosState extends State<OrderTypeRadios> {
             child: ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => CustomRadioTileItem(
-                title: typeOptions[index],
+                title: widget.productDetailsModel?.orderType?[index].name ??
+                    typesOptions[index],
                 groupValue: selectedOption,
-                value: typeOptions[index],
+                value: widget.productDetailsModel?.orderType?[index].name ??
+                    typesOptions[index],
                 onChanged: (value) {
                   setState(() {
                     selectedOption = value!;
+                    log(value);
+                    bloc.orderTypeId = widget.productDetailsModel?.orderType
+                        ?.firstWhere((element) => element.name == value)
+                        .id
+                        .toString();
+                    log('type id ${bloc.orderTypeId}');
                   });
                 },
-                selected: selectedOption == typeOptions[index],
+                selected: selectedOption ==
+                    widget.productDetailsModel?.orderType?[index].name,
               ),
-              itemCount: typeOptions.length,
+              itemCount: widget.productDetailsModel?.orderType?.length ??
+                  typesOptions.length,
             ),
           ),
         ],

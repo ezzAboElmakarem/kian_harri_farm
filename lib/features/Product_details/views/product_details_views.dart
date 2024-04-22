@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../widgets/add_to_cart_button.dart';
 import '../widgets/extra_services_drop_down.dart';
@@ -26,6 +28,8 @@ class ProductDetailsView extends StatelessWidget {
         title: 'product_details'.tr(),
         leading: GestureDetector(
             onTap: () {
+              CartBloc.of(context).add(Get());
+
               navigateTo(context: context, widget: const CartView());
             },
             child: Padding(
@@ -83,7 +87,10 @@ class ProductDetailsView extends StatelessWidget {
               left: 25.w,
               right: 25.w,
               bottom: 16.w,
-              child: const AddToCartButton(price: 160)),
+              child: AddToCartButton(
+                productDetailsModel: productDetailsModel,
+                offerId: productDetailsModel?.id.toString() ?? 'x',
+              )),
         ],
       ),
     );

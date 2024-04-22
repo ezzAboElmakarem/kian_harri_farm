@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
+import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/model/order_details_model.dart';
 import '../../../widgets/payment_summary.dart';
@@ -80,7 +81,9 @@ class OrderDetailsView extends StatelessWidget {
                         ),
                         orderStatus == 'refuse' || orderStatus == 'تم الرفض'
                             ? const RefusedReason()
-                            : const PaymentSummary(),
+                            : PaymentSummary(
+                                cartDataModel: CartBloc.of(context).cartData,
+                              ),
                       ],
                     ),
                     SizedBox(

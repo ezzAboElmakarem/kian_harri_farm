@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../../categories/widgets/custom_radio_tile_item.dart';
 import '../../../helper/text_styles.dart';
@@ -25,6 +28,8 @@ class _ProductpackagingRadiosState extends State<ProductpackagingRadios> {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = ProductDetailsBloc.of(context);
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
@@ -52,6 +57,11 @@ class _ProductpackagingRadiosState extends State<ProductpackagingRadios> {
                 onChanged: (value) {
                   setState(() {
                     selectedOption = value!;
+                    bloc.wrappingId = widget.productDetailsModel?.wrapping
+                        ?.firstWhere((element) => element.name == value)
+                        .id
+                        .toString();
+                    log('wrapping id ${bloc.wrappingId}');
                   });
                 },
                 selected: selectedOption ==

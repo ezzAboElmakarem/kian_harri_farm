@@ -16,7 +16,7 @@ class BottomSheetTitle extends StatelessWidget {
         SizedBox(
           height: 16.h,
         ),
-        InkWell(
+        GestureDetector(
           onTap: () {
             Navigator.pop(context);
           },

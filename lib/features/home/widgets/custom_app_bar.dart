@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bloc.dart';
 import 'package:kian_sheeps_projects/features/notifications/views/notifications_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
@@ -36,6 +37,7 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             const Spacer(),
             GestureDetector(
                 onTap: () {
+                  CartBloc.of(context).add(Get());
                   navigateTo(context: context, widget: const CartView());
                 },
                 child: Stack(

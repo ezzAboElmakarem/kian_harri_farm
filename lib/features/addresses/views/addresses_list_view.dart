@@ -39,7 +39,7 @@ class AddressesListView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 24.h),
-                  InkWell(
+                  GestureDetector(
                     onTap: () {
                       CitiesAndRegionsBloc.of(context).add(Get());
 

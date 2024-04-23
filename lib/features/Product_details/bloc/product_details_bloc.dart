@@ -6,7 +6,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
-import 'package:kian_sheeps_projects/features/Product_details/model/product_details_model.dart';
 import 'package:kian_sheeps_projects/features/Product_details/repo/product_details_repo.dart';
 import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';

@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
-import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../widgets/add_to_cart_button.dart';
@@ -18,12 +17,18 @@ import '../../../helper/app_bar_method.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/navigation_methods.dart';
 
-class ProductDetailsView extends StatelessWidget {
+class ProductDetailsView extends StatefulWidget {
   const ProductDetailsView({super.key, this.productDetailsModel});
   final ProductModel? productDetailsModel;
+
+  @override
+  State<ProductDetailsView> createState() => _ProductDetailsViewState();
+}
+
+class _ProductDetailsViewState extends State<ProductDetailsView> {
   @override
   Widget build(BuildContext context) {
-    final bloc = ProductDetailsBloc.of(context);
+    // final bloc = ProductDetailsBloc.of(context);
 
     return Scaffold(
       appBar: customAppBar(
@@ -52,22 +57,22 @@ class ProductDetailsView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ProductInfo(
-                    productDetailsModel: productDetailsModel,
+                    productDetailsModel: widget.productDetailsModel,
                   ),
                   SizedBox(
                     height: 20.h,
                   ),
                   OrderTypeRadios(
-                    productDetailsModel: productDetailsModel,
+                    productDetailsModel: widget.productDetailsModel,
                   ),
                   ExtraServicesDropDown(
-                    productDetailsModel: productDetailsModel,
+                    productDetailsModel: widget.productDetailsModel,
                   ),
                   ProductpackagingRadios(
-                    productDetailsModel: productDetailsModel,
+                    productDetailsModel: widget.productDetailsModel,
                   ),
                   ProductchoppingRadios(
-                    productDetailsModel: productDetailsModel,
+                    productDetailsModel: widget.productDetailsModel,
                   ),
                   SizedBox(
                     height: 20.h,
@@ -77,7 +82,7 @@ class ProductDetailsView extends StatelessWidget {
                     height: 16.h,
                   ),
                   SimilarProductsSlider(
-                    productDetailsModel: bloc.productDetailsData,
+                    productDetailsModel: widget.productDetailsModel!,
                   ),
                   SizedBox(
                     height: 88.h,
@@ -91,8 +96,8 @@ class ProductDetailsView extends StatelessWidget {
               right: 25.w,
               bottom: 16.w,
               child: AddToCartButton(
-                productDetailsModel: productDetailsModel,
-                offerId: productDetailsModel?.id.toString() ?? 'x',
+                productDetailsModel: widget.productDetailsModel,
+                offerId: widget.productDetailsModel?.id.toString() ?? 'x',
               )),
         ],
       ),

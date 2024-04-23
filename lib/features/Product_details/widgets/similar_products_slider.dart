@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/features/Product_details/model/product_details_model.dart';
 import 'package:kian_sheeps_projects/features/Product_details/widgets/similar_products_card.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
-import '../../../widgets/custom_product_card.dart';
 import '../../../helper/text_styles.dart';
 
 class SimilarProductsSlider extends StatelessWidget {

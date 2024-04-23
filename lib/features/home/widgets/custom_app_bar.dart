@@ -7,10 +7,8 @@ import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bloc.dart';
 import 'package:kian_sheeps_projects/features/notifications/views/notifications_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
-import '../../cart/views/cart_view.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
-import '../../../helper/navigation_methods.dart';
 import '../../../helper/text_styles.dart';
 
 class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -38,7 +36,7 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             GestureDetector(
                 onTap: () {
                   CartBloc.of(context).add(Get());
-                  navigateTo(context: context, widget: const CartView());
+                  // navigateTo(context: context, widget: const CartView());
                 },
                 child: Stack(
                   children: [

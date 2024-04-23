@@ -8,6 +8,7 @@ import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/cart/model/cart_model.dart';
 import 'package:kian_sheeps_projects/features/cart/repo/cart_repo.dart';
+import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
@@ -31,9 +32,12 @@ class CartBloc extends Bloc<AppEvent, AppState> {
       if (response.statusCode == 200) {
         cartData = CartModel.fromJson(response.data);
         log('Get  cart data Successfuly ');
-        response.data['message'] == 'cart'
-            ? emit(Done())
-            : showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        if (response.data['message'] == 'cart') {
+          emit(Done());
+          RouteUtils.navigateAndPopUntilFirstPage(const CartView());
+        } else {
+          showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        }
       } else {
         emit(Error());
         log('Get cart data  Failed with Status code ${response.statusCode}');

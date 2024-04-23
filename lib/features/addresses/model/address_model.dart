@@ -1,14 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/foundation.dart';
 
-class AddressModel {
+class AddressesModel {
   bool? success;
   List<Address>? addresses;
   String? message;
 
-  AddressModel({this.success, this.addresses, this.message});
+  AddressesModel({this.success, this.addresses, this.message});
 
-  AddressModel.fromJson(Map<String, dynamic> json) {
+  AddressesModel.fromJson(Map<String, dynamic> json) {
     success = json['success'];
     if (json['data'] != null) {
       addresses = <Address>[];
@@ -30,7 +30,7 @@ class AddressModel {
   }
 
   @override
-  bool operator ==(covariant AddressModel other) {
+  bool operator ==(covariant AddressesModel other) {
     if (identical(this, other)) return true;
 
     return other.success == success &&

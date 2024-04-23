@@ -7,10 +7,8 @@ import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
-import '../../cart/views/cart_view.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
-import '../../../helper/navigation_methods.dart';
 import '../../../helper/text_styles.dart';
 
 class AddToCartButton extends StatefulWidget {
@@ -78,8 +76,7 @@ class _AddToCartButtonState extends State<AddToCartButton> {
           child: GestureDetector(
             onTap: () {
               CartBloc.of(context).add(Get());
-
-              navigateTo(context: context, widget: const CartView());
+              ProductDetailsBloc.of(context).add(Get());
             },
             child: Row(
               children: [

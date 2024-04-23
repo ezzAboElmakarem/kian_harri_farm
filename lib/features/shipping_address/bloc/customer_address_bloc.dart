@@ -14,7 +14,7 @@ class CustomerAddressBloc extends Bloc<AppEvent, AppState> {
     // on<Click>(_saveShippingData);
   }
   static CustomerAddressBloc of(context) => BlocProvider.of(context);
-  AddressModel addressesData = AddressModel();
+  AddressesModel addressesData = AddressesModel();
 
   Map<String, dynamic> cachedInfo = {};
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
@@ -24,10 +24,10 @@ class CustomerAddressBloc extends Bloc<AppEvent, AppState> {
     try {
       Response response = await AddressRepositroy.getAddressData();
       if (response.statusCode == 200) {
-        addressesData = AddressModel.fromJson(response.data);
+        addressesData = AddressesModel.fromJson(response.data);
         log('Get Addresses data Successfuly ');
         emit(Done());
-        log(addressesData.addresses?[0].id.toString() ?? 'test');
+        // log(addressesData.addresses?[0].id.toString() ?? 'test');
         if (addressesData.addresses!.isEmpty) {
           emit(Empty());
         }

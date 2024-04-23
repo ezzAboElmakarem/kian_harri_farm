@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
+import 'package:kian_sheeps_projects/features/payment/bloc/payment_bloc.dart';
+import 'package:kian_sheeps_projects/features/payment/widgets/customer_shipping_details.dart';
 import '../../../widgets/payment_summary.dart';
-import '../../order_success/views/order_success_view.dart';
 import '../widgets/selcect_payment_way.dart';
 import '../../../helper/app_bar_method.dart';
 import '../../../helper/color_styles.dart';
-import '../../../helper/navigation_methods.dart';
 import '../../../helper/text_styles.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_text_button.dart';
@@ -45,6 +46,7 @@ class PaymentView extends StatelessWidget {
                 SizedBox(
                   height: 20.h,
                 ),
+                const PaymentShippingDetails(),
                 // DeliverySummary(isEditing: false, orderDetails: orderDetails),
                 SizedBox(
                   height: 20.h,
@@ -75,8 +77,7 @@ class PaymentView extends StatelessWidget {
                           buttonText: 'اتمام الطلب',
                           textColor: Colors.white,
                           onTap: () {
-                            navigateTo(
-                                context: context, widget: const OrderSuccess());
+                            PaymentBloc.of(context).add(Add());
                           },
                           width: 328.w),
                     ),

@@ -2,10 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
+import 'package:kian_sheeps_projects/features/payment/views/payment_view.dart';
 import 'package:kian_sheeps_projects/features/shipping_address/bloc/customer_address_bloc.dart';
 import 'package:kian_sheeps_projects/features/shipping_address/customer_address_form.dart';
+import 'package:kian_sheeps_projects/helper/routes.dart';
 import '../../../helper/app_bar_method.dart';
 import '../../../widgets/custom_button.dart';
 
@@ -143,7 +144,8 @@ class NextButton extends StatelessWidget {
       onTap: () {
         if (!bloc.formkey.currentState!.validate()) return;
 
-        CustomerAddressBloc.of(context).add(Click());
+        // CustomerAddressBloc.of(context).add(Click());
+        RouteUtils.navigateTo(const PaymentView());
       },
     );
     // return BlocBuilder<AddAddressBloc, AppState>(

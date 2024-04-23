@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/features/payment/bloc/payment_bloc.dart';
 import 'visa_form.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
@@ -45,6 +46,7 @@ class _SelectPaymentWayState extends State<SelectPaymentWay> {
                   onChanged: (value) {
                     setState(() {
                       selectedOption = value!;
+                      PaymentBloc.of(context).paymentType = "offline";
                     });
                   },
                   selected: selectedOption == 'الدفع كاش',
@@ -83,6 +85,7 @@ class _SelectPaymentWayState extends State<SelectPaymentWay> {
                   onChanged: (value) {
                     setState(() {
                       selectedOption = value!;
+                      PaymentBloc.of(context).paymentType = "online";
                     });
                   },
                   selected: selectedOption == 'الدفع عن طريق الفيزا',

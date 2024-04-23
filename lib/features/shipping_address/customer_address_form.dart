@@ -16,7 +16,7 @@ class CustomerAddressForms extends StatelessWidget {
     super.key,
     required this.addressData,
   });
-  final AddressModel addressData;
+  final AddressesModel addressData;
   // final RegionsModel regionData;
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,6 @@ class CustomerAddressForms extends StatelessWidget {
             isEnabled: true,
             title: "notes".tr(),
             controller: bloc.notesController,
-            validation: Validator.empty,
           ),
           SizedBox(height: 50.h),
         ],
@@ -82,13 +81,13 @@ class CustomerAddressForms extends StatelessWidget {
 
 class AddressDropDown extends StatefulWidget {
   const AddressDropDown({super.key, required this.addressData});
-  final AddressModel addressData;
+  final AddressesModel addressData;
   @override
   State<AddressDropDown> createState() => _CitiesDropDownState();
 }
 
 class _CitiesDropDownState extends State<AddressDropDown> {
-  String? selectedItem;
+  String? selectedAddressId;
 
   @override
   Widget build(BuildContext context) {
@@ -127,33 +126,12 @@ class _CitiesDropDownState extends State<AddressDropDown> {
                   color: Colors.white,
                 ),
               ),
-              value: selectedItem,
+              value: selectedAddressId,
               icon: null,
               underline: Container(),
-              onChanged: (String? newValue) {
-                String? lastAddressId;
-
-                setState(() {
-                  selectedItem = newValue;
-                  log(newValue ?? 'no data');
-
-                  for (var address in bloc.addressesData.addresses!) {
-                    lastAddressId = address.id.toString();
-                  }
-                  lastAddressId == null ? log('null') : log('$lastAddressId');
-                });
-
-                // Log the last city ID if it's not null
-                if (lastAddressId != null) {
-                  log(lastAddressId!);
-                }
-
-                // Assign the last city ID to bloc.cityId
-                paymentBloc.addressId = lastAddressId ?? "0";
-              },
               items: bloc.addressesData.addresses
                       ?.map((e) => DropdownMenuItem<String>(
-                            value: e.name,
+                            value: e.id.toString(),
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 8.w),
                               child: Text(e.name ?? ''),
@@ -161,6 +139,24 @@ class _CitiesDropDownState extends State<AddressDropDown> {
                           ))
                       .toList() ??
                   [],
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedAddressId = newValue;
+
+                  // final selectedAddress =
+                  //     bloc.addressesData.addresses?.firstWhere(
+                  //   (address) => address.id.toString() == newValue,
+                  //   orElse: () => Address(),
+                  // );
+
+                  // final lastAddressId = newValue;
+                  // log(lastAddressId ?? 'null..');
+
+                  // Assign the last address ID to bloc.cityId
+                  log(selectedAddressId ?? 'null..');
+                  paymentBloc.addressId = selectedAddressId ?? "0";
+                });
+              },
             ),
           ),
         ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/my_orders/bloc/order_bloc.dart';
+import 'package:kian_sheeps_projects/helper/routes.dart';
 import '../../home/views/home_view.dart';
 import '../../my_orders/views/orders_tapbar.dart';
 import '../../../helper/assets.dart';
@@ -37,8 +40,9 @@ class OrderSuccess extends StatelessWidget {
                       buttonText: 'طلباتي',
                       textColor: Colors.white,
                       onTap: () {
-                        navigateTo(
-                            context: context, widget: const OrdersTabBar());
+                        MyOrdersBloc.get(context).add(Get());
+                        RouteUtils.navigateAndPopUntilFirstPage(
+                            const OrdersTabBar());
                       },
                       width: 160.w),
                   SizedBox(

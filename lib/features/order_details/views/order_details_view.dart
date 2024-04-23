@@ -6,10 +6,10 @@ import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/model/order_details_model.dart';
+import 'package:kian_sheeps_projects/features/payment/widgets/customer_shipping_details.dart';
 import '../../../widgets/payment_summary.dart';
 import '../widgets/products_details_list.dart';
 import '../widgets/refused_reason.dart';
-import '../../../widgets/delivery_summary.dart';
 import '../../../helper/app_bar_method.dart';
 import '../../../helper/assets.dart';
 import '../../../helper/color_styles.dart';
@@ -73,9 +73,10 @@ class OrderDetailsView extends StatelessWidget {
                         SizedBox(
                           height: 16.h,
                         ),
-                        DeliverySummary(
-                            isEditing: false,
-                            orderDetails: myOrderDetailsModel),
+                        const PaymentShippingDetails(),
+                        // DeliverySummary(
+                        //     isEditing: false,
+                        //     orderDetails: myOrderDetailsModel),
                         SizedBox(
                           height: 20.h,
                         ),

@@ -12,17 +12,17 @@ class AddressesBloc extends Bloc<AppEvent, AppState> {
     on<Get>(_getData);
   }
   static AddressesBloc of(context) => BlocProvider.of(context);
-  AddressModel addressesData = AddressModel();
+  AddressesModel addressesData = AddressesModel();
 
   _getData(AppEvent event, Emitter<AppState> emit) async {
     emit(Loading());
     try {
       Response response = await AddressRepositroy.getAddressData();
       if (response.statusCode == 200) {
-        addressesData = AddressModel.fromJson(response.data);
+        addressesData = AddressesModel.fromJson(response.data);
         log('Get Addresses data Successfuly ');
         emit(Done());
-        log(addressesData.addresses?[0].id.toString() ?? 'zxcvbnm,.');
+        // log(addressesData.addresses?[0].id.toString() ?? 'zxcvbnm,.');
         if (addressesData.addresses!.isEmpty) {
           emit(Empty());
         }

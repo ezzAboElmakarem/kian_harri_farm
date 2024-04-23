@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/main_models/product_model.dart';
 import '../widgets/add_to_cart_button.dart';
@@ -22,6 +23,8 @@ class ProductDetailsView extends StatelessWidget {
   final ProductModel? productDetailsModel;
   @override
   Widget build(BuildContext context) {
+    final bloc = ProductDetailsBloc.of(context);
+
     return Scaffold(
       appBar: customAppBar(
         context: context,
@@ -74,7 +77,7 @@ class ProductDetailsView extends StatelessWidget {
                     height: 16.h,
                   ),
                   SimilarProductsSlider(
-                    productDetailsModel: productDetailsModel,
+                    productDetailsModel: bloc.productDetailsData,
                   ),
                   SizedBox(
                     height: 88.h,

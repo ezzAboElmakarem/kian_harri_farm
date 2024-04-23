@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
+import 'package:kian_sheeps_projects/features/order_success/views/order_success_view.dart';
 import 'package:kian_sheeps_projects/features/payment/repo/payment_repo.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
@@ -34,13 +35,14 @@ class PaymentBloc extends Bloc<AppEvent, AppState> {
         "email": emailController.text,
         "address_id": addressId,
         "note": notesController.text,
-        "payment": paymentType,
+        "payment": paymentType ?? 'offline',
       };
       Response response = await PaymentRepository.addPaymentOrder(body: body);
       if (response.statusCode == 200) {
         log('Add payment order Successfuly ');
         emit(Done());
         showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        RouteUtils.navigateAndPopUntilFirstPage(const OrderSuccess());
       } else {
         emit(Error());
         log('Add payment order Failed with Status code ${response.statusCode}');

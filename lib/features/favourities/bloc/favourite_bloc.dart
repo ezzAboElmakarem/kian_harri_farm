@@ -29,6 +29,9 @@ class FavouriteBloc extends Bloc<AppEvent, AppState> {
         log('Get favourite  data Successfuly ');
         log("${favouriteData.data?.product?.length}");
         emit(Done());
+        if (favouriteData.data!.product!.isEmpty) {
+          emit(Empty());
+        }
       } else {
         emit(Error());
         showSnackBar(RouteUtils.context, " ${response.data['message']}");

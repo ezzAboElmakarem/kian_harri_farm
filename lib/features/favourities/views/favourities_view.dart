@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
 import 'package:kian_sheeps_projects/widgets/custom_product_card.dart';
+import 'package:kian_sheeps_projects/widgets/empty_data_view.dart';
 import '../../../helper/app_bar_method.dart';
 
 class Favourites extends StatelessWidget {
@@ -20,6 +21,8 @@ class Favourites extends StatelessWidget {
         builder: (context, state) {
           if (state is Loading) {
             return const Center(child: CircularProgressIndicator());
+          } else if (state is Empty) {
+            return const EmptyDataScreen();
           } else if (state is Error) {
             return Center(child: Text('error_getting_data'.tr()));
           } else if (bloc.favouriteData.data!.product!.isEmpty) {

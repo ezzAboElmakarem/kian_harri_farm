@@ -7,8 +7,8 @@ import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/add_address/bloc/get_cities_and_regions_bloc.dart';
 import 'package:kian_sheeps_projects/features/addresses/bloc/addresses_bloc.dart';
 import 'package:kian_sheeps_projects/features/addresses/widgets/addresses_card.dart';
-import 'package:kian_sheeps_projects/features/notifications/views/empty_notification_view.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
+import 'package:kian_sheeps_projects/widgets/empty_data_view.dart';
 import '../../add_address/views/add_address_view.dart';
 import '../../../helper/app_bar_method.dart';
 import '../../../helper/assets.dart';
@@ -31,7 +31,7 @@ class AddressesListView extends StatelessWidget {
           } else if (state is Error) {
             return Center(child: Text('error_getting_data'.tr()));
           } else if (state is Empty) {
-            return const EmptyNotificationView();
+            return const EmptyDataScreen();
           } else if (state is Done) {
             var bloc = AddressesBloc.of(context);
             return SingleChildScrollView(

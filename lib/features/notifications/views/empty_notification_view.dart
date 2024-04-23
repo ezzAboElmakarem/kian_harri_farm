@@ -49,7 +49,7 @@ class EmptyNotificationView extends StatelessWidget {
           ),
           Image.asset(AssetsData.noNotificationImage),
           Text(
-            'لا توجد اشعارات ابدأ باستخدام التطبيق',
+            "no_data".tr(),
             style: TextStyles.textstyle16.copyWith(fontWeight: FontWeight.w400),
             //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
           ),

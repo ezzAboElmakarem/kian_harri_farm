@@ -34,6 +34,9 @@ class CartBloc extends Bloc<AppEvent, AppState> {
         log('Get  cart data Successfuly ');
         if (response.data['message'] == 'cart') {
           emit(Done());
+          if (cartData.data!.cart!.isEmpty) {
+            emit(Empty());
+          }
           RouteUtils.navigateAndPopUntilFirstPage(const CartView());
         } else {
           showSnackBar(RouteUtils.context, " ${response.data['message']}");

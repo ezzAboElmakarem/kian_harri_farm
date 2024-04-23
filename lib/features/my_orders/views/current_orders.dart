@@ -8,6 +8,7 @@ import 'package:kian_sheeps_projects/features/my_orders/bloc/order_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/views/order_details_view.dart';
 import 'package:kian_sheeps_projects/helper/navigation_methods.dart';
+import 'package:kian_sheeps_projects/widgets/empty_data_view.dart';
 import '../widgets/order_item.dart';
 
 class CurrentOrders extends StatelessWidget {
@@ -21,6 +22,8 @@ class CurrentOrders extends StatelessWidget {
       builder: (context, state) {
         if (state is Loading) {
           return const Center(child: CircularProgressIndicator());
+        } else if (state is Empty) {
+          return const EmptyDataScreen();
         } else if (state is Error) {
           return Center(child: Text('error_getting_data'.tr()));
         } else if (state is Done) {

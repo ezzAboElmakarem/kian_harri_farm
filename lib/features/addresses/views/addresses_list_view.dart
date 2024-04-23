@@ -70,12 +70,12 @@ class AddressesListView extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: 16.w, vertical: 14.h),
                       itemBuilder: (context, index) => AddressesCard(
-                            addressdata: bloc.addressesData.data![index],
+                            addressdata: bloc.addressesData.addresses![index],
                           ),
                       separatorBuilder: (context, index) => SizedBox(
                             height: 16.w,
                           ),
-                      itemCount: bloc.addressesData.data?.length ?? 0),
+                      itemCount: bloc.addressesData.addresses?.length ?? 0),
                   SizedBox(height: 40.h),
                 ],
               ),

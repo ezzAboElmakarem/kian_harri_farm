@@ -31,10 +31,13 @@ class CartBloc extends Bloc<AppEvent, AppState> {
       if (response.statusCode == 200) {
         cartData = CartModel.fromJson(response.data);
         log('Get  cart data Successfuly ');
-        emit(Done());
+        response.data['message'] == 'cart'
+            ? emit(Done())
+            : showSnackBar(RouteUtils.context, " ${response.data['message']}");
       } else {
         emit(Error());
         log('Get cart data  Failed with Status code ${response.statusCode}');
+        showSnackBar(RouteUtils.context, " ${response.data['message']}");
       }
     } catch (e) {
       emit(Error());

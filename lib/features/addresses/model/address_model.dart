@@ -1,16 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/foundation.dart';
+
 class AddressModel {
   bool? success;
-  List<Data>? data;
+  List<Address>? addresses;
   String? message;
 
-  AddressModel({this.success, this.data, this.message});
+  AddressModel({this.success, this.addresses, this.message});
 
   AddressModel.fromJson(Map<String, dynamic> json) {
     success = json['success'];
     if (json['data'] != null) {
-      data = <Data>[];
+      addresses = <Address>[];
       json['data'].forEach((v) {
-        data!.add(Data.fromJson(v));
+        addresses!.add(Address.fromJson(v));
       });
     }
     message = json['message'];
@@ -19,15 +22,27 @@ class AddressModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['success'] = success;
-    if (this.data != null) {
-      data['data'] = this.data!.map((v) => v.toJson()).toList();
+    if (this.addresses != null) {
+      data['data'] = this.addresses!.map((v) => v.toJson()).toList();
     }
     data['message'] = message;
     return data;
   }
+
+  @override
+  bool operator ==(covariant AddressModel other) {
+    if (identical(this, other)) return true;
+
+    return other.success == success &&
+        listEquals(other.addresses, addresses) &&
+        other.message == message;
+  }
+
+  @override
+  int get hashCode => success.hashCode ^ addresses.hashCode ^ message.hashCode;
 }
 
-class Data {
+class Address {
   int? id;
   String? name;
   String? phone;
@@ -43,7 +58,7 @@ class Data {
   String? address;
   String? addressDetails;
 
-  Data(
+  Address(
       {this.id,
       this.name,
       this.phone,
@@ -59,7 +74,7 @@ class Data {
       this.address,
       this.addressDetails});
 
-  Data.fromJson(Map<String, dynamic> json) {
+  Address.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     phone = json['phone'];

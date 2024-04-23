@@ -27,12 +27,14 @@ import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bl
 import 'package:kian_sheeps_projects/features/offers/bloc/all_offer_bloc.dart';
 import 'package:kian_sheeps_projects/features/my_orders/bloc/order_bloc.dart';
 import 'package:kian_sheeps_projects/features/order_details/bloc/order_details_bloc.dart';
+import 'package:kian_sheeps_projects/features/payment/bloc/payment_bloc.dart';
 import 'package:kian_sheeps_projects/features/privacy_Policy/bloc/privacy_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
 import 'package:kian_sheeps_projects/features/register/views/register_view.dart';
 import 'package:kian_sheeps_projects/features/reset_password/bloc/reset_pass_bloc.dart';
 import 'package:kian_sheeps_projects/features/return_and_exchange/bloc/exchange_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/service_rate/bloc/service_rate_bloc.dart';
+import 'package:kian_sheeps_projects/features/shipping_address/bloc/customer_address_bloc.dart';
 import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
 import 'package:kian_sheeps_projects/features/verify_code/views/vrefiy_code_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
@@ -172,6 +174,12 @@ class _MyAppState extends State<MyApp> {
                 ),
                 BlocProvider(
                   create: (context) => CouponBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => CustomerAddressBloc(),
+                ),
+                BlocProvider(
+                  create: (context) => PaymentBloc(),
                 ),
               ],
               child: MaterialApp(

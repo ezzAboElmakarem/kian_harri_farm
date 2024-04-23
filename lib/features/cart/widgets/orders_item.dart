@@ -32,7 +32,6 @@ class _OrderItemState extends State<OrderItem> {
 
   @override
   Widget build(BuildContext context) {
-    var bloc = CartBloc.of(context);
     return SizedBox(
       // height: 95.h,
       width: double.infinity,

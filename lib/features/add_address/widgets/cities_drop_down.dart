@@ -37,7 +37,7 @@ class _CitiesDropDownState extends State<CitiesDropDown> {
         Center(
           child: Container(
             width: double.infinity,
-            height: 50.h,
+            // height: 65.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
@@ -77,12 +77,10 @@ class _CitiesDropDownState extends State<CitiesDropDown> {
                     lastCityId = city.id.toString();
                   });
                 });
-
                 // Log the last city ID if it's not null
                 if (lastCityId != null) {
                   log(lastCityId!);
                 }
-
                 // Assign the last city ID to bloc.cityId
                 bloc.cityId = lastCityId ?? "0";
               },

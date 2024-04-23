@@ -10,7 +10,7 @@ class AddressesCard extends StatelessWidget {
     super.key,
     required this.addressdata,
   });
-  final Data addressdata;
+  final Address addressdata;
   @override
   Widget build(BuildContext context) {
     return Container(

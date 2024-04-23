@@ -47,7 +47,7 @@ class LoginBloc extends Bloc<AppEvent, AppState> {
         emit(Done());
         AppStorage.cacheToken(response.data['data']['token']);
         RouteUtils.navigateAndPopAll(HomeView());
-        log("login success welcome > ${response.data}");
+        log("login success welcome > ${response.data['data']['token']}");
       } else {
         emit(Error());
         showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");

@@ -4,7 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
-import 'package:kian_sheeps_projects/main_models/product_model.dart';
+import 'package:kian_sheeps_projects/features/Product_details/model/product_details_model.dart';
 import '../../categories/widgets/custom_radio_tile_item.dart';
 import '../../../helper/text_styles.dart';
 
@@ -13,7 +13,7 @@ class ProductpackagingRadios extends StatefulWidget {
     super.key,
     this.productDetailsModel,
   });
-  final ProductModel? productDetailsModel;
+  final ProductDetailsModel? productDetailsModel;
 
   @override
   State<ProductpackagingRadios> createState() => _ProductpackagingRadiosState();
@@ -49,15 +49,18 @@ class _ProductpackagingRadiosState extends State<ProductpackagingRadios> {
             child: ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => CustomRadioTileItem(
-                title: widget.productDetailsModel?.wrapping?[index].name ??
+                title: widget.productDetailsModel?.data?.offer?.wrapping?[index]
+                        .name ??
                     packagingOptions[index],
                 groupValue: selectedOption,
-                value: widget.productDetailsModel?.wrapping?[index].name ??
+                value: widget.productDetailsModel?.data?.offer?.wrapping?[index]
+                        .name ??
                     packagingOptions[index],
                 onChanged: (value) {
                   setState(() {
                     selectedOption = value!;
-                    bloc.wrappingId = widget.productDetailsModel?.wrapping
+                    bloc.wrappingId = widget
+                        .productDetailsModel?.data?.offer?.wrapping
                         ?.firstWhere((element) => element.name == value)
                         .id
                         .toString();
@@ -65,10 +68,12 @@ class _ProductpackagingRadiosState extends State<ProductpackagingRadios> {
                   });
                 },
                 selected: selectedOption ==
-                    widget.productDetailsModel?.wrapping?[index].name,
+                    widget.productDetailsModel?.data?.offer?.wrapping?[index]
+                        .name,
               ),
-              itemCount: widget.productDetailsModel?.wrapping?.length ??
-                  packagingOptions.length,
+              itemCount:
+                  widget.productDetailsModel?.data?.offer?.wrapping?.length ??
+                      packagingOptions.length,
             ),
           ),
         ],

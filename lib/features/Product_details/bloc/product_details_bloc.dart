@@ -12,7 +12,6 @@ import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/cart/views/cart_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
-import 'package:kian_sheeps_projects/main_models/product_model.dart';
 
 class ProductDetailsBloc extends Bloc<AppEvent, AppState> {
   ProductDetailsBloc() : super(Loading()) {
@@ -20,7 +19,7 @@ class ProductDetailsBloc extends Bloc<AppEvent, AppState> {
     on<Click>(_addToCart);
   }
   static ProductDetailsBloc of(context) => BlocProvider.of(context);
-  ProductModel productDetailsData = ProductModel();
+  ProductDetailsModel productDetailsData = ProductDetailsModel();
   // ProductDetailsModel smilarProdactsModel = ProductDetailsModel();
 
   String? offerId,
@@ -39,9 +38,9 @@ class ProductDetailsBloc extends Bloc<AppEvent, AppState> {
         offerId: event.arguments.toString(),
       );
       if (response.statusCode == 200) {
-        productDetailsData = ProductModel.fromJson(response.data);
+        productDetailsData = ProductDetailsModel.fromJson(response.data);
         // smilarProdactsModel = ProductDetailsModel.fromJson(response.data);
-        log('${response.data['data']['offer']['similarProduct']}');
+        // log('${response.data['similarProduct']}');
         log('Get product details  data Successfuly ');
         emit(Done());
       } else {

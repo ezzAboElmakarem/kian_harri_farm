@@ -4,7 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
-import 'package:kian_sheeps_projects/main_models/product_model.dart';
+import 'package:kian_sheeps_projects/features/Product_details/model/product_details_model.dart';
 import '../../categories/widgets/custom_radio_tile_item.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
@@ -14,7 +14,7 @@ class ProductchoppingRadios extends StatefulWidget {
     super.key,
     this.productDetailsModel,
   });
-  final ProductModel? productDetailsModel;
+  final ProductDetailsModel? productDetailsModel;
 
   @override
   State<ProductchoppingRadios> createState() => _ProductchoppingRadiosState();
@@ -52,15 +52,18 @@ class _ProductchoppingRadiosState extends State<ProductchoppingRadios> {
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return CustomRadioTileItem(
-                  title: widget.productDetailsModel?.cutting?[index].name ??
+                  title: widget.productDetailsModel?.data?.offer
+                          ?.cutting?[index].name ??
                       choppingOptions[index],
                   groupValue: selectedOption,
-                  value: widget.productDetailsModel?.cutting?[index].name ??
+                  value: widget.productDetailsModel?.data?.offer
+                          ?.cutting?[index].name ??
                       choppingOptions[index],
                   onChanged: (value) {
                     setState(() {
                       selectedOption = value!;
-                      bloc.cuttingId = widget.productDetailsModel?.cutting
+                      bloc.cuttingId = widget
+                          .productDetailsModel?.data?.offer?.cutting
                           ?.firstWhere((element) => element.name == value)
                           .id
                           .toString();
@@ -68,17 +71,20 @@ class _ProductchoppingRadiosState extends State<ProductchoppingRadios> {
                     });
                   },
                   selected: selectedOption ==
-                      widget.productDetailsModel?.cutting?[index].name,
+                      widget.productDetailsModel?.data?.offer?.cutting?[index]
+                          .name,
                   secondaryText: Text(
-                    widget.productDetailsModel?.cutting?[index].price ??
+                    widget.productDetailsModel?.data?.offer?.cutting?[index]
+                            .price ??
                         '(+\$ $addtionalMoney)',
                     style: TextStyles.textstyle12.copyWith(
                         color: ColorStyles.textGreyColor.withOpacity(0.6)),
                   ),
                 );
               },
-              itemCount: widget.productDetailsModel?.cutting?.length ??
-                  choppingOptions.length,
+              itemCount:
+                  widget.productDetailsModel?.data?.offer?.cutting?.length ??
+                      choppingOptions.length,
             ),
           ),
         ],

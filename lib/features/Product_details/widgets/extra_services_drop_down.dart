@@ -4,14 +4,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
-import 'package:kian_sheeps_projects/main_models/product_model.dart';
+import 'package:kian_sheeps_projects/features/Product_details/model/product_details_model.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
 
 class ExtraServicesDropDown extends StatefulWidget {
   const ExtraServicesDropDown({super.key, this.productDetailsModel});
 
-  final ProductModel? productDetailsModel;
+  final ProductDetailsModel? productDetailsModel;
 
   @override
   State<ExtraServicesDropDown> createState() => _ExtraServicesDropDownState();
@@ -119,7 +119,8 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                   log(newValue ?? 'no data');
                   setState(() {
                     selectedItem = newValue;
-                    bloc.addition = widget.productDetailsModel?.addition
+                    bloc.addition = widget
+                        .productDetailsModel?.data?.offer?.addition
                         ?.firstWhere((element) => element.name == newValue)
                         .id
                         .toString();
@@ -130,7 +131,7 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
                   //   addtionalServiceId = choice.toString();
                   // });
                 },
-                items: widget.productDetailsModel?.addition
+                items: widget.productDetailsModel?.data?.offer?.addition
                         ?.map((e) => DropdownMenuItem<String>(
                               value: e.name,
                               child: Padding(

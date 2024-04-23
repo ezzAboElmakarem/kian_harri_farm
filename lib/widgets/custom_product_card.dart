@@ -58,9 +58,7 @@ class _CustomProductCardState extends State<CustomProductCard> {
       onTap: () {
         ProductDetailsBloc.of(context)
             .add(Get(arguments: widget.offer?.id ?? ''));
-        navigateTo(
-            context: context,
-            widget: ProductDetailsView(productDetailsModel: widget.offer));
+        navigateTo(context: context, widget: const ProductDetailsView());
       },
       child: Stack(
         children: [

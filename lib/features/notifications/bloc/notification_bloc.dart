@@ -31,7 +31,7 @@ class NotificationBloc extends Bloc<AppEvent, AppState> {
         }
       } else {
         emit(Error());
-        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
+        showSnackBar(RouteUtils.context, "${response.data['message']}");
         log('Get data Failed with Status code ${response.statusCode}');
       }
     } catch (e) {

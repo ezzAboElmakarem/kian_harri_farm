@@ -26,6 +26,10 @@ class MyOrdersBloc extends Bloc<AppEvent, AppState> {
         ordersData = MyOrdersModel.fromJson(response.data);
         log('Get orders data Successfuly ');
         emit(Done());
+        if (ordersData.data!.newOrder!.isEmpty ||
+            ordersData.data!.newOrder!.isEmpty) {
+          emit(Empty());
+        }
       } else {
         emit(Error());
         showSnackBar(RouteUtils.context, " ${response.data['message']}");

@@ -107,7 +107,9 @@
     "notes": "Notes",
     "pick_location_on_map" : "Pick Location On Map",
     "press_to_choose" : "Press To Choose",
-    "service fee" : "service fee"
+    "service fee" : "service fee",
+    "no_data"   : "No Data Start Use The App"
+
 
 
 

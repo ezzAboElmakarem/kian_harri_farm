@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/add_address/bloc/get_cities_and_regions_bloc.dart';
+import 'package:kian_sheeps_projects/widgets/empty_data_view.dart';
 import '../widgets/add_address_forms.dart';
 import '../widgets/add_address_button.dart';
 import '../../../helper/app_bar_method.dart';
@@ -19,6 +20,8 @@ class AddAddressView extends StatelessWidget {
         builder: (context, state) {
           if (state is Loading) {
             return const Center(child: CircularProgressIndicator());
+          } else if (state is Empty) {
+            return const EmptyDataScreen();
           } else if (state is Error) {
             return Center(child: Text('error_getting_data'.tr()));
           } else if (state is Done) {

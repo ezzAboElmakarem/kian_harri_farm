@@ -33,9 +33,15 @@ class FavouriteBloc extends Bloc<AppEvent, AppState> {
           emit(Empty());
         }
       } else {
-        emit(Error());
-        showSnackBar(RouteUtils.context, " ${response.data['message']}");
-        log('Get favourite  data Failed with Status code ${response.statusCode}');
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Empty());
+          showSnackBar(RouteUtils.context,
+              " please Login  to save you favourites Products");
+        } else {
+          emit(Error());
+          showSnackBar(RouteUtils.context, " ${response.data['message']}");
+          log('Get favourite  data Failed with Status code ${response.statusCode}');
+        }
       }
     } catch (e) {
       emit(Error());
@@ -56,10 +62,15 @@ class FavouriteBloc extends Bloc<AppEvent, AppState> {
         HomeBloc.get(RouteUtils.context).add(Get());
         FavouriteBloc.get(RouteUtils.context).add(Get());
       } else {
-        emit(Error());
-
-        log("Error  my orders details ${response.statusCode}");
-        showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Empty());
+          showSnackBar(RouteUtils.context,
+              " please Login  to save you favourites Products");
+        } else {
+          emit(Error());
+          log("Error  my orders details ${response.statusCode}");
+          showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        }
       }
     } catch (e) {
       emit(Error());

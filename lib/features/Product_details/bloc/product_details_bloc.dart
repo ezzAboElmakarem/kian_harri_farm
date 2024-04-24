@@ -72,10 +72,16 @@ class ProductDetailsBloc extends Bloc<AppEvent, AppState> {
         showSnackBar(
             RouteUtils.context, " Your Order Added to Cart Successfully");
       } else {
-        emit(Error());
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Empty());
+          showSnackBar(
+              RouteUtils.context, " Please login before make Your Order");
+        } else {
+          emit(Error());
 
-        log("Add To cart Failed ${response.statusCode}");
-        showSnackBar(RouteUtils.context, " Please Complete  Your Order");
+          log("Add To cart Failed ${response.statusCode}");
+          showSnackBar(RouteUtils.context, " Please Complete  Your Order");
+        }
       }
     } catch (e) {
       emit(Error());

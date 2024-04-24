@@ -69,8 +69,14 @@ class AddAddressBloc extends Bloc<AppEvent, AppState> {
         RouteUtils.pop();
         showSnackBar(RouteUtils.context, " Address Added Successfully");
       } else {
-        log("Error add address ${response.statusCode}");
-        showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Empty());
+        } else {
+          emit(Error());
+
+          log("Error add address ${response.statusCode}");
+          showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        }
       }
     } catch (e) {
       emit(Error());

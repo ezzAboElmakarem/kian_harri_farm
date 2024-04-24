@@ -24,7 +24,7 @@ class ProductReviewItem extends StatelessWidget {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 1.5,
               blurRadius: 3,
-              offset: Offset(0, 1),
+              offset: const Offset(0, 1),
             ),
           ],
         ),

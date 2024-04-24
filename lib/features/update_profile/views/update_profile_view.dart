@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
+import 'package:kian_sheeps_projects/widgets/empty_data_view.dart';
 import '../widgets/update_profile_buttons.dart';
 import '../widgets/settings_forms.dart';
 import '../../../helper/app_bar_method.dart';
@@ -23,6 +24,8 @@ class UpdateProfileView extends StatelessWidget {
 
           if (state is Loading) {
             return const Center(child: CircularProgressIndicator());
+          } else if (state is Empty) {
+            return const EmptyDataScreen();
           } else if (state is Error) {
             return Center(
                 child: Text(

@@ -30,8 +30,39 @@ class AddressesListView extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           } else if (state is Error) {
             return Center(child: Text('error_getting_data'.tr()));
-          } else if (state is Empty) {
+          } else if (state is Unauthorized) {
             return const EmptyDataScreen();
+          } else if (state is Empty) {
+            return Column(
+              children: [
+                SizedBox(height: 24.h),
+                GestureDetector(
+                  onTap: () {
+                    CitiesAndRegionsBloc.of(context).add(Get());
+
+                    navigateTo(
+                        context: context, widget: const AddAddressView());
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(AssetsData.maximizeIcon),
+                      SizedBox(
+                        width: 8.w,
+                      ),
+                      Text(
+                        'add_new_address'.tr(),
+                        style: TextStyles.textstyle14
+                            .copyWith(fontSize: 13.sp, color: kPrimaryColor),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 24.h),
+                const EmptyDataScreen(),
+              ],
+            );
           } else if (state is Done) {
             var bloc = AddressesBloc.of(context);
             return SingleChildScrollView(

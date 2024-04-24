@@ -50,14 +50,16 @@ class SearchView extends StatelessWidget {
                           shrinkWrap: true,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
+                            childAspectRatio: .9 / 1,
                             crossAxisCount: 2,
-                            mainAxisSpacing: 24.h,
-                            crossAxisSpacing: 32.w,
-                            childAspectRatio: 2 / 3,
+                            crossAxisSpacing: 2.w,
+                            mainAxisSpacing: 16.h,
                           ),
                           itemCount: bloc.searchData.data!.length,
                           itemBuilder: (context, index) {
                             return SearchProductCard(
+                              isFavourite:
+                                  bloc.searchData.data?[index].like ?? false,
                               searchItem: bloc.searchData.data![index],
                             );
                           },

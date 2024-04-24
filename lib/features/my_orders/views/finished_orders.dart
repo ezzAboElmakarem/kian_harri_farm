@@ -23,7 +23,7 @@ class FinishedOrders extends StatelessWidget {
         if (state is Loading) {
           return const Center(child: CircularProgressIndicator());
         } else if (state is Empty) {
-          return const Center(child: EmptyDataScreen());
+          return const EmptyDataScreen();
         } else if (state is Error) {
           return Center(child: Text('error_getting_data'.tr()));
         } else if (state is Done) {

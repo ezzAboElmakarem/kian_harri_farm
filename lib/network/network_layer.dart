@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, unnecessary_string_interpolations, deprecated_member_use, no_leading_underscores_for_local_identifiers
+
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -12,7 +14,7 @@ enum ServerMethods { GET, POST, UPDATE, DELETE, PUT, PATCH }
 class Network {
   static Network? _instance;
   static String? lang;
-  static Dio _dio = Dio();
+  static final Dio _dio = Dio();
   bool isActiveUser = true;
   Network._private();
 

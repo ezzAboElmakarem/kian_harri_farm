@@ -42,9 +42,13 @@ class CartBloc extends Bloc<AppEvent, AppState> {
           showSnackBar(RouteUtils.context, " ${response.data['message']}");
         }
       } else {
-        emit(Error());
-        log('Get cart data  Failed with Status code ${response.statusCode}');
-        showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Empty());
+        } else {
+          emit(Error());
+          log('Get cart data  Failed with Status code ${response.statusCode}');
+          showSnackBar(RouteUtils.context, " ${response.data['message']}");
+        }
       }
     } catch (e) {
       emit(Error());

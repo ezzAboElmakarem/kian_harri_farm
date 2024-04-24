@@ -27,8 +27,12 @@ class AddressesBloc extends Bloc<AppEvent, AppState> {
           emit(Empty());
         }
       } else {
-        emit(Error());
-        log('Get Addresses Failed with Status code ${response.statusCode}');
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Unauthorized());
+        } else {
+          emit(Error());
+          log('Get Addresses Failed with Status code ${response.statusCode}');
+        }
       }
     } catch (e) {
       emit(Error());

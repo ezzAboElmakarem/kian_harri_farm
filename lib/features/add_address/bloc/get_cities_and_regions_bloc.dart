@@ -26,8 +26,12 @@ class CitiesAndRegionsBloc extends Bloc<AppEvent, AppState> {
         log('Get cities Successfuly ');
         emit(Done());
       } else {
-        emit(Error());
-        log('Get cities Failed with Status code ${response.statusCode}');
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Empty());
+        } else {
+          emit(Error());
+          log('Get cities Failed with Status code ${response.statusCode}');
+        }
       }
     } catch (e) {
       emit(Error());
@@ -49,8 +53,12 @@ class CitiesAndRegionsBloc extends Bloc<AppEvent, AppState> {
         log('Get regions Successfuly ');
         emit(Done());
       } else {
-        emit(Error());
-        log('Get regions Failed with Status code ${response.statusCode}');
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Empty());
+        } else {
+          emit(Error());
+          log('Get regions Failed with Status code ${response.statusCode}');
+        }
       }
     } catch (e) {
       emit(Error());

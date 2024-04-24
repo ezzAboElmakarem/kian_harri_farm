@@ -27,13 +27,17 @@ class MyOrdersBloc extends Bloc<AppEvent, AppState> {
         log('Get orders data Successfuly ');
         emit(Done());
         if (ordersData.data!.newOrder!.isEmpty ||
-            ordersData.data!.newOrder!.isEmpty) {
+            ordersData.data!.payedOrder!.isEmpty) {
           emit(Empty());
         }
       } else {
-        emit(Error());
-        showSnackBar(RouteUtils.context, " ${response.data['message']}");
-        log('Get orders data Failed with Status code ${response.statusCode}');
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Empty());
+        } else {
+          emit(Error());
+          showSnackBar(RouteUtils.context, " ${response.data['message']}");
+          log('Get orders data Failed with Status code ${response.statusCode}');
+        }
       }
     } catch (e) {
       emit(Error());

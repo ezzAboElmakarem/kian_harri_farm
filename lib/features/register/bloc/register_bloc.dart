@@ -17,13 +17,13 @@ import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
 class RegisterBloc extends Bloc<AppEvent, AppState> {
   RegisterBloc() : super(Start()) {
     on<Click>(_addUser);
+    on<Reset>((event, emit) => emit(Start()));
   }
 
   static RegisterBloc get(context) => BlocProvider.of(context);
 
   // static SignupBloc get instance =>
   //     BlocProvider.of<SignupBloc>(RouteUtils.context);
-  late final GetStorage _storage;
 
   TextEditingController name = TextEditingController();
   TextEditingController phone = TextEditingController();
@@ -52,21 +52,28 @@ class RegisterBloc extends Bloc<AppEvent, AppState> {
       Response response = await SignupRepository.signUp(body: body);
       log("response => $response");
       log(response.statusCode.toString());
-      print("the user Id is **********${response.data["data"]["user_id"]}");
-      print("the code is **********${response.data["data"]["code"]}");
+
       String userId = response.data["data"]["user_id"].toString();
       String code = response.data["data"]["code"].toString();
+
       GetStorage().write('user_id', userId);
       GetStorage().write('code', code);
+      GetStorage().write('email', email.text);
       if (response.statusCode == 200) {
         emit(Done());
-        AppStorage.cacheToken(response.data['data']['token']);
+        AppStorage.cacheId(response.data["data"]["user_id"]);
+
+        // AppStorage.cacheToken(response.data['data']['token']);
 
         RouteUtils.navigateAndPopAll(const VerfiyCodeScreenView(
-          isRegister: true,
+          isVerified: true,
         ));
 
         log("name => ${body["name"]}");
+      } else if (response.statusCode == 422) {
+        emit(Error());
+        log('error name  ${body["name"]}');
+        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
       } else {
         emit(Error());
         log('error name  ${body["name"]}');

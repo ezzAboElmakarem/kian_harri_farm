@@ -105,6 +105,12 @@ class Loading extends AppState {
   Loading({this.arguments});
 }
 
+class Unauthorized extends AppState {
+  dynamic arguments;
+
+  Unauthorized({this.arguments});
+}
+
 class LoadingBTN extends AppState {}
 
 class Empty extends AppState {

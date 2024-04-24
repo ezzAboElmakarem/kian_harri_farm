@@ -17,7 +17,7 @@ class EmptyDataScreen extends StatelessWidget {
         SizedBox(
           height: 60.h,
         ),
-        Image.asset(AssetsData.noNotificationImage),
+        Center(child: Image.asset(AssetsData.noNotificationImage)),
         Text(
           "no_data".tr(),
           style: TextStyles.textstyle16.copyWith(fontWeight: FontWeight.w400),

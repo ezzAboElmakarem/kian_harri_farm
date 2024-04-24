@@ -40,9 +40,14 @@ class UpdateProfileBloc extends Bloc<AppEvent, AppState> {
 
         emit(Done());
       } else {
-        emit(Error());
-        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
-        log('Get user data Failed with Status code ${response.statusCode}');
+        if ("${response.data['message']}" == "Unauthenticated.") {
+          emit(Empty());
+        } else {
+          emit(Error());
+          showSnackBar(
+              RouteUtils.context, "ERROR : ${response.data['message']}");
+          log('Get user data Failed with Status code ${response.statusCode}');
+        }
       }
     } catch (e) {
       emit(Error());

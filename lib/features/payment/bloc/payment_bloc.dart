@@ -25,6 +25,8 @@ class PaymentBloc extends Bloc<AppEvent, AppState> {
   String? addressId;
   String? paymentType;
 
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
   _addPaymentOrder(AppEvent event, Emitter<AppState> emit) async {
     emit(Loading());
     try {

@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
@@ -17,7 +16,6 @@ class CustomerAddressBloc extends Bloc<AppEvent, AppState> {
   AddressesModel addressesData = AddressesModel();
 
   Map<String, dynamic> cachedInfo = {};
-  GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
   _getData(AppEvent event, Emitter<AppState> emit) async {
     emit(Loading());

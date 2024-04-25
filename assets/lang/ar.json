@@ -56,7 +56,7 @@
     "cart" :  "السلة",
     "payment_summary" : "ملخص الدفع",
     "sub_total" : "المجموع الفرعى",
-    "discount" : "الخصم",
+    "discount" : "خصم",
     "service_fee" : "رسوم الخدمة",
     "shipping_fees" : "رسوم الشحن",
     "added_tax_value" : "قيمه الضريبه المضافة",
@@ -108,7 +108,24 @@
     "pick_location_on_map" : "تحديد موقع الاستلام على الخريطة",
     "press_to_choose" : "اضغط لاختيار",
     "service fee" : "رسوم الخدمة",
-     "no_data"   : "لا توجد بيانات ابدأ باستخدام التطبيق"
+     "no_data"   : "لا توجد بيانات ابدأ باستخدام التطبيق",
+     "search" : "البحث",
+    "search_here" : "ابحث عن منتجاتك هنا ",
+    "products" : "منتجات",
+    "clear_cart" : "حذف السلة" ,
+    "sort_by" :"الترتيب بواسطة",
+    "all" : "الكل",
+    "most_saled": "الاكثر مبيعا",
+    "top_rated" : "الاعلي تقيما",
+    "from_highest_to_lowest" : "من السعر الاعلي الي الاقل ",
+    "from_lowest_to_highest" : "من السعر الاقل الي الاعلي",
+    "approximate_weight" : "الوزن التقريبي",
+    "extra_services" : "خدمات أضافية",
+    "smilar_products" : "منتجات مشابهة",
+    "choose_city_error" : " من فضلك اختار مدينة",
+    "choose_address_error" : "من فضلك اختار عنوان"
+
+
 
 
 

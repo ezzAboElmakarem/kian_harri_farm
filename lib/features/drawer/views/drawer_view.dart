@@ -6,7 +6,7 @@ import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/about_us/about_us_bloc.dart';
 import 'package:kian_sheeps_projects/features/addresses/bloc/addresses_bloc.dart';
 import 'package:kian_sheeps_projects/features/common_Questions/bloc/common_ques_bloc.dart';
-import 'package:kian_sheeps_projects/features/contact_us/bloc/Contact_us_bloc.dart';
+import 'package:kian_sheeps_projects/features/contact_us/bloc/contact_us_bloc.dart';
 import 'package:kian_sheeps_projects/features/delivery_and_shiping_terms/bloc/delivery_shipping_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
 import 'package:kian_sheeps_projects/features/my_orders/bloc/order_bloc.dart';
@@ -14,6 +14,7 @@ import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bl
 import 'package:kian_sheeps_projects/features/privacy_Policy/bloc/privacy_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/return_and_exchange/bloc/exchange_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import '../../about_us/views/about_us_view.dart';
@@ -244,18 +245,25 @@ class LogOutButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(
           children: [
-            Image.asset(
-              AssetsData.logOutIcon,
-              height: 24.h,
-              width: 24.w,
-            ),
+            AppStorage.isLogged
+                ? Image.asset(
+                    AssetsData.logOutIcon,
+                    height: 24.h,
+                    width: 24.w,
+                  )
+                : Icon(Icons.login, color: kPrimaryColor, size: 24.sp),
             SizedBox(
               width: 8.w,
             ),
-            Text(
-              "log_out".tr(),
-              style: TextStyles.textstyle14,
-            ),
+            AppStorage.isLogged
+                ? Text(
+                    "log_out".tr(),
+                    style: TextStyles.textstyle14,
+                  )
+                : Text(
+                    "login".tr(),
+                    style: TextStyles.textstyle14,
+                  ),
             const Spacer(),
           ],
         ),

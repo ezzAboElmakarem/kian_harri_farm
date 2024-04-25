@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:kian_sheeps_projects/app_config/app_end_points.dart';
 import 'package:kian_sheeps_projects/network/network_layer.dart';
 

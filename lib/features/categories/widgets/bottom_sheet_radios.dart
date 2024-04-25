@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/categories/bloc/category_Items_bloc.dart';
+import 'package:kian_sheeps_projects/helper/routes.dart';
 import 'custom_radio_tile_item.dart';
 
 class BottomSheetRadiosList extends StatefulWidget {
@@ -53,7 +54,9 @@ class _BottomSheetRadiosListState extends State<BottomSheetRadiosList> {
       itemCount: filters.length,
       itemBuilder: (BuildContext context, int index) {
         return CustomRadioTileItem(
-          title: filters[index]["title"],
+          title: RouteUtils.isAR
+              ? filters[index]["title"]
+              : filters[index]["titleEn"],
           groupValue: selectedOption,
           value: filters[index]["id"].toString(),
           onChanged: (value) {

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../helper/text_styles.dart';
@@ -14,8 +15,7 @@ class SearchBodyTitle extends StatelessWidget {
         padding: EdgeInsets.only(
           top: 20.h,
         ),
-        child: Text('ابحث عن منتجاتك هنا',
-            textAlign: TextAlign.right,
+        child: Text('search_here'.tr(),
             style:
                 TextStyles.textstyle20.copyWith(fontWeight: FontWeight.bold)),
       ),

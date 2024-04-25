@@ -20,11 +20,10 @@ class CustomerAddressForms extends StatelessWidget {
   // final RegionsModel regionData;
   @override
   Widget build(BuildContext context) {
-    final customerAddressBloc = CustomerAddressBloc.of(context);
     final bloc = PaymentBloc.of(context);
 
     return Form(
-      key: customerAddressBloc.formkey,
+      key: bloc.formkey,
       child: Column(
         children: [
           CustomTextFormField(

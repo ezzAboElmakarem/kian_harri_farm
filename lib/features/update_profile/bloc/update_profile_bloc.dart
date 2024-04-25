@@ -41,7 +41,7 @@ class UpdateProfileBloc extends Bloc<AppEvent, AppState> {
         emit(Done());
       } else {
         if ("${response.data['message']}" == "Unauthenticated.") {
-          emit(Empty());
+          emit(Unauthorized());
         } else {
           emit(Error());
           showSnackBar(

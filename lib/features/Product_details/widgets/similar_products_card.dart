@@ -71,22 +71,19 @@ class _SimilarProductCard extends State<SimilarProductCard> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 34.h),
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                    ),
-                    child: Center(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
-                          widget.similarProduct?.image ??
-                              AssetsData.dummyProductImage,
-                          fit: BoxFit.fitWidth,
-                        ),
-                      ),
-                    ),
+                // SizedBox(height: 34.h),
+                Container(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Image.network(
+                    widget.similarProduct?.image ??
+                        AssetsData.dummyProductImage,
+                    width: double.infinity,
+                    height: 120.h,
+                    fit: BoxFit.fill,
                   ),
                 ),
                 SizedBox(
@@ -198,11 +195,11 @@ class _SimilarProductCard extends State<SimilarProductCard> {
             } else {
               return Positioned(
                 // left: RouteUtils.isAR ? 0 : null,
-                right: RouteUtils.isAR ? 12.w : 12.w,
+                right: RouteUtils.isAR ? 4.w : 4.w,
 
-                top: -18.h,
+                top: -30.h,
                 child: SizedBox(
-                  width: 130.w,
+                  width: 140.w,
                   height: 100.h,
                   child: Row(
                     children: [
@@ -242,12 +239,12 @@ class _SimilarProductCard extends State<SimilarProductCard> {
                               radius: 20.r,
                               child: Column(
                                 children: [
-                                  Text(widget.similarProduct?.discount ?? '10',
+                                  Text("${widget.similarProduct?.discount}%",
                                       style: TextStyles.textstyle12.copyWith(
                                           color: Colors.white,
                                           fontSize: 9.sp,
                                           fontWeight: FontWeight.bold)),
-                                  Text('خصم',
+                                  Text('discount'.tr(),
                                       style: TextStyles.textstyle12.copyWith(
                                           color: Colors.white, fontSize: 7.sp)),
                                 ],

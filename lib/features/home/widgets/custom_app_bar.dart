@@ -8,8 +8,6 @@ import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bl
 import 'package:kian_sheeps_projects/features/notifications/views/notifications_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import '../../../helper/assets.dart';
-import '../../../helper/color_styles.dart';
-import '../../../helper/text_styles.dart';
 
 class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomHomeAppBar({
@@ -50,16 +48,23 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                     ),
                     Positioned(
-                      left: 18.w,
-                      child: CircleAvatar(
-                        backgroundColor: ColorStyles.orangeColor,
-                        radius: 8.r,
-                        child: Text(
-                          '2',
-                          style: TextStyles.textstyle12
-                              .copyWith(color: Colors.white, fontSize: 7.sp),
+                      left: 20.w,
+                      child: Positioned(
+                        left: 8.w,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.red,
+                          radius: 6.r,
                         ),
                       ),
+                      //  CircleAvatar(
+                      //   backgroundColor: ColorStyles.orangeColor,
+                      //   radius: 8.r,
+                      //   child: Text(
+                      //     '2',
+                      //     style: TextStyles.textstyle12
+                      //         .copyWith(color: Colors.white, fontSize: 7.sp),
+                      //   ),
+                      // ),
                     ),
                   ],
                 )),

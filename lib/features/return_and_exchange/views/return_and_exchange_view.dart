@@ -36,10 +36,10 @@ class _ReturnAndExchangeState extends State<ReturnAndExchange> {
                         shrinkWrap: true,
                         physics: const BouncingScrollPhysics(),
                         itemBuilder: (context, index) => QuestionsItem(
-                              answer: bloc.exchangePolicyData.data?[index]
+                              question: bloc.exchangePolicyData.data?[index]
                                       .question ??
                                   'test question',
-                              question:
+                              answer:
                                   bloc.exchangePolicyData.data?[index].answer ??
                                       'test answer',
                             ),

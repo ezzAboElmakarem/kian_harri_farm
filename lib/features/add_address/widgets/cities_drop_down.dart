@@ -59,8 +59,18 @@ class _CitiesDropDownState extends State<CitiesDropDown> {
               value: selectedItem,
               icon: null,
               underline: Container(),
+              items: widget.citiesData.data
+                      ?.map((e) => DropdownMenuItem<String>(
+                            value: e.id.toString(),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.w),
+                              child: Text(e.name ?? ''),
+                            ),
+                          ))
+                      .toList() ??
+                  [],
               onChanged: (String? newValue) {
-                String? lastCityId; // Variable to store the last city ID
+                // String? lastCityId; // Variable to store the last city ID
 
                 setState(() {
                   selectedItem = newValue;
@@ -73,27 +83,17 @@ class _CitiesDropDownState extends State<CitiesDropDown> {
                   ));
 
                   // Find the last city ID and store it
-                  widget.citiesData.data!.forEach((city) {
-                    lastCityId = city.id.toString();
-                  });
+                  // widget.citiesData.data!.forEach((city) {
+                  //   lastCityId = city.id.toString();
+                  // });
+                  bloc.cityId = selectedItem ?? "0";
                 });
                 // Log the last city ID if it's not null
-                if (lastCityId != null) {
-                  log(lastCityId!);
-                }
+                // if (lastCityId != null) {
+                //   log(lastCityId!);
+                // }
                 // Assign the last city ID to bloc.cityId
-                bloc.cityId = lastCityId ?? "0";
               },
-              items: widget.citiesData.data
-                      ?.map((e) => DropdownMenuItem<String>(
-                            value: e.name,
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 8.w),
-                              child: Text(e.name ?? ''),
-                            ),
-                          ))
-                      .toList() ??
-                  [],
             ),
           ),
         ),

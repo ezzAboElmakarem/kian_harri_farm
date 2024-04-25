@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/Product_details/model/product_details_model.dart';
@@ -20,7 +21,7 @@ class SimilarProductsSlider extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Text(
-              'منتجات مشابهة',
+              "smilar_products".tr(),
               //textdirection: TextDirection.rtl,
               style:
                   TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),

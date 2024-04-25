@@ -13,12 +13,12 @@ import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
 
 class HomeBloc extends Bloc<AppEvent, AppState> {
   HomeBloc() : super(Loading()) {
-    on<Get>(getData);
+    on<Get>(_getData);
   }
   static HomeBloc get(context) => BlocProvider.of(context);
   HomeModel homeData = HomeModel();
 
-  getData(AppEvent event, Emitter<AppState> emit) async {
+  _getData(AppEvent event, Emitter<AppState> emit) async {
     emit(Loading());
     try {
       Response response = await HomeRepo.getData();

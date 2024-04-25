@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
+import 'package:kian_sheeps_projects/features/payment/bloc/payment_bloc.dart';
 import 'package:kian_sheeps_projects/features/payment/views/payment_view.dart';
 import 'package:kian_sheeps_projects/features/shipping_address/bloc/customer_address_bloc.dart';
 import 'package:kian_sheeps_projects/features/shipping_address/customer_address_form.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
+import 'package:kian_sheeps_projects/helper/show_snack_bar.dart';
 import '../../../helper/app_bar_method.dart';
 import '../../../widgets/custom_button.dart';
 
@@ -138,11 +140,13 @@ class NextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var bloc = CustomerAddressBloc.of(context);
+    var bloc = PaymentBloc.of(context);
     return CustomButton(
       buttonText: 'next'.tr(),
       onTap: () {
-        if (!bloc.formkey.currentState!.validate()) return;
+        if (!bloc.formkey.currentState!.validate() || bloc.addressId == null) {
+          return showSnackBar(RouteUtils.context, "choose_address_error".tr());
+        }
 
         // CustomerAddressBloc.of(context).add(Click());
         RouteUtils.navigateTo(const PaymentView());

@@ -35,7 +35,7 @@ class CustomCategoryItem extends StatelessWidget {
         },
         child: Container(
           width: 70.w,
-          height: 100.h,
+          height: 90.h,
           decoration: BoxDecoration(
               color: categoryColor, borderRadius: BorderRadius.circular(12.r)),
           child: Column(
@@ -48,7 +48,7 @@ class CustomCategoryItem extends StatelessWidget {
                   height: 44.w,
                   color: Colors.white,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: CircleAvatar(
                       radius: 24,
                       backgroundColor: Colors.white,
@@ -57,12 +57,12 @@ class CustomCategoryItem extends StatelessWidget {
                   ),
                 ),
               ),
-              // SizedBox(
-              //   height: 10.h,
-              // ),
+              SizedBox(
+                height: 4.h,
+              ),
               Text(
                 categoryName,
-                style: TextStyles.textstyle14,
+                style: TextStyles.textstyle12,
               ),
             ],
           ),

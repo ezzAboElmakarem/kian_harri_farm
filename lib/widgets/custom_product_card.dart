@@ -2,10 +2,8 @@ import 'dart:developer';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
-import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/Product_details/bloc/product_details_bloc.dart';
 import 'package:kian_sheeps_projects/features/cart/bloc/cart_bloc.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
@@ -23,19 +21,9 @@ class CustomProductCard extends StatefulWidget {
     super.key,
     this.offer,
     required this.isFavourite,
-    // required this.categoryName,
-    // required this.price,
-    // required this.oldPrice,
-    // required this.productName,
-    // required this.imageUrl,
   });
   final ProductModel? offer;
   final bool isFavourite;
-  // final String categoryName;
-  // final String price;
-  // final String oldPrice;
-  // final String productName;
-  // final String imageUrl;
 
   @override
   State<CustomProductCard> createState() => _CustomProductCardState();
@@ -69,21 +57,18 @@ class _CustomProductCardState extends State<CustomProductCard> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 34.h),
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                    ),
-                    child: Center(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
-                          widget.offer?.image ?? AssetsData.dummyProductImage,
-                          fit: BoxFit.fitWidth,
-                        ),
-                      ),
-                    ),
+                // SizedBox(height: 34.h),
+                Container(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Image.network(
+                    widget.offer?.image ?? AssetsData.dummyProductImage,
+                    width: double.infinity,
+                    height: 120.h,
+                    fit: BoxFit.fill,
                   ),
                 ),
                 SizedBox(
@@ -184,111 +169,181 @@ class _CustomProductCardState extends State<CustomProductCard> {
               ],
             ),
           ),
-          BlocBuilder<FavouriteBloc, AppState>(builder: (context, state) {
-            if (state is Error) {
-              return Center(
-                  child: Text(
-                "error_getting_data".tr(),
-                style: TextStyles.textstyle16,
-              ));
-            } else {
-              return Positioned(
-                // left: RouteUtils.isAR ? 0 : null,
-                right: RouteUtils.isAR ? 12.w : 12.w,
+          Positioned(
+            // left: RouteUtils.isAR ? 0 : null,
+            right: RouteUtils.isAR ? 4.w : 4.w,
 
-                top: -18.h,
-                child: SizedBox(
-                  width: 130.w,
-                  height: 100.h,
-                  child: Row(
-                    children: [
-                      // const Spacer(
-                      //   flex: 1,
-                      // ),
-                      GestureDetector(
-                          // splashColor: Colors.transparent,
-                          onTap: () {
-                            _isFavourite = !_isFavourite;
-                            log('state is : $_isFavourite');
-                            setState(() {});
-                            FavouriteBloc.get(context).add(Click(
-                              arguments: {
-                                "product_id": widget.offer?.id,
-                                "like": _isFavourite,
-                              },
-                            ));
-                          },
-                          child: Container(
-                            // width: 70.w,
-                            // height: 60.h,
-                            color: Colors.transparent,
-                            child: Image.asset(
-                              _isFavourite ? favouriteImage : notFavouriteImage,
-                            ),
-                          )),
-                      const Spacer(
-                          // flex: 8,
+            top: -30.h,
+            child: SizedBox(
+              width: 140.w,
+              height: 100.h,
+              child: Row(
+                children: [
+                  // const Spacer(
+                  //   flex: 1,
+                  // ),
+                  GestureDetector(
+                      // splashColor: Colors.transparent,
+                      onTap: () {
+                        setState(() {
+                          _isFavourite = !_isFavourite;
+                          log('state is : $_isFavourite');
+                          FavouriteBloc.get(context).add(Click(
+                            arguments: {
+                              "product_id": widget.offer?.id,
+                              "like": _isFavourite,
+                            },
+                          ));
+                        });
+                      },
+                      child: Container(
+                        // width: 70.w,
+                        // height: 60.h,
+                        color: Colors.transparent,
+                        child: Image.asset(
+                          _isFavourite ? favouriteImage : notFavouriteImage,
+                        ),
+                      )),
+                  const Spacer(
+                      // flex: 8,
+                      ),
+                  widget.offer?.discount == '0' ||
+                          widget.offer?.discount == null
+                      ? const SizedBox()
+                      : CircleAvatar(
+                          backgroundColor: ColorStyles.orangeColor,
+                          radius: 20.r,
+                          child: Column(
+                            children: [
+                              Text("${widget.offer?.discount}%",
+                                  style: TextStyles.textstyle12.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 9.sp,
+                                      fontWeight: FontWeight.bold)),
+                              Text('discount'.tr(),
+                                  style: TextStyles.textstyle12.copyWith(
+                                      color: Colors.white, fontSize: 7.sp)),
+                            ],
                           ),
-                      widget.offer?.discount == '0' ||
-                              widget.offer?.discount == null
-                          ? const SizedBox()
-                          : CircleAvatar(
-                              backgroundColor: ColorStyles.orangeColor,
-                              radius: 20.r,
-                              child: Column(
-                                children: [
-                                  Text(widget.offer?.discount ?? '10',
-                                      style: TextStyles.textstyle12.copyWith(
-                                          color: Colors.white,
-                                          fontSize: 9.sp,
-                                          fontWeight: FontWeight.bold)),
-                                  Text('خصم',
-                                      style: TextStyles.textstyle12.copyWith(
-                                          color: Colors.white, fontSize: 7.sp)),
-                                ],
-                              ),
-                            ),
-                      // const Spacer(
-                      //   flex: 1,
-                      // ),
-                    ],
-                  ),
-                ),
-              );
+                        ),
+                  // const Spacer(
+                  //   flex: 1,
+                  // ),
+                ],
+              ),
+            ),
+          ),
 
-              //   return Positioned(
-              //     left: RouteUtils.isAR ? 0 : null,
-              //     right: RouteUtils.isAR ? null : 0,
-              //     top: -12.h,
-              //     child: Row(
-              //       children: [
-              //         SizedBox(
-              //           width: 64.w,
-              //         ),
-              //         CircleAvatar(
-              //           backgroundColor: ColorStyles.orangeColor,
-              //           radius: 17.r,
-              //           child: Column(
-              //             children: [
-              //               Text(widget.offer?.discount ?? '10',
-              //                   style: TextStyles.textstyle12.copyWith(
-              //                       color: Colors.white,
-              //                       fontSize: 11.sp,
-              //                       fontWeight: FontWeight.bold)),
-              //               Text('خصم',
-              //                   style: TextStyles.textstyle12.copyWith(
-              //                       color: Colors.white, fontSize: 8.sp)),
-              //             ],
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   );
-              // } else {
-              //   return const SizedBox();
-              // }
-            }
-          }),
+          // BlocBuilder<FavouriteBloc, AppState>(builder: (context, state) {
+          //   if (state is Loading) {
+          //     return const Center(child: CircularProgressIndicator());
+          //   }
+          //   // else if (state is Error) {
+          //   //   return Center(
+          //   //       child: Text(
+          //   //     "error_getting_data".tr(),
+          //   //     style: TextStyles.textstyle16,
+          //   //   ));
+          //   // }
+          //   else {
+          //     return Positioned(
+          //       // left: RouteUtils.isAR ? 0 : null,
+          //       right: RouteUtils.isAR ? 12.w : 12.w,
+
+          //       top: -18.h,
+          //       child: SizedBox(
+          //         width: 130.w,
+          //         height: 100.h,
+          //         child: Row(
+          //           children: [
+          //             // const Spacer(
+          //             //   flex: 1,
+          //             // ),
+          //             GestureDetector(
+          //                 // splashColor: Colors.transparent,
+          //                 onTap: () {
+          //                   setState(() {
+          //                     _isFavourite = !_isFavourite;
+          //                     log('state is : $_isFavourite');
+          //                     FavouriteBloc.get(context).add(Click(
+          //                       arguments: {
+          //                         "product_id": widget.offer?.id,
+          //                         "like": _isFavourite,
+          //                       },
+          //                     ));
+          //                   });
+          //                 },
+          //                 child: Container(
+          //                   // width: 70.w,
+          //                   // height: 60.h,
+          //                   color: Colors.transparent,
+          //                   child: Image.asset(
+          //                     _isFavourite ? favouriteImage : notFavouriteImage,
+          //                   ),
+          //                 )),
+          //             const Spacer(
+          //                 // flex: 8,
+          //                 ),
+          //             widget.offer?.discount == '0' ||
+          //                     widget.offer?.discount == null
+          //                 ? const SizedBox()
+          //                 : CircleAvatar(
+          //                     backgroundColor: ColorStyles.orangeColor,
+          //                     radius: 20.r,
+          //                     child: Column(
+          //                       children: [
+          //                         Text(widget.offer?.discount ?? '10',
+          //                             style: TextStyles.textstyle12.copyWith(
+          //                                 color: Colors.white,
+          //                                 fontSize: 9.sp,
+          //                                 fontWeight: FontWeight.bold)),
+          //                         Text('خصم',
+          //                             style: TextStyles.textstyle12.copyWith(
+          //                                 color: Colors.white, fontSize: 7.sp)),
+          //                       ],
+          //                     ),
+          //                   ),
+          //             // const Spacer(
+          //             //   flex: 1,
+          //             // ),
+          //           ],
+          //         ),
+          //       ),
+          //     );
+
+          //     //   return Positioned(
+          //     //     left: RouteUtils.isAR ? 0 : null,
+          //     //     right: RouteUtils.isAR ? null : 0,
+          //     //     top: -12.h,
+          //     //     child: Row(
+          //     //       children: [
+          //     //         SizedBox(
+          //     //           width: 64.w,
+          //     //         ),
+          //     //         CircleAvatar(
+          //     //           backgroundColor: ColorStyles.orangeColor,
+          //     //           radius: 17.r,
+          //     //           child: Column(
+          //     //             children: [
+          //     //               Text(widget.offer?.discount ?? '10',
+          //     //                   style: TextStyles.textstyle12.copyWith(
+          //     //                       color: Colors.white,
+          //     //                       fontSize: 11.sp,
+          //     //                       fontWeight: FontWeight.bold)),
+          //     //               Text('خصم',
+          //     //                   style: TextStyles.textstyle12.copyWith(
+          //     //                       color: Colors.white, fontSize: 8.sp)),
+          //     //             ],
+          //     //           ),
+          //     //         ),
+          //     //       ],
+          //     //     ),
+          //     //   );
+          //     // } else {
+          //     //   return const SizedBox();
+          //     // }
+          //   }
+          // }),
         ],
       ),
     );

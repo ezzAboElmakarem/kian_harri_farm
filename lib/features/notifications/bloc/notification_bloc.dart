@@ -31,7 +31,7 @@ class NotificationBloc extends Bloc<AppEvent, AppState> {
         }
       } else {
         if ("${response.data['message']}" == "Unauthenticated.") {
-          emit(Empty());
+          emit(Unauthorized());
         } else {
           emit(Error());
           showSnackBar(RouteUtils.context, "${response.data['message']}");

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +19,7 @@ class SearchView extends StatelessWidget {
     return BlocProvider(
       create: (context) => SearchBloc(),
       child: Scaffold(
-        appBar: customAppBar(context: context, title: 'البحث'),
+        appBar: customAppBar(context: context, title: "search".tr()),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: CustomScrollView(
@@ -50,9 +51,9 @@ class SearchView extends StatelessWidget {
                           shrinkWrap: true,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
-                            childAspectRatio: .9 / 1,
+                            childAspectRatio: .7 / 0.9,
                             crossAxisCount: 2,
-                            crossAxisSpacing: 2.w,
+                            crossAxisSpacing: 16.w,
                             mainAxisSpacing: 16.h,
                           ),
                           itemCount: bloc.searchData.data!.length,

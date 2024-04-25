@@ -1,6 +1,6 @@
 {
     "login" : "Login",
-    "welcome_text" : "Welc,ome Again",
+    "welcome_text" : "Welcome Again,",
     "skip" :"Skip",
     "next": "Next",
     "email_or_phone" : "Email Or Phone ",
@@ -56,7 +56,7 @@
     "cart" : "Cart",
     "payment_summary": "Payment Summary ",
     "sub_total" : "Subtotal",
-    "discount" : "Discount",
+    "discount" : "discount",
     "service_fee" :"Service fee",
     "shipping_fees" : "Shipping fees",
     "added_tax_value" :"Added tax value",
@@ -108,7 +108,23 @@
     "pick_location_on_map" : "Pick Location On Map",
     "press_to_choose" : "Press To Choose",
     "service fee" : "service fee",
-    "no_data"   : "No Data Start Use The App"
+    "no_data"   : "No Data Start Use The App",
+    "search" : "Search",
+    "search_here" : "Search for products here",
+    "products" : "products",
+    "clear_cart" : "Clear Cart" ,
+    "sort_by" :"Sort By",
+    "all" : "All",
+    "most_saled": "Most Saled",
+    "top_rated" : "Top Rated",
+    "from_highest_to_lowest" : "From highest price to lowest",
+    "from_lowest_to_highest" : "From lowest price to highest",
+    "approximate_weight" : "Approximate weight",
+    "extra_services" : "Extra Services",
+    "smilar_products" : "Smilar Products",
+    "choose_city_error" : " please  choose your city",
+    "choose_address_error" : "Choose Address please"
+
 
 
 

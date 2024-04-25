@@ -14,13 +14,12 @@ import 'package:kian_sheeps_projects/features/cart/bloc/coupon_bloc.dart';
 import 'package:kian_sheeps_projects/features/categories/bloc/categories_bloc.dart';
 import 'package:kian_sheeps_projects/features/categories/bloc/category_Items_bloc.dart';
 import 'package:kian_sheeps_projects/features/common_Questions/bloc/common_ques_bloc.dart';
-import 'package:kian_sheeps_projects/features/contact_us/bloc/Contact_us_bloc.dart';
+import 'package:kian_sheeps_projects/features/contact_us/bloc/contact_us_bloc.dart';
 import 'package:kian_sheeps_projects/features/delivery_and_shiping_terms/bloc/delivery_shipping_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/favourities/bloc/favourite_bloc.dart';
 import 'package:kian_sheeps_projects/features/forget_password/bloc/forget_password_bloc.dart';
 import 'package:kian_sheeps_projects/features/forget_password/views/forget_password_view.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
-import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/login/bloc/login_bloc.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/features/notifications/bloc/notification_bloc.dart';
@@ -35,6 +34,7 @@ import 'package:kian_sheeps_projects/features/reset_password/bloc/reset_pass_blo
 import 'package:kian_sheeps_projects/features/return_and_exchange/bloc/exchange_policy_bloc.dart';
 import 'package:kian_sheeps_projects/features/service_rate/bloc/service_rate_bloc.dart';
 import 'package:kian_sheeps_projects/features/shipping_address/bloc/customer_address_bloc.dart';
+import 'package:kian_sheeps_projects/features/splash_screen/views/splash_screen_view.dart';
 import 'package:kian_sheeps_projects/features/update_profile/bloc/update_profile_bloc.dart';
 import 'package:kian_sheeps_projects/features/verify_code/views/vrefiy_code_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
@@ -198,7 +198,7 @@ class _MyAppState extends State<MyApp> {
                   Locale('en'),
                 ],
                 locale: context.locale,
-                home: HomeView(),
+                home: const SplashScreenView(),
               ),
             ),
           );

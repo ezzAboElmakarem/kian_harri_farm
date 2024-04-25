@@ -33,10 +33,10 @@ class CommonQuestions extends StatelessWidget {
                         physics: const BouncingScrollPhysics(),
                         itemBuilder: (context, index) => QuestionsItem(
                               answer: bloc.commonQuestionsData.data?[index]
-                                      .question ??
+                                      .answer ??
                                   'test question',
                               question: bloc.commonQuestionsData.data?[index]
-                                      .answer ??
+                                      .question ??
                                   'test answer',
                             ),
                         separatorBuilder: (context, index) => SizedBox(

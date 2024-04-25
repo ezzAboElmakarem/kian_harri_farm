@@ -22,8 +22,8 @@ class AddressesModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['success'] = success;
-    if (this.addresses != null) {
-      data['data'] = this.addresses!.map((v) => v.toJson()).toList();
+    if (addresses != null) {
+      data['data'] = addresses!.map((v) => v.toJson()).toList();
     }
     data['message'] = message;
     return data;

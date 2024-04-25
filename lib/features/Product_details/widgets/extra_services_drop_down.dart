@@ -53,7 +53,7 @@ class _ExtraServicesDropDownState extends State<ExtraServicesDropDown> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'خدمات أضافية ',
+            "extra_services".tr(),
             //textdirection: TextDirection.rtl,
             style: TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
           ),

@@ -43,7 +43,8 @@ class CartBloc extends Bloc<AppEvent, AppState> {
         }
       } else {
         if ("${response.data['message']}" == "Unauthenticated.") {
-          emit(Empty());
+          emit(Unauthorized());
+          showSnackBar(RouteUtils.context, " please login to make your order");
         } else {
           emit(Error());
           log('Get cart data  Failed with Status code ${response.statusCode}');

@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:kian_sheeps_projects/features/splash_screen/views/splash_screen_view.dart';
 import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
 import '../../../helper/app_bar_method.dart';
@@ -73,11 +74,16 @@ class _LanguageViewState extends State<LanguageView> {
             CustomButton(
               buttonText: "confirm".tr(),
               onTap: () {
-                context.setLocale(Locale(_selectedLocale));
-                final rootElement =
-                    WidgetsFlutterBinding.ensureInitialized().rootElement!;
-                WidgetsBinding.instance.buildOwner!.reassemble(rootElement);
-                log(_selectedLocale);
+                setState(() {
+                  context.setLocale(Locale(_selectedLocale));
+                  _storage.write('selectedLocale', _selectedLocale);
+
+                  final rootElement =
+                      WidgetsFlutterBinding.ensureInitialized().rootElement!;
+                  WidgetsBinding.instance.buildOwner!.reassemble(rootElement);
+                  log(_selectedLocale);
+                  RouteUtils.navigateAndPopAll(const SplashScreenView());
+                });
               },
             ),
           ],

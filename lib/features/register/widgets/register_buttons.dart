@@ -30,6 +30,14 @@ class RegisterButtons extends StatelessWidget {
               return const Center(
                 child: CircularProgressIndicator(color: kPrimaryColor),
               );
+            } else if (state is Error) {
+              return CustomButton(
+                buttonText: "login_button".tr(),
+                textColor: Colors.white,
+                onTap: () {
+                  bloc.add(Click());
+                },
+              );
             } else {
               return CustomButton(
                 buttonText: "login_button".tr(),

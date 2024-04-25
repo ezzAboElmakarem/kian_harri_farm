@@ -24,7 +24,7 @@ class OffersView extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = AllOffersBloc.of(context);
     return Scaffold(
-      appBar: customAppBar(context: context, title: 'العروض'),
+      appBar: customAppBar(context: context, title: 'offers'.tr()),
       body: BlocBuilder<AllOffersBloc, AppState>(
         builder: (context, state) {
           if (state is Loading) {

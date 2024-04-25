@@ -3,6 +3,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
@@ -54,9 +55,7 @@ class AddAddressBloc extends Bloc<AppEvent, AppState> {
       if (response.statusCode == 200) {
         log('Posted Address data Successfuly ');
         emit(Done());
-        // if (addressesData.data!.isEmpty) {
-        //   emit(Empty());
-        // }
+
         AddAddressBloc bloc = AddAddressBloc.of(RouteUtils.context);
         bloc.nameController.clear();
         bloc.phoneController.clear();
@@ -70,7 +69,10 @@ class AddAddressBloc extends Bloc<AppEvent, AppState> {
         showSnackBar(RouteUtils.context, " Address Added Successfully");
       } else {
         if ("${response.data['message']}" == "Unauthenticated.") {
-          emit(Empty());
+          emit(Unauthorized());
+        } else if (cityId == null) {
+          emit(Error());
+          showSnackBar(RouteUtils.context, "choose_city_error".tr());
         } else {
           emit(Error());
 

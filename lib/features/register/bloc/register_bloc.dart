@@ -25,6 +25,8 @@ class RegisterBloc extends Bloc<AppEvent, AppState> {
   // static SignupBloc get instance =>
   //     BlocProvider.of<SignupBloc>(RouteUtils.context);
 
+  bool acceptTerms = false;
+
   TextEditingController name = TextEditingController();
   TextEditingController phone = TextEditingController();
   TextEditingController email = TextEditingController();
@@ -38,7 +40,7 @@ class RegisterBloc extends Bloc<AppEvent, AppState> {
   //============================================================================
 
   _addUser(AppEvent event, Emitter<AppState> emit) async {
-    if (!formkey.currentState!.validate()) return;
+    if (!formkey.currentState!.validate() || acceptTerms == false) return;
 
     emit(Loading());
     Map<String, dynamic> body = {
@@ -50,16 +52,17 @@ class RegisterBloc extends Bloc<AppEvent, AppState> {
     };
     try {
       Response response = await SignupRepository.signUp(body: body);
-      log("response => $response");
-      log(response.statusCode.toString());
 
-      String userId = response.data["data"]["user_id"].toString();
-      String code = response.data["data"]["code"].toString();
-
-      GetStorage().write('user_id', userId);
-      GetStorage().write('code', code);
-      GetStorage().write('email', email.text);
       if (response.statusCode == 200) {
+        log("response => $response");
+        log(response.statusCode.toString());
+
+        String userId = response.data["data"]["user_id"].toString();
+        String code = response.data["data"]["code"].toString();
+
+        GetStorage().write('user_id', userId);
+        GetStorage().write('  code', code);
+        GetStorage().write('email', email.text);
         emit(Done());
         AppStorage.cacheId(response.data["data"]["user_id"]);
 
@@ -68,16 +71,15 @@ class RegisterBloc extends Bloc<AppEvent, AppState> {
         RouteUtils.navigateAndPopAll(const VerfiyCodeScreenView(
           isVerified: true,
         ));
-
-        log("name => ${body["name"]}");
-      } else if (response.statusCode == 422) {
+      }
+      // else if (response.statusCode == 422) {
+      //   emit(Error());
+      //   showSnackBar(RouteUtils.context, "${response.data['message']}");
+      // }
+      else {
         emit(Error());
         log('error name  ${body["name"]}');
-        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
-      } else {
-        emit(Error());
-        log('error name  ${body["name"]}');
-        showSnackBar(RouteUtils.context, "ERROR : ${response.data['message']}");
+        showSnackBar(RouteUtils.context, " ${response.data['message']}");
       }
     } catch (e) {
       emit(Error());

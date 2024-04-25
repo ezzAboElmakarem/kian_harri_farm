@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
@@ -30,7 +31,7 @@ class CartOrders extends StatelessWidget {
                   TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
             ),
             Text(
-              ' منتجات',
+              "products".tr(),
               //textdirection: isArabic() ? TextDirection.rtl : TextDirection.ltr,
               style:
                   TextStyles.textstyle14.copyWith(fontWeight: FontWeight.bold),
@@ -45,7 +46,7 @@ class CartOrders extends StatelessWidget {
                   CartBloc.of(context).add(Clear());
                 },
                 child: Text(
-                  'حذف السلة',
+                  "clear_cart".tr(),
                   style: TextStyles.textstyle14.copyWith(color: kPrimaryColor),
                 ),
               ),

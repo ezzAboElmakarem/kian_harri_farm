@@ -16,12 +16,13 @@ class _QuestionsItemState extends State<QuestionsItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 22.h),
+      width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.symmetric(vertical: 22.h, horizontal: 6.w),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: kPrimaryColor, width: 2.w)),
-      child: GestureDetector(
-        // splashColor: Colors.transparent,
+      child: InkWell(
+        splashColor: Colors.transparent,
         onTap: () {
           setState(() {
             isPressed = !isPressed;
@@ -33,13 +34,14 @@ class _QuestionsItemState extends State<QuestionsItem> {
             Row(
               children: [
                 Text(
-                  widget.answer,
+                  widget.question,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyles.textstyle16
-                      .copyWith(fontWeight: FontWeight.w400),
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
                 const Spacer(),
                 Transform.rotate(
-                    angle: 3.14 / 2,
+                    angle: 9.4 / 2,
                     child: Icon(
                       Icons.arrow_forward_ios,
                       size: 18.sp,
@@ -51,9 +53,9 @@ class _QuestionsItemState extends State<QuestionsItem> {
                     padding:
                         EdgeInsets.symmetric(horizontal: 4.w, vertical: 14.h),
                     child: Text(
-                      widget.question,
+                      widget.answer,
                       style: TextStyles.textstyle16
-                          .copyWith(fontWeight: FontWeight.w300),
+                          .copyWith(fontWeight: FontWeight.w400),
                     ),
                   )
                 : SizedBox(height: 0.h),

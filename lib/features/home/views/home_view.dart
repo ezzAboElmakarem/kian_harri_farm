@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/core/app_state.dart';
 import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'package:kian_sheeps_projects/features/home/widgets/home_advert.dart';
+import 'package:kian_sheeps_projects/helper/color_styles.dart';
 import 'package:kian_sheeps_projects/helper/text_styles.dart';
 import 'package:kian_sheeps_projects/widgets/product_slider_image.dart';
 import '../../drawer/views/drawer_view.dart';
@@ -51,7 +52,10 @@ class HomeView extends StatelessWidget {
       body: BlocBuilder<HomeBloc, AppState>(
         builder: (context, state) {
           if (state is Loading) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+                child: CircularProgressIndicator(
+              color: kPrimaryColor,
+            ));
           } else if (state is Done) {
             return HomeBuildItem(
                 imagesUrl: imagesUrl, secondImagesUrl: secondImagesUrl);

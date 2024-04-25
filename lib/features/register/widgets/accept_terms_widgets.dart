@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
+import 'package:kian_sheeps_projects/features/register/bloc/register_bloc.dart';
 import '../../../helper/color_styles.dart';
 import '../../../helper/text_styles.dart';
 
@@ -17,6 +18,7 @@ class _AcceptTermsWidgetState extends State<AcceptTermsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = RegisterBloc.get(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -26,6 +28,7 @@ class _AcceptTermsWidgetState extends State<AcceptTermsWidget> {
           onChanged: (value) {
             setState(() {
               ischecked_1 = value!;
+              bloc.acceptTerms = ischecked_1;
             });
           },
         ),

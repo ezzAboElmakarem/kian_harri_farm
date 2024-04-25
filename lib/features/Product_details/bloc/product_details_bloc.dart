@@ -73,7 +73,7 @@ class ProductDetailsBloc extends Bloc<AppEvent, AppState> {
             RouteUtils.context, " Your Order Added to Cart Successfully");
       } else {
         if ("${response.data['message']}" == "Unauthenticated.") {
-          emit(Empty());
+          emit(Unauthorized());
           showSnackBar(
               RouteUtils.context, " Please login before make Your Order");
         } else {

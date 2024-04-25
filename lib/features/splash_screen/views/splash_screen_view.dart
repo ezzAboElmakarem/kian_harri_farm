@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kian_sheeps_projects/core/AppStorage.dart';
+import 'package:kian_sheeps_projects/core/app_event.dart';
+import 'package:kian_sheeps_projects/features/home/bloc/home_bloc.dart';
 import 'package:kian_sheeps_projects/features/home/views/home_view.dart';
 import 'package:kian_sheeps_projects/features/login/views/login_screen_view.dart';
 import 'package:kian_sheeps_projects/helper/routes.dart';
@@ -21,10 +23,15 @@ class _SplashScreenViewState extends State<SplashScreenView> {
       const Duration(seconds: 2),
       () {
         if (AppStorage.isLogged) {
+          HomeBloc.get(context).add(Get());
           RouteUtils.navigateAndPopAll(HomeView());
         } else if (AppStorage.isOnBoardingComplete) {
+          HomeBloc.get(context).add(Get());
+
           RouteUtils.navigateAndPopAll(const LoginScreenView());
         } else {
+          HomeBloc.get(context).add(Get());
+
           RouteUtils.navigateAndPopAll(const OnBordingScreenView());
         }
       },

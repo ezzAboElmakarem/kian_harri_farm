@@ -34,7 +34,7 @@ class FavouriteBloc extends Bloc<AppEvent, AppState> {
         }
       } else {
         if ("${response.data['message']}" == "Unauthenticated.") {
-          emit(Empty());
+          emit(Unauthorized());
           showSnackBar(RouteUtils.context,
               " please Login  to save you favourites Products");
         } else {
@@ -63,7 +63,7 @@ class FavouriteBloc extends Bloc<AppEvent, AppState> {
         FavouriteBloc.get(RouteUtils.context).add(Get());
       } else {
         if ("${response.data['message']}" == "Unauthenticated.") {
-          emit(Empty());
+          emit(Unauthorized());
           showSnackBar(RouteUtils.context,
               " please Login  to save you favourites Products");
         } else {

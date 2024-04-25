@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -29,7 +30,7 @@ class BottomSheetTitle extends StatelessWidget {
               SizedBox(
                 width: 100.w,
               ),
-              Text('ترتيب بواسطة',
+              Text("sort_by".tr(),
                   style: TextStyles.textstyle16
                       .copyWith(fontWeight: FontWeight.bold)),
             ],

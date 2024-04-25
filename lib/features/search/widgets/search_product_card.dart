@@ -64,22 +64,18 @@ class _CustomProductCardState extends State<SearchProductCard> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 34.h),
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                    ),
-                    child: Center(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
-                          widget.searchItem?.image ??
-                              AssetsData.dummyProductImage,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
+                // SizedBox(height: 34.h),
+                Container(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Image.network(
+                    widget.searchItem?.image ?? AssetsData.dummyProductImage,
+                    fit: BoxFit.fill,
+                    width: double.infinity,
+                    height: 120.h,
                   ),
                 ),
                 SizedBox(
@@ -189,11 +185,11 @@ class _CustomProductCardState extends State<SearchProductCard> {
               } else {
                 return Positioned(
                   // left: RouteUtils.isAR ? 0 : null,
-                  right: RouteUtils.isAR ? 12.w : 12.w,
+                  right: RouteUtils.isAR ? 4.w : 4.w,
 
-                  top: -18.h,
+                  top: -30.h,
                   child: SizedBox(
-                    width: 130.w,
+                    width: 158.w,
                     height: 100.h,
                     child: Row(
                       children: [
@@ -234,12 +230,12 @@ class _CustomProductCardState extends State<SearchProductCard> {
                                 radius: 20.r,
                                 child: Column(
                                   children: [
-                                    Text(widget.searchItem?.discount ?? '10',
+                                    Text("${widget.searchItem?.discount}%",
                                         style: TextStyles.textstyle12.copyWith(
                                             color: Colors.white,
                                             fontSize: 9.sp,
                                             fontWeight: FontWeight.bold)),
-                                    Text('خصم',
+                                    Text('discount'.tr(),
                                         style: TextStyles.textstyle12.copyWith(
                                             color: Colors.white,
                                             fontSize: 7.sp)),

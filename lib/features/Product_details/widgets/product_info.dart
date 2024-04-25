@@ -32,7 +32,7 @@ class ProductInfo extends StatelessWidget {
             child: Center(
               child: Container(
                 height: 260.h,
-                width: 300.w,
+                // width: 300.w,
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(16.r)),
                 child: ClipRRect(
@@ -58,20 +58,28 @@ class ProductInfo extends StatelessWidget {
 
           /**** */
           SizedBox(height: 7.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text("${productDetailsModel?.data?.offer?.price ?? '555'} SR",
-                  style: TextStyles.textstyle16.copyWith(color: kPrimaryColor)),
-              SizedBox(width: 8.w),
-              Text(
-                  "${productDetailsModel?.data?.offer?.offerPrice ?? '444'} SR",
-                  style: TextStyles.textstyle14.copyWith(
-                      color: ColorStyles.textGreyColor.withOpacity(0.5),
-                      decoration: TextDecoration.lineThrough,
-                      decorationThickness: 2.0)),
-            ],
-          ),
+
+          productDetailsModel?.data?.offer?.offerPrice ==
+                  productDetailsModel?.data?.offer?.price
+              ? Text(
+                  "${productDetailsModel?.data?.offer?.offerPrice ?? '555'} SR",
+                  style: TextStyles.textstyle16.copyWith(color: kPrimaryColor))
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                        "${productDetailsModel?.data?.offer?.price ?? '555'} SR",
+                        style: TextStyles.textstyle16
+                            .copyWith(color: kPrimaryColor)),
+                    SizedBox(width: 8.w),
+                    Text(
+                        "${productDetailsModel?.data?.offer?.offerPrice ?? '444'} SR",
+                        style: TextStyles.textstyle14.copyWith(
+                            color: ColorStyles.textGreyColor.withOpacity(0.5),
+                            decoration: TextDecoration.lineThrough,
+                            decorationThickness: 2.0)),
+                  ],
+                ),
           SizedBox(height: 14.h),
           // Row(
           //   mainAxisAlignment: MainAxisAlignment.start,
@@ -93,9 +101,8 @@ class ProductInfo extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'الوزن التقريبي',
-                style: TextStyles.textstyle16
-                    .copyWith(color: ColorStyles.hintColor),
+                "approximate_weight".tr(),
+                style: TextStyles.textstyle16,
               ),
               Text(
                 ' : ',
@@ -106,7 +113,8 @@ class ProductInfo extends StatelessWidget {
               Text(
                 productDetailsModel?.data?.offer?.sizes?[0].name.toString() ??
                     'x',
-                style: TextStyles.textstyle16,
+                style: TextStyles.textstyle16
+                    .copyWith(color: ColorStyles.hintColor),
                 //textdirection: TextDirection.rtl,
               ),
             ],

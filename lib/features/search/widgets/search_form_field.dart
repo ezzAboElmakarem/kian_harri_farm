@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:kian_sheeps_projects/core/app_event.dart';
 import 'package:kian_sheeps_projects/features/search/bloc/search_bloc.dart';
@@ -18,12 +19,12 @@ class SearchTextFormField extends StatelessWidget {
       child: CustomTextFormField(
         ispassword: false,
         isEnabled: true,
-        hint: 'ابحث عن منتج',
+        hint: 'search_hint'.tr(),
         controller: bloc.searchController,
         onChange: (value) {
           bloc.add(Get());
         },
-        suffixIcon: Icon(
+        prefixIcon: Icon(
           Icons.search_outlined,
           color: ColorStyles.textGreyColor.withOpacity(0.4),
         ),

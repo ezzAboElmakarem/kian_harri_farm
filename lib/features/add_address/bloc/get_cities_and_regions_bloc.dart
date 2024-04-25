@@ -27,7 +27,7 @@ class CitiesAndRegionsBloc extends Bloc<AppEvent, AppState> {
         emit(Done());
       } else {
         if ("${response.data['message']}" == "Unauthenticated.") {
-          emit(Empty());
+          emit(Unauthorized());
         } else {
           emit(Error());
           log('Get cities Failed with Status code ${response.statusCode}');
@@ -54,7 +54,7 @@ class CitiesAndRegionsBloc extends Bloc<AppEvent, AppState> {
         emit(Done());
       } else {
         if ("${response.data['message']}" == "Unauthenticated.") {
-          emit(Empty());
+          emit(Unauthorized());
         } else {
           emit(Error());
           log('Get regions Failed with Status code ${response.statusCode}');
